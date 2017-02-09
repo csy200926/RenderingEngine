@@ -18,6 +18,7 @@
 #include "Componenets/MeshPoints.h"
 #include "Componenets/Material.h"
 #include "Componenets/Mesh.h"
+#include "Componenets/Model.h"
 #include "Componenets/Texture.h"
 
 
@@ -71,10 +72,10 @@ static void mousePos_callback()//(GLFWwindow* window, double x, double y)
 	InputManager *pInputManger = InputManager::GetInstance();
 
 	int x = 0, y = 0;
-	SDL_GetRelativeMouseState(&x,&y);
+	SDL_GetRelativeMouseState(&x, &y);
 	vec2 offset(x, y);
 
-	static const float factor = 0.001f; 
+	static const float factor = 0.001f;
 	offset *= factor;
 
 	// get the axis to rotate around the x-axis. 
@@ -131,7 +132,7 @@ void InputUpdates()
 		move += vec3(0, 1, 0) * speed;
 	}
 
-	vec3 moveXZ(move.x,0,move.z);
+	vec3 moveXZ(move.x, 0, move.z);
 	//shadowCameraPos += moveXZ;
 	//shadowCameratarget += moveXZ;
 
@@ -165,7 +166,7 @@ void InputUpdates()
 
 int main(int argc, char** argv) {
 
-	
+
 	{
 		using namespace Rendering;
 		using namespace std;
@@ -174,7 +175,7 @@ int main(int argc, char** argv) {
 		SDL_Init(SDL_INIT_EVERYTHING);
 		SDL_Window *window = SDL_CreateWindow("STAY or TO GO", 200, 200, ScreenWidth, ScreenHeight, SDL_WINDOW_OPENGL);
 		SDL_GLContext glContext = SDL_GL_CreateContext(window);
-		
+
 		// Start GL context and O/S window using the GLFW helper library
 		if (!glfwInit()) {
 			fprintf(stderr, "ERROR: could not start GLFW3\n");
@@ -186,7 +187,7 @@ int main(int argc, char** argv) {
 		glewInit();
 
 		system("CLS");
-		printf("OpenGL version supported by this platform (%s): \n",glGetString(GL_VERSION));
+		printf("OpenGL version supported by this platform (%s): \n", glGetString(GL_VERSION));
 
 
 		//Skybox
@@ -200,36 +201,12 @@ int main(int argc, char** argv) {
 			skyBox->Init(cubeTex);
 		}
 
-		Mesh_Old* pMesh = new Mesh_Old();
-		vector<Vertex_Old> vertices;
-		vector<unsigned int> indices;
-
-		Vertex_Old quadPoint;
-
-		//Left bottom  0
-		quadPoint.Set(vec3(0, 0, 0), vec3(0, 0, 1), vec4(1.0f, 1.0f, 1.0f, 1.0f), vec2(0.0f, 0.0f));
-		vertices.push_back(quadPoint);
-
-		//Left top     1
-		quadPoint.Set(vec3(0, 10, 0), vec3(0, 0, 1), vec4(1.0f, 1.0f, 1.0f, 1.0f), vec2(0.0f, 1.0f));
-		vertices.push_back(quadPoint);
-
-		//Right top    2
-		quadPoint.Set(vec3(10, 10, 0), vec3(0, 0, 1), vec4(1.0f, 1.0f, 1.0f, 1.0f), vec2(1.0f, 1.0f));
-		vertices.push_back(quadPoint);
-
-		//Right bottom 3
-		quadPoint.Set(vec3(10, 0, 0), vec3(0, 0, 1), vec4(1.0f, 1.0f, 1.0f, 1.0f), vec2(1.0f, 0.0f));
-		vertices.push_back(quadPoint);
-
-		indices.push_back(0); indices.push_back(1); indices.push_back(2);
-		indices.push_back(2); indices.push_back(3); indices.push_back(0);
-
-		pMesh->LoadFromList(vertices, indices);
 
 		Material *pMaterial = new Material();
-		pMaterial->Init("Shaders/phongVS.shader", "Shaders/phongFS.shader");
-		pMesh->SetMaterial(pMaterial);
+		pMaterial->Init("Shaders/DefaultVS.shader", "Shaders/DefaultFS.shader");
+
+		Model *pModel = new Model("Models/test.obj");
+
 
 		glViewport(0, 0, ScreenWidth, ScreenHeight);
 		glEnable(GL_DEPTH_TEST);
@@ -237,7 +214,7 @@ int main(int argc, char** argv) {
 		//glCullFace(GL_BACK);
 
 		float timer = 0.0f;
-	
+
 		using namespace  glm;
 		vec3 cameraPos(0, 0, 10);
 		vec3 target(0, 0, 0);
@@ -254,6 +231,33 @@ int main(int argc, char** argv) {
 
 		SDL_SetRelativeMouseMode(SDL_TRUE);
 
+		std::vector<Vertex> vertices;
+		std::vector<GLuint> indices;
+		std::vector<Texture_ID> textures;
+
+		Vertex quadPoint;
+
+		//Left bottom  0
+		quadPoint.Set(vec3(0, 0, 0), vec3(0, 0, 1), vec2(0.0f, 0.0f));
+		vertices.push_back(quadPoint);
+
+		//Left top     1
+		quadPoint.Set(vec3(0, 10, 0), vec3(0, 0, 1), vec2(0.0f, 1.0f));
+		vertices.push_back(quadPoint);
+
+		//Right top    2
+		quadPoint.Set(vec3(10, 10, 0), vec3(0, 0, 1), vec2(1.0f, 1.0f));
+		vertices.push_back(quadPoint);
+
+		//Right bottom 3
+		quadPoint.Set(vec3(10, 0, 0), vec3(0, 0, 1), vec2(1.0f, 0.0f));
+		vertices.push_back(quadPoint);
+
+		indices.push_back(0); indices.push_back(1); indices.push_back(2);
+		indices.push_back(2); indices.push_back(3); indices.push_back(0);
+
+
+		Mesh *pMeshTest = new Mesh(vertices, indices, textures);
 
 
 		while (isGameRunning)//(!glfwWindowShouldClose(window))
@@ -286,16 +290,15 @@ int main(int argc, char** argv) {
 					break;
 				}
 			}
-		
+
 			// Normal GL draw methods
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
 
 
 			//skyBox->Draw();
-
-			pMesh->Draw();
-
+			//pMeshTest->Draw(pMaterial);
+			pModel->Draw(pMaterial);
 
 			// Updates
 			{
@@ -308,7 +311,7 @@ int main(int argc, char** argv) {
 				}
 			}
 
-			
+
 			SDL_GL_SwapWindow(window);
 
 			timing.end();
@@ -319,9 +322,9 @@ int main(int argc, char** argv) {
 		// close GL context and any other GLFW resources
 		glfwTerminate();
 
-	
+
 	}
-	
+
 	_CrtDumpMemoryLeaks();
 
 	return 0;

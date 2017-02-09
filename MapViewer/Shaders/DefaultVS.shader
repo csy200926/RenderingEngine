@@ -23,6 +23,6 @@ uniform vec3 light_pos = vec3(100.0, 100.0, 100.0);
 void main(void)
 {
     // Calculate view-space coordinate
-    vec4 P = Projective_Matrix * WorldToView_Matrix * ModelToWorld_Matrix * vec4(position,1.0);
+    gl_Position = Projective_Matrix * WorldToView_Matrix * ModelToWorld_Matrix * vec4(position,1.0);
 	TexCoords = texCoords;
 }

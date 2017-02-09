@@ -132,15 +132,15 @@ namespace Rendering
 		glBufferData(GL_ARRAY_BUFFER, vertices.size()*sizeof(Vertex) , &vertices[0],GL_STATIC_DRAW);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-		glBufferData(GL_ARRAY_BUFFER, indices.size()*sizeof(Vertex), &indices[0], GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices.size()*sizeof(GLuint), &indices[0], GL_STATIC_DRAW);
 
 		glEnableVertexAttribArray(0);
 		glEnableVertexAttribArray(1);
 		glEnableVertexAttribArray(2);
 
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, position)));
-		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, normal)));
-		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, texCoords)));
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, _position)));
+		glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, _normal)));
+		glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), reinterpret_cast<void *>(offsetof(Vertex, _texCoords)));
 
 		glBindVertexArray(0);
 	}
@@ -148,6 +148,15 @@ namespace Rendering
 	void Mesh::Draw(Material *pMaterial)
 	{
 		using namespace std;
+		using namespace glm;
+		mat4 scale = glm::scale(mat4(1.0f), vec3(1,1,1));
+		mat4 rotation = glm::mat4_cast(glm::quat(glm::vec3(0, 0, 0)));
+		mat4 translation = glm::translate(vec3(0, 0, 0));
+
+		Camera::ModelToWorld_Matrix = translation * rotation * scale;
+
+		pMaterial->Activate();
+
 
 		GLuint diffuseNr = 1;
 		GLuint specularNr = 1;

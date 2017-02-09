@@ -45,7 +45,7 @@ namespace Rendering
 			_uv[1] = uv.y;
 		}
 
-		void Set(glm::vec3 &position, glm::vec3 &normal, glm::vec4 &color, glm::vec2 &uv)
+		void Set(glm::vec3 &position, glm::vec3 &normal, glm::vec2 &uv)
 		{
 			_position[0] = position.x;
 			_position[1] = position.y;
@@ -55,20 +55,29 @@ namespace Rendering
 			_normal[1] = normal.y;
 			_normal[2] = normal.z;
 
-			_color[0] = color.x;
-			_color[1] = color.y;
-			_color[2] = color.z;
-			_color[3] = color.w;
-
 			_uv[0] = uv.x;
 			_uv[1] = uv.y;
 		}
 	};
 	struct Vertex
 	{
-		glm::vec3 position;
-		glm::vec3 normal;
-		glm::vec2 texCoords;
+		glm::vec3 _position;
+		glm::vec3 _normal;
+		glm::vec2 _texCoords;
+
+		void Set(glm::vec3 &position, glm::vec3 &normal, glm::vec2 &uv)
+		{
+			_position[0] = position.x;
+			_position[1] = position.y;
+			_position[2] = position.z;
+
+			_normal[0] = normal.x;
+			_normal[1] = normal.y;
+			_normal[2] = normal.z;
+
+			_texCoords[0] = uv.x;
+			_texCoords[1] = uv.y;
+		}
 	};
 
 	struct Texture_ID
