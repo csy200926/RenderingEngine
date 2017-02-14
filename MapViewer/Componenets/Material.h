@@ -40,6 +40,7 @@ namespace Rendering
 		GLint m_program;
 
 		void Activate();
+		void Use(){	glUseProgram(m_program);};
 	};
 
 

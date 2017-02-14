@@ -47,7 +47,7 @@ using namespace glm;
 
 #pragma region static variables
 GLFWwindow* window;
-unsigned int ScreenHeight = 768, ScreenWidth = 1024;
+unsigned int ScreenHeight = 300, ScreenWidth = 400;
 bool isGameRunning = true;
 
 #define FRONT "Images/skyBox/stormydays_ft.tga"
@@ -298,6 +298,35 @@ int main(int argc, char** argv) {
 
 			//skyBox->Draw();
 			//pMeshTest->Draw(pMaterial);
+
+			pMaterial->Use();
+			GLint viewPosLoc = glGetUniformLocation(pMaterial->GetProgram(), "viewPos");
+			glUniform3f(viewPosLoc, Rendering::Camera::cameraPos.x, Rendering::Camera::cameraPos.y, Rendering::Camera::cameraPos.z);
+			
+			// Directional light
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.direction"), -0.2f, -1.0f, -0.3f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.ambient"), 0.05f, 0.05f, 0.05f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.specular"), 0.5f, 0.5f, 0.5f);
+
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "NR_POINT_LIGHTS"),2.0);
+			// Point light 1
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].position"), 0,1,0);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].ambient"), 0.05f, 0.05f, 0.05f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].diffuse"), 0.8f, 0.8f, 0.8f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].specular"), 1.0f, 1.0f, 1.0f);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].constant"), 1.0f);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].linear"), 0.09);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].quadratic"), 0.032);
+
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].position"), 10, 1, 0);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].ambient"), 0.05f, 0.05f, 0.05f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].diffuse"), 0.8f, 0.8f, 0.8f);
+			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].specular"), 1.0f, 1.0f, 1.0f);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].constant"), 1.0f);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].linear"), 0.09);
+			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].quadratic"), 0.032);
+
 			pModel->Draw(pMaterial);
 
 			// Updates

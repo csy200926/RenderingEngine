@@ -149,14 +149,6 @@ namespace Rendering
 	{
 		using namespace std;
 		using namespace glm;
-		mat4 scale = glm::scale(mat4(1.0f), vec3(1,1,1));
-		mat4 rotation = glm::mat4_cast(glm::quat(glm::vec3(0, 0, 0)));
-		mat4 translation = glm::translate(vec3(0, 0, 0));
-
-		Camera::ModelToWorld_Matrix = translation * rotation * scale;
-
-		pMaterial->Activate();
-
 
 		GLuint diffuseNr = 1;
 		GLuint specularNr = 1;
