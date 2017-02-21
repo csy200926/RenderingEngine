@@ -20,7 +20,7 @@
 #include "Componenets/Mesh.h"
 #include "Componenets/Model.h"
 #include "Componenets/Texture.h"
-
+#include "Componenets/SceneNode.h"
 
 
 #include "stdio.h"
@@ -206,12 +206,23 @@ int main(int argc, char** argv) {
 		pMaterial->Init("Shaders/DefaultVS.shader", "Shaders/DefaultFS.shader");
 
 		Model *pModel = new Model("Models/test.obj");
+		pModel->SetMaterial(pMaterial);
+		
+		SceneNode *pRoot = new SceneNode();
+		pRoot->AttachRenderable(pModel);
 
+		Model *pModel_2 = new Model("Models/test.obj");
+		pModel_2->SetMaterial(pMaterial);
+
+		SceneNode *pTestNode = new SceneNode();
+		pTestNode->AttachRenderable(pModel_2);
+
+		pRoot->AddChild(pTestNode);
+		pTestNode->m_position = vec3(80,0,0);
+		pTestNode->m_scale = vec3(0.5f,0.5f,0.5f);
 
 		glViewport(0, 0, ScreenWidth, ScreenHeight);
 		glEnable(GL_DEPTH_TEST);
-		//glEnable(GL_CULL_FACE);
-		//glCullFace(GL_BACK);
 
 		float timer = 0.0f;
 
@@ -230,35 +241,6 @@ int main(int argc, char** argv) {
 		SDL_Event inputEvent;
 
 		SDL_SetRelativeMouseMode(SDL_TRUE);
-
-		std::vector<Vertex> vertices;
-		std::vector<GLuint> indices;
-		std::vector<Texture_ID> textures;
-
-		Vertex quadPoint;
-
-		//Left bottom  0
-		quadPoint.Set(vec3(0, 0, 0), vec3(0, 0, 1), vec2(0.0f, 0.0f));
-		vertices.push_back(quadPoint);
-
-		//Left top     1
-		quadPoint.Set(vec3(0, 10, 0), vec3(0, 0, 1), vec2(0.0f, 1.0f));
-		vertices.push_back(quadPoint);
-
-		//Right top    2
-		quadPoint.Set(vec3(10, 10, 0), vec3(0, 0, 1), vec2(1.0f, 1.0f));
-		vertices.push_back(quadPoint);
-
-		//Right bottom 3
-		quadPoint.Set(vec3(10, 0, 0), vec3(0, 0, 1), vec2(1.0f, 0.0f));
-		vertices.push_back(quadPoint);
-
-		indices.push_back(0); indices.push_back(1); indices.push_back(2);
-		indices.push_back(2); indices.push_back(3); indices.push_back(0);
-
-
-		Mesh *pMeshTest = new Mesh(vertices, indices, textures);
-
 
 		while (isGameRunning)//(!glfwWindowShouldClose(window))
 		{
@@ -294,40 +276,9 @@ int main(int argc, char** argv) {
 			// Normal GL draw methods
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-
-
-			//skyBox->Draw();
-			//pMeshTest->Draw(pMaterial);
-
-			pMaterial->Use();
-			GLint viewPosLoc = glGetUniformLocation(pMaterial->GetProgram(), "viewPos");
-			glUniform3f(viewPosLoc, Rendering::Camera::cameraPos.x, Rendering::Camera::cameraPos.y, Rendering::Camera::cameraPos.z);
-			
-			// Directional light
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.direction"), -0.2f, -1.0f, -0.3f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.ambient"), 0.05f, 0.05f, 0.05f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "dirLight.specular"), 0.5f, 0.5f, 0.5f);
-
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "NR_POINT_LIGHTS"),2.0);
-			// Point light 1
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].position"), 0,1,0);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].ambient"), 0.05f, 0.05f, 0.05f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].diffuse"), 0.8f, 0.8f, 0.8f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].specular"), 1.0f, 1.0f, 1.0f);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].constant"), 1.0f);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].linear"), 0.09);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[0].quadratic"), 0.032);
-
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].position"), 10, 1, 0);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].ambient"), 0.05f, 0.05f, 0.05f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].diffuse"), 0.8f, 0.8f, 0.8f);
-			glUniform3f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].specular"), 1.0f, 1.0f, 1.0f);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].constant"), 1.0f);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].linear"), 0.09);
-			glUniform1f(glGetUniformLocation(pMaterial->GetProgram(), "pointLights[1].quadratic"), 0.032);
-
-			pModel->Draw(pMaterial);
+			skyBox->Draw();
+			pRoot->Pitch(0.0003f); pRoot->Yaw(0.0003f);
+			pRoot->Draw();
 
 			// Updates
 			{

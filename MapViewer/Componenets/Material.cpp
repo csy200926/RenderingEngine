@@ -60,6 +60,36 @@ namespace Rendering
 	{
 		glUseProgram(m_program);
 
+#pragma region Lights
+		GLint viewPosLoc = glGetUniformLocation(m_program, "viewPos");
+		glUniform3f(viewPosLoc, Rendering::Camera::cameraPos.x, Rendering::Camera::cameraPos.y, Rendering::Camera::cameraPos.z);
+
+		// Directional light
+		glUniform3f(glGetUniformLocation(m_program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);
+		glUniform3f(glGetUniformLocation(m_program, "dirLight.ambient"), 0.05f, 0.05f, 0.05f);
+		glUniform3f(glGetUniformLocation(m_program, "dirLight.diffuse"), 0.4f, 0.4f, 0.4f);
+		glUniform3f(glGetUniformLocation(m_program, "dirLight.specular"), 0.5f, 0.5f, 0.5f);
+
+		glUniform1f(glGetUniformLocation(m_program, "NR_POINT_LIGHTS"), 2.0);
+		// Point light 1
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[0].position"), 40, 1, 0);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[0].ambient"), 0.05f, 0.05f, 0.05f);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[0].diffuse"), 0.8f, 0.8f, 0.8f);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[0].specular"), 1.0f, 1.0f, 1.0f);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[0].constant"), 1.0f);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[0].linear"), 0.09);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[0].quadratic"), 0.032);
+
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[1].position"), 10, 1, 0);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[1].ambient"), 0.05f, 0.05f, 0.05f);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[1].diffuse"), 0.8f, 0.8f, 0.8f);
+		glUniform3f(glGetUniformLocation(m_program, "pointLights[1].specular"), 1.0f, 1.0f, 1.0f);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[1].constant"), 1.0f);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[1].linear"), 0.09);
+		glUniform1f(glGetUniformLocation(m_program, "pointLights[1].quadratic"), 0.032);
+#pragma endregion
+
+
 		glUniformMatrix4fv(m_PMatrixLocation, 1, GL_FALSE, &Camera::Projective_Matrix[0][0]);
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);
 		glUniformMatrix4fv(m_MMatrixLocation, 1, GL_FALSE, &Camera::ModelToWorld_Matrix[0][0]);

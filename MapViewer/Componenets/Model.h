@@ -52,8 +52,26 @@ namespace Rendering
 
 			for (GLuint i = 0; i < meshes.size(); i++)
 				meshes[i].Draw(pMaterial);
-		};
+		}
+		void Draw()
+		{
+			if (m_pMaterial == nullptr)
+				return;
+
+			m_pMaterial->Activate();
+
+			for (GLuint i = 0; i < meshes.size(); i++)
+				meshes[i].Draw(m_pMaterial);
+		}
+		void SetMaterial(Material *i_pMaterial)
+		{
+			m_pMaterial = i_pMaterial;
+		}
+
 	private:
+
+		Material *m_pMaterial;
+
 		/*  Model Data  */
 		std::vector<Mesh> meshes;
 		std::string directory;
