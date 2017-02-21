@@ -62,7 +62,9 @@ namespace Rendering
 
 #pragma region Lights
 		GLint viewPosLoc = glGetUniformLocation(m_program, "viewPos");
-		glUniform3f(viewPosLoc, Rendering::Camera::cameraPos.x, Rendering::Camera::cameraPos.y, Rendering::Camera::cameraPos.z);
+
+		Camera *pCurrentCamera = Rendering::Camera::GetInstance();
+		glUniform3f(viewPosLoc, pCurrentCamera->m_position.x, pCurrentCamera->m_position.y, pCurrentCamera->m_position.z);
 
 		// Directional light
 		glUniform3f(glGetUniformLocation(m_program, "dirLight.direction"), -0.2f, -1.0f, -0.3f);

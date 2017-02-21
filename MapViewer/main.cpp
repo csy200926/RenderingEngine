@@ -56,6 +56,8 @@ bool isGameRunning = true;
 #define BOTTOM "Images/skyBox/stormydays_dn.tga"
 #define LEFT "Images/skyBox/stormydays_lf.tga"
 #define RIGHT "Images/skyBox/stormydays_rt.tga"
+
+Rendering::Camera *s_pCamera = nullptr;
 #pragma endregion
 
 
@@ -75,26 +77,26 @@ static void mousePos_callback()//(GLFWwindow* window, double x, double y)
 	SDL_GetRelativeMouseState(&x, &y);
 	vec2 offset(x, y);
 
-	static const float factor = 0.001f;
+	static const float factor = 0.0001f;
 	offset *= factor;
 
 	// get the axis to rotate around the x-axis. 
-	vec3 Axis = cross(Rendering::Camera::viewVector - Rendering::Camera::cameraPos, vec3(0, 1, 0));
+	vec3 Axis = cross(s_pCamera->viewVector - s_pCamera->cameraPos, vec3(0, 1, 0));
 	// To be able to use the quaternion conjugate, the axis to
 	// rotate around must be normalized.
 	Axis = normalize(Axis);
 
-	Rendering::Camera::RotateCamera(-offset.y, Axis.x, Axis.y, Axis.z);// rotate around local x axis
-	Rendering::Camera::RotateCamera(-offset.x, 0, 1, 0);//rotate around local y axis
+	s_pCamera->Pitch(offset.y);
+	s_pCamera->Yaw(offset.x);
+	//s_pCamera->RotateCamera(-offset.y, Axis.x, Axis.y, Axis.z);// rotate around local x axis
+//	s_pCamera->RotateCamera(-offset.x, 0, 1, 0);//rotate around local y axis
 
 }
 
-// hack
-vec3 shadowCameraPos(232.41f, 346.67f, 13.65f);
-vec3 shadowCameratarget(231.025f, 345.247f, 13.87f);
 
 void InputUpdates()
 {
+
 	using namespace glm;
 	using namespace Rendering;
 
@@ -104,25 +106,26 @@ void InputUpdates()
 
 	if (pInputManger->isKeyPressed(SDLK_LSHIFT))//if (GetKey(GLFW_KEY_LEFT_SHIFT))
 		speed = 1.5f;
-	vec3 forwarDir = Rendering::Camera::GetForwardDir();
+	vec3 forwarDir = s_pCamera->GetForwardDir();
 
 	vec3 move(0, 0, 0);
 	if (pInputManger->isKeyPressed(SDLK_w))//if (GetKey(GLFW_KEY_W))
 	{
-		move += Rendering::Camera::GetForwardDir() * speed;
+		move += s_pCamera->GetForwardDir() * speed;
 	}
 	if (pInputManger->isKeyPressed(SDLK_s))//if (GetKey(GLFW_KEY_S))
 	{
-		move -= Rendering::Camera::GetForwardDir() * speed;
+		move -= s_pCamera->GetForwardDir() * speed;
 	}
 	if (pInputManger->isKeyPressed(SDLK_a))//if (GetKey(GLFW_KEY_A))
 	{
-		move -= Rendering::Camera::GetLeftDir() * speed;
+		move -= s_pCamera->GetLeftDir() * speed;
 	}
 	if (pInputManger->isKeyPressed(SDLK_d))//if (GetKey(GLFW_KEY_D))
 	{
-		move += Rendering::Camera::GetLeftDir() * speed;
+		move += s_pCamera->GetLeftDir() * speed;
 	}
+
 	if (pInputManger->isKeyPressed(SDLK_q))//if (GetKey(GLFW_KEY_Q))
 	{
 		move -= vec3(0, 1, 0) * speed;
@@ -133,29 +136,26 @@ void InputUpdates()
 	}
 
 	vec3 moveXZ(move.x, 0, move.z);
-	//shadowCameraPos += moveXZ;
-	//shadowCameratarget += moveXZ;
 
-	Rendering::Camera::cameraPos += move;
-	Rendering::Camera::viewVector = Rendering::Camera::cameraPos + forwarDir * 10.0f;
+	s_pCamera->cameraPos += move;
+	//s_pCamera->viewVector = forwarDir;// s_pCamera->cameraPos + forwarDir * 10.0f;
 
-	Rendering::Camera::Update();
+	
 
 	s_wireframeMode = false;
 	if (pInputManger->isKeyPressed(SDLK_k))//if (GetKey(GLFW_KEY_K))
 	{
 		s_wireframeMode = true;
 	}
-	s_useShadow = false;
-	if (pInputManger->isKeyPressed(SDLK_j))//if (GetKey(GLFW_KEY_K))
-	{
-		s_useShadow = true;
-	}
 	if (pInputManger->isKeyPressed(SDLK_ESCAPE))//if (GetKey(GLFW_KEY_K))
 	{
 		isGameRunning = false;
 	}
+
+
 	mousePos_callback();
+
+	s_pCamera->Update();
 }
 
 #pragma endregion
@@ -189,6 +189,8 @@ int main(int argc, char** argv) {
 		system("CLS");
 		printf("OpenGL version supported by this platform (%s): \n", glGetString(GL_VERSION));
 
+
+		s_pCamera = new Rendering::Camera();
 
 		//Skybox
 		TextureCube *cubeTex = NULL;
@@ -231,8 +233,8 @@ int main(int argc, char** argv) {
 		vec3 target(0, 0, 0);
 		vec3 up(0, 1, 0);
 
-		Rendering::Camera::SetLookAt(cameraPos, target, up);
-		Rendering::Camera::SetPerspective(70, 4.0f / 3.0f, 0.1f, 1000.0f);
+		s_pCamera->SetLookAt(cameraPos, target, up);
+		s_pCamera->SetPerspective(70, 4.0f / 3.0f, 0.1f, 1000.0f);
 		Utilities::Timing timing;
 		timing.init(60);
 

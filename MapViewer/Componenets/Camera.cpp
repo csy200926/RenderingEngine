@@ -9,14 +9,13 @@ namespace Rendering
 	glm::mat4x4 Camera::WorldToView_Matrix;
 	glm::mat4x4 Camera::Projective_Matrix;
 
-	glm::vec3 Camera::cameraPos;
-	glm::vec3 Camera::viewVector;
-	glm::vec3 Camera::upVector(0, 1, 0);
+	Camera* Camera::s_pInstance = nullptr;
 
 	void Camera::SetLookAt(glm::vec3& i_eye, glm::vec3& i_target, glm::vec3& i_up)
 	{
-		viewVector = i_target;
+		viewVector = normalize(i_target - i_eye);
 		cameraPos = i_eye;
+		upVector = i_up;
 		WorldToView_Matrix = glm::lookAt(i_eye, i_target, i_up);
 
 	}
@@ -30,7 +29,7 @@ namespace Rendering
 	{
 		//printf("cameraPos %f,%f,%f \n", cameraPos.x, cameraPos.y, cameraPos.z);
 		//printf("viewVector %f,%f,%f \n", viewVector.x, viewVector.y, viewVector.z);
-		WorldToView_Matrix = glm::lookAt(cameraPos, viewVector, glm::vec3(0, 1, 0));
+		WorldToView_Matrix = glm::lookAt(cameraPos, cameraPos + (viewVector * m_orientation) * 5.0f, glm::vec3(0, 1, 0));
 	}
 
 
@@ -41,7 +40,7 @@ namespace Rendering
 	}
 	glm::vec3 Camera::GetForwardDir()
 	{
-		return normalize(viewVector - cameraPos);
+		return (viewVector * m_orientation);
 	}
 	void Camera::RotateCamera(double Angle, double x, double y, double z)
 	{
@@ -64,4 +63,5 @@ namespace Rendering
 		viewVector = cameraPos + vec3(result.x, result.y, result.z) * 2.0f;
 
 	}
+
 }
