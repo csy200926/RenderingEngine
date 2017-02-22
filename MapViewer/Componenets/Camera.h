@@ -55,7 +55,7 @@ namespace Rendering
 			using namespace glm;
 			quat q;
 			q = angleAxis(degrees(angle), axis);
-			m_orientation = normalize( q * m_orientation);
+			m_orientation = m_orientation * q;
 
 		}
 

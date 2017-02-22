@@ -67,6 +67,9 @@ Rendering::Camera *s_pCamera = nullptr;
 bool s_wireframeMode = false;
 bool s_useShadow = false;
 
+float cameraPitch = 0.0f;
+float cameraYaw = 0.0f;
+
 static void mousePos_callback()//(GLFWwindow* window, double x, double y)
 {
 	using namespace glm;
@@ -75,19 +78,39 @@ static void mousePos_callback()//(GLFWwindow* window, double x, double y)
 
 	int x = 0, y = 0;
 	SDL_GetRelativeMouseState(&x, &y);
-	vec2 offset(x, y);
+	vec2 offset(x, -y);
 
-	static const float factor = 0.0001f;
+	static const float factor = 0.1f;
 	offset *= factor;
 
-	// get the axis to rotate around the x-axis. 
-	vec3 Axis = cross(s_pCamera->viewVector - s_pCamera->cameraPos, vec3(0, 1, 0));
-	// To be able to use the quaternion conjugate, the axis to
-	// rotate around must be normalized.
-	Axis = normalize(Axis);
+	cameraYaw += offset.x;
+	cameraPitch += offset.y;
+	
 
-	s_pCamera->Pitch(offset.y);
-	s_pCamera->Yaw(offset.x);
+	if (cameraPitch > 89.0f)
+		cameraPitch = 89.0f;
+	if (cameraPitch < -89.0f)
+		cameraPitch = -89.0f;
+
+	glm::vec3 front;
+	front.x = cos(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+	front.y = sin(glm::radians(cameraPitch));
+	front.z = sin(glm::radians(cameraYaw)) * cos(glm::radians(cameraPitch));
+
+	s_pCamera->viewVector = glm::normalize(front);
+
+	//if (((dotPro > 0.95f && offset.y > 0)
+	//	|| (dotPro < -0.95f && offset.y < 0))
+	//	== true)
+	//	return;
+	//	s_pCamera->Pitch(-offset.y);
+
+	//s_pCamera->Rotate(vec3(0,1,0), offset.x);
+
+	//vec3 leftDir = s_pCamera->GetLeftDir();
+	//s_pCamera->Rotate(leftDir, offset.y);
+
+	//s_pCamera->Yaw(-offset.x);
 	//s_pCamera->RotateCamera(-offset.y, Axis.x, Axis.y, Axis.z);// rotate around local x axis
 //	s_pCamera->RotateCamera(-offset.x, 0, 1, 0);//rotate around local y axis
 

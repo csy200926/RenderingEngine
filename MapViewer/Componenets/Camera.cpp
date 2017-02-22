@@ -29,18 +29,18 @@ namespace Rendering
 	{
 		//printf("cameraPos %f,%f,%f \n", cameraPos.x, cameraPos.y, cameraPos.z);
 		//printf("viewVector %f,%f,%f \n", viewVector.x, viewVector.y, viewVector.z);
-		WorldToView_Matrix = glm::lookAt(cameraPos, cameraPos + (viewVector * m_orientation) * 5.0f, glm::vec3(0, 1, 0));
+		WorldToView_Matrix = glm::lookAt(cameraPos, cameraPos + ( viewVector) * 5.0f, upVector);
 	}
 
 
 
 	glm::vec3 Camera::GetLeftDir()
 	{
-		return normalize(cross(normalize(viewVector - cameraPos), upVector));
+		return normalize(cross( viewVector, upVector));
 	}
 	glm::vec3 Camera::GetForwardDir()
 	{
-		return (viewVector * m_orientation);
+		return viewVector;
 	}
 	void Camera::RotateCamera(double Angle, double x, double y, double z)
 	{
