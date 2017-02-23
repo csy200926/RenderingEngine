@@ -1,7 +1,13 @@
 #include "Game.h"
 
+int Game::screenWidth;
+int Game::screenHeight;
+
 void Game::Initilize(int i_screenWidth, int i_screenHeight)
 {
+	screenWidth = i_screenWidth;
+	screenHeight = i_screenHeight;
+
 	using namespace Rendering;
 	using namespace std;
 	using namespace glm;
@@ -25,7 +31,16 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	glViewport(0, 0, i_screenWidth, i_screenHeight);
 	glEnable(GL_DEPTH_TEST);
 
+	m_rootNode = new SceneNode();
+
 	m_timing.init(60);
+
+	vec3 cameraPos(0, 0, 10);
+	vec3 target(0, 0, 0);
+	vec3 up(0, 1, 0);
+
+	m_camera.SetLookAt(cameraPos, target, up);
+	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 0.1f, 1000.0f);
 
 	OnStart();
 }
@@ -72,16 +87,19 @@ void Game::Running()
 
 		m_skyBox.Draw();
 
-		m_rootNode.Draw();
+		m_rootNode->Draw();
 
 		SDL_GL_SwapWindow(m_window);
 
 		m_timing.end();
+
+
 	}
 }
 
 void Game::ShutDown()
 {
+	delete m_rootNode;
 	OnDestroy();
 	glfwTerminate();
 }
@@ -91,13 +109,6 @@ void Game::ShutDown()
 
 void Game::OnStart()
 {
-	vec3 cameraPos(0, 0, 10);
-	vec3 target(0, 0, 0);
-	vec3 up(0, 1, 0);
-
-	m_camera.SetLookAt(cameraPos, target, up);
-	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 0.1f, 1000.0f);
-
 
 	m_cubeTex.Init(FRONT, BACK, TOP, BOTTOM, LEFT, RIGHT);
 	m_skyBox.Init(&m_cubeTex);

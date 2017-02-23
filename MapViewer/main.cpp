@@ -306,14 +306,22 @@
 //
 //	return 0;
 //}
-#include "Game.h"
+
+#include "RenderingGame.h"
 int main(int argc, char** argv)
 {
-	Game myGame;
+	{
 
-	myGame.Initilize(800, 600);
-	myGame.StartRunning();
-	myGame.ShutDown();
+		RenderingGame myGame;
+
+		myGame.Initilize(400, 300);
+		myGame.StartRunning();
+		myGame.ShutDown();
+
+	}
+
+
+	_CrtDumpMemoryLeaks();
 
 	return 0;
 }

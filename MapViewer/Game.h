@@ -52,6 +52,10 @@ using namespace Rendering;
 class Game
 {
 public:
+
+	static int screenWidth;
+	static int screenHeight;
+
 	void Initilize(int i_screenWidth,int i_screenHeight);
 	void StartRunning(){Running();}
 	void ShutDown();
@@ -61,6 +65,12 @@ protected:
 	virtual void OnStart();
 	virtual void OnDestroy();
 	virtual void Update();
+
+	InputManager m_inputManager;
+	SceneNode* m_rootNode;
+
+
+
 
 
 	Camera m_camera;
@@ -76,10 +86,6 @@ private:
 	Utilities::Timing m_timing;
 
 	bool m_isGameRunning = true;
-
-	InputManager m_inputManager;
-
-	SceneNode m_rootNode;
 
 	void Running();
 };
