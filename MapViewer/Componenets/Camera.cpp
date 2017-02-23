@@ -33,7 +33,7 @@ namespace Rendering
 	}
 
 
-
+	// Free move camera tutorial:  https://learnopengl.com/#!Getting-started/Camera
 	glm::vec3 Camera::GetLeftDir()
 	{
 		return normalize(cross( viewVector, upVector));

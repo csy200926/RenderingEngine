@@ -17,7 +17,7 @@ namespace Rendering
 		glm::quat m_orientation;
 
 
-		SceneNode::SceneNode() : m_pParent(nullptr)
+		SceneNode::SceneNode() : m_pParent(nullptr), m_pRenderable(nullptr)
 		{
 
 			m_position = glm::vec3(0.0f, 0.0f, 0.0f);
