@@ -20,6 +20,10 @@
 #include "Rendering/Model.h"
 #include "Rendering/Texture.h"
 #include "Rendering/SceneNode.h"
+#include "Rendering/MaterialManager.h"
+#include "Rendering/TextureManager.h"
+#include "Rendering/MeshManager.h"
+
 
 #include "stdio.h"
 #include "stdlib.h"
@@ -66,10 +70,13 @@ protected:
 	virtual void OnDestroy();
 	virtual void Update();
 
+
 	InputManager* m_pInputManager;
-	SceneNode* m_rootNode;
+	SceneNode* m_pRootNode;
 
-
+	MaterialManager *m_pMaterialManager;
+	TextureManager * m_pTextureManager;
+	MeshManager * m_pMeshManager;
 
 
 

@@ -31,7 +31,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	glViewport(0, 0, i_screenWidth, i_screenHeight);
 	glEnable(GL_DEPTH_TEST);
 
-	m_rootNode = new SceneNode();
+	m_pRootNode = new SceneNode();
 
 	m_timing.init(60);
 
@@ -43,6 +43,9 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 0.1f, 1000.0f);
 
 	m_pInputManager = InputManager::CreateInstance();
+	m_pMaterialManager = MaterialManager::CreateInstance();
+	m_pTextureManager = TextureManager::CreateInstance();
+	m_pMeshManager = MeshManager::CreateInstance();
 
 	OnStart();
 }
@@ -89,7 +92,7 @@ void Game::Running()
 
 		m_skyBox.Draw();
 
-		m_rootNode->Draw();
+		m_pRootNode->Draw();
 
 		SDL_GL_SwapWindow(m_window);
 
@@ -101,8 +104,14 @@ void Game::Running()
 
 void Game::ShutDown()
 {
+
 	InputManager::DestroyInstance();
-	delete m_rootNode;
+	MaterialManager::DestroyInstance();
+	TextureManager::DestroyInstance();
+	MeshManager::DestroyInstance();
+
+	delete m_pRootNode;
+
 	OnDestroy();
 	glfwTerminate();
 }
@@ -198,10 +207,13 @@ void Game::Update()
 	}
 
 	m_camera.Update();
+
+	m_pRootNode->InternalUpdate();
 }
 
 void Game::OnDestroy()
 {
+
 
 }
 

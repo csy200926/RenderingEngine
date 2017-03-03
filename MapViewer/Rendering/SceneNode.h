@@ -5,19 +5,25 @@
 #include "gtx/transform.hpp"
 #include <glm.hpp>
 #include <gtx/quaternion.hpp>
-#include "Model.h"
+
+
+
 
 namespace Rendering
 {
+	class INodeComponent;
+
 	class SceneNode
 	{
+
+
 	public:
 		glm::vec3 m_position;
 		glm::vec3 m_scale;
 		glm::quat m_orientation;
 
 
-		SceneNode::SceneNode() : m_pParent(nullptr), m_pRenderable(nullptr)
+		SceneNode::SceneNode() : m_pParent(nullptr)
 		{
 
 			m_position = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -58,10 +64,7 @@ namespace Rendering
 
 		}
 
-		void AttachRenderable(Model *i_pModel)
-		{
-			m_pRenderable = i_pModel;
-		}
+		void AttachComponent(INodeComponent *i_component);
 
 		void AddChild(SceneNode *pChildObj)
 		{
@@ -82,7 +85,11 @@ namespace Rendering
 		// TODO: transform cache
 		virtual void Draw();
 
+		virtual void Update(){};
+		void InternalUpdate();
 	private:
+
+
 
 		// Do not change this directly!
 		std::string name;
@@ -92,7 +99,8 @@ namespace Rendering
 		SceneNode *m_pParent;
 		std::vector<SceneNode *> m_children;
 
-		Model* m_pRenderable;
+		std::vector<INodeComponent *> m_components;
+		
 
 		//Stop thinking those fucking shit!
 		glm::mat4x4 GetLocalTransform()

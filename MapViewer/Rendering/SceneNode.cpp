@@ -1,5 +1,5 @@
 #include "SceneNode.h"
-
+#include "INodeComponent.h"
 namespace Rendering
 {
 
@@ -8,11 +8,10 @@ namespace Rendering
 	{
 		using namespace glm;
 
-		// Draw self
-		if (m_pRenderable != nullptr)
+		// Draw components
+		for (size_t index = 0; index < m_components.size(); index++)
 		{
-			Camera::ModelToWorld_Matrix = GetFullTransform();
-			m_pRenderable->Draw();
+			m_components[index]->Render();
 		}
 
 		// Draw children
@@ -44,6 +43,30 @@ namespace Rendering
 				m_children.erase(m_children.begin() + index);
 				break;
 			}
+		}
+	}
+
+	void SceneNode::InternalUpdate()
+	{
+		// Update components
+		for (size_t index = 0; index < m_components.size(); index++)
+		{
+			m_components[index]->Update();
+		}
+
+		// Update children
+		for (size_t index = 0; index < m_children.size(); index++)
+		{
+			m_children[index]->InternalUpdate();
+		}
+	}
+
+	void SceneNode::AttachComponent(INodeComponent *i_component)
+	{
+		if (i_component->GetParentNode() == nullptr)
+		{
+			i_component->SetNode(this);
+			m_components.push_back(i_component);
 		}
 	}
 

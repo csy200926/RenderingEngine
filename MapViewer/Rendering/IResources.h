@@ -17,7 +17,7 @@ namespace Rendering
 	class IResource
 	{
 	public:
-
+		virtual ~IResource(){};
 
 		ResourceType GetType() const
 		{

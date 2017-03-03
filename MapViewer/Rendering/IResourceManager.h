@@ -13,19 +13,12 @@ namespace Rendering
 
 	public:
 
-		virtual IResource *CreateImpl(std::string& i_path) = 0;
+		virtual IResource *CreateImpl(const std::string& i_path) = 0;
+
+		//virtual ~IResourceManager(){ m_nameResMap.clear(); };
 
 
-		virtual void Load(std::string i_name,std::string& i_path)
-		{
-
-			ResourcePtr resPtr = Create(i_path);
-			m_nameResMap.insert(make_pair(i_name, resPtr));
-			
-		}
-
-
-		virtual ResourcePtr GetResByName(std::string& i_name)
+		virtual ResourcePtr GetResByName(const std::string& i_name)
 		{
 			ResourcePtr resPtr;
 			ResourceMap::iterator it = m_nameResMap.find(i_name);
@@ -40,12 +33,28 @@ namespace Rendering
 		virtual ResourcePtr GetResByHandle(int temp)
 		{
 			
-
+			return ResourcePtr(nullptr);
 
 		}
 
 
-		virtual ResourcePtr Create(std::string& i_path)
+
+	protected:
+
+		ResourceMap m_nameResMap;
+
+		ResourcePtr Load(const std::string& i_name, const std::string& i_path)
+		{
+
+			ResourcePtr resPtr = Create(i_path);
+
+			m_nameResMap.insert(make_pair(i_name, resPtr));
+
+			return resPtr;
+
+		}
+	private:
+		virtual ResourcePtr Create(const std::string& i_path)
 		{
 			ResourcePtr resPtr;
 
@@ -53,9 +62,5 @@ namespace Rendering
 
 			return resPtr;
 		}
-
-	protected:
-		ResourceMap m_nameResMap;
-
 	};
 }

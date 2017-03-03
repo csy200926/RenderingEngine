@@ -4,9 +4,13 @@
 #include <glm.hpp>
 #include <vector>
 #include "IResources.h"
+#include <memory>
 
 namespace Rendering
 {
+
+
+
 	class Texture;
 	class Material : public IResource
 	{
@@ -43,6 +47,6 @@ namespace Rendering
 		void Use(){	glUseProgram(m_program);};
 	};
 
-
+	typedef std::shared_ptr<Material> MaterialPtr;
 }
 

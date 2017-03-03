@@ -57,6 +57,7 @@ namespace Rendering
 
 	Material::~Material()
 	{
+		int debug = 0;
 	}
 
 	bool Material::Init(const char *i_vs, const char * i_fs)

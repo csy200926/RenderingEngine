@@ -5,6 +5,7 @@ namespace Rendering
 
 	Texture::Texture()
 	{
+		int debug = 0;
 	}
 
 

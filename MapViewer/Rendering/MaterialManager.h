@@ -8,7 +8,7 @@ namespace Rendering
 	class MaterialManager : public IResourceManager , public Singleton<MaterialManager>
 	{
 	public:
-		virtual IResource *CreateImpl(std::string& i_path)
+		virtual IResource *CreateImpl(const std::string& i_path)
 		{
 			Material *pMaterial;
 			pMaterial = new Material(i_path);
@@ -16,6 +16,10 @@ namespace Rendering
 		}
 		
 
+		MaterialPtr Load(const std::string& i_name, const std::string& i_path)
+		{
+			return std::static_pointer_cast<Material>(IResourceManager::Load(i_name,i_path));
+		}
 
 
 
