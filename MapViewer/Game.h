@@ -11,15 +11,15 @@
 
 #include "Utilities/Timing.h"
 
-#include "Componenets/SkyBox.h"
-#include "Componenets/TextureCube.h"
-#include "Componenets/Camera.h"
-#include "Componenets/MeshPoints.h"
-#include "Componenets/Material.h"
-#include "Componenets/Mesh.h"
-#include "Componenets/Model.h"
-#include "Componenets/Texture.h"
-#include "Componenets/SceneNode.h"
+#include "Rendering/SkyBox.h"
+#include "Rendering/TextureCube.h"
+#include "Rendering/Camera.h"
+#include "Rendering/MeshPoints.h"
+#include "Rendering/Material.h"
+#include "Rendering/Mesh.h"
+#include "Rendering/Model.h"
+#include "Rendering/Texture.h"
+#include "Rendering/SceneNode.h"
 
 #include "stdio.h"
 #include "stdlib.h"
@@ -34,8 +34,8 @@
 
 #include <windows.h>
 
-#include "Componenets/InputManager.h"
-#include "Componenets/GUI.h"
+#include "Rendering/InputManager.h"
+#include "Rendering/GUI.h"
 #include "SDL/SDL.h"
 
 using namespace glm;
