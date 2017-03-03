@@ -91,7 +91,7 @@ namespace Rendering
 	void SkyBox::Init(Texture *i_textureCube)
 	{
 
-		m_material = new Material();
+		m_material = new Material("");
 		m_material->Init("Shaders/cube_vs.shader", "Shaders/cube_fs.shader");
 		m_material->SetTexture(i_textureCube);
 

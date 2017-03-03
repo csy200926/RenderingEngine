@@ -11,6 +11,10 @@
 #include "gtc/matrix_transform.hpp"
 #include "gtx/transform.hpp"
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 //#define POINT_MODE
 
 namespace Rendering 
@@ -109,6 +113,65 @@ namespace Rendering
 
 
 	//------------------------------------------------------------------------------------------------------------
+	Mesh::Mesh(std::string i_filePath)
+	{
+		using namespace std;
+
+		// Read
+		Assimp::Importer importer;
+		const aiScene* scene = importer.ReadFile(i_filePath, aiProcess_Triangulate | aiProcess_FlipUVs);
+		// Check for errors
+		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
+		{
+			cout << "ERROR::ASSIMP::" << importer.GetErrorString() << endl;
+			return;
+		}
+
+		using namespace std;
+
+		const aiMesh* mesh = scene->mMeshes[0];
+
+		for (GLuint i = 0; i < mesh->mNumVertices; i++)
+		{
+			Vertex vertex;
+			glm::vec3 vector; // We declare a placeholder vector since assimp uses its own vector class that doesn't directly convert to glm's vec3 class so we transfer the data to this placeholder glm::vec3 first.
+			// Positions
+			vector.x = mesh->mVertices[i].x;
+			vector.y = mesh->mVertices[i].y;
+			vector.z = mesh->mVertices[i].z;
+			vertex._position = vector;
+			// Normals
+			vector.x = mesh->mNormals[i].x;
+			vector.y = mesh->mNormals[i].y;
+			vector.z = mesh->mNormals[i].z;
+			vertex._normal = vector;
+			// Texture Coordinates
+			if (mesh->mTextureCoords[0]) // Does the mesh contain texture coordinates?
+			{
+				glm::vec2 vec;
+				// A vertex can contain up to 8 different texture coordinates. We thus make the assumption that we won't 
+				// use models where a vertex can have multiple texture coordinates so we always take the first set (0).
+				vec.x = mesh->mTextureCoords[0][i].x;
+				vec.y = mesh->mTextureCoords[0][i].y;
+				vertex._texCoords = vec;
+			}
+			else
+				vertex._texCoords = glm::vec2(0.0f, 0.0f);
+			vertices.push_back(vertex);
+
+		}
+
+		for (GLuint i = 0; i < mesh->mNumFaces; i++)
+		{
+			aiFace face = mesh->mFaces[i];
+			// Retrieve all indices of the face and store them in the indices vector
+			for (GLuint j = 0; j < face.mNumIndices; j++)
+				indices.push_back(face.mIndices[j]);
+		}
+
+		SetupMesh();
+
+	}
 
 	Mesh::Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices, std::vector<Texture_ID> &textures)
 	{

@@ -3,12 +3,12 @@
 #include <glfw3.h> // GLFW helper library
 #include <glm.hpp>
 #include <vector>
-
+#include "IResources.h"
 
 namespace Rendering
 {
 	class Texture;
-	class Material
+	class Material : public IResource
 	{
 	private:
 
@@ -34,7 +34,7 @@ namespace Rendering
 		void SetTexture(Texture *i_texture);
 		void SetTextureNormal(Texture *i_texture);
 
-		Material();
+		Material(const std::string &path);
 		~Material();
 
 		GLint m_program;

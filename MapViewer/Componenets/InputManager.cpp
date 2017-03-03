@@ -2,11 +2,11 @@
 
 namespace Rendering {
 
-	InputManager *InputManager::pInstance = nullptr;
+	//InputManager *InputManager::pInstance = nullptr;
 
 	InputManager::InputManager() : _mouseCoords(0.0f)
 	{
-		pInstance = this;
+		//pInstance = this;
 	}
 
 

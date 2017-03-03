@@ -5,8 +5,8 @@ void RenderingGame::OnStart()
 {
 	Game::OnStart();
 
-	Material *pMaterial = new Material();
-	pMaterial->Init("Shaders/DefaultVS.shader", "Shaders/DefaultFS.shader");
+	Material *pMaterial = new Material("Materials/Default.material");
+	//pMaterial->Init("Shaders/DefaultVS.shader", "Shaders/DefaultFS.shader");
 
 	Model *pModel = new Model("Models/test.obj");
 	pModel->SetMaterial(pMaterial);

@@ -2,21 +2,21 @@
 
 #include <unordered_map>
 #include <glm/glm.hpp>
-
+#include "ISingleton.h"
 namespace Rendering {
 
 	// Input manager stores a key map that maps SDL_Keys to booleans.
 	// If the value in the key map is true, then the key is pressed.
 	// Otherwise, it is released.
-	class InputManager
+	class InputManager : public Singleton<InputManager>
 	{
 	public:
 		InputManager();
 		~InputManager();
-		static InputManager *GetInstance()
-		{
-			return pInstance;
-		}
+		//static InputManager *GetInstance()
+		//{
+		//	return pInstance;
+		//}
 
 
 		void update();
@@ -35,7 +35,7 @@ namespace Rendering {
 		//getters
 		glm::vec2 getMouseCoords() const { return _mouseCoords; }
 	private:
-		static InputManager *pInstance;
+		//static InputManager *pInstance;
 		
 		/// Returns true if the key is held down
 		bool wasKeyDown(unsigned int keyID);

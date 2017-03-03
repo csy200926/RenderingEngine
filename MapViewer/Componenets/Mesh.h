@@ -8,7 +8,7 @@
 #include <vector>
 #include <string>
 #include "../Utilities/Debugging.h"
-
+#include "IResources.h"
 
 namespace Rendering
 {
@@ -90,13 +90,15 @@ namespace Rendering
 
 	class Material;
 
-	class Mesh
+	class Mesh : public IResource
 	{
 	public :
 		std::vector<Vertex> vertices;
 		std::vector<GLuint> indices;
 		std::vector<Texture_ID> textures;
 
+		// Load mesh from this function is single mesh
+		Mesh(std::string i_filePath);
 
 		Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices, std::vector<Texture_ID> &textures);
 		void Draw(Material *pMaterial);//Shader

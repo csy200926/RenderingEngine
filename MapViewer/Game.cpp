@@ -42,6 +42,8 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_camera.SetLookAt(cameraPos, target, up);
 	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 0.1f, 1000.0f);
 
+	m_pInputManager = InputManager::CreateInstance();
+
 	OnStart();
 }
 
@@ -62,19 +64,19 @@ void Game::Running()
 				m_isGameRunning = false;
 				break;
 			case SDL_MOUSEMOTION:
-				m_inputManager.setMouseCoords((float)inputEvent.motion.x, (float)inputEvent.motion.y);
+				m_pInputManager->setMouseCoords((float)inputEvent.motion.x, (float)inputEvent.motion.y);
 				break;
 			case SDL_KEYDOWN:
-				m_inputManager.pressKey(inputEvent.key.keysym.sym);
+				m_pInputManager->pressKey(inputEvent.key.keysym.sym);
 				break;
 			case SDL_KEYUP:
-				m_inputManager.releaseKey(inputEvent.key.keysym.sym);
+				m_pInputManager->releaseKey(inputEvent.key.keysym.sym);
 				break;
 			case SDL_MOUSEBUTTONDOWN:
-				m_inputManager.pressKey(inputEvent.button.button);
+				m_pInputManager->pressKey(inputEvent.button.button);
 				break;
 			case SDL_MOUSEBUTTONUP:
-				m_inputManager.releaseKey(inputEvent.button.button);
+				m_pInputManager->releaseKey(inputEvent.button.button);
 				break;
 			}
 		}
@@ -99,6 +101,7 @@ void Game::Running()
 
 void Game::ShutDown()
 {
+	InputManager::DestroyInstance();
 	delete m_rootNode;
 	OnDestroy();
 	glfwTerminate();
@@ -126,35 +129,34 @@ void Game::Update()
 
 	float speed = 0.1f;
 
-	InputManager *pInputManger = InputManager::GetInstance();
 
-	if (pInputManger->isKeyPressed(SDLK_LSHIFT))//if (GetKey(GLFW_KEY_LEFT_SHIFT))
+	if (m_pInputManager->isKeyPressed(SDLK_LSHIFT))//if (GetKey(GLFW_KEY_LEFT_SHIFT))
 		speed = 1.5f;
 	vec3 forwarDir = m_camera.GetForwardDir();
 
 	vec3 move(0, 0, 0);
-	if (pInputManger->isKeyPressed(SDLK_w))//if (GetKey(GLFW_KEY_W))
+	if (m_pInputManager->isKeyPressed(SDLK_w))//if (GetKey(GLFW_KEY_W))
 	{
 		move += m_camera.GetForwardDir() * speed;
 	}
-	if (pInputManger->isKeyPressed(SDLK_s))//if (GetKey(GLFW_KEY_S))
+	if (m_pInputManager->isKeyPressed(SDLK_s))//if (GetKey(GLFW_KEY_S))
 	{
 		move -= m_camera.GetForwardDir() * speed;
 	}
-	if (pInputManger->isKeyPressed(SDLK_a))//if (GetKey(GLFW_KEY_A))
+	if (m_pInputManager->isKeyPressed(SDLK_a))//if (GetKey(GLFW_KEY_A))
 	{
 		move -= m_camera.GetLeftDir() * speed;
 	}
-	if (pInputManger->isKeyPressed(SDLK_d))//if (GetKey(GLFW_KEY_D))
+	if (m_pInputManager->isKeyPressed(SDLK_d))//if (GetKey(GLFW_KEY_D))
 	{
 		move += m_camera.GetLeftDir() * speed;
 	}
 
-	if (pInputManger->isKeyPressed(SDLK_q))//if (GetKey(GLFW_KEY_Q))
+	if (m_pInputManager->isKeyPressed(SDLK_q))//if (GetKey(GLFW_KEY_Q))
 	{
 		move -= vec3(0, 1, 0) * speed;
 	}
-	if (pInputManger->isKeyPressed(SDLK_e))//if (GetKey(GLFW_KEY_E))
+	if (m_pInputManager->isKeyPressed(SDLK_e))//if (GetKey(GLFW_KEY_E))
 	{
 		move += vec3(0, 1, 0) * speed;
 	}
@@ -163,7 +165,7 @@ void Game::Update()
 
 	m_camera.cameraPos += move;
 
-	if (pInputManger->isKeyPressed(SDLK_ESCAPE))//if (GetKey(GLFW_KEY_K))
+	if (m_pInputManager->isKeyPressed(SDLK_ESCAPE))//if (GetKey(GLFW_KEY_K))
 	{
 		m_isGameRunning = false;
 	}

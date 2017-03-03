@@ -7,12 +7,51 @@
 
 #include "Texture.h"
 #include "Camera.h"
+
+#include <iostream>
+#include <fstream>
+
 namespace Rendering
 {
-	Material::Material()
+	Material::Material(const std::string &path)
 	{
 		m_texture = NULL;
 		m_textureNormal = NULL;
+
+		using namespace std;
+
+		ifstream file(path);
+
+		if (!file)
+		{
+			return;
+		}
+
+		// 0 vertex shader   1 pixel shader
+		// 2 3 4 ?? textures??
+		int index = 0;
+		const int vertexShaderPathIndex = 0;
+		const int fragmentShaderPathIndex = 1;
+
+		string vertShdPath;
+		string pixelShdPath;
+
+		std::string s;
+		while (std::getline(file, s))
+		{
+			if (index == vertexShaderPathIndex)
+			{
+				vertShdPath = s;
+			}
+			else if (index == fragmentShaderPathIndex)
+			{
+				pixelShdPath = s;
+			}
+			index++;
+		}
+
+		Init(vertShdPath.c_str(), pixelShdPath.c_str());
+
 	}
 
 
@@ -119,7 +158,7 @@ namespace Rendering
 		m_textureNormal = i_texture;
 
 		// tell shader which uniform finds which slot
-		GLint tex_loc = glGetUniformLocation(m_program, "basic_texture");
+		GLint tex_loc = glGetUniformLocation(m_program, "basic_texture_normal");
 		glUniform1i(tex_loc, 0);
 	}
 

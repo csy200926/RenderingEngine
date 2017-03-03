@@ -214,7 +214,7 @@
 //		SceneNode *pTestNode = new SceneNode();
 //		pTestNode->AttachRenderable(pModel_2);
 //
-//		pRoot->AddChild(pTestNode);
+//		pRoot->AddChild(pTestNode);\
 //		pTestNode->m_position = vec3(80,0,0);
 //		pTestNode->m_scale = vec3(0.5f,0.5f,0.5f);
 //

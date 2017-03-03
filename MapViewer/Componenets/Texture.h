@@ -3,12 +3,12 @@
 #include <glew.h> // include GLEW and new version of GL on Windows
 #include <glfw3.h> // GLFW helper library
 #include <glm.hpp>
-
+#include "IResources.h"
 namespace Rendering
 {
 
 
-	class Texture
+	class Texture : public IResource
 	{
 	private:
 
