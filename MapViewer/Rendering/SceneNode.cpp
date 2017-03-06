@@ -9,9 +9,10 @@ namespace Rendering
 		using namespace glm;
 
 		// Draw components
-		for (size_t index = 0; index < m_components.size(); index++)
+		TypeComponentMap::iterator it = m_components.begin();
+		for (; it != m_components.end(); it++)
 		{
-			m_components[index]->Render();
+			it->second->Render();
 		}
 
 		// Draw children
@@ -48,10 +49,11 @@ namespace Rendering
 
 	void SceneNode::InternalUpdate()
 	{
-		// Update components
-		for (size_t index = 0; index < m_components.size(); index++)
+		//// Update components
+		TypeComponentMap::iterator it = m_components.begin();
+		for (; it != m_components.end(); it++)
 		{
-			m_components[index]->Update();
+			it->second->Update();
 		}
 
 		// Update children
@@ -60,16 +62,6 @@ namespace Rendering
 			m_children[index]->InternalUpdate();
 		}
 	}
-
-	void SceneNode::AttachComponent(INodeComponent *i_component)
-	{
-		if (i_component->GetParentNode() == nullptr)
-		{
-			i_component->SetNode(this);
-			m_components.push_back(i_component);
-		}
-	}
-
 
 
 

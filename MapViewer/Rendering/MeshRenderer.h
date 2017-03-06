@@ -13,19 +13,26 @@ namespace Rendering
 	{
 	public:
 
-		MeshRenderer(MaterialPtr i_pMaterial, MeshPtr i_pMesh):
-			 m_pMaterial(i_pMaterial),
-			 m_pMesh(i_pMesh)
+		void Init(const MaterialPtr &i_pMaterial, const MeshPtr &i_pMesh)
 		{
-
+			m_pMaterial = i_pMaterial;
+			m_pMesh = i_pMesh;
 		}
 
-		virtual void Render() const
+		MeshRenderer(const MaterialPtr &i_pMaterial, const MeshPtr &i_pMesh)
 		{
+			m_pMaterial = i_pMaterial;
+			m_pMesh = i_pMesh;
+		}
+
+		virtual void Render()
+		{
+			// I will just let it crash if not initialized...
 			Camera::ModelToWorld_Matrix = GetTransform();
-			m_pMesh->Draw(m_pMaterial.get());
+			m_pMaterial->Activate();
+			m_pMesh->Draw();
 		
-		}
+		} 
 
 	private:
 

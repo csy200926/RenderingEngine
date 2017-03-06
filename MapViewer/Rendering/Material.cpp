@@ -15,8 +15,7 @@ namespace Rendering
 {
 	Material::Material(const std::string &path)
 	{
-		m_texture = NULL;
-		m_textureNormal = NULL;
+		m_texture = TexturePtr(nullptr);
 
 		using namespace std;
 
@@ -136,30 +135,18 @@ namespace Rendering
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);
 		glUniformMatrix4fv(m_MMatrixLocation, 1, GL_FALSE, &Camera::ModelToWorld_Matrix[0][0]);
 
-		if (m_texture != NULL)
+		if (m_texture.get() != NULL)
 			m_texture->Activate();
 
-		if (m_textureNormal != NULL)
-		{
-			glActiveTexture(GL_TEXTURE1);
-			glBindTexture(GL_TEXTURE_2D, m_textureNormal->m_textureID);
-		}
+
 	}
 
-	void Material::SetTexture(Texture *i_texture)
+	void Material::SetTexture(TexturePtr i_texture)
 	{
 		m_texture = i_texture;
 
 		// tell shader which uniform finds which slot
 		GLint tex_loc = glGetUniformLocation(m_program, "basic_texture");
-		glUniform1i(tex_loc, 0);
-	}
-	void Material::SetTextureNormal(Texture *i_texture)
-	{
-		m_textureNormal = i_texture;
-
-		// tell shader which uniform finds which slot
-		GLint tex_loc = glGetUniformLocation(m_program, "basic_texture_normal");
 		glUniform1i(tex_loc, 0);
 	}
 

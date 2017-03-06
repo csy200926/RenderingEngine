@@ -1,6 +1,6 @@
 #include "RenderingGame.h"
 
-
+#include "Rendering/MeshRenderer.h"
 void RenderingGame::OnStart()
 {
 	Game::OnStart();
@@ -29,6 +29,7 @@ void RenderingGame::OnStart()
 
 	MeshPtr defaultMesh = m_pMeshManager->Load("Default", "Models/test.obj");
 
+	m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
 }
 
 

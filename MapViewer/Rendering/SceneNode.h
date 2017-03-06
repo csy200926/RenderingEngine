@@ -5,13 +5,15 @@
 #include "gtx/transform.hpp"
 #include <glm.hpp>
 #include <gtx/quaternion.hpp>
-
+#include <map>
+#include <typeindex>
 
 
 
 namespace Rendering
 {
 	class INodeComponent;
+	typedef std::map<std::type_index, INodeComponent *> TypeComponentMap;
 
 	class SceneNode
 	{
@@ -64,7 +66,22 @@ namespace Rendering
 
 		}
 
-		void AttachComponent(INodeComponent *i_component);
+		template<typename T, class... Ts>
+		T* AddComponent(Ts... args)
+		{
+			using namespace std;
+
+			T* pComponent = new T(args...);
+			std::type_index index(typeid(T));
+
+			if (m_components.find(index) == m_components.end())
+				m_components.insert(make_pair(index, pComponent));
+			else
+				printf("SceneNode-AddComponent:only one instance of each type can be added.");
+			return pComponent;
+		}
+
+
 
 		void AddChild(SceneNode *pChildObj)
 		{
@@ -88,7 +105,7 @@ namespace Rendering
 		virtual void Update(){};
 		void InternalUpdate();
 	private:
-
+		//void AttachComponent(INodeComponent *i_component);
 
 
 		// Do not change this directly!
@@ -99,7 +116,7 @@ namespace Rendering
 		SceneNode *m_pParent;
 		std::vector<SceneNode *> m_children;
 
-		std::vector<INodeComponent *> m_components;
+		TypeComponentMap m_components;
 		
 
 		//Stop thinking those fucking shit!
