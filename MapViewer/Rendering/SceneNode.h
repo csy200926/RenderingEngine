@@ -33,11 +33,8 @@ namespace Rendering
 			m_orientation = glm::quat(glm::vec3(0, 0, 0));
 		}
 
-
-		SceneNode::~SceneNode()
-		{
-
-		}
+		
+		~SceneNode();
 
 		// Rotate around local Z
 		void Roll(const float angle)
@@ -66,18 +63,22 @@ namespace Rendering
 
 		}
 
-		template<typename T, class... Ts>
-		T* AddComponent(Ts... args)
+		template<typename T, typename ...Args>
+		T* AddComponent(Args&&... args)
 		{
 			using namespace std;
 
 			T* pComponent = new T(args...);
 			std::type_index index(typeid(T));
 
+			INodeComponent *pComponentBase = static_cast<INodeComponent*>(pComponent);
+			pComponentBase->SetNode(this);
+
 			if (m_components.find(index) == m_components.end())
-				m_components.insert(make_pair(index, pComponent));
+				m_components.insert(make_pair(index, pComponentBase));
 			else
 				printf("SceneNode-AddComponent:only one instance of each type can be added.");
+
 			return pComponent;
 		}
 
@@ -104,6 +105,7 @@ namespace Rendering
 
 		virtual void Update(){};
 		void InternalUpdate();
+
 	private:
 		//void AttachComponent(INodeComponent *i_component);
 
@@ -117,7 +119,7 @@ namespace Rendering
 		std::vector<SceneNode *> m_children;
 
 		TypeComponentMap m_components;
-		
+
 
 		//Stop thinking those fucking shit!
 		glm::mat4x4 GetLocalTransform()

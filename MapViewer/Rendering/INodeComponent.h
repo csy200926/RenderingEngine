@@ -17,10 +17,12 @@ namespace Rendering
 
 	public:
 		INodeComponent() :m_pNode(nullptr){};
-		virtual ~INodeComponent(){};
+		virtual ~INodeComponent()		{
+		
+		}
 
 		virtual void Update(){}
-		virtual void Render() const{}
+		virtual void Render(){}
 
 		// TODO: pass class 'Transform' directly
 		glm::mat4x4 GetTransform()

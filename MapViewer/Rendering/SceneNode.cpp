@@ -63,6 +63,16 @@ namespace Rendering
 		}
 	}
 
+	SceneNode::~SceneNode()
+	{
+		TypeComponentMap::iterator it = m_components.begin();
+		for (; it != m_components.end(); it++)
+		{
+			delete it->second;
+		}
+
+	}
+
 
 
 }

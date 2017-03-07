@@ -15,7 +15,7 @@ namespace Rendering
 
 		virtual IResource *CreateImpl(const std::string& i_path) = 0;
 
-		//virtual ~IResourceManager(){ m_nameResMap.clear(); };
+		virtual ~IResourceManager(){ m_nameResMap.clear(); };
 
 
 		virtual ResourcePtr GetResByName(const std::string& i_name)

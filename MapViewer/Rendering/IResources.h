@@ -1,6 +1,8 @@
 #pragma once
 #include <string>
 #include <memory>
+
+
 namespace Rendering
 {
 	class IResourceManager;

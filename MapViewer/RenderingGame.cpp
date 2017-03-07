@@ -26,10 +26,12 @@ void RenderingGame::OnStart()
 	MaterialPtr defaultMat = m_pMaterialManager->Load("Default", "Materials/Default.material") ;
 
 	TexturePtr defaultTex = m_pTextureManager->Load("Default", "Images/Terrain.png");
+	defaultMat->SetTexture(defaultTex);
 
 	MeshPtr defaultMesh = m_pMeshManager->Load("Default", "Models/test.obj");
 
 	m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
+
 }
 
 

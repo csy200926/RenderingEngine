@@ -104,13 +104,14 @@ void Game::Running()
 
 void Game::ShutDown()
 {
+	delete m_pRootNode;
 
 	InputManager::DestroyInstance();
 	MaterialManager::DestroyInstance();
 	TextureManager::DestroyInstance();
 	MeshManager::DestroyInstance();
 
-	delete m_pRootNode;
+	
 
 	OnDestroy();
 	glfwTerminate();
