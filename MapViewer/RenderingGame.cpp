@@ -1,8 +1,11 @@
 #include "RenderingGame.h"
 
 #include "Rendering/MeshRenderer.h"
+
+
 void RenderingGame::OnStart()
 {
+	using namespace std;
 	Game::OnStart();
 
 	//Material *pMaterial = new Material("Materials/Default.material");
@@ -23,14 +26,12 @@ void RenderingGame::OnStart()
 	//pTestNode->m_position = vec3(80, 0, 0);
 	//pTestNode->m_scale = vec3(0.5f, 0.5f, 0.5f);
 	
-	MaterialPtr defaultMat = m_pMaterialManager->Load("Default", "Materials/Default.material") ;
-
-	TexturePtr defaultTex = m_pTextureManager->Load("Default", "Images/Terrain.png");
-	defaultMat->SetTexture(defaultTex);
-
+	
 	MeshPtr defaultMesh = m_pMeshManager->Load("Default", "Models/test.obj");
 
-	m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
+	MaterialPtr mat = m_pMaterialManager->GetByName("Default");
+
+	m_pRootNode->AddComponent<MeshRenderer>(mat, defaultMesh);
 
 }
 

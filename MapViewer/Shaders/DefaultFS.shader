@@ -43,7 +43,6 @@ struct Spot {
     vec3 specular;
 };  
 
-uniform float NR_POINT_LIGHTS;
 uniform PointLight pointLights[5];
 
 // Function prototypes
@@ -60,6 +59,8 @@ void main(void)
     vec3 viewDir = normalize(viewPos - FragPos);
 
 	vec3 result = CalcDirLight(dirLight, norm, viewDir);
+
+	const int NR_POINT_LIGHTS = 0;
 
     for(int i = 0; i < NR_POINT_LIGHTS; i++)
         result += CalcPointLight(pointLights[i], norm, FragPos, viewDir);   

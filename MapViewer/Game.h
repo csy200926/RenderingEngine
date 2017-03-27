@@ -23,7 +23,7 @@
 #include "Rendering/MaterialManager.h"
 #include "Rendering/TextureManager.h"
 #include "Rendering/MeshManager.h"
-
+#include "Rendering/RenderingEngine.h"
 
 #include "stdio.h"
 #include "stdlib.h"
@@ -79,7 +79,6 @@ protected:
 	MeshManager * m_pMeshManager;
 
 
-
 	Camera m_camera;
 	float cameraPitch;
 	float cameraYaw;
@@ -88,6 +87,9 @@ protected:
 	TextureCube m_cubeTex;
 
 private:
+
+	RenderingEngine* m_pRenderingEngine;
+
 	SDL_Window* m_window;
 
 	Utilities::Timing m_timing;

@@ -20,7 +20,10 @@ namespace Rendering
 			return std::static_pointer_cast<Mesh>(IResourceManager::Load(i_name, i_path));
 		}
 
-
+		MeshPtr GetByName(const std::string & i_name)
+		{
+			return std::static_pointer_cast<Mesh>(IResourceManager::GetResourceByName(i_name));
+		}
 
 
 	};

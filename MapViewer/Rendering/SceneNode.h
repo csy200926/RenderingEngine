@@ -25,7 +25,7 @@ namespace Rendering
 		glm::quat m_orientation;
 
 
-		SceneNode::SceneNode() : m_pParent(nullptr)
+		SceneNode::SceneNode(std::string i_nodeName) : m_pParent(nullptr), m_name(i_nodeName)
 		{
 
 			m_position = glm::vec3(0.0f, 0.0f, 0.0f);
@@ -81,8 +81,19 @@ namespace Rendering
 
 			return pComponent;
 		}
+		template<typename T>
+		T* GetComponent()
+		{
+			using namespace std;
 
+			std::type_index index(typeid(T));
+			TypeComponentMap::iterator it_result = m_components.find(index);
 
+			if (it_result != m_components.end())
+				return static_cast<T*>(it_result->second);
+			else
+				return nullptr;
+		}
 
 		void AddChild(SceneNode *pChildObj)
 		{
@@ -106,16 +117,11 @@ namespace Rendering
 		virtual void Update(){};
 		void InternalUpdate();
 
-	private:
-		//void AttachComponent(INodeComponent *i_component);
-
-
-		// Do not change this directly!
-		std::string name;
-
-		// Fuck them!
-
 		SceneNode *m_pParent;
+	private:
+
+		std::string m_name;
+
 		std::vector<SceneNode *> m_children;
 
 		TypeComponentMap m_components;

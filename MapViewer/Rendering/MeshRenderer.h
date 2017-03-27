@@ -5,6 +5,7 @@
 #include "Material.h"
 #include "Mesh.h"
 #include "Camera.h"
+
 namespace Rendering
 {
 
@@ -27,7 +28,7 @@ namespace Rendering
 
 		virtual void Render()
 		{
-			
+
 			// I will just let it crash if not initialized...
 			Camera::ModelToWorld_Matrix = GetTransform();
 			m_pMaterial->Activate();

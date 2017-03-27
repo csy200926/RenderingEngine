@@ -18,7 +18,7 @@ namespace Rendering
 		virtual ~IResourceManager(){ m_nameResMap.clear(); };
 
 
-		virtual ResourcePtr GetResByName(const std::string& i_name)
+		virtual ResourcePtr GetResourceByName(const std::string& i_name)
 		{
 			ResourcePtr resPtr;
 			ResourceMap::iterator it = m_nameResMap.find(i_name);

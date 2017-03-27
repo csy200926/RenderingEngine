@@ -31,7 +31,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	glViewport(0, 0, i_screenWidth, i_screenHeight);
 	glEnable(GL_DEPTH_TEST);
 
-	m_pRootNode = new SceneNode();
+	m_pRootNode = new SceneNode("Root");
 
 	m_timing.init(60);
 
@@ -47,8 +47,33 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pTextureManager = TextureManager::CreateInstance();
 	m_pMeshManager = MeshManager::CreateInstance();
 
+	m_pRenderingEngine = RenderingEngine::CreateInstance();
+	m_pRenderingEngine->SetRootNode(m_pRootNode);
+	m_pRenderingEngine->Initilize();
+	
+
+
 	OnStart();
 }
+
+
+void Game::ShutDown()
+{
+	delete m_pRootNode;
+
+	InputManager::DestroyInstance();
+	MaterialManager::DestroyInstance();
+	TextureManager::DestroyInstance();
+	MeshManager::DestroyInstance();
+
+	m_pRenderingEngine->ShutDown();
+	RenderingEngine::DestroyInstance();
+
+	OnDestroy();
+	glfwTerminate();
+}
+
+
 
 
 void Game::Running()
@@ -92,7 +117,9 @@ void Game::Running()
 
 		m_skyBox.Draw();
 
-		m_pRootNode->Draw();
+		m_pRenderingEngine->Render();
+
+		//m_pRootNode->Draw();
 
 		SDL_GL_SwapWindow(m_window);
 
@@ -101,23 +128,6 @@ void Game::Running()
 
 	}
 }
-
-void Game::ShutDown()
-{
-	delete m_pRootNode;
-
-	InputManager::DestroyInstance();
-	MaterialManager::DestroyInstance();
-	TextureManager::DestroyInstance();
-	MeshManager::DestroyInstance();
-
-	
-
-	OnDestroy();
-	glfwTerminate();
-}
-
-
 
 
 void Game::OnStart()

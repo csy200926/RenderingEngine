@@ -40,9 +40,10 @@ namespace Rendering
 			m_pNode = i_pNode;
 		}
 
-
-	private:
 		SceneNode *m_pNode;
+		//virtual void AddToEngine(CoreEngine* engine) const { }
+	private:
+		
 
 	};
 }
