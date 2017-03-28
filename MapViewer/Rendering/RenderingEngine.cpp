@@ -75,7 +75,7 @@ namespace Rendering
 
 		GLint viewPosLoc = glGetUniformLocation(program, "viewPos");
 		Camera *pCurrentCamera = Rendering::Camera::GetInstance();
-		glUniform3f(viewPosLoc, pCurrentCamera->m_position.x, pCurrentCamera->m_position.y, pCurrentCamera->m_position.z);
+		glUniform3f(viewPosLoc, pCurrentCamera->cameraPos.x, pCurrentCamera->cameraPos.y, pCurrentCamera->cameraPos.z);
 
 		glm::vec3 position = m_pDirectionalLight->GetPosition();
 		glm::vec3 ambient = m_pDirectionalLight->m_ambient;
