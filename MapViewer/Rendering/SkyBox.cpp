@@ -77,13 +77,15 @@ namespace Rendering
 
 	void SkyBox::Draw()
 	{
-		return;
+		
 		glDepthMask(GL_FALSE);
-
+		
 		m_material->Activate();
+		m_textureCube->Activate();
 
 		glBindVertexArray(m_vao);
 		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
 
 		glDepthMask(GL_TRUE);
 
@@ -95,7 +97,7 @@ namespace Rendering
 		m_material = new Material("");
 		m_material->Init("Shaders/cube_vs.shader", "Shaders/cube_fs.shader");
 	//	m_material->SetTexture(i_textureCube);
-
+		m_textureCube = i_textureCube;
 		m_vao = make_big_cube();
 
 

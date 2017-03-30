@@ -18,8 +18,10 @@ namespace Rendering
 
 	void RenderingEngine::Render()
 	{
+		m_defaultMat->Activate();
 		UpdateDirctLightUniform(m_defaultMat.get());
 		UpdatePointLightUniform(m_defaultMat.get());
+
 		m_pRootNode->Draw();
 	}
 
@@ -105,7 +107,7 @@ namespace Rendering
 			std::stringstream lightIndexSS;
 			lightIndexSS << "pointLights[" << i << "].";
 			string lightIndexStr = lightIndexSS.str();
-			glUniform3f(glGetUniformLocation(program, (lightIndexStr + "position").c_str()), 0, 0, 0);
+			glUniform3f(glGetUniformLocation(program, (lightIndexStr + "position").c_str()), 9999, 9999,9999);
 			glUniform3f(glGetUniformLocation(program, (lightIndexStr + "ambient").c_str()), 0.05f, 0.05f, 0.05f);
 			glUniform3f(glGetUniformLocation(program, (lightIndexStr + "diffuse").c_str()), 0.8f, 0.8f, 0.8f);
 			glUniform3f(glGetUniformLocation(program, (lightIndexStr + "specular").c_str()), 1.0f, 1.0f, 1.0f);

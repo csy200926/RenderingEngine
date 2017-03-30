@@ -119,8 +119,6 @@ void Game::Running()
 
 		m_pRenderingEngine->Render();
 
-		//m_pRootNode->Draw();
-
 		SDL_GL_SwapWindow(m_window);
 
 		m_timing.end();
