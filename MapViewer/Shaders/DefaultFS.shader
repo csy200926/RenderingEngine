@@ -15,7 +15,6 @@ uniform sampler2D texture_diffuse1;
 struct DirLight {
     vec3 direction;
 	
-    vec3 ambient;
     vec3 diffuse;
     vec3 specular;
 };
@@ -28,7 +27,6 @@ struct PointLight {
     float linear;
     float quadratic;  
 
-    vec3 ambient;
     vec3 diffuse;
     vec3 specular;
 }; 
@@ -38,7 +36,6 @@ struct Spot {
     vec3  direction;
     float cutOff;
 
-    vec3 ambient;
     vec3 diffuse;
     vec3 specular;
 };  
@@ -60,7 +57,7 @@ void main(void)
 
 	vec3 result = CalcDirLight(dirLight, norm, viewDir);
 
-	const int NR_POINT_LIGHTS = 0;
+	const int NR_POINT_LIGHTS = 5;
 
     for(int i = 0; i < NR_POINT_LIGHTS; i++)
         result += CalcPointLight(pointLights[i], norm, FragPos, viewDir);   
@@ -78,9 +75,8 @@ vec3 CalcDirLight(DirLight light, vec3 normal, vec3 viewDir)
     vec3 reflectDir = reflect(lightDir, normal);
     float spec = pow(max(dot(-viewDir, reflectDir), 0.0), 2);
     // Combine results
-    vec3 ambient = light.ambient * vec3(texture(texture_diffuse1, TexCoords));
     vec3 diffuse = light.diffuse * diff *  vec3(texture(texture_diffuse1, TexCoords));
-    vec3 specular = light.specular * spec * vec3(1,1,1);
+    vec3 specular = light.specular * spec;// * vec3(1,1,1);
     return (diffuse + specular);
 }
 
@@ -95,14 +91,11 @@ vec3 CalcPointLight(PointLight light, vec3 normal, vec3 fragPos, vec3 viewDir)
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), 2);
     // Attenuation
     float distance    = length(light.position - fragPos);
-    float attenuation = 1.0f / (light.constant + light.linear * distance + 
-  			     light.quadratic * (distance * distance));    
+    float attenuation = 1.0f / (light.constant + light.linear * distance + light.quadratic * (distance * distance));    
     // Combine results
-    vec3 ambient  = light.ambient  * vec3(texture(texture_diffuse1, TexCoords));
     vec3 diffuse  = light.diffuse  * diff * vec3(texture(texture_diffuse1, TexCoords));
-    vec3 specular = light.specular * spec * vec3(1,1,1);
-    ambient  *= attenuation;
+    vec3 specular = light.specular * spec;// * vec3(1,1,1);
     diffuse  *= attenuation;
     specular *= attenuation;
-    return (ambient + diffuse + specular);
+    return (diffuse + specular);
 } 

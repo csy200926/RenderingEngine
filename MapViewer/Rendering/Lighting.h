@@ -32,9 +32,12 @@ namespace Rendering
 		LightType GetType(){ return m_type; }
 		bool IsActivated(){ return m_isActivated; }
 	protected:
+
+		void AddToEngine();
+
 		LightType m_type;
 
-		glm::vec3 m_ambient;
+		//glm::vec3 m_ambient;
 		glm::vec3 m_diffuse;
 		glm::vec3 m_specular;
 
@@ -54,6 +57,7 @@ namespace Rendering
 		DirectionalLight()
 		{
 			m_type = DIRECTIONAL;
+			AddToEngine();
 		}
 
 		// TODO: Hack
@@ -65,6 +69,7 @@ namespace Rendering
 		PointLight()
 		{
 			m_type = POINT;
+			AddToEngine();
 		}
 	};
 	class SpotLight :public LightBase
@@ -73,6 +78,7 @@ namespace Rendering
 		SpotLight()
 		{
 			m_type = SPOT;
+			AddToEngine();
 		}
 		float m_cutoff;
 	};
