@@ -70,7 +70,6 @@ protected:
 	virtual void OnDestroy();
 	virtual void Update();
 
-
 	InputManager* m_pInputManager;
 	SceneNode* m_pRootNode;
 

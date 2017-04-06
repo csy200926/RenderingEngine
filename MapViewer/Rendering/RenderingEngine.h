@@ -45,7 +45,8 @@ namespace Rendering
 		{
 			m_pRootNode = i_pRoot;
 		}
-		void Render();
+		virtual void Render();
+		virtual void OnRenderImage(TexturePtr scr, TexturePtr tar, MaterialPtr material);
 
 		void Initilize();
 		void ShutDown();
@@ -55,11 +56,16 @@ namespace Rendering
 		void UpdateDirctLightUniform(Material *i_pMaterial);
 
 		MaterialPtr m_defaultMat;
+		MaterialPtr m_screenMat;
 
 		SceneNode *m_pRootNode;
 		std::vector<LightBase*> m_pPointLights;
 		DirectionalLight* m_pDirectionalLight;
 
 
+		GLuint framebuffer;
+		GLuint renderTexture;
+		GLuint depthrenderBuffer;
+		GLuint quadVAO;
 	};
 }

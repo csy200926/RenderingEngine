@@ -18,11 +18,35 @@ namespace Rendering
 
 	void RenderingEngine::Render()
 	{
-		m_defaultMat->Activate();
-		UpdateDirctLightUniform(m_defaultMat.get());
-		UpdatePointLightUniform(m_defaultMat.get());
+		//// First pass
+		//glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+		//glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
+		//glEnable(GL_DEPTH_TEST);
 
-		m_pRootNode->Draw();
+		//m_defaultMat->Activate();
+		//UpdateDirctLightUniform(m_defaultMat.get());
+		//UpdatePointLightUniform(m_defaultMat.get());
+		//m_pRootNode->Draw();
+
+
+		// Second pass
+		glBindFramebuffer(GL_FRAMEBUFFER, 0); // back to default
+		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT);
+
+		glUseProgram( m_screenMat->GetProgram() );
+		glBindVertexArray(quadVAO);
+		glDisable(GL_DEPTH_TEST);
+		glBindTexture(GL_TEXTURE_2D, renderTexture);
+		glDrawArrays(GL_TRIANGLES, 0, 6);
+		glBindVertexArray(0);
+
+
+
+
+
+
 	}
 
 
@@ -125,9 +149,75 @@ namespace Rendering
 		}
 
 		m_pDirectionalLight = m_pRootNode->AddComponent<DirectionalLight>();
+
+
+
+
+		m_screenMat = MaterialManager::GetInstance()->Load("Default", "Materials/Default.material");
+		// Render texture init
+		{
+			framebuffer = 0;
+			glGenFramebuffers(1, &framebuffer);
+			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+
+			renderTexture = 0;
+			glGenTextures(1, &renderTexture);
+			glBindTexture(GL_TEXTURE_2D, renderTexture);
+
+			// Set data as empty
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 1024, 768, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+			glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderTexture, 0);
+
+
+			// If depth test is needed
+			depthrenderBuffer = 0;
+			glGenRenderbuffers(1, &depthrenderBuffer);
+			glBindRenderbuffer(GL_RENDERBUFFER, depthrenderBuffer);
+			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 1024, 768);
+			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderBuffer);
+
+			// which one should be activate, similar to glActiveTexture(GL_TEXTURE0);
+			GLenum drawBuffers[1] = { GL_COLOR_ATTACHMENT0 };
+			glDrawBuffers(1, drawBuffers);
+
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+
+		// Init quad
+		{
+			GLfloat quadVertices[] = {   // Vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
+				// Positions   // TexCoords
+				-1.0f, 1.0f, 0.0f, 1.0f,
+				-1.0f, -1.0f, 0.0f, 0.0f,
+				1.0f, -1.0f, 1.0f, 0.0f,
+
+				-1.0f, 1.0f, 0.0f, 1.0f,
+				1.0f, -1.0f, 1.0f, 0.0f,
+				1.0f, 1.0f, 1.0f, 1.0f
+			};
+
+			GLuint quadVAO, quadVBO;
+			glGenVertexArrays(1, &quadVAO);
+			glGenBuffers(1, &quadVBO);
+			glBindVertexArray(quadVAO);
+			glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
+			glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
+			glEnableVertexAttribArray(0);
+			glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)0);
+			glEnableVertexAttribArray(1);
+			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(2 * sizeof(GLfloat)));
+			glBindVertexArray(0);
+		}
 	}
 
 	void RenderingEngine::ShutDown()
+	{
+
+	}
+
+	void RenderingEngine::OnRenderImage(TexturePtr scr, TexturePtr tar, MaterialPtr material)
 	{
 
 	}
