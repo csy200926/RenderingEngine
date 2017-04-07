@@ -24,6 +24,8 @@ namespace Rendering
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 		glEnable(GL_DEPTH_TEST);
 
+		m_skyBox.Draw();
+
 		m_defaultMat->Activate();
 		UpdateDirctLightUniform(m_defaultMat.get());
 		UpdatePointLightUniform(m_defaultMat.get());
@@ -40,6 +42,7 @@ namespace Rendering
 		glBindTexture(GL_TEXTURE_2D, renderTexture);
 		// 1rst attribute buffer : vertices
 		glEnableVertexAttribArray(0);
+		glDisable(GL_DEPTH_TEST);
 		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
 		glVertexAttribPointer(
 			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
@@ -163,6 +166,9 @@ namespace Rendering
 		m_pDirectionalLight = m_pRootNode->AddComponent<DirectionalLight>();
 
 
+		//Skybox init
+		m_cubeTex.Init(FRONT, BACK, TOP, BOTTOM, LEFT, RIGHT);
+		m_skyBox.Init(&m_cubeTex);
 
 
 		m_screenMat = MaterialManager::GetInstance()->Load("Screen", "Materials/Screen.material");

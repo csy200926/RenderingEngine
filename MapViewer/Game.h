@@ -11,8 +11,6 @@
 
 #include "Utilities/Timing.h"
 
-#include "Rendering/SkyBox.h"
-#include "Rendering/TextureCube.h"
 #include "Rendering/Camera.h"
 #include "Rendering/MeshPoints.h"
 #include "Rendering/Material.h"
@@ -45,12 +43,7 @@
 using namespace glm;
 using namespace Rendering;
 
-#define FRONT "Images/skyBox/stormydays_ft.tga"
-#define BACK "Images/skyBox/stormydays_bk.tga"
-#define TOP "Images/skyBox/stormydays_up.tga"
-#define BOTTOM "Images/skyBox/stormydays_dn.tga"
-#define LEFT "Images/skyBox/stormydays_lf.tga"
-#define RIGHT "Images/skyBox/stormydays_rt.tga"
+
 
 
 class Game
@@ -82,8 +75,7 @@ protected:
 	float cameraPitch;
 	float cameraYaw;
 
-	SkyBox m_skyBox;
-	TextureCube m_cubeTex;
+
 
 private:
 

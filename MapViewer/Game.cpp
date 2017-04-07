@@ -112,11 +112,6 @@ void Game::Running()
 		// Logic update
 		Update();
 
-		// Normal GL draw methods
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
-		m_skyBox.Draw();
-
 		m_pRenderingEngine->Render();
 
 		SDL_GL_SwapWindow(m_window);
@@ -131,8 +126,6 @@ void Game::Running()
 void Game::OnStart()
 {
 
-	m_cubeTex.Init(FRONT, BACK, TOP, BOTTOM, LEFT, RIGHT);
-	m_skyBox.Init(&m_cubeTex);
 
 	SDL_SetRelativeMouseMode(SDL_TRUE);
 

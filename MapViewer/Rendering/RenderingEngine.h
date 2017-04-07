@@ -5,8 +5,19 @@
 #include <vector>
 #include "Material.h"
 #include <glm.hpp>
+#include "SkyBox.h"
+#include "TextureCube.h"
+
 namespace Rendering
 {
+
+#define FRONT "Images/skyBox/stormydays_ft.tga"
+#define BACK "Images/skyBox/stormydays_bk.tga"
+#define TOP "Images/skyBox/stormydays_up.tga"
+#define BOTTOM "Images/skyBox/stormydays_dn.tga"
+#define LEFT "Images/skyBox/stormydays_lf.tga"
+#define RIGHT "Images/skyBox/stormydays_rt.tga"
+
 	class RenderingEngine : public Singleton<RenderingEngine>
 	{
 
@@ -62,6 +73,8 @@ namespace Rendering
 		std::vector<LightBase*> m_pPointLights;
 		DirectionalLight* m_pDirectionalLight;
 
+		SkyBox m_skyBox;
+		TextureCube m_cubeTex;
 
 		GLuint framebuffer;
 		GLuint renderTexture;
