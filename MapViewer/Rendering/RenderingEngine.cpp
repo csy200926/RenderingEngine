@@ -18,16 +18,16 @@ namespace Rendering
 
 	void RenderingEngine::Render()
 	{
-		//// First pass
-		//glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-		//glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
-		//glEnable(GL_DEPTH_TEST);
+		// First pass
+		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
+		glEnable(GL_DEPTH_TEST);
 
-		//m_defaultMat->Activate();
-		//UpdateDirctLightUniform(m_defaultMat.get());
-		//UpdatePointLightUniform(m_defaultMat.get());
-		//m_pRootNode->Draw();
+		m_defaultMat->Activate();
+		UpdateDirctLightUniform(m_defaultMat.get());
+		UpdatePointLightUniform(m_defaultMat.get());
+		m_pRootNode->Draw();
 
 
 		// Second pass
@@ -35,13 +35,25 @@ namespace Rendering
 		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		glUseProgram( m_screenMat->GetProgram() );
-		glBindVertexArray(quadVAO);
-		glDisable(GL_DEPTH_TEST);
-		glBindTexture(GL_TEXTURE_2D, renderTexture);
-		glDrawArrays(GL_TRIANGLES, 0, 6);
-		glBindVertexArray(0);
 
+		glUseProgram( m_screenMat->GetProgram() );
+		glBindTexture(GL_TEXTURE_2D, renderTexture);
+		// 1rst attribute buffer : vertices
+		glEnableVertexAttribArray(0);
+		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+		glVertexAttribPointer(
+			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+			3,                  // size
+			GL_FLOAT,           // type
+			GL_FALSE,           // normalized?
+			0,                  // stride
+			(void*)0            // array buffer offset
+			);
+
+		// Draw the triangles !
+		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+
+		glDisableVertexAttribArray(0);
 
 
 
@@ -153,7 +165,7 @@ namespace Rendering
 
 
 
-		m_screenMat = MaterialManager::GetInstance()->Load("Default", "Materials/Default.material");
+		m_screenMat = MaterialManager::GetInstance()->Load("Screen", "Materials/Screen.material");
 		// Render texture init
 		{
 			framebuffer = 0;
@@ -165,7 +177,7 @@ namespace Rendering
 			glBindTexture(GL_TEXTURE_2D, renderTexture);
 
 			// Set data as empty
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 1024, 768, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 400, 300, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderTexture, 0);
@@ -175,7 +187,7 @@ namespace Rendering
 			depthrenderBuffer = 0;
 			glGenRenderbuffers(1, &depthrenderBuffer);
 			glBindRenderbuffer(GL_RENDERBUFFER, depthrenderBuffer);
-			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 1024, 768);
+			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 400, 300);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderBuffer);
 
 			// which one should be activate, similar to glActiveTexture(GL_TEXTURE0);
@@ -187,28 +199,20 @@ namespace Rendering
 
 		// Init quad
 		{
-			GLfloat quadVertices[] = {   // Vertex attributes for a quad that fills the entire screen in Normalized Device Coordinates.
-				// Positions   // TexCoords
-				-1.0f, 1.0f, 0.0f, 1.0f,
-				-1.0f, -1.0f, 0.0f, 0.0f,
-				1.0f, -1.0f, 1.0f, 0.0f,
-
-				-1.0f, 1.0f, 0.0f, 1.0f,
-				1.0f, -1.0f, 1.0f, 0.0f,
-				1.0f, 1.0f, 1.0f, 1.0f
+			// The fullscreen quad's FBO
+			static const GLfloat g_quad_vertex_buffer_data[] = {
+				-1.0f, -1.0f, 0.0f,
+				1.0f, -1.0f, 0.0f,
+				-1.0f, 1.0f, 0.0f,
+				-1.0f, 1.0f, 0.0f,
+				1.0f, -1.0f, 0.0f,
+				1.0f, 1.0f, 0.0f,
 			};
 
-			GLuint quadVAO, quadVBO;
-			glGenVertexArrays(1, &quadVAO);
-			glGenBuffers(1, &quadVBO);
-			glBindVertexArray(quadVAO);
-			glBindBuffer(GL_ARRAY_BUFFER, quadVBO);
-			glBufferData(GL_ARRAY_BUFFER, sizeof(quadVertices), &quadVertices, GL_STATIC_DRAW);
-			glEnableVertexAttribArray(0);
-			glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)0);
-			glEnableVertexAttribArray(1);
-			glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 4 * sizeof(GLfloat), (GLvoid*)(2 * sizeof(GLfloat)));
-			glBindVertexArray(0);
+
+			glGenBuffers(1, &quad_vertexbuffer);
+			glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+			glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
 		}
 	}
 

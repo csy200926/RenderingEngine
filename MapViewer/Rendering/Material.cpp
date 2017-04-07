@@ -82,7 +82,7 @@ namespace Rendering
 		m_PMatrixLocation = glGetUniformLocation(m_program, "Projective_Matrix");
 		m_VMatrixLocation = glGetUniformLocation(m_program, "WorldToView_Matrix");
 		
-
+//		glUseProgram(m_program);
 
 		return true;
 	}

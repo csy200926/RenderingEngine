@@ -22,10 +22,12 @@ namespace Rendering
 		{
 			ResourcePtr resPtr;
 			ResourceMap::iterator it = m_nameResMap.find(i_name);
-			for (; it != m_nameResMap.end(); it++)
+			if (it != m_nameResMap.end())
 			{
 				resPtr = it->second;
 			}
+			else
+				return m_nameResMap["Default"];
 			return resPtr;
 		}
 

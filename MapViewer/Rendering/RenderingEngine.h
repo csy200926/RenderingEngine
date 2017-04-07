@@ -66,6 +66,6 @@ namespace Rendering
 		GLuint framebuffer;
 		GLuint renderTexture;
 		GLuint depthrenderBuffer;
-		GLuint quadVAO;
+		GLuint quad_vertexbuffer;
 	};
 }
