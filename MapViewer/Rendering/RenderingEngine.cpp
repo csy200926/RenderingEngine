@@ -13,6 +13,8 @@
 
 #include "Camera.h"
 
+#include "../Game.h"
+
 namespace Rendering
 {
 
@@ -183,7 +185,7 @@ namespace Rendering
 			glBindTexture(GL_TEXTURE_2D, renderTexture);
 
 			// Set data as empty
-			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, 400, 300, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
+			glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, Game::screenWidth, Game::screenHeight, 0, GL_RGB, GL_UNSIGNED_BYTE, 0);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
 			glFramebufferTexture(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, renderTexture, 0);
@@ -193,7 +195,7 @@ namespace Rendering
 			depthrenderBuffer = 0;
 			glGenRenderbuffers(1, &depthrenderBuffer);
 			glBindRenderbuffer(GL_RENDERBUFFER, depthrenderBuffer);
-			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, 400, 300);
+			glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT, Game::screenWidth, Game::screenHeight);
 			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, depthrenderBuffer);
 
 			// which one should be activate, similar to glActiveTexture(GL_TEXTURE0);
