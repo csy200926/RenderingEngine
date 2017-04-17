@@ -80,5 +80,9 @@ namespace Rendering
 		GLuint renderTexture;
 		GLuint depthrenderBuffer;
 		GLuint quad_vertexbuffer;
+
+		// AA use
+		GLuint multiTex;
+		GLuint framebuffer_AA;
 	};
 }

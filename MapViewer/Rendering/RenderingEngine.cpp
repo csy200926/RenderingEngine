@@ -21,8 +21,8 @@ namespace Rendering
 	void RenderingEngine::Render()
 	{
 		// First pass
-		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer);
-		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_AA);
+		glClearColor(0.1f, 1.0f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 		glEnable(GL_DEPTH_TEST);
 
@@ -33,18 +33,19 @@ namespace Rendering
 		UpdatePointLightUniform(m_defaultMat.get());
 		m_pRootNode->Draw();
 
+		glBindFramebuffer(GL_READ_BUFFER, framebuffer_AA);
+		glBindFramebuffer(GL_DRAW_BUFFER, framebuffer);
+		glBlitFramebuffer(0, 0, Game::screenWidth, Game::screenHeight, 0, 0, Game::screenWidth, Game::screenHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
-		// Second pass
-		glBindFramebuffer(GL_FRAMEBUFFER, 0); // back to default
-		glClearColor(1.0f, 0.0f, 1.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT);
-
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
+		glClear(GL_COLOR_BUFFER_BIT ); // We're not using stencil buffer now
+		glDisable(GL_DEPTH_TEST);
 
 		glUseProgram( m_screenMat->GetProgram() );
 		glBindTexture(GL_TEXTURE_2D, renderTexture);
-		// 1rst attribute buffer : vertices
+
 		glEnableVertexAttribArray(0);
-		glDisable(GL_DEPTH_TEST);
 		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
 		glVertexAttribPointer(
 			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
@@ -57,7 +58,6 @@ namespace Rendering
 
 		// Draw the triangles !
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
-
 		glDisableVertexAttribArray(0);
 
 
@@ -222,6 +222,34 @@ namespace Rendering
 			glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
 			glBufferData(GL_ARRAY_BUFFER, sizeof(g_quad_vertex_buffer_data), g_quad_vertex_buffer_data, GL_STATIC_DRAW);
 		}
+
+		//MSAA
+		{
+			framebuffer_AA = 0;
+			glGenFramebuffers(1, &framebuffer_AA);
+			glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_AA);
+
+			//Bind multiTex to frameBuffer_AA
+			glGenTextures(1, &multiTex);
+			glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, multiTex);
+			glTexImage2DMultisample(GL_TEXTURE_2D_MULTISAMPLE, 4, GL_RGB, Game::screenWidth, Game::screenHeight, GL_TRUE);
+			glBindTexture(GL_TEXTURE_2D_MULTISAMPLE, 0);
+			glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D_MULTISAMPLE, multiTex, 0);
+
+			GLuint rbo;
+			glGenRenderbuffers(1, &rbo);
+			glBindRenderbuffer(GL_RENDERBUFFER, rbo);
+			glRenderbufferStorageMultisample(GL_RENDERBUFFER, 4, GL_DEPTH_COMPONENT, Game::screenWidth, Game::screenHeight);
+			glBindRenderbuffer(GL_RENDERBUFFER, 0);
+			glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, rbo);
+
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+
+
+
+
+
 	}
 
 	void RenderingEngine::ShutDown()

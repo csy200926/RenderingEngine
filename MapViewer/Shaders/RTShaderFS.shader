@@ -38,6 +38,7 @@ void main()
 { 
     color = texture(screenTexture, TexCoords);
 
+	/*
 	vec3 col = vec3(0.0);
 	for(int i = 0 ; i < 9 ; i++)
 	{
@@ -45,7 +46,7 @@ void main()
 
 	}
 	color = vec4(col,1.0);
-
+	*/
 
 	/*Sharpen
 	vec3 col = vec3(0.0);
