@@ -20,8 +20,10 @@ namespace Rendering
 
 	void RenderingEngine::Render()
 	{
+
 		// First pass
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_AA);
+
 		glClearColor(0.1f, 1.0f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 		glEnable(GL_DEPTH_TEST);
@@ -33,8 +35,8 @@ namespace Rendering
 		UpdatePointLightUniform(m_defaultMat.get());
 		m_pRootNode->Draw();
 
-		glBindFramebuffer(GL_READ_BUFFER, framebuffer_AA);
-		glBindFramebuffer(GL_DRAW_BUFFER, framebuffer);
+		glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer_AA);
+		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
 		glBlitFramebuffer(0, 0, Game::screenWidth, Game::screenHeight, 0, 0, Game::screenWidth, Game::screenHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
@@ -59,10 +61,6 @@ namespace Rendering
 		// Draw the triangles !
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
 		glDisableVertexAttribArray(0);
-
-
-
-
 
 	}
 
