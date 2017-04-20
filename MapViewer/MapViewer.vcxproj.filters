@@ -1,0 +1,203 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="FractalNoise.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Perlin.cpp" />
+    <ClCompile Include="RandomGenerator.cpp" />
+    <ClCompile Include="StrangeTree.cpp" />
+    <ClCompile Include="Utilities\stb_image.c">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\WinTiming.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Utilities\Timing.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="RenderingGame.cpp" />
+    <ClCompile Include="Rendering\Material.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Mesh.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\MeshPoints.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Model.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\SceneNode.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\SkyBox.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Texture.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\TextureCube.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Camera.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\GUI.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\InputManager.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\RenderingEngine.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\Lighting.cpp">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\RenderTarget.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="BitMap\BitMap.h" />
+    <ClInclude Include="FractalNoise.h" />
+    <ClInclude Include="Perlin.h" />
+    <ClInclude Include="RandomGenerator.h" />
+    <ClInclude Include="StrangeTree.h" />
+    <ClInclude Include="Utilities.h" />
+    <ClInclude Include="Utilities\stb_image.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Debugging.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\WinTiming.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Utilities\Timing.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="RenderingGame.h" />
+    <ClInclude Include="Utilities\Singleton.h">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\InputManager.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\ISingleton.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Material.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Mesh.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\MeshPoints.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Model.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\SceneNode.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\SkyBox.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Texture.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\TextureCube.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Camera.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\GUI.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\IResourceManager.h">
+      <Filter>Rendering\ResManager_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\IResources.h">
+      <Filter>Rendering\ResManager_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\MaterialManager.h">
+      <Filter>Rendering\ResManager_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\MeshManager.h">
+      <Filter>Rendering\ResManager_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\TextureManager.h">
+      <Filter>Rendering\ResManager_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\MeshRenderer.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\SimplePhysics.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\SpriteRenderer.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\INodeComponent.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\RenderingEngine.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Lighting.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\RenderTarget.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{93f7c0d5-1319-42d9-8a80-f6bf0cc0761a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{1f264bd5-1402-47c3-bb72-78fedcd1f578}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering">
+      <UniqueIdentifier>{05d149a7-b2de-4a4b-8a9d-fc3759f68386}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\Component_Nonfolder">
+      <UniqueIdentifier>{b47581d1-24c6-4af8-bf8a-203bd4ccd715}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Rendering\ResManager_Nonfolder">
+      <UniqueIdentifier>{8cf169cd-b335-41ce-bfa4-bbb7ec521277}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shaders\cube_vs.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\cube_fs.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\phongFS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\phongVS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\DefaultVS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\DefaultFS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\RTShaderFS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="Shaders\RTShaderVS.shader">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
