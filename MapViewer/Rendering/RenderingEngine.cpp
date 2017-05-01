@@ -77,6 +77,12 @@ namespace Rendering
 		GLint program = i_pMaterial->GetProgram();
 		int shaderLightIndex = 0;
 
+		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.2f, 0.2f);
+		glUniform1f(glGetUniformLocation(program, "ao"), 1.0f);
+		glUniform1f(glGetUniformLocation(program, "metallic"), 1.0f);
+		glUniform1f(glGetUniformLocation(program, "roughness"), 0.1f);
+
+
 		// m_pointLights size no bigger than MAX_POINT_LIGHTS
 		for (int lightIndex = 0; lightIndex < MAX_POINT_LIGHTS; lightIndex++)
 		{
@@ -164,7 +170,7 @@ namespace Rendering
 		}
 
 		m_pDirectionalLight = m_pRootNode->AddComponent<DirectionalLight>();
-
+		m_pDirectionalLight->m_diffuse = vec3(1.0f, 1.0f, 0.5f);
 
 		//Skybox init
 		m_cubeTex.Init(FRONT, BACK, TOP, BOTTOM, LEFT, RIGHT);

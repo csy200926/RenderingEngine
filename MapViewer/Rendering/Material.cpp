@@ -200,6 +200,7 @@ namespace Rendering
 		}
 		else {
 			std::cerr << "Unable to open " << fname << " I'm out!" << std::endl;
+			system("pause");
 			exit(-1);
 		}
 	}

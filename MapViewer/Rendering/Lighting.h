@@ -27,7 +27,7 @@ namespace Rendering
 			return m_pNode->m_position;
 		};
 
-
+		void SetColor(glm::vec3 &i_color){ m_diffuse = i_color; }
 
 		LightType GetType(){ return m_type; }
 		bool IsActivated(){ return m_isActivated; }

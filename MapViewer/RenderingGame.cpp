@@ -23,13 +23,16 @@ void RenderingGame::OnStart()
 		SceneNode *pLightNode_1 = new SceneNode("Light1");
 		m_pRootNode->AddChild(pLightNode_1);
 
-		pLightNode_1->AddComponent<PointLight>();
+		PointLight* pPointLight_1 = pLightNode_1->AddComponent<PointLight>();
+		pPointLight_1->SetColor(vec3(0.0f, 1.0f, 0.0f));
 		pLightNode_1->m_position = glm::vec3(0, -5, 0);
+		
 
 		SceneNode *pLightNode_2 = new SceneNode("Light2");
 		m_pRootNode->AddChild(pLightNode_2);
 
-		pLightNode_2->AddComponent<PointLight>();
+		PointLight* pPointLight_2 = pLightNode_2->AddComponent<PointLight>();
+		pPointLight_2->SetColor(vec3(0.0f, 0.0f, 1.0f));
 		pLightNode_2->m_position = glm::vec3(15, -5, 0);
 	}
 

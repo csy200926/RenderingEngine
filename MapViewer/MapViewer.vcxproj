@@ -156,8 +156,6 @@
     <None Include="Shaders\cube_vs.shader" />
     <None Include="Shaders\DefaultFS.shader" />
     <None Include="Shaders\DefaultVS.shader" />
-    <None Include="Shaders\phongFS.shader" />
-    <None Include="Shaders\phongVS.shader" />
     <None Include="Shaders\RTShaderFS.shader" />
     <None Include="Shaders\RTShaderVS.shader" />
   </ItemGroup>

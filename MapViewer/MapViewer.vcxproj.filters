@@ -173,31 +173,34 @@
     <Filter Include="Rendering\ResManager_Nonfolder">
       <UniqueIdentifier>{8cf169cd-b335-41ce-bfa4-bbb7ec521277}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders\Default">
+      <UniqueIdentifier>{f35dbbd1-7fd8-420a-bd58-d744e7d821bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Post">
+      <UniqueIdentifier>{23598fea-7ad1-4106-aff5-4df62d433c8f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders\Advanced">
+      <UniqueIdentifier>{dfcb4cce-c2ec-4202-a510-86a499ab8990}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Shaders\cube_vs.shader">
-      <Filter>Shaders</Filter>
-    </None>
     <None Include="Shaders\cube_fs.shader">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\Default</Filter>
     </None>
-    <None Include="Shaders\phongFS.shader">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\phongVS.shader">
-      <Filter>Shaders</Filter>
-    </None>
-    <None Include="Shaders\DefaultVS.shader">
-      <Filter>Shaders</Filter>
+    <None Include="Shaders\cube_vs.shader">
+      <Filter>Shaders\Default</Filter>
     </None>
     <None Include="Shaders\DefaultFS.shader">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\Default</Filter>
     </None>
-    <None Include="Shaders\RTShaderFS.shader">
-      <Filter>Shaders</Filter>
+    <None Include="Shaders\DefaultVS.shader">
+      <Filter>Shaders\Default</Filter>
     </None>
     <None Include="Shaders\RTShaderVS.shader">
-      <Filter>Shaders</Filter>
+      <Filter>Shaders\Post</Filter>
+    </None>
+    <None Include="Shaders\RTShaderFS.shader">
+      <Filter>Shaders\Post</Filter>
     </None>
   </ItemGroup>
 </Project>
