@@ -74,10 +74,20 @@ namespace Rendering
 		return vao;
 	}
 
+	void SkyBox::InitOnlyCube()
+	{
+		m_vao = make_big_cube();
+	}
+
+	void SkyBox::DrawBigCube()
+	{
+		glBindVertexArray(m_vao);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+	}
 
 	void SkyBox::Draw()
 	{
-		
 		glDepthMask(GL_FALSE);
 		
 		m_material->Activate();
@@ -88,7 +98,6 @@ namespace Rendering
 		glBindVertexArray(0);
 
 		glDepthMask(GL_TRUE);
-
 	}
 
 	void SkyBox::Init(Texture *i_textureCube)
@@ -106,6 +115,24 @@ namespace Rendering
 	void SkyBox::ShowDown()
 	{
 
+	}
+
+	void SkyBox::UseTexCube()
+	{
+		m_textureCube->Activate();
+	}
+
+	void SkyBox::DrawBigCubeAndMat()
+	{
+		glDepthMask(GL_FALSE);
+
+		m_material->Activate();
+
+		glBindVertexArray(m_vao);
+		glDrawArrays(GL_TRIANGLES, 0, 36);
+		glBindVertexArray(0);
+
+		glDepthMask(GL_TRUE);
 	}
 
 }

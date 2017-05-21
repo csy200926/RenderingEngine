@@ -28,6 +28,9 @@ namespace Rendering
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 		glEnable(GL_DEPTH_TEST);
 
+		//glActiveTexture(GL_TEXTURE0);
+		//glBindTexture(GL_TEXTURE_CUBE_MAP, m_envCubemap);
+		//m_skyBox.DrawBigCubeAndMat();
 		m_skyBox.Draw();
 
 		m_defaultMat->Activate();
@@ -38,6 +41,13 @@ namespace Rendering
 		glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer_AA);
 		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
 		glBlitFramebuffer(0, 0, Game::screenWidth, Game::screenHeight, 0, 0, Game::screenWidth, Game::screenHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
+
+
+
+
+
+
+
 
 		glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
@@ -79,8 +89,8 @@ namespace Rendering
 
 		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.2f, 0.2f);
 		glUniform1f(glGetUniformLocation(program, "ao"), 1.0f);
-		glUniform1f(glGetUniformLocation(program, "metallic"), 1.0f);
-		glUniform1f(glGetUniformLocation(program, "roughness"), 0.1f);
+		glUniform1f(glGetUniformLocation(program, "metallic"), 0.5f);
+		glUniform1f(glGetUniformLocation(program, "roughness"), 0.8f);
 
 
 		// m_pointLights size no bigger than MAX_POINT_LIGHTS
@@ -251,9 +261,71 @@ namespace Rendering
 		}
 
 
+		// pbr: setup cubemap to render to and attach to framebuffer
+		// ---------------------------------------------------------
+		m_envCubemap;
+		glGenTextures(1, &m_envCubemap);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_envCubemap);
+		for (unsigned int i = 0; i < 6; i++)
+		{
+			glTexImage2D(GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, 0, GL_RGB16F, 32, 32, 0, GL_RGB, GL_FLOAT, nullptr);
+		}
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_WRAP_R, GL_CLAMP_TO_EDGE);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_CUBE_MAP, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+
+		// pbr: set up projection and view matrices for capturing data onto the 6 cubemap face directions
+		// ----------------------------------------------------------------------------------------------
+		glm::mat4 captureProjection = glm::perspective(glm::radians(90.0f), 1.0f, 0.1f, 20.0f);
+		glm::mat4 captureViews[] =
+		{
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)),
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(-1.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f)),
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f)),
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, -1.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f)),
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, 1.0f), glm::vec3(0.0f, -1.0f, 0.0f)),
+			glm::lookAt(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 0.0f, -1.0f), glm::vec3(0.0f, -1.0f, 0.0f))
+		};
+
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+
+		
+		
+		// pbr: setup framebuffer
+		// ----------------------
+		unsigned int captureFBO;
+		unsigned int captureRBO;
+		glGenFramebuffers(1, &captureFBO);
+		glGenRenderbuffers(1, &captureRBO);
+
+		glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+		glBindRenderbuffer(GL_RENDERBUFFER, captureRBO);
+		glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH_COMPONENT24, 32, 32);
+		glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_DEPTH_ATTACHMENT, GL_RENDERBUFFER, captureRBO);
 
 
+		// pbr: convolution cube map 
+		{
+			m_PBRcon = MaterialManager::GetInstance()->Load("Convolution", "Materials/PBRconvolution.material");
+			glViewport(0, 0, 32,32);
+			glBindFramebuffer(GL_FRAMEBUFFER, captureFBO);
+			glUseProgram(m_PBRcon->GetProgram());
+			m_skyBox.UseTexCube();
 
+			glUniformMatrix4fv(glGetUniformLocation(m_PBRcon->GetProgram(), "Projective_Matrix"), 1, GL_FALSE, &captureProjection[0][0]);
+			for (unsigned int i = 0; i < 6; ++i)
+			{
+				glUniformMatrix4fv(glGetUniformLocation(m_PBRcon->GetProgram(), "WorldToView_Matrix"), 1, GL_FALSE, &captureViews[i][0][0]);
+				glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_CUBE_MAP_POSITIVE_X + i, m_envCubemap, 0);
+				glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+				m_skyBox.DrawBigCube();
+			}
+			glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		}
+		glViewport(0, 0, Game::screenWidth, Game::screenHeight);
 	}
 
 	void RenderingEngine::ShutDown()

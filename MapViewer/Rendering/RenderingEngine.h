@@ -84,5 +84,9 @@ namespace Rendering
 		// AA use
 		GLuint multiTex;
 		GLuint framebuffer_AA;
+
+		// PBR
+		MaterialPtr m_PBRcon;
+		GLuint m_envCubemap;
 	};
 }

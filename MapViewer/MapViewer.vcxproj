@@ -152,6 +152,8 @@
     <ClInclude Include="Utilities\WinTiming.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Shaders\cube_convolution_fs.shader" />
+    <None Include="Shaders\cube_convolution_vs.shader" />
     <None Include="Shaders\cube_fs.shader" />
     <None Include="Shaders\cube_vs.shader" />
     <None Include="Shaders\DefaultFS.shader" />

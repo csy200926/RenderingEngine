@@ -34,6 +34,11 @@ namespace Rendering
 		GLuint m_cubeMapTexture;
 
 		void Draw();
+		void UseTexCube();
+
+		void InitOnlyCube();
+		void DrawBigCube();
+		void DrawBigCubeAndMat();
 
 		void Init(Texture *i_textureCube);
 		void ShowDown();

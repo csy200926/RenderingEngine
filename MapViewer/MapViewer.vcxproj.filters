@@ -202,5 +202,11 @@
     <None Include="Shaders\RTShaderFS.shader">
       <Filter>Shaders\Post</Filter>
     </None>
+    <None Include="Shaders\cube_convolution_fs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\cube_convolution_vs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
   </ItemGroup>
 </Project>
