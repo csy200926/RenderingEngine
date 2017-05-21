@@ -64,6 +64,13 @@
       <AdditionalLibraryDirectories>Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)Dlls
+xcopy /y $(ProjectDir)Images$(OutDir)Images
+xcopy /y $(ProjectDir)Materials $(OutDir)Materials
+xcopy /y $(ProjectDir)Models $(OutDir)Models
+xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
@@ -85,6 +92,13 @@
       <AdditionalLibraryDirectories>Libs;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
+    <PostBuildEvent>
+      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)Dlls
+xcopy /y $(ProjectDir)Images$(OutDir)Images
+xcopy /y $(ProjectDir)Materials $(OutDir)Materials
+xcopy /y $(ProjectDir)Models $(OutDir)Models
+xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FractalNoise.cpp" />
