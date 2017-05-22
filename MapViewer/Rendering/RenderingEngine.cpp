@@ -33,6 +33,8 @@ namespace Rendering
 		//m_skyBox.DrawBigCubeAndMat();
 		m_skyBox.Draw();
 
+		glActiveTexture(GL_TEXTURE0);
+		glBindTexture(GL_TEXTURE_CUBE_MAP, m_envCubemap);
 		m_defaultMat->Activate();
 		UpdateDirctLightUniform(m_defaultMat.get());
 		UpdatePointLightUniform(m_defaultMat.get());
@@ -87,10 +89,10 @@ namespace Rendering
 		GLint program = i_pMaterial->GetProgram();
 		int shaderLightIndex = 0;
 
-		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.2f, 0.2f);
+		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.0f, 0.0f);
 		glUniform1f(glGetUniformLocation(program, "ao"), 1.0f);
-		glUniform1f(glGetUniformLocation(program, "metallic"), 0.5f);
-		glUniform1f(glGetUniformLocation(program, "roughness"), 0.8f);
+		glUniform1f(glGetUniformLocation(program, "metallic"), 0.4f);
+		glUniform1f(glGetUniformLocation(program, "roughness"), 0.1f);
 
 
 		// m_pointLights size no bigger than MAX_POINT_LIGHTS
