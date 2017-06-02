@@ -208,5 +208,17 @@
     <None Include="Shaders\cube_convolution_vs.shader">
       <Filter>Shaders\Advanced</Filter>
     </None>
+    <None Include="Shaders\deferred_first_vs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\deferred_first_fs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\deferred_second_vs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\deferred_second_fs.shader">
+      <Filter>Shaders\Advanced</Filter>
+    </None>
   </ItemGroup>
 </Project>

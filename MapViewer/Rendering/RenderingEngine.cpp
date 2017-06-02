@@ -33,21 +33,18 @@ namespace Rendering
 		//m_skyBox.DrawBigCubeAndMat();
 		m_skyBox.Draw();
 
+		// Bind PBR cubemap
 		glActiveTexture(GL_TEXTURE0);
 		glBindTexture(GL_TEXTURE_CUBE_MAP, m_envCubemap);
 		m_defaultMat->Activate();
 		UpdateDirctLightUniform(m_defaultMat.get());
 		UpdatePointLightUniform(m_defaultMat.get());
+
 		m_pRootNode->Draw();
 
 		glBindFramebuffer(GL_READ_FRAMEBUFFER, framebuffer_AA);
 		glBindFramebuffer(GL_DRAW_FRAMEBUFFER, framebuffer);
 		glBlitFramebuffer(0, 0, Game::screenWidth, Game::screenHeight, 0, 0, Game::screenWidth, Game::screenHeight, GL_COLOR_BUFFER_BIT, GL_NEAREST);
-
-
-
-
-
 
 
 
@@ -328,6 +325,40 @@ namespace Rendering
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 		glViewport(0, 0, Game::screenWidth, Game::screenHeight);
+
+
+		// Deferred
+		glGenFramebuffers(1, &m_gBuffer);
+		glBindFramebuffer(GL_FRAMEBUFFER, m_gBuffer);
+		GLuint gPosition, gNormal, gColorSpec;
+
+		glGenTextures(1, &gPosition);
+		glBindTexture(GL_TEXTURE_2D, gPosition);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, Game::screenWidth, Game::screenHeight, 0, GL_RGB, GL_FLOAT, NULL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, gPosition, 0);
+
+		glGenTextures(1, &gNormal);
+		glBindTexture(GL_TEXTURE_2D, gNormal);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB16F, Game::screenWidth, Game::screenHeight, 0, GL_RGB, GL_FLOAT, NULL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT1, GL_TEXTURE_2D, gNormal, 0);
+
+		glGenTextures(1, &gColorSpec);
+		glBindTexture(GL_TEXTURE_2D, gColorSpec);
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, Game::screenWidth, Game::screenHeight, 0, GL_RGBA, GL_FLOAT, NULL);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT2, GL_TEXTURE_2D, gColorSpec, 0);
+
+		GLuint attachments[3] = { GL_COLOR_ATTACHMENT0, GL_COLOR_ATTACHMENT1, GL_COLOR_ATTACHMENT2 };
+		glDrawBuffers(3, attachments);
+
+		m_deferred_first = MaterialManager::GetInstance()->Load("Deferred_first", "Materials/Deferred_first.material");
+		m_deferred_second = MaterialManager::GetInstance()->Load("Deferred_second", "Materials/Deferred_second.material");
+
 	}
 
 	void RenderingEngine::ShutDown()

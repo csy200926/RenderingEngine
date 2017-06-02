@@ -88,5 +88,10 @@ namespace Rendering
 		// PBR
 		MaterialPtr m_PBRcon;
 		GLuint m_envCubemap;
+
+		// Deferred
+		GLuint m_gBuffer;
+		MaterialPtr m_deferred_first;
+		MaterialPtr m_deferred_second;
 	};
 }

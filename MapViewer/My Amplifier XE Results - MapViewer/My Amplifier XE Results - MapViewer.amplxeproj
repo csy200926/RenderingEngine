@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+ <rdmgr>
+  <timestamp type="u64_t">1495793135</timestamp>
+  <hostname>Seancheng-PC0.tencent.com</hostname>
+  <os>windows</os>
+  <product>Intel® VTune™ Amplifier XE 2017 Update 3</product>
+  <buildNumber type="s32_t">510739</buildNumber>
+  <logicalCPUCount type="s32_t">8</logicalCPUCount>
+  <CPUFrequency type="s64_t">3600000000</CPUFrequency>
+  <CPUFamily type="s32_t">6</CPUFamily>
+  <CPUModel type="s32_t">60</CPUModel>
+  <CPUStepping type="s32_t">3</CPUStepping>
+  <CPUBrandName>Intel(R) Core(TM) i7-4790 CPU @ 3.60GHz</CPUBrandName>
+  <isa>avx</isa>
+ </rdmgr>
+</root>

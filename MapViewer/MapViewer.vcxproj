@@ -65,7 +65,7 @@
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)Dlls
+      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)
 xcopy /y $(ProjectDir)Images$(OutDir)Images
 xcopy /y $(ProjectDir)Materials $(OutDir)Materials
 xcopy /y $(ProjectDir)Models $(OutDir)Models
@@ -93,7 +93,7 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)Dlls
+      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)
 xcopy /y $(ProjectDir)Images$(OutDir)Images
 xcopy /y $(ProjectDir)Materials $(OutDir)Materials
 xcopy /y $(ProjectDir)Models $(OutDir)Models
@@ -172,6 +172,10 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <None Include="Shaders\cube_vs.shader" />
     <None Include="Shaders\DefaultFS.shader" />
     <None Include="Shaders\DefaultVS.shader" />
+    <None Include="Shaders\deferred_first_fs.shader" />
+    <None Include="Shaders\deferred_first_vs.shader" />
+    <None Include="Shaders\deferred_second_fs.shader" />
+    <None Include="Shaders\deferred_second_vs.shader" />
     <None Include="Shaders\RTShaderFS.shader" />
     <None Include="Shaders\RTShaderVS.shader" />
   </ItemGroup>
