@@ -93,5 +93,6 @@ namespace Rendering
 		GLuint m_gBuffer;
 		MaterialPtr m_deferred_first;
 		MaterialPtr m_deferred_second;
+		GLuint gPosition, gNormal, gColorSpec;
 	};
 }

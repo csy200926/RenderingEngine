@@ -13,7 +13,7 @@ void RenderingGame::OnStart()
 	MeshPtr defaultMesh = m_pMeshManager->GetByName("Default");//Load("Default", "Models/box.obj");
 
 	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/Wood.gif");
-	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");
+	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Deferred_first");
 	defaultMat->SetTexture(woodTexture);
 
 	m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
