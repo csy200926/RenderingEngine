@@ -314,7 +314,7 @@ int main(int argc, char** argv)
 
 		RenderingGame myGame;
 
-		myGame.Initilize(1920, 1440);
+		myGame.Initilize(1920 / 4, 1440 / 4);
 		myGame.StartRunning();
 		myGame.ShutDown();
 

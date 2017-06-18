@@ -47,8 +47,21 @@ namespace Rendering
 		// "Bind" the newly created texture : all future texture functions will modify this texture
 		glBindTexture(GL_TEXTURE_2D, m_textureID);
 
-		// Give the image to OpenGL
-		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
+		/* Note:
+		You should be careful when specifying your textures in sRGB space as not all textures will actually be in sRGB space. 
+		Textures used for coloring objects like diffuse textures are almost always in sRGB space. 
+		Textures used for retrieving lighting parameters like specular maps and normal maps are almost always in linear space so if you were to configure these as sRGB textures as well, 
+			the lighting will break down. 
+		Be careful in which textures you specify as sRGB.
+		*/
+
+		// Monitor show things in SRGB.
+		// Most textures are painted in SRGB space. So they look correct without Gamma correction.
+		// Doing a renderer Gamma correction would make textures look way brighter than they ought to be.
+		// So textures must be transfer back to linear space before renderer Gamma correction is applied.
+
+		// Give the image to OpenGL use GL_SRGB_ALPHA if want it to be linear space
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_SRGB_ALPHA, x, y, 0, GL_RGBA, GL_UNSIGNED_BYTE, image_data);
 
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

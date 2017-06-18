@@ -37,7 +37,8 @@ const float kernel_Edge[9] = float[](
 void main()
 { 
     color = texture(screenTexture, TexCoords);
-
+	float gamma = 2.2;
+	color.rgb = pow(color.rgb, vec3(1.0 / gamma));
 	/*
 	vec3 col = vec3(0.0);
 	for(int i = 0 ; i < 9 ; i++)

@@ -20,53 +20,53 @@ namespace Rendering
 
 	void RenderingEngine::Render()
 	{
-		glBindFramebuffer(GL_FRAMEBUFFER, m_gBuffer);
+		//glBindFramebuffer(GL_FRAMEBUFFER, m_gBuffer);
 
-		glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
-		glEnable(GL_DEPTH_TEST);
-		m_deferred_first->Activate();
+		//glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
+		//glEnable(GL_DEPTH_TEST);
+		//m_deferred_first->Activate();
 	
-		m_pRootNode->Draw();
+		//m_pRootNode->Draw();
 
-		glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-		GLint shaderID = m_deferred_second->GetProgram();
+		//glBindFramebuffer(GL_FRAMEBUFFER, 0);
+		//glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		//GLint shaderID = m_deferred_second->GetProgram();
 
-		glUseProgram(shaderID);
-		GLint texLoc = 0;
-		texLoc = glGetUniformLocation(shaderID, "gPosition");
-		glUniform1i(texLoc, 0);
-		texLoc = glGetUniformLocation(shaderID, "gNormal");
-		glUniform1i(texLoc, 1);
-		texLoc = glGetUniformLocation(shaderID, "gAlbedoSpec");
-		glUniform1i(texLoc, 2);
+		//glUseProgram(shaderID);
+		//GLint texLoc = 0;
+		//texLoc = glGetUniformLocation(shaderID, "gPosition");
+		//glUniform1i(texLoc, 0);
+		//texLoc = glGetUniformLocation(shaderID, "gNormal");
+		//glUniform1i(texLoc, 1);
+		//texLoc = glGetUniformLocation(shaderID, "gAlbedoSpec");
+		//glUniform1i(texLoc, 2);
+		//
+		//glActiveTexture(GL_TEXTURE0);
+		//glBindTexture(GL_TEXTURE_2D, gPosition);
+		//glActiveTexture(GL_TEXTURE1);
+		//glBindTexture(GL_TEXTURE_2D, gNormal); 
+		//glActiveTexture(GL_TEXTURE2);
+		//glBindTexture(GL_TEXTURE_2D, gColorSpec);
+
+		//UpdatePointLightUniform(m_deferred_second.get());
+		//UpdateDirctLightUniform(m_deferred_second.get());
+
+		//glEnableVertexAttribArray(0);
+		//glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
+		//glVertexAttribPointer(
+		//	0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+		//	3,                  // size
+		//	GL_FLOAT,           // type
+		//	GL_FALSE,           // normalized?
+		//	0,                  // stride
+		//	(void*)0            // array buffer offset
+		//	);
+
+		//// Draw the triangles !
+		//glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
+		//glDisableVertexAttribArray(0);
 		
-		glActiveTexture(GL_TEXTURE0);
-		glBindTexture(GL_TEXTURE_2D, gPosition);
-		glActiveTexture(GL_TEXTURE1);
-		glBindTexture(GL_TEXTURE_2D, gNormal); 
-		glActiveTexture(GL_TEXTURE2);
-		glBindTexture(GL_TEXTURE_2D, gColorSpec);
-
-		UpdatePointLightUniform(m_deferred_second.get());
-		UpdateDirctLightUniform(m_deferred_second.get());
-
-		glEnableVertexAttribArray(0);
-		glBindBuffer(GL_ARRAY_BUFFER, quad_vertexbuffer);
-		glVertexAttribPointer(
-			0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-			3,                  // size
-			GL_FLOAT,           // type
-			GL_FALSE,           // normalized?
-			0,                  // stride
-			(void*)0            // array buffer offset
-			);
-
-		// Draw the triangles !
-		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
-		glDisableVertexAttribArray(0);
-		/*
 		// First pass
 		glBindFramebuffer(GL_FRAMEBUFFER, framebuffer_AA);
 
@@ -115,7 +115,7 @@ namespace Rendering
 		// Draw the triangles !
 		glDrawArrays(GL_TRIANGLES, 0, 6); // 2*3 indices starting at 0 -> 2 triangles
 		glDisableVertexAttribArray(0);
-		*/
+		
 
 
 
@@ -136,8 +136,8 @@ namespace Rendering
 
 		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.0f, 0.0f);
 		glUniform1f(glGetUniformLocation(program, "ao"), 1.0f);
-		glUniform1f(glGetUniformLocation(program, "metallic"), 0.4f);
-		glUniform1f(glGetUniformLocation(program, "roughness"), 0.1f);
+		glUniform1f(glGetUniformLocation(program, "metallic"), 0.5f);
+		glUniform1f(glGetUniformLocation(program, "roughness"), 0.2f);
 
 
 		// m_pointLights size no bigger than MAX_POINT_LIGHTS
@@ -374,7 +374,7 @@ namespace Rendering
 		}
 		glViewport(0, 0, Game::screenWidth, Game::screenHeight);
 
-
+		return;
 		// Deferred
 		glGenFramebuffers(1, &m_gBuffer);
 		glBindFramebuffer(GL_FRAMEBUFFER, m_gBuffer);

@@ -39,11 +39,17 @@ namespace Rendering
 				);
 		}
 
+
+		/*
+		GL_SRGB_ALPHA is used
+		*/
+
+
 		// copy image data into 'target' side of cube map
 		glTexImage2D(
 			side_target,
 			0,
-			GL_RGBA,
+			GL_SRGB_ALPHA,
 			x,
 			y,
 			0,
