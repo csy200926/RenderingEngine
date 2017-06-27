@@ -43,6 +43,15 @@ namespace Rendering
 		std::string path;
 	};
 
+	class SubMesh
+	{
+	public:
+
+
+	private:
+
+
+	};
 
 	class Material;
 
@@ -63,6 +72,8 @@ namespace Rendering
 	private:
 		GLuint VAO, VBO, EBO;
 		void SetupMesh();
+
+		bool useSingleVBO;
 	};
 	typedef std::shared_ptr<Mesh> MeshPtr;
 

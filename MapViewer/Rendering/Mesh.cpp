@@ -28,7 +28,7 @@ namespace Rendering
 
 		// Read
 		Assimp::Importer importer;
-		const aiScene* scene = importer.ReadFile(i_filePath, aiProcess_Triangulate | aiProcess_FlipUVs);
+		const aiScene* scene = importer.ReadFile(i_filePath,aiProcess_OptimizeMeshes|  aiProcess_OptimizeGraph | aiProcess_Triangulate | aiProcess_FlipUVs);
 		// Check for errors
 		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
@@ -84,6 +84,8 @@ namespace Rendering
 
 	Mesh::Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices, std::vector<Texture_ID> &textures)
 	{
+		useSingleVBO = true;
+
 		this->vertices = vertices;
 		this->indices = indices;
 		this->textures = textures;
