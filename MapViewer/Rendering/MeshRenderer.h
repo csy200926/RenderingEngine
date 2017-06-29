@@ -5,7 +5,7 @@
 #include "Material.h"
 #include "Mesh.h"
 #include "Camera.h"
-
+#include <vector>
 namespace Rendering
 {
 
@@ -17,7 +17,7 @@ namespace Rendering
 
 		MeshRenderer(const MaterialPtr &i_pMaterial, const MeshPtr &i_pMesh)
 		{
-			m_pMaterial = i_pMaterial;
+			m_pMaterials.push_back(i_pMaterial);
 			m_pMesh = i_pMesh;
 		}
 
@@ -28,17 +28,27 @@ namespace Rendering
 
 		virtual void Render()
 		{
-
-			// I will just let it crash if not initialized...
+			m_pMesh->Draw_Pre();
 			Camera::ModelToWorld_Matrix = GetTransform();
-			m_pMaterial->Activate();
-			m_pMesh->Draw();
-		
+			for (int i = 0; i < m_pMaterials.size(); i++)
+			{
+				m_pMaterials[i]->Activate();
+				m_pMesh->Draw(i);
+			}
+			m_pMesh->Draw_Post();
 		} 
 
+		bool AddMaterial(MaterialPtr i_pMaterial)
+		{
+			if (m_pMesh->GetSubmeshCount() >= m_pMaterials.size() + 1)
+			{
+				m_pMaterials.push_back(i_pMaterial);
+				return true;
+			}
+			return false;
+		}
 	private:
-
-		MaterialPtr m_pMaterial;
+		std::vector<MaterialPtr> m_pMaterials;
 		MeshPtr m_pMesh;
 
 	};

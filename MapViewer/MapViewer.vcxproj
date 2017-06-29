@@ -114,7 +114,6 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClCompile Include="Rendering\Material.cpp" />
     <ClCompile Include="Rendering\Mesh.cpp" />
     <ClCompile Include="Rendering\MeshPoints.cpp" />
-    <ClCompile Include="Rendering\Model.cpp" />
     <ClCompile Include="Rendering\RenderingEngine.cpp" />
     <ClCompile Include="Rendering\RenderTarget.cpp" />
     <ClCompile Include="Rendering\SceneNode.cpp" />
@@ -147,7 +146,6 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClInclude Include="Rendering\MeshManager.h" />
     <ClInclude Include="Rendering\MeshPoints.h" />
     <ClInclude Include="Rendering\MeshRenderer.h" />
-    <ClInclude Include="Rendering\Model.h" />
     <ClInclude Include="Rendering\RenderingEngine.h" />
     <ClInclude Include="Rendering\RenderTarget.h" />
     <ClInclude Include="Rendering\SceneNode.h" />

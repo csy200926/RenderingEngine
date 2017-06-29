@@ -134,11 +134,6 @@ namespace Rendering
 		GLint program = i_pMaterial->GetProgram();
 		int shaderLightIndex = 0;
 
-		glUniform3f(glGetUniformLocation(program, "albedo"), 1.0f, 0.0f, 0.0f);
-		glUniform1f(glGetUniformLocation(program, "ao"), 1.0f);
-		glUniform1f(glGetUniformLocation(program, "metallic"), 0.5f);
-		glUniform1f(glGetUniformLocation(program, "roughness"), 0.2f);
-
 
 		// m_pointLights size no bigger than MAX_POINT_LIGHTS
 		for (int lightIndex = 0; lightIndex < MAX_POINT_LIGHTS; lightIndex++)
@@ -206,7 +201,7 @@ namespace Rendering
 		m_defaultMat = MaterialManager::GetInstance()->Load("Default", "Materials/Default.material");
 		m_defaultMat->SetTexture(defaultTex);
 
-		MeshManager::GetInstance()->Load("Default", "Models/untitled.FBX");
+		MeshManager::GetInstance()->Load("Default", "Models/Maskboy.FBX");
 
 		using namespace std;
 

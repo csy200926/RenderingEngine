@@ -36,20 +36,16 @@ namespace Rendering
 		}
 	};
 
-	struct Texture_ID
-	{
-		GLuint ID;
-		std::string type;
-		std::string path;
-	};
 
 	class SubMesh
 	{
 	public:
+		SubMesh(std::vector<GLuint> &i_indices);
+		std::vector<GLuint> m_indices;
 
-
+		void Draw();//Shader
 	private:
-
+		GLuint EBO;
 
 	};
 
@@ -58,19 +54,25 @@ namespace Rendering
 	class Mesh : public IResource
 	{
 	public :
-		std::vector<Vertex> vertices;
-		std::vector<GLuint> indices;
-		std::vector<Texture_ID> textures;
+		std::vector<Vertex> m_vertices;
 
 		// Load mesh from this function is single mesh
 		Mesh(std::string i_filePath);
 		~Mesh();
 
-		Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices, std::vector<Texture_ID> &textures);
-		void Draw(Material *pMaterial);//Shader
+		Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices);
+
+		void Draw_Pre() const;
 		void Draw()const;
+		void Draw(int submeshIndex)const;
+		void Draw_Post() const;
+
+		int GetSubmeshCount() const { return m_subMeshes.size(); }
+
 	private:
-		GLuint VAO, VBO, EBO;
+		std::vector<SubMesh *> m_subMeshes;
+		
+		GLuint VAO, VBO;
 		void SetupMesh();
 
 		bool useSingleVBO;

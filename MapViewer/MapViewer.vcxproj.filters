@@ -26,9 +26,6 @@
     <ClCompile Include="Rendering\MeshPoints.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
-    <ClCompile Include="Rendering\Model.cpp">
-      <Filter>Rendering</Filter>
-    </ClCompile>
     <ClCompile Include="Rendering\SceneNode.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
@@ -97,9 +94,6 @@
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\MeshPoints.h">
-      <Filter>Rendering</Filter>
-    </ClInclude>
-    <ClInclude Include="Rendering\Model.h">
       <Filter>Rendering</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\SceneNode.h">

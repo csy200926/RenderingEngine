@@ -11,12 +11,12 @@ void RenderingGame::OnStart()
 
 	
 	MeshPtr defaultMesh = m_pMeshManager->GetByName("Default");//Load("Default", "Models/box.obj");
-
-	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/Wood.gif");
+	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
+	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/Wood.gif");
 	defaultMat->SetTexture(woodTexture);
 
-	m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
+	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
 
 	//Point lights test
 	{

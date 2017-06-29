@@ -15,7 +15,6 @@
 #include "Rendering/MeshPoints.h"
 #include "Rendering/Material.h"
 #include "Rendering/Mesh.h"
-#include "Rendering/Model.h"
 #include "Rendering/Texture.h"
 #include "Rendering/SceneNode.h"
 #include "Rendering/MaterialManager.h"

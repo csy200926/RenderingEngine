@@ -97,6 +97,13 @@ namespace Rendering
 
 	void Material::Activate()
 	{
+
+		glUniform3f(glGetUniformLocation(m_program, "albedo"), 1.0f, 0.0f, 0.0f);
+		glUniform1f(glGetUniformLocation(m_program, "ao"), 1.0f);
+		glUniform1f(glGetUniformLocation(m_program, "metallic"), 0.5f);
+		glUniform1f(glGetUniformLocation(m_program, "roughness"), 0.2f);
+
+
 		glUseProgram(m_program);
 
 		glUniformMatrix4fv(m_PMatrixLocation, 1, GL_FALSE, &Camera::Projective_Matrix[0][0]);
