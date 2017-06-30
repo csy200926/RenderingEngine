@@ -20,6 +20,9 @@ namespace Rendering
 		void read_shader_src(const char *fname, std::vector<char> &buffer);
 
 		TexturePtr m_texture;
+
+		glm::vec3 m_color;
+
 	public:
 		GLint m_VMatrixLocation;
 		GLint m_MMatrixLocation;
@@ -42,6 +45,8 @@ namespace Rendering
 
 		void Activate();
 		void Use(){	glUseProgram(m_program);};
+
+		void SetColor(glm::vec3 i_color){ m_color = i_color; }
 	};
 
 	typedef std::shared_ptr<Material> MaterialPtr;
