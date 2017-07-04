@@ -312,8 +312,9 @@
 int main(int argc, char** argv)
 {
 	using namespace LuaPlus;
-
-
+	LuaState* luaState = LuaState::Create();
+	const int luaResult = luaState->LoadFile("LuaTest/Test.lua");
+	
 	{
 
 		RenderingGame myGame;
