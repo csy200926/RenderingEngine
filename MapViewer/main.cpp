@@ -303,13 +303,17 @@
 //	}
 //
 //	_CrtDumpMemoryLeaks();
-//
+// 
 //	return 0;
 //}
 
+#include "LuaPlus.h"
 #include "RenderingGame.h"
 int main(int argc, char** argv)
 {
+	using namespace LuaPlus;
+
+
 	{
 
 		RenderingGame myGame;

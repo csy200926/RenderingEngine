@@ -70,7 +70,11 @@ namespace Rendering
 		{
 			delete it->second;
 		}
-
+		for (int i = 0; i < m_children.size(); i++)
+		{
+			if (m_children[i] != nullptr)
+				delete m_children[i];
+		}
 	}
 
 
