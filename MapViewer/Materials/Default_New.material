@@ -1,0 +1,23 @@
+Material=
+{
+	Properties=
+	{
+		albedo = {1.0, 0.0, 0.0},
+		metallic = 0.5,
+		roughness = 0.2,
+	},
+
+	Textures=
+	{
+		main = "Images/terrain.png"
+	},
+
+	Shaders=
+	{
+		VertexShader = "Shaders/DefaultVS.shader",
+		PixelShader = "Shaders/DefaultFS.shader",
+	},
+
+}
+
+

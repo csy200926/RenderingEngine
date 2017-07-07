@@ -23,6 +23,7 @@ namespace Rendering
 		bool virtual ShowDown();
 
 		void virtual Activate();
+		void virtual Bind();
 
 	};
 

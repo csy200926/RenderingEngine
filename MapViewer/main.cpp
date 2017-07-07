@@ -311,22 +311,13 @@
 #include "RenderingGame.h"
 int main(int argc, char** argv)
 {
-	using namespace LuaPlus;
-	LuaState* luaState = LuaState::Create();
-	const int luaResult = luaState->LoadFile("LuaTest/Test.lua");
-	
 	{
-
 		RenderingGame myGame;
 
 		myGame.Initilize(1920 / 4, 1440 / 4);
 		myGame.StartRunning();
 		myGame.ShutDown();
-
 	}
-
-
 	_CrtDumpMemoryLeaks();
-
 	return 0;
 }

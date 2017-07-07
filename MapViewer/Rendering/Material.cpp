@@ -5,51 +5,99 @@
 #include <stdlib.h>
 #include <iostream>
 
+#include "TextureManager.h"
 #include "Texture.h"
 #include "Camera.h"
 
 #include <iostream>
 #include <fstream>
 
+#include "LuaPlus.h"
+
 namespace Rendering
 {
-	Material::Material(const std::string &path)
+	Material::Material(const std::string &i_path,int version)
 	{
-		m_texture = TexturePtr(nullptr);
-
-		using namespace std;
-
-		ifstream file(path);
-
-		if (!file)
+		if (version == 0)
 		{
-			return;
+			m_texture = TexturePtr(nullptr);
+			using namespace std;
+			ifstream file(i_path);
+			if (!file)
+			{
+				return;
+			}
+			// 0 vertex shader   1 pixel shader
+			// 2 3 4 ?? textures??
+			int index = 0;
+			const int vertexShaderPathIndex = 0;
+			const int fragmentShaderPathIndex = 1;
+
+			string vertShdPath;
+			string pixelShdPath;
+
+			std::string s;
+			while (std::getline(file, s))
+			{
+				if (index == vertexShaderPathIndex)
+				{
+					vertShdPath = s;
+				}
+				else if (index == fragmentShaderPathIndex)
+				{
+					pixelShdPath = s;
+				}
+				index++;
+			}
+			Init(vertShdPath.c_str(), pixelShdPath.c_str());
+		}
+		else if (version == 1)
+		{
+			using namespace LuaPlus;
+			LuaState* luaState = LuaState::Create();
+			const int luaResult = luaState->DoFile(i_path.c_str());
+
+			LuaObject matObj = luaState->GetGlobal("Material");
+			LuaObject propertiesObj = matObj["Properties"];
+			LuaObject texturesObj = matObj["Textures"];
+			LuaObject ShadersObj = matObj["Shaders"];
+
+			// Iterate property table and Set uniforms
+			for (LuaTableIterator it(propertiesObj); it; it.Next())
+			{
+				LuaObject &obj = it.GetValue();
+				const char* uniformName = it.GetKey().GetString();
+
+				// Check if is color. Alpha is not considered yet
+				if (obj.IsTable() && obj.GetCount() == 3)
+				{
+					// Index start from 1
+					float r = obj[1].ToNumber();
+					float g = obj[2].ToNumber();
+					float b = obj[3].ToNumber();
+
+					m_vector3Map[uniformName] = glm::vec3(r,g,b);
+				}
+				else if (obj.IsNumber())
+				{
+					m_floatMap[uniformName] = obj.ToNumber();
+				}
+				else{}// Invalid type
+			}
+
+			// Iterate texture table
+			for (LuaTableIterator it(texturesObj); it; it.Next())
+			{
+				LuaObject &obj = it.GetValue();
+				const char* uniformName = it.GetKey().GetString();
+
+				//TODO: now just assuming all texture path is corrent
+				TexturePtr tex = TextureManager::GetInstance()->Load(uniformName, obj.ToString());
+				m_textureMap[uniformName] = tex;
+			}
+
 		}
 
-		// 0 vertex shader   1 pixel shader
-		// 2 3 4 ?? textures??
-		int index = 0;
-		const int vertexShaderPathIndex = 0;
-		const int fragmentShaderPathIndex = 1;
-
-		string vertShdPath;
-		string pixelShdPath;
-
-		std::string s;
-		while (std::getline(file, s))
-		{
-			if (index == vertexShaderPathIndex)
-			{
-				vertShdPath = s;
-			}
-			else if (index == fragmentShaderPathIndex)
-			{
-				pixelShdPath = s;
-			}
-			index++;
-		}
-
-		Init(vertShdPath.c_str(), pixelShdPath.c_str());
 
 	}
 
@@ -97,12 +145,26 @@ namespace Rendering
 
 	void Material::Activate()
 	{
+		for (auto const &it_vec3 : m_vector3Map)
+		{
+			glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()), 
+				it_vec3.second.r, 
+				it_vec3.second.g,
+				it_vec3.second.b);
+		}
 
-		glUniform3f(glGetUniformLocation(m_program, "albedo"), 1.0f, 0.0f, 0.0f);
-		glUniform1f(glGetUniformLocation(m_program, "ao"), 1.0f);
-		glUniform1f(glGetUniformLocation(m_program, "metallic"), 0.5f);
-		glUniform1f(glGetUniformLocation(m_program, "roughness"), 0.2f);
+		for (auto const &it_float : m_floatMap)
+		{
+			glUniform1f(glGetUniformLocation(m_program, it_float.first.c_str()), it_float.second);
+		}
 
+		int texIndex = 0;
+		for (auto const &it_tex : m_textureMap)
+		{
+			glActiveTexture(GL_TEXTURE0 + texIndex);
+			it_tex.second->Bind();
+			texIndex++;
+		}
 
 		glUseProgram(m_program);
 

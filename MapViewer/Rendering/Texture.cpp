@@ -87,4 +87,11 @@ namespace Rendering
 		glBindTexture(GL_TEXTURE_2D, m_textureID);
 	}
 
+	void Texture::Bind()
+	{
+		glBindTexture(GL_TEXTURE_2D, m_textureID);
+	}
+
+
+
 }
