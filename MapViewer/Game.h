@@ -21,6 +21,8 @@
 #include "Rendering/TextureManager.h"
 #include "Rendering/MeshManager.h"
 #include "Rendering/RenderingEngine.h"
+#include "Rendering/RenderingEnginePbr.h"
+#include "Rendering/RenderingEngineDeferred.h"
 
 #include "stdio.h"
 #include "stdlib.h"
@@ -73,7 +75,6 @@ protected:
 	Camera m_camera;
 	float cameraPitch;
 	float cameraYaw;
-
 
 
 private:

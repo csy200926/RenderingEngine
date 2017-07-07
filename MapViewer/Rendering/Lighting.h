@@ -50,6 +50,8 @@ namespace Rendering
 		bool m_isActivated;
 
 		friend class RenderingEngine;
+		friend class RenderingEngineDeferred;
+		friend class RenderingEnginePbr;
 	};
 	class DirectionalLight : public LightBase
 	{

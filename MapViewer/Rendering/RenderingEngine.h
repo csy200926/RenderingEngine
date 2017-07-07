@@ -18,10 +18,12 @@ namespace Rendering
 #define LEFT "Images/skyBox/stormydays_lf.tga"
 #define RIGHT "Images/skyBox/stormydays_rt.tga"
 
-	class RenderingEngine : public Singleton<RenderingEngine>
+	class RenderingEngine 
 	{
 
 	public:
+
+		static RenderingEngine *GetInstance(){ return s_pRenderingEngine; }
 
 		void AddLight(LightBase *i_pLight)
 		{ 
@@ -57,11 +59,15 @@ namespace Rendering
 			m_pRootNode = i_pRoot;
 		}
 		virtual void Render();
-		virtual void OnRenderImage(TexturePtr scr, TexturePtr tar, MaterialPtr material);
+		virtual void OnRenderImage(TexturePtr scr, TexturePtr tar, MaterialPtr material){};
 
-		void Initilize();
-		void ShutDown();
-	private:
+		void virtual Initilize();
+		void virtual ShutDown();
+
+		RenderingEngine();
+
+		static RenderingEngine* s_pRenderingEngine;
+	protected:
 
 		void UpdatePointLightUniform(Material *i_pMaterial);
 		void UpdateDirctLightUniform(Material *i_pMaterial);
@@ -73,26 +79,6 @@ namespace Rendering
 		std::vector<LightBase*> m_pPointLights;
 		DirectionalLight* m_pDirectionalLight;
 
-		SkyBox m_skyBox;
-		TextureCube m_cubeTex;
-
-		GLuint framebuffer;
-		GLuint renderTexture;
-		GLuint depthrenderBuffer;
-		GLuint quad_vertexbuffer;
-
-		// AA use
-		GLuint multiTex;
-		GLuint framebuffer_AA;
-
-		// PBR
-		MaterialPtr m_PBRcon;
-		GLuint m_envCubemap;
-
-		// Deferred
-		GLuint m_gBuffer;
-		MaterialPtr m_deferred_first;
-		MaterialPtr m_deferred_second;
-		GLuint gPosition, gNormal, gColorSpec;
+		
 	};
 }

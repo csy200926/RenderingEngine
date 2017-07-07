@@ -47,7 +47,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pTextureManager = TextureManager::CreateInstance();
 	m_pMeshManager = MeshManager::CreateInstance();
 
-	m_pRenderingEngine = RenderingEngine::CreateInstance();
+	m_pRenderingEngine = new RenderingEngineDeferred();
 	m_pRenderingEngine->SetRootNode(m_pRootNode);
 	m_pRenderingEngine->Initilize();
 	
@@ -67,7 +67,7 @@ void Game::ShutDown()
 	MeshManager::DestroyInstance();
 
 	m_pRenderingEngine->ShutDown();
-	RenderingEngine::DestroyInstance();
+	delete m_pRenderingEngine;
 
 	OnDestroy();
 	glfwTerminate();

@@ -56,6 +56,12 @@
     <ClCompile Include="Rendering\RenderTarget.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Rendering\RenderingEngineDeferred.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="Rendering\RenderingEnginePbr.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitMap\BitMap.h" />
@@ -148,6 +154,12 @@
       <Filter>Rendering\Component_Nonfolder</Filter>
     </ClInclude>
     <ClInclude Include="Rendering\RenderTarget.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\RenderingEngineDeferred.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\RenderingEnginePbr.h">
       <Filter>Rendering</Filter>
     </ClInclude>
   </ItemGroup>
