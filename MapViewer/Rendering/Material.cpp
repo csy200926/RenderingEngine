@@ -18,86 +18,64 @@ namespace Rendering
 {
 	Material::Material(const std::string &i_path,int version)
 	{
-		if (version == 0)
+
+		
+		using namespace LuaPlus;
+		LuaState* luaState = LuaState::Create();
+		const int luaResult = luaState->DoFile(i_path.c_str());
+
+		LuaObject matObj = luaState->GetGlobal("Material");
+		LuaObject propertiesObj = matObj["Properties"];
+		LuaObject texturesObj = matObj["Textures"];
+		LuaObject ShadersObj = matObj["Shaders"];
+
+		// Iterate property table and Set uniforms
+		for (LuaTableIterator it(propertiesObj); it; it.Next())
 		{
-			m_texture = TexturePtr(nullptr);
-			using namespace std;
-			ifstream file(i_path);
-			if (!file)
+			LuaObject &obj = it.GetValue();
+			const char* uniformName = it.GetKey().GetString();
+
+			// Check if is color. Alpha is not considered yet
+			if (obj.IsTable() && obj.GetCount() == 3)
 			{
-				return;
+				// Index start from 1
+				float r = obj[1].ToNumber();
+				float g = obj[2].ToNumber();
+				float b = obj[3].ToNumber();
+
+				m_vector3Map[uniformName] = glm::vec3(r,g,b);
 			}
-			// 0 vertex shader   1 pixel shader
-			// 2 3 4 ?? textures??
-			int index = 0;
-			const int vertexShaderPathIndex = 0;
-			const int fragmentShaderPathIndex = 1;
-
-			string vertShdPath;
-			string pixelShdPath;
-
-			std::string s;
-			while (std::getline(file, s))
+			else if (obj.IsNumber())
 			{
-				if (index == vertexShaderPathIndex)
-				{
-					vertShdPath = s;
-				}
-				else if (index == fragmentShaderPathIndex)
-				{
-					pixelShdPath = s;
-				}
-				index++;
+				m_floatMap[uniformName] = obj.ToNumber();
 			}
-			Init(vertShdPath.c_str(), pixelShdPath.c_str());
-		}
-		else if (version == 1)
-		{
-			using namespace LuaPlus;
-			LuaState* luaState = LuaState::Create();
-			const int luaResult = luaState->DoFile(i_path.c_str());
-
-			LuaObject matObj = luaState->GetGlobal("Material");
-			LuaObject propertiesObj = matObj["Properties"];
-			LuaObject texturesObj = matObj["Textures"];
-			LuaObject ShadersObj = matObj["Shaders"];
-
-			// Iterate property table and Set uniforms
-			for (LuaTableIterator it(propertiesObj); it; it.Next())
-			{
-				LuaObject &obj = it.GetValue();
-				const char* uniformName = it.GetKey().GetString();
-
-				// Check if is color. Alpha is not considered yet
-				if (obj.IsTable() && obj.GetCount() == 3)
-				{
-					// Index start from 1
-					float r = obj[1].ToNumber();
-					float g = obj[2].ToNumber();
-					float b = obj[3].ToNumber();
-
-					m_vector3Map[uniformName] = glm::vec3(r,g,b);
-				}
-				else if (obj.IsNumber())
-				{
-					m_floatMap[uniformName] = obj.ToNumber();
-				}
-				else{}// Invalid type
-			}
-
-			// Iterate texture table
-			for (LuaTableIterator it(texturesObj); it; it.Next())
-			{
-				LuaObject &obj = it.GetValue();
-				const char* uniformName = it.GetKey().GetString();
-
-				//TODO: now just assuming all texture path is corrent
-				TexturePtr tex = TextureManager::GetInstance()->Load(uniformName, obj.ToString());
-				m_textureMap[uniformName] = tex;
-			}
-
+			else{}// Invalid type
 		}
 
+		// Iterate texture table
+		for (LuaTableIterator it(texturesObj); it; it.Next())
+		{
+			LuaObject &obj = it.GetValue();
+			const char* uniformName = it.GetKey().GetString();
+
+			//TODO: now just assuming all texture path is corrent
+			TexturePtr tex = TextureManager::GetInstance()->Load(uniformName, obj.ToString());
+			m_textureMap[uniformName] = tex;
+		}
+
+		// Iterate Shaders table
+		LuaObject vertexShd = ShadersObj["VertexShader"];
+		LuaObject pixelShd = ShadersObj["PixelShader"];
+
+		Init(vertexShd.ToString(),pixelShd.ToString());
+		
+
+
+
+	}
+
+	Material::Material()
+	{
 
 	}
 
@@ -145,10 +123,12 @@ namespace Rendering
 
 	void Material::Activate()
 	{
+		glUseProgram(m_program);
+
 		for (auto const &it_vec3 : m_vector3Map)
 		{
-			glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()), 
-				it_vec3.second.r, 
+			glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()),
+				it_vec3.second.r,
 				it_vec3.second.g,
 				it_vec3.second.b);
 		}
@@ -165,8 +145,6 @@ namespace Rendering
 			it_tex.second->Bind();
 			texIndex++;
 		}
-
-		glUseProgram(m_program);
 
 		glUniformMatrix4fv(m_PMatrixLocation, 1, GL_FALSE, &Camera::Projective_Matrix[0][0]);
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);

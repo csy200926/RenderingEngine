@@ -45,6 +45,7 @@ namespace Rendering
 
 		void SetTexture(TexturePtr i_texture);
 
+		Material();
 		Material(const std::string &path,int version = 0);
 		~Material();
 

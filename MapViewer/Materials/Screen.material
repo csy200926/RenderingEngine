@@ -1,2 +1,21 @@
-Shaders/RTShaderVS.shader
-Shaders/RTShaderFS.shader
+Material=
+{
+	Properties=
+	{
+
+	},
+
+	Textures=
+	{
+
+	},
+
+	Shaders=
+	{
+		VertexShader = "Shaders/RTShaderVS.shader",
+		PixelShader = "Shaders/RTShaderFS.shader",
+	},
+
+}
+
+

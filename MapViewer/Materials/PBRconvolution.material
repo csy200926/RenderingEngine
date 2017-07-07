@@ -1,2 +1,21 @@
-Shaders/cube_convolution_vs.shader
-Shaders/cube_convolution_fs.shader
+Material=
+{
+	Properties=
+	{
+
+	},
+
+	Textures=
+	{
+
+	},
+
+	Shaders=
+	{
+		VertexShader = "Shaders/cube_convolution_vs.shader",
+		PixelShader = "Shaders/cube_convolution_fs.shader",
+	},
+
+}
+
+

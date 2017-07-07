@@ -1,2 +1,21 @@
-Shaders/deferred_first_vs.shader
-Shaders/deferred_first_fs.shader
+Material=
+{
+	Properties=
+	{
+
+	},
+
+	Textures=
+	{
+
+	},
+
+	Shaders=
+	{
+		VertexShader = "Shaders/deferred_first_vs.shader",
+		PixelShader = "Shaders/deferred_first_fs.shader",
+	},
+
+}
+
+
