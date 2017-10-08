@@ -47,7 +47,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pTextureManager = TextureManager::CreateInstance();
 	m_pMeshManager = MeshManager::CreateInstance();
 
-	m_pRenderingEngine = new RenderingEngineDeferred();
+	m_pRenderingEngine = new RenderingEngineDiffuse();
 	m_pRenderingEngine->SetRootNode(m_pRootNode);
 	m_pRenderingEngine->Initilize();
 	

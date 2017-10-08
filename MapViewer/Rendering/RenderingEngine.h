@@ -58,15 +58,17 @@ namespace Rendering
 		{
 			m_pRootNode = i_pRoot;
 		}
-		virtual void Render();
+		virtual void Render() = 0;
 		virtual void OnRenderImage(TexturePtr scr, TexturePtr tar, MaterialPtr material){};
 
-		void virtual Initilize();
-		void virtual ShutDown();
+		void virtual Initilize() = 0;
+		void virtual ShutDown() = 0;
 
 		RenderingEngine();
 
 		static RenderingEngine* s_pRenderingEngine;
+
+		virtual ~RenderingEngine(){};
 	protected:
 
 		void UpdatePointLightUniform(Material *i_pMaterial);

@@ -19,10 +19,6 @@ namespace Rendering
 {
 	RenderingEngine* RenderingEngine::s_pRenderingEngine = nullptr;
 
-	void RenderingEngine::Render()
-	{
-		
-	}
 
 	void RenderingEngine::UpdatePointLightUniform(Material *i_pMaterial)
 	{
@@ -93,16 +89,6 @@ namespace Rendering
 		glUniform3f(glGetUniformLocation(program, "dirLight.direction"), direction.x, direction.y, direction.z);
 		glUniform3f(glGetUniformLocation(program, "dirLight.diffuse"), diffuse.x, diffuse.y, diffuse.z);
 		glUniform3f(glGetUniformLocation(program, "dirLight.specular"), specular.x, specular.y, specular.z);
-	}
-
-	void RenderingEngine::Initilize()
-	{
-
-	}
-
-	void RenderingEngine::ShutDown()
-	{
-
 	}
 
 	RenderingEngine::RenderingEngine()

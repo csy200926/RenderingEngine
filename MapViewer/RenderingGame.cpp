@@ -10,14 +10,15 @@ void RenderingGame::OnStart()
 
 
 	
-	MeshPtr defaultMesh = m_pMeshManager->GetByName("Default");//Load("Default", "Models/box.obj");
+	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/table.obj");
 	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
-	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/Wood.gif");
+	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/WoodSeemles.jpg");
 	defaultMat->SetTexture(woodTexture);
 
-	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, defaultMesh);
+	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, tableMesh);
 
+	return;
 	//Point lights test
 	{
 		SceneNode *pLightNode_1 = new SceneNode("Light1");

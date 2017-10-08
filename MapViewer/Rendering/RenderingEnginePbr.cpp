@@ -82,7 +82,7 @@ namespace Rendering
 		m_defaultMat = MaterialManager::GetInstance()->Load("Default", "Materials/Default.material");
 		m_defaultMat->SetTexture(defaultTex);
 
-		MeshManager::GetInstance()->Load("Default", "Models/Maskboy.FBX");
+		
 
 		using namespace std;
 

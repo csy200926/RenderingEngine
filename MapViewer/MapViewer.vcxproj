@@ -17,7 +17,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
@@ -116,6 +116,7 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClCompile Include="Rendering\MeshPoints.cpp" />
     <ClCompile Include="Rendering\RenderingEngine.cpp" />
     <ClCompile Include="Rendering\RenderingEngineDeferred.cpp" />
+    <ClCompile Include="Rendering\RenderingEngineDiffuse.cpp" />
     <ClCompile Include="Rendering\RenderingEnginePbr.cpp" />
     <ClCompile Include="Rendering\RenderTarget.cpp" />
     <ClCompile Include="Rendering\SceneNode.cpp" />
@@ -150,6 +151,7 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClInclude Include="Rendering\MeshRenderer.h" />
     <ClInclude Include="Rendering\RenderingEngine.h" />
     <ClInclude Include="Rendering\RenderingEngineDeferred.h" />
+    <ClInclude Include="Rendering\RenderingEngineDiffuse.h" />
     <ClInclude Include="Rendering\RenderingEnginePbr.h" />
     <ClInclude Include="Rendering\RenderTarget.h" />
     <ClInclude Include="Rendering\SceneNode.h" />
@@ -178,6 +180,8 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <None Include="Shaders\deferred_first_vs.shader" />
     <None Include="Shaders\deferred_second_fs.shader" />
     <None Include="Shaders\deferred_second_vs.shader" />
+    <None Include="Shaders\phongFS.shader" />
+    <None Include="Shaders\phongVS.shader" />
     <None Include="Shaders\RTShaderFS.shader" />
     <None Include="Shaders\RTShaderVS.shader" />
   </ItemGroup>

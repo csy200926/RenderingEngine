@@ -62,6 +62,9 @@
     <ClCompile Include="Rendering\RenderingEnginePbr.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Rendering\RenderingEngineDiffuse.cpp">
+      <Filter>Rendering</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitMap\BitMap.h" />
@@ -162,6 +165,9 @@
     <ClInclude Include="Rendering\RenderingEnginePbr.h">
       <Filter>Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="Rendering\RenderingEngineDiffuse.h">
+      <Filter>Rendering</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">
@@ -225,6 +231,12 @@
     </None>
     <None Include="Shaders\deferred_second_fs.shader">
       <Filter>Shaders\Advanced</Filter>
+    </None>
+    <None Include="Shaders\phongVS.shader">
+      <Filter>Shaders\Default</Filter>
+    </None>
+    <None Include="Shaders\phongFS.shader">
+      <Filter>Shaders\Default</Filter>
     </None>
   </ItemGroup>
 </Project>

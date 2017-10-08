@@ -23,6 +23,7 @@
 #include "Rendering/RenderingEngine.h"
 #include "Rendering/RenderingEnginePbr.h"
 #include "Rendering/RenderingEngineDeferred.h"
+#include "Rendering/RenderingEngineDiffuse.h"
 
 #include "stdio.h"
 #include "stdlib.h"

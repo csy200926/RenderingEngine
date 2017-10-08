@@ -1,0 +1,24 @@
+Material=
+{
+	Properties=
+	{
+		albedo = {1.0, 0.0, 0.0},
+		metallic = 0.5,
+		roughness = 0.2,
+		ao = 1.0,
+	},
+
+	Textures=
+	{
+		main = "Images/terrain.png"
+	},
+
+	Shaders=
+	{
+		VertexShader = "Shaders/phongVS.shader",
+		PixelShader = "Shaders/phongFS.shader",
+	},
+
+}
+
+
