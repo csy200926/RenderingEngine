@@ -36,9 +36,9 @@ namespace Rendering
 	{
 		m_defaultMat = MaterialManager::GetInstance()->Load("Default", "Materials/Diffuse.material");
 
-		m_UIManager.init("GUI");
-		m_UIManager.loadScheme("OgreTray.scheme");
-		m_UIManager.setFont("DejaVuSans-10");
+		//m_UIManager.init("GUI");
+		//m_UIManager.loadScheme("OgreTray.scheme");
+		//m_UIManager.setFont("DejaVuSans-10");
 	}
 
 	void RenderingEngineDiffuse::ShutDown()
