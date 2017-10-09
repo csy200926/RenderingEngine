@@ -1,7 +1,5 @@
 #pragma once
 
-#pragma once
-
 namespace Utilities {
 
 	///Calculates FPS and also limits FPS

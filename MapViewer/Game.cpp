@@ -1,5 +1,8 @@
 #include "Game.h"
 
+
+#include "SDL/SDL.h"
+
 int Game::screenWidth;
 int Game::screenHeight;
 

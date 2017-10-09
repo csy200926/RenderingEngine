@@ -33,10 +33,10 @@
 #define _CEGUIBase_h_
 
 // bring in configuration options
-#include "CEGUI/Config.h"
+#include "Config.h"
 
 // add CEGUI version defines
-#include "CEGUI/Version.h"
+#include "Version.h"
 
 #include <cassert>
 #include <algorithm>

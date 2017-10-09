@@ -29,7 +29,7 @@
 #ifndef _String_h_
 #define _String_h_
 
-#include "CEGUI/Base.h"
+#include "Base.h"
 #include <cstring>
 #include <stdexcept>
 #include <cstddef>

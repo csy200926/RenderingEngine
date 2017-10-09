@@ -74,6 +74,7 @@ namespace Rendering
 
 	void RenderingEngineDeferred::Initilize()
 	{
+		using namespace glm;
 		TexturePtr defaultTex = TextureManager::GetInstance()->Load("Default", "Images/defaultTex.jpg");
 
 		m_defaultMat = MaterialManager::GetInstance()->Load("Default", "Materials/Default.material");

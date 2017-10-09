@@ -2,7 +2,7 @@
 #include <glew.h> // include GLEW and new version of GL on Windows
 #include <glfw3.h> // GLFW helper library
 #include <glm.hpp>
-#include <stdio.h>
+
 #include <vector>
 #include <map>
 #include "detail/func_common.hpp"
@@ -25,24 +25,12 @@
 #include "Rendering/RenderingEngineDeferred.h"
 #include "Rendering/RenderingEngineDiffuse.h"
 
-#include "stdio.h"
-#include "stdlib.h"
-#include <time.h>
-#include <string>
-#include <fstream>
-#include <streambuf>
-#include <stdlib.h>
-#include <iostream>
-#include <thread>
-#include <chrono>
-
-#include <windows.h>
 
 #include "Rendering/InputManager.h"
 #include "Rendering/GUI.h"
-#include "SDL/SDL.h"
 
-using namespace glm;
+
+
 using namespace Rendering;
 
 

@@ -5,6 +5,7 @@
 
 void RenderingGame::OnStart()
 {
+	using namespace glm;
 	using namespace std;
 	Game::OnStart();
 

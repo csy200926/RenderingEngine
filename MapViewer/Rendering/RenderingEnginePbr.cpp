@@ -85,6 +85,7 @@ namespace Rendering
 		
 
 		using namespace std;
+		using namespace glm;
 
 		const int MAX_POINT_LIGHTS = 5;
 		GLint program = m_defaultMat->GetProgram();
