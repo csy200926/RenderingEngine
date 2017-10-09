@@ -1,9 +1,10 @@
 #include "RenderingGame.h"
-#include "Editor.h"
-#include <QtWidgets/QApplication>
 
+#include <QtWidgets/QApplication>
+#include "Editor.h"
 int main(int argc, char *argv[])
 {
+
 	RenderingGame myGame;
 	//QApplication a(argc, argv);
 	myGame.Initilize(1920 / 4, 1440 / 4);	//Editor w;

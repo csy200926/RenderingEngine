@@ -307,17 +307,17 @@
 //	return 0;
 //}
 
-#include "LuaPlus.h"
-#include "RenderingGame.h"
-int main(int argc, char** argv)
-{
-	{
-		RenderingGame myGame;
-
-		myGame.Initilize(1920 / 4, 1440 / 4);
-		myGame.StartRunning();
-		myGame.ShutDown();
-	}
-	_CrtDumpMemoryLeaks();
-	return 0;
-}
+//#include "LuaPlus.h"
+//#include "RenderingGame.h"
+//int main(int argc, char** argv)
+//{
+//	{
+//		RenderingGame myGame;
+//
+//		myGame.Initilize(1920 / 4, 1440 / 4);
+//		myGame.StartRunning();
+//		myGame.ShutDown();
+//	}
+//	_CrtDumpMemoryLeaks();
+//	return 0;
+//}
