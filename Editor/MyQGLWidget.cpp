@@ -2,6 +2,7 @@
 #include <QtWidgets>
 #include <QtOpenGL>
 
+
 MyQGLWidget::MyQGLWidget(QWidget *parent)
 	: QGLWidget(parent)
 {
@@ -15,20 +16,18 @@ MyQGLWidget::~MyQGLWidget()
 
 void MyQGLWidget::initializeGL()
 {
-	qglClearColor(Qt::black);
+	game.Initilize(100, 100);
 
-	glEnable(GL_DEPTH_TEST);
-	glEnable(GL_CULL_FACE);
-	glShadeModel(GL_SMOOTH);
-	glEnable(GL_LIGHTING);
-	glEnable(GL_LIGHT0);
 
-	static GLfloat lightPosition[4] = { 0, 0, 10, 1.0 };
-	glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+	connect(&myTimer, SIGNAL(timeout()), this, SLOT(Update()));
+	myTimer.start(0);
+
 }
 
 void MyQGLWidget::paintGL()
 {
+	game.RenderFrame();
+	return;
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glLoadIdentity();
 	glTranslatef(0.0, 0.0, -10.0);
@@ -89,4 +88,9 @@ void MyQGLWidget::draw()
 	glVertex3f(-1, -1, 0);
 	glVertex3f(0, 0, 1.2);
 	glEnd();
+}
+
+void MyQGLWidget::Update()
+{
+	game.UpdateFrame();
 }

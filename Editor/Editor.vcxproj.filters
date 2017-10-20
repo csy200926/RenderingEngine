@@ -34,6 +34,11 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+      <ParseFiles>true</ParseFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -51,13 +56,13 @@
     <ClCompile Include="GeneratedFiles\qrc_Editor.cpp">
       <Filter>Generated Files</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_MyQGLWidget.cpp">
+    <ClCompile Include="GeneratedFiles\Debug\moc_EditorMain.cpp">
       <Filter>Generated Files\Debug</Filter>
     </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_MyQGLWidget.cpp">
+    <ClCompile Include="GeneratedFiles\Release\moc_EditorMain.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
-    <ClCompile Include="MyQGLWidget.cpp">
+    <ClCompile Include="EditorMain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -71,12 +76,18 @@
     <CustomBuild Include="Editor.h">
       <Filter>Source Files</Filter>
     </CustomBuild>
-    <CustomBuild Include="MyQGLWidget.h">
-      <Filter>Source Files</Filter>
+    <CustomBuild Include="EditorMain.h">
+      <Filter>Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="EditorMain.ui">
+      <Filter>Form Files</Filter>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GeneratedFiles\ui_Editor.h">
+      <Filter>Generated Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GeneratedFiles\ui_EditorMain.h">
       <Filter>Generated Files</Filter>
     </ClInclude>
   </ItemGroup>

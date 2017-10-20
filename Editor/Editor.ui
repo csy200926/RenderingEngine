@@ -6,22 +6,25 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>600</width>
-    <height>400</height>
+    <width>284</width>
+    <height>738</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Editor</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="MyQGLWidget" name="openGLWidget">
+   <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>100</x>
-      <y>40</y>
-      <width>300</width>
-      <height>200</height>
+      <x>70</x>
+      <y>130</y>
+      <width>75</width>
+      <height>23</height>
      </rect>
+    </property>
+    <property name="text">
+     <string>PushButton</string>
     </property>
    </widget>
   </widget>
@@ -30,7 +33,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>600</width>
+     <width>284</width>
      <height>17</height>
     </rect>
    </property>

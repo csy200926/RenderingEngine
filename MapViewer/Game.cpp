@@ -222,4 +222,52 @@ void Game::OnDestroy()
 
 }
 
+void Game::RenderFrame()
+{
+
+	m_pRenderingEngine->Render();
+
+	SDL_GL_SwapWindow(m_window);
+}
+
+void Game::UpdateFrame()
+{
+	SDL_Event inputEvent;
+
+	m_timing.begin();// Utilities::Timing::getDelta();
+
+	//Will keep looping until there are no more events to process
+	while (SDL_PollEvent(&inputEvent)) {
+		switch (inputEvent.type) {
+		case SDL_QUIT:
+			m_isGameRunning = false;
+			break;
+		case SDL_MOUSEMOTION:
+			m_pInputManager->setMouseCoords((float)inputEvent.motion.x, (float)inputEvent.motion.y);
+			break;
+		case SDL_KEYDOWN:
+			m_pInputManager->pressKey(inputEvent.key.keysym.sym);
+			break;
+		case SDL_KEYUP:
+			m_pInputManager->releaseKey(inputEvent.key.keysym.sym);
+			break;
+		case SDL_MOUSEBUTTONDOWN:
+			m_pInputManager->pressKey(inputEvent.button.button);
+			break;
+		case SDL_MOUSEBUTTONUP:
+			m_pInputManager->releaseKey(inputEvent.button.button);
+			break;
+		}
+	}
+
+	// Logic update
+	Update();
+
+
+	m_timing.end();
+
+
+	
+}
+
 

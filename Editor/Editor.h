@@ -1,7 +1,12 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
+
 #include "ui_Editor.h"
+
+#include <qtimer.h>
+
+#include "RenderingGame.h"
 
 class Editor : public QMainWindow
 {
@@ -12,4 +17,12 @@ public:
 
 private:
 	Ui::EditorClass ui;
+	QTimer myTimer;
+
+	RenderingGame game;
+
+	bool isGameRunning;
+
+private slots:
+	void Update();
 };

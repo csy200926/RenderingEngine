@@ -59,6 +59,7 @@
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>Includes\GLFW;Includes\GL;Includes\glm;Includes\assimp;Includes\LuaPlus\lua;Includes\LuaPlus;Includes\engine;Includes\</AdditionalIncludeDirectories>
       <IntrinsicFunctions>false</IntrinsicFunctions>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

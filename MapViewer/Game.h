@@ -47,6 +47,9 @@ public:
 	void StartRunning(){Running();}
 	void ShutDown();
 
+	void RenderFrame();
+	void UpdateFrame();
+
 protected:
 
 	virtual void OnStart();

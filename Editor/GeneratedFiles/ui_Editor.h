@@ -16,10 +16,10 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
-#include <myqglwidget.h>
 
 QT_BEGIN_NAMESPACE
 
@@ -27,7 +27,7 @@ class Ui_EditorClass
 {
 public:
     QWidget *centralWidget;
-    MyQGLWidget *openGLWidget;
+    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -36,16 +36,16 @@ public:
     {
         if (EditorClass->objectName().isEmpty())
             EditorClass->setObjectName(QStringLiteral("EditorClass"));
-        EditorClass->resize(600, 400);
+        EditorClass->resize(284, 738);
         centralWidget = new QWidget(EditorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        openGLWidget = new MyQGLWidget(centralWidget);
-        openGLWidget->setObjectName(QStringLiteral("openGLWidget"));
-        openGLWidget->setGeometry(QRect(100, 40, 300, 200));
+        pushButton = new QPushButton(centralWidget);
+        pushButton->setObjectName(QStringLiteral("pushButton"));
+        pushButton->setGeometry(QRect(70, 130, 75, 23));
         EditorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(EditorClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 600, 17));
+        menuBar->setGeometry(QRect(0, 0, 284, 17));
         EditorClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(EditorClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -62,6 +62,7 @@ public:
     void retranslateUi(QMainWindow *EditorClass)
     {
         EditorClass->setWindowTitle(QApplication::translate("EditorClass", "Editor", Q_NULLPTR));
+        pushButton->setText(QApplication::translate("EditorClass", "PushButton", Q_NULLPTR));
     } // retranslateUi
 
 };
