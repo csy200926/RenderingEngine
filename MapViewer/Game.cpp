@@ -1,7 +1,9 @@
 #include "Game.h"
 
-
+#include "LuaPlus.h"
 #include "SDL/SDL.h"
+
+#include "Rendering/Components.h"
 
 int Game::screenWidth;
 int Game::screenHeight;
@@ -54,9 +56,18 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pRenderingEngine->SetRootNode(m_pRootNode);
 	m_pRenderingEngine->Initilize();
 	
-
+	SaveScene();
 
 	OnStart();
+
+	// Simple reflections
+	REGISTER_CLASS(DirectionalLight);
+	REGISTER_CLASS(PointLight);
+	REGISTER_CLASS(SpotLight);
+	REGISTER_CLASS(MeshRenderer);
+	REGISTER_CLASS(SceneNode);
+
+
 }
 
 
@@ -124,6 +135,8 @@ void Game::Running()
 
 	}
 }
+
+#pragma region Free Move Camera
 
 
 void Game::OnStart()
@@ -221,6 +234,10 @@ void Game::OnDestroy()
 
 
 }
+#pragma endregion Free Move Camera
+
+
+#pragma region External Calls
 
 void Game::RenderFrame()
 {
@@ -270,4 +287,43 @@ void Game::UpdateFrame()
 	
 }
 
+void Game::SaveScene()
+{
 
+	using namespace LuaPlus;
+
+	LuaStateOwner state;
+	LuaObject scene = state->GetGlobals().CreateTable("Scene");
+
+	LuaObject rootNode = scene.CreateTable("SceneNode");
+//	m_pRootNode->Serialize(rootNode);
+
+	state->DumpObject("Scene.lua", "Scene", scene);
+
+	////example
+	//{
+	//	LuaStateOwner state;
+	//	LuaObject myTable = state->GetGlobals().CreateTable("Window");
+	//	
+	//	myTable.SetInteger("width", 640);
+	//	myTable.SetInteger("height", 480);
+	//	myTable.SetString("title", "My First Window");
+	//	myTable.SetBoolean("enabled", true);
+	//	myTable.SetInteger("alpha", 128);
+	//	myTable.SetString("backgroundimage", "bg.jpg");
+	//	
+	//	LuaObject testTable = state->GetGlobals().CreateTable("ff");
+	//	myTable.AssignNewTable(testTable);
+
+
+	//	state->DumpObject("FirstWindow.lua", "Window", myTable);
+	//}
+	
+}
+
+void Game::LoadScene(const char * i_pPath)
+{
+
+}
+
+#pragma endregion External Calls

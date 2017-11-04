@@ -13,7 +13,7 @@ namespace Rendering
 	class MeshRenderer : public INodeComponent
 	{
 	public:
-
+		MeshRenderer(){}
 
 		MeshRenderer(const MaterialPtr &i_pMaterial, const MeshPtr &i_pMesh)
 		{

@@ -21,7 +21,7 @@ namespace Rendering
 
 		
 		using namespace LuaPlus;
-		LuaState* luaState = LuaState::Create();
+		LuaStateOwner luaState;
 		const int luaResult = luaState->DoFile(i_path.c_str());
 
 		LuaObject matObj = luaState->GetGlobal("Material");
@@ -58,7 +58,7 @@ namespace Rendering
 			LuaObject &obj = it.GetValue();
 			const char* uniformName = it.GetKey().GetString();
 
-			//TODO: now just assuming all texture path is corrent
+			//TODO: now just assuming all texture path is correct
 			TexturePtr tex = TextureManager::GetInstance()->Load(uniformName, obj.ToString());
 			m_textureMap[uniformName] = tex;
 		}

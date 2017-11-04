@@ -31,6 +31,7 @@
 
 
 
+
 using namespace Rendering;
 
 
@@ -68,7 +69,8 @@ protected:
 	float cameraPitch;
 	float cameraYaw;
 
-
+	void SaveScene();
+	void LoadScene(const char * i_pPath);
 private:
 
 	RenderingEngine* m_pRenderingEngine;

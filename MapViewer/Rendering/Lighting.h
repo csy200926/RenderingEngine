@@ -13,7 +13,7 @@ namespace Rendering
 		NONE
 	};
 
-	class LightBase : public INodeComponent
+	class LightBase : public INodeComponent 
 	{
 	public:
 

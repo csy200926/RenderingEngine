@@ -8,14 +8,14 @@
 #include <map>
 #include <typeindex>
 
-
+#include "../ISerializable.h"
 
 namespace Rendering
 {
 	class INodeComponent;
 	typedef std::map<std::type_index, INodeComponent *> TypeComponentMap;
 
-	class SceneNode
+	class SceneNode : public ISerializable
 	{
 
 
@@ -24,6 +24,7 @@ namespace Rendering
 		glm::vec3 m_scale;
 		glm::quat m_orientation;
 
+		SceneNode(){}
 
 		SceneNode::SceneNode(std::string i_nodeName) : m_pParent(nullptr), m_name(i_nodeName)
 		{
@@ -70,7 +71,7 @@ namespace Rendering
 
 			T* pComponent = new T(args...);
 			std::type_index index(typeid(T));
-
+			printf(index.name());
 			INodeComponent *pComponentBase = static_cast<INodeComponent*>(pComponent);
 			pComponentBase->SetNode(this);
 
@@ -118,6 +119,9 @@ namespace Rendering
 		void InternalUpdate();
 
 		SceneNode *m_pParent;
+
+		virtual void Serialize(LuaPlus::LuaObject luaObject);
+		virtual void Deserialize(LuaPlus::LuaObject luaObject);
 	private:
 
 		std::string m_name;

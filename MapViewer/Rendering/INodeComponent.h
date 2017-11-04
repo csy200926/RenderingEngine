@@ -7,12 +7,13 @@
 #include <gtx/quaternion.hpp>
 
 #include "SceneNode.h"
+#include "../ISerializable.h"
 
 namespace Rendering
 {
 
 
-	class INodeComponent
+	class INodeComponent : public ISerializable
 	{
 
 	public:
@@ -39,6 +40,9 @@ namespace Rendering
 		{
 			m_pNode = i_pNode;
 		}
+
+		virtual void Serialize(LuaPlus::LuaObject luaObject){};
+		virtual void Deserialize(LuaPlus::LuaObject luaObject){};
 
 		SceneNode *m_pNode;
 		//virtual void AddToEngine(CoreEngine* engine) const { }

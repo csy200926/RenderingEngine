@@ -77,6 +77,27 @@ namespace Rendering
 		}
 	}
 
+	void SceneNode::Serialize(LuaPlus::LuaObject luaObject)
+	{
+		using namespace LuaPlus;
+		//LuaObject components = luaObject.CreateTable("Components");
+		//TypeComponentMap::iterator it = m_components.begin();
+		//for (; it != m_components.end(); it++)
+		//{
+		//	LuaObject component = components.CreateTable(components.);
+		//	it->second.Serialize();
+		//}
+
+
+	}
+
+	void SceneNode::Deserialize(LuaPlus::LuaObject luaObject)
+	{
+
+	}
+
+
+
 
 
 }

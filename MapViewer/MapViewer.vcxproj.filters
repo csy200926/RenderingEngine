@@ -65,6 +65,16 @@
     <ClCompile Include="Rendering\RenderingEngineDiffuse.cpp">
       <Filter>Rendering</Filter>
     </ClCompile>
+    <ClCompile Include="Includes\LuaPlus\LuaState_DumpObject.cpp">
+      <Filter>LuaPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\LuaPlus\LuaPlus.cpp">
+      <Filter>LuaPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="Includes\LuaPlus\LuaPlusAddons.c">
+      <Filter>LuaPlus</Filter>
+    </ClCompile>
+    <ClCompile Include="ISerializable.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BitMap\BitMap.h" />
@@ -168,6 +178,64 @@
     <ClInclude Include="Rendering\RenderingEngineDiffuse.h">
       <Filter>Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="ISerializable.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStackTableIterator.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaState.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaStateCD.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaStateOutFile.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaStateOutString.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaTableIterator.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaAutoBlock.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaCall.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaFunction.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaHelper.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaHelper_Object.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaHelper_StackObject.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaObject.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaPlus.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaPlusCD.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaPlusConfig.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaPlusInternal.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Includes\LuaPlus\LuaStackObject.h">
+      <Filter>LuaPlus</Filter>
+    </ClInclude>
+    <ClInclude Include="Rendering\Components.h">
+      <Filter>Rendering\Component_Nonfolder</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Shaders">
@@ -193,6 +261,9 @@
     </Filter>
     <Filter Include="Shaders\Advanced">
       <UniqueIdentifier>{dfcb4cce-c2ec-4202-a510-86a499ab8990}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LuaPlus">
+      <UniqueIdentifier>{4bb21574-4e39-416c-8276-f43ac4cdd41b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -237,6 +308,27 @@
     </None>
     <None Include="Shaders\phongFS.shader">
       <Filter>Shaders\Default</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaStackObject.inl">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaStackTableIterator.inl">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaState.inl">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaCall.inl">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaObject.inl">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaPlusSharedLib.jam">
+      <Filter>LuaPlus</Filter>
+    </None>
+    <None Include="Includes\LuaPlus\LuaPlusStaticLib.jam">
+      <Filter>LuaPlus</Filter>
     </None>
   </ItemGroup>
 </Project>

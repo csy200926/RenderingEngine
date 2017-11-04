@@ -9,7 +9,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 #ifndef LUAPLUS__LUAPLUS_H
 #define LUAPLUS__LUAPLUS_H
-
+#include "LuaPlusConfig.h"
 #include "LuaPlusInternal.h"
 #include "LuaStackObject.h"
 #include "LuaObject.h"

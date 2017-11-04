@@ -17,13 +17,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>false</EmbedManifest>
-    <OutDir>$(SolutionDir)Editor\Libs</OutDir>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)Editor\Libs</OutDir>
-    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,6 +107,10 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
   <ItemGroup>
     <ClCompile Include="FractalNoise.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Includes\LuaPlus\LuaPlus.cpp" />
+    <ClCompile Include="Includes\LuaPlus\LuaPlusAddons.c" />
+    <ClCompile Include="Includes\LuaPlus\LuaState_DumpObject.cpp" />
+    <ClCompile Include="ISerializable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Perlin.cpp" />
     <ClCompile Include="RandomGenerator.cpp" />
@@ -136,10 +140,30 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClInclude Include="BitMap\BitMap.h" />
     <ClInclude Include="FractalNoise.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaAutoBlock.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaCall.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaFunction.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaHelper.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaHelper_Object.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaHelper_StackObject.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaObject.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaPlus.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaPlusCD.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaPlusConfig.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaPlusInternal.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStackObject.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStackTableIterator.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaState.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStateCD.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStateOutFile.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaStateOutString.h" />
+    <ClInclude Include="Includes\LuaPlus\LuaTableIterator.h" />
+    <ClInclude Include="ISerializable.h" />
     <ClInclude Include="Perlin.h" />
     <ClInclude Include="RandomGenerator.h" />
     <ClInclude Include="RenderingGame.h" />
     <ClInclude Include="Rendering\Camera.h" />
+    <ClInclude Include="Rendering\Components.h" />
     <ClInclude Include="Rendering\GUI.h" />
     <ClInclude Include="Rendering\INodeComponent.h" />
     <ClInclude Include="Rendering\InputManager.h" />
@@ -174,6 +198,13 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
     <ClInclude Include="Utilities\WinTiming.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Includes\LuaPlus\LuaCall.inl" />
+    <None Include="Includes\LuaPlus\LuaObject.inl" />
+    <None Include="Includes\LuaPlus\LuaPlusSharedLib.jam" />
+    <None Include="Includes\LuaPlus\LuaPlusStaticLib.jam" />
+    <None Include="Includes\LuaPlus\LuaStackObject.inl" />
+    <None Include="Includes\LuaPlus\LuaStackTableIterator.inl" />
+    <None Include="Includes\LuaPlus\LuaState.inl" />
     <None Include="Shaders\cube_convolution_fs.shader" />
     <None Include="Shaders\cube_convolution_vs.shader" />
     <None Include="Shaders\cube_fs.shader" />
