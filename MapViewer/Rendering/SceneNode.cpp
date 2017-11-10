@@ -77,21 +77,31 @@ namespace Rendering
 		}
 	}
 
-	void SceneNode::Serialize(LuaPlus::LuaObject luaObject)
+	void SceneNode::Serialize(LuaPlus::LuaObject &luaObject)
 	{
 		using namespace LuaPlus;
-		//LuaObject components = luaObject.CreateTable("Components");
-		//TypeComponentMap::iterator it = m_components.begin();
-		//for (; it != m_components.end(); it++)
-		//{
-		//	LuaObject component = components.CreateTable(components.);
-		//	it->second.Serialize();
-		//}
+		using namespace std;
 
+		LuaObject components = luaObject.CreateTable("Components");
+		TypeComponentMap::iterator it = m_components.begin();
+		for (; it != m_components.end(); it++)
+		{
+			string name = SerializableFactory::GetStringByTypeIndex(it->first);
+			LuaObject component_lua = components.CreateTable(name.c_str());
+			it->second->Serialize(component_lua);
+		}
+		
+		// Serialize transform
+		LuaObject position_lua = luaObject.CreateTable("Position");
+		LuaObject scale_lua = luaObject.CreateTable("Scale");
+		LuaObject orientation_lua = luaObject.CreateTable("Orientation");
+		ISerializable::SerilizeVec3(position_lua, m_position);
+		ISerializable::SerilizeVec3(scale_lua, m_scale);
+		ISerializable::SerilizeQuat(orientation_lua, m_orientation);
 
 	}
 
-	void SceneNode::Deserialize(LuaPlus::LuaObject luaObject)
+	void SceneNode::Deserialize(LuaPlus::LuaObject &luaObject)
 	{
 
 	}

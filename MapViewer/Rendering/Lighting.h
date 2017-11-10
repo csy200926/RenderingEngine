@@ -7,7 +7,7 @@ namespace Rendering
 {
 	enum LightType
 	{
-		DIRECTIONAL,
+		DIRECTIONAL = 0,
 		POINT,
 		SPOT,
 		NONE
@@ -64,6 +64,20 @@ namespace Rendering
 
 		// TODO: Hack
 		glm::vec3 GetDirection(){ return glm::vec3(-1.0f, -1.0f, -1.0f); }
+
+		void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+			luaObject.SetInteger("Type", (int)m_type);
+
+
+			ISerializable::SerilizeVec3(luaObject,)
+
+		}
+
+		void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
 	};
 	class PointLight :public LightBase
 	{
@@ -72,6 +86,16 @@ namespace Rendering
 		{
 			m_type = POINT;
 			AddToEngine();
+		}
+
+		void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
+
+		void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
+
 		}
 	};
 	class SpotLight :public LightBase
@@ -83,6 +107,16 @@ namespace Rendering
 			AddToEngine();
 		}
 		float m_cutoff;
+
+		void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
+
+		void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
 	};
 
 }

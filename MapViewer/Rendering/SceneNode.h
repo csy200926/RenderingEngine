@@ -120,8 +120,8 @@ namespace Rendering
 
 		SceneNode *m_pParent;
 
-		virtual void Serialize(LuaPlus::LuaObject luaObject);
-		virtual void Deserialize(LuaPlus::LuaObject luaObject);
+		virtual void Serialize(LuaPlus::LuaObject &luaObject);
+		virtual void Deserialize(LuaPlus::LuaObject &luaObject);
 	private:
 
 		std::string m_name;

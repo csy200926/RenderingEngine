@@ -41,8 +41,8 @@ namespace Rendering
 			m_pNode = i_pNode;
 		}
 
-		virtual void Serialize(LuaPlus::LuaObject luaObject){};
-		virtual void Deserialize(LuaPlus::LuaObject luaObject){};
+		virtual void Serialize(LuaPlus::LuaObject &luaObject){};
+		virtual void Deserialize(LuaPlus::LuaObject &luaObject){};
 
 		SceneNode *m_pNode;
 		//virtual void AddToEngine(CoreEngine* engine) const { }

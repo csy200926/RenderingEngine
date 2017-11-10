@@ -3,4 +3,5 @@
 #include "ISerializable.h"
 
 
-SerializableFactory::TypeMap SerializableFactory::m_classes;
+SerializableFactory::TypeConstructorMap SerializableFactory::s_classes;
+SerializableFactory::TypeNameMap SerializableFactory::s_nameMap;

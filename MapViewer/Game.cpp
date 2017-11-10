@@ -56,7 +56,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pRenderingEngine->SetRootNode(m_pRootNode);
 	m_pRenderingEngine->Initilize();
 	
-	SaveScene();
+	
 
 	OnStart();
 
@@ -66,7 +66,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	REGISTER_CLASS(SpotLight);
 	REGISTER_CLASS(MeshRenderer);
 	REGISTER_CLASS(SceneNode);
-
+	SaveScene();
 
 }
 
@@ -289,17 +289,17 @@ void Game::UpdateFrame()
 
 void Game::SaveScene()
 {
-
+	using namespace std;
 	using namespace LuaPlus;
 
 	LuaStateOwner state;
 	LuaObject scene = state->GetGlobals().CreateTable("Scene");
 
 	LuaObject rootNode = scene.CreateTable("SceneNode");
-//	m_pRootNode->Serialize(rootNode);
+
+	m_pRootNode->Serialize(rootNode);
 
 	state->DumpObject("Scene.lua", "Scene", scene);
-
 	////example
 	//{
 	//	LuaStateOwner state;
