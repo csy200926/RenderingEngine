@@ -4,11 +4,13 @@
 #include <memory>
 
 #include "IResources.h"
+#include "../ISerializable.h"
+
 namespace Rendering
 {
 
 	typedef std::map<std::string, ResourcePtr> ResourceMap;
-	class IResourceManager
+	class IResourceManager : public ISerializable
 	{
 
 	public:
@@ -34,12 +36,24 @@ namespace Rendering
 
 		virtual ResourcePtr GetResByHandle(int temp)
 		{
-			
 			return ResourcePtr(nullptr);
+		}
+
+		virtual void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+			ResourceMap::iterator it = m_nameResMap.begin();
+			for (; it != m_nameResMap.end(); it++)
+			{
+				LuaObject resFile_lua = luaObject.CreateTable("ResourcesFile");
+
+			}
 
 		}
 
+		virtual void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
 
+		}
 
 	protected:
 
@@ -49,6 +63,8 @@ namespace Rendering
 		{
 
 			ResourcePtr resPtr = Create(i_path);
+			resPtr->m_name = i_name;
+			resPtr->m_fileName = i_path;
 
 			m_nameResMap.insert(make_pair(i_name, resPtr));
 

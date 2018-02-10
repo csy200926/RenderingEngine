@@ -66,13 +66,15 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	REGISTER_CLASS(SpotLight);
 	REGISTER_CLASS(MeshRenderer);
 	REGISTER_CLASS(SceneNode);
-	SaveScene();
+	
 
 }
 
 
 void Game::ShutDown()
 {
+	SaveScene();
+
 	delete m_pRootNode;
 
 	InputManager::DestroyInstance();
@@ -295,11 +297,12 @@ void Game::SaveScene()
 	LuaStateOwner state;
 	LuaObject scene = state->GetGlobals().CreateTable("Scene");
 
-	LuaObject rootNode = scene.CreateTable("SceneNode");
+	LuaObject rootNode = scene.CreateTable("RootNode");
 
 	m_pRootNode->Serialize(rootNode);
 
 	state->DumpObject("Scene.lua", "Scene", scene);
+
 	////example
 	//{
 	//	LuaStateOwner state;

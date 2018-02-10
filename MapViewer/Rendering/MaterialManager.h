@@ -26,6 +26,8 @@ namespace Rendering
 			return std::static_pointer_cast<Material>(IResourceManager::GetResourceByName(i_name));
 		}
 
+
+
 	};
 
 

@@ -19,7 +19,7 @@ void RenderingGame::OnStart()
 
 	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, tableMesh);
 
-	return;
+	
 	//Point lights test
 	{
 		SceneNode *pLightNode_1 = new SceneNode("Light1");

@@ -81,16 +81,16 @@ public:
 
 	static void SerilizeVec3(LuaPlus::LuaObject &luaObject, glm::vec3 &vec3)
 	{
-		luaObject.SetNumber("x", vec3.x);
-		luaObject.SetNumber("y", vec3.y);
-		luaObject.SetNumber("z", vec3.z);
+		luaObject.SetNumber("x", 1);
+		luaObject.SetNumber("y", 1);
+		luaObject.SetNumber("z", 1);
 	}
 
 	static void SerilizeQuat(LuaPlus::LuaObject &luaObject, glm::quat &quat)
 	{
-		luaObject.SetNumber("x", quat.x);
-		luaObject.SetNumber("y", quat.y);
-		luaObject.SetNumber("z", quat.z);
-		luaObject.SetNumber("w", quat.w);
+		luaObject.SetNumber("x", 1);
+		luaObject.SetNumber("y", 1);
+		luaObject.SetNumber("z", 1);
+		luaObject.SetNumber("w", 1);
 	}
 };

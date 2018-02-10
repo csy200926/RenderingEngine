@@ -76,7 +76,7 @@ namespace Rendering
 
 	Material::Material()
 	{
-
+		m_type = RT_Material;
 	}
 
 

@@ -47,6 +47,23 @@ namespace Rendering
 			}
 			return false;
 		}
+		void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+			using namespace LuaPlus;
+			LuaObject materials_lua = luaObject.CreateTable("Materials");
+
+			for (int i = 0; i < m_pMaterials.size(); i++)
+			{
+				materials_lua.SetString(i, m_pMaterials[i]->m_name.c_str());
+			}
+
+			luaObject.SetString("Mesh", m_pMesh->m_name.c_str());
+		}
+
+		void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
 	private:
 		std::vector<MaterialPtr> m_pMaterials;
 		MeshPtr m_pMesh;

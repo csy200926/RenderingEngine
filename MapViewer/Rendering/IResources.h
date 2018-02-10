@@ -9,7 +9,7 @@ namespace Rendering
 
 	enum ResourceType
 	{
-		RT_Texture,
+		RT_Texture = 0,
 		RT_Mesh,
 		RT_Shader,
 		RT_Material,
@@ -28,12 +28,12 @@ namespace Rendering
 
 		virtual void Load(){};
 
+		std::string m_fileName;
+		std::string m_name;
 
 	protected:
-		IResourceManager* m_pCreator;
 
-		std::string m_name;
-		std::string m_fileName;
+		IResourceManager* m_pCreator;
 
 		ResourceType m_type;
 	};

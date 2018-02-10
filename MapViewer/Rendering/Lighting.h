@@ -31,6 +31,31 @@ namespace Rendering
 
 		LightType GetType(){ return m_type; }
 		bool IsActivated(){ return m_isActivated; }
+
+		void Serialize(LuaPlus::LuaObject &luaObject)
+		{
+			using namespace LuaPlus;
+			luaObject.SetInteger("Type", (int)m_type);
+			luaObject.SetBoolean("Enable", m_isActivated);
+
+			LuaObject diffuse_lua = luaObject.CreateTable("Diffuse");
+			ISerializable::SerilizeVec3(diffuse_lua, m_diffuse);
+
+			LuaObject specular_lua = luaObject.CreateTable("Specular");
+			ISerializable::SerilizeVec3(specular_lua, m_specular);
+
+			luaObject.SetNumber("Intensity", m_intensity);
+			luaObject.SetNumber("Constant", m_constant);
+			luaObject.SetNumber("Linear", m_linear);
+			luaObject.SetNumber("Quadratic", m_quadratic);
+
+
+		}
+
+		void Deserialize(LuaPlus::LuaObject &luaObject)
+		{
+
+		}
 	protected:
 
 		void AddToEngine();
@@ -65,19 +90,7 @@ namespace Rendering
 		// TODO: Hack
 		glm::vec3 GetDirection(){ return glm::vec3(-1.0f, -1.0f, -1.0f); }
 
-		void Serialize(LuaPlus::LuaObject &luaObject)
-		{
-			luaObject.SetInteger("Type", (int)m_type);
 
-
-			ISerializable::SerilizeVec3(luaObject,)
-
-		}
-
-		void Deserialize(LuaPlus::LuaObject &luaObject)
-		{
-
-		}
 	};
 	class PointLight :public LightBase
 	{
@@ -88,15 +101,6 @@ namespace Rendering
 			AddToEngine();
 		}
 
-		void Serialize(LuaPlus::LuaObject &luaObject)
-		{
-
-		}
-
-		void Deserialize(LuaPlus::LuaObject &luaObject)
-		{
-
-		}
 	};
 	class SpotLight :public LightBase
 	{
@@ -110,11 +114,14 @@ namespace Rendering
 
 		void Serialize(LuaPlus::LuaObject &luaObject)
 		{
-
+			using namespace LuaPlus;
+			LightBase::Serialize(luaObject);
+			luaObject.SetNumber("Cutoff", m_cutoff);
 		}
 
 		void Deserialize(LuaPlus::LuaObject &luaObject)
 		{
+			using namespace LuaPlus;
 
 		}
 	};

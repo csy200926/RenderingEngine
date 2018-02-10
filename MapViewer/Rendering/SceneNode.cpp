@@ -82,15 +82,6 @@ namespace Rendering
 		using namespace LuaPlus;
 		using namespace std;
 
-		LuaObject components = luaObject.CreateTable("Components");
-		TypeComponentMap::iterator it = m_components.begin();
-		for (; it != m_components.end(); it++)
-		{
-			string name = SerializableFactory::GetStringByTypeIndex(it->first);
-			LuaObject component_lua = components.CreateTable(name.c_str());
-			it->second->Serialize(component_lua);
-		}
-		
 		// Serialize transform
 		LuaObject position_lua = luaObject.CreateTable("Position");
 		LuaObject scale_lua = luaObject.CreateTable("Scale");
@@ -98,6 +89,29 @@ namespace Rendering
 		ISerializable::SerilizeVec3(position_lua, m_position);
 		ISerializable::SerilizeVec3(scale_lua, m_scale);
 		ISerializable::SerilizeQuat(orientation_lua, m_orientation);
+
+		// Components
+		if (m_components.size() > 0)
+		{
+			LuaObject components = luaObject.CreateTable("Components");
+			TypeComponentMap::iterator it = m_components.begin();
+			for (; it != m_components.end(); it++)
+			{
+				string name = SerializableFactory::GetStringByTypeIndex(it->first);
+				LuaObject component_lua = components.CreateTable(name.c_str());
+				it->second->Serialize(component_lua);
+			}
+		}
+
+		// Children nodes
+		if (m_children.size() > 0)
+		{
+			LuaObject children_lua = luaObject.CreateTable("Children");
+			for (int i = 0; i < m_children.size(); i++)
+			{
+				m_children[i]->Serialize(children_lua.CreateTable(m_children[i]->m_name.c_str()));
+			}
+		}
 
 	}
 

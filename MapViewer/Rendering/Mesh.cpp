@@ -94,7 +94,7 @@ namespace Rendering
 
 	Mesh::Mesh(std::vector<Vertex> &vertices, std::vector<GLuint> &indices)
 	{
-
+		m_type = RT_Mesh;
 	}
 
 
