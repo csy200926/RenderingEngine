@@ -71,7 +71,7 @@ namespace Rendering
 
 			T* pComponent = new T(args...);
 			std::type_index index(typeid(T));
-			printf(index.name());
+			//printf(index.name());
 			INodeComponent *pComponentBase = static_cast<INodeComponent*>(pComponent);
 			pComponentBase->SetNode(this);
 

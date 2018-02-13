@@ -9,16 +9,18 @@ void RenderingGame::OnStart()
 	using namespace std;
 	Game::OnStart();
 
-
+	LoadScene("Scene.lua");
+	return;
+	m_pTextureManager->Load("terrain", "Images/terrain.png");
 	
-	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/table.obj");
+	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/untitled.fbx");
 	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
-	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/WoodSeemles.jpg");
+	
+	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/defaultTex.jpg");
 	defaultMat->SetTexture(woodTexture);
-
+	
 	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, tableMesh);
-
 	
 	//Point lights test
 	{

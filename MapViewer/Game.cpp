@@ -56,16 +56,16 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	m_pRenderingEngine->SetRootNode(m_pRootNode);
 	m_pRenderingEngine->Initilize();
 	
-	
-
-	OnStart();
-
 	// Simple reflections
 	REGISTER_CLASS(DirectionalLight);
 	REGISTER_CLASS(PointLight);
 	REGISTER_CLASS(SpotLight);
 	REGISTER_CLASS(MeshRenderer);
 	REGISTER_CLASS(SceneNode);
+
+	OnStart();
+
+
 	
 
 }
@@ -293,6 +293,9 @@ void Game::SaveScene()
 {
 	using namespace std;
 	using namespace LuaPlus;
+	return;
+
+
 
 	LuaStateOwner state;
 	LuaObject scene = state->GetGlobals().CreateTable("Scene");
@@ -301,7 +304,20 @@ void Game::SaveScene()
 
 	m_pRootNode->Serialize(rootNode);
 
+	LuaObject matMgrObj = scene.CreateTable("MaterialManager");
+	MaterialManager::GetInstance()->Serialize(matMgrObj);
+
+
+	LuaObject MeshMgrObj = scene.CreateTable("MeshManager");
+	MeshManager::GetInstance()->Serialize(MeshMgrObj);
+
+
+	LuaObject texMgrObj = scene.CreateTable("TextureManager");
+	TextureManager::GetInstance()->Serialize(texMgrObj);
+
 	state->DumpObject("Scene.lua", "Scene", scene);
+
+
 
 	////example
 	//{
@@ -327,6 +343,44 @@ void Game::SaveScene()
 void Game::LoadScene(const char * i_pPath)
 {
 
+	using namespace LuaPlus;
+	LuaStateOwner luaState;
+	const int luaResult = luaState->DoFile(i_pPath);
+
+	LuaObject mainSceneObj = luaState->GetGlobal("Scene");
+
+	LuaObject texMgrObj = mainSceneObj["TextureManager"];
+	for (LuaTableIterator it(texMgrObj); it; it.Next())
+	{
+		LuaObject &obj = it.GetValue();
+		const char* resName = it.GetKey().GetString();
+		const char* filePath = obj["Path"].ToString();
+
+		m_pTextureManager->Load(resName, filePath);
+	}
+
+	LuaObject matMgrObj = mainSceneObj["MaterialManager"];
+	for (LuaTableIterator it(matMgrObj); it; it.Next())
+	{
+		LuaObject &obj = it.GetValue();
+		const char* resName = it.GetKey().GetString();
+		const char* filePath = obj["Path"].ToString();
+
+		m_pMaterialManager->Load(resName, filePath);
+	}
+
+	LuaObject meshMgrObj = mainSceneObj["MeshManager"];
+	for (LuaTableIterator it(meshMgrObj); it; it.Next())
+	{
+		LuaObject &obj = it.GetValue();
+		const char* resName = it.GetKey().GetString();
+		const char* filePath = obj["Path"].ToString();
+
+		m_pMeshManager->Load(resName, filePath);
+	}
+
+	LuaObject rootNodeObj = mainSceneObj["RootNode"];
+	m_pRootNode->Deserialize(rootNodeObj);
 }
 
 #pragma endregion External Calls

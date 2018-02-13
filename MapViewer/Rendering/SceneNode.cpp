@@ -1,5 +1,6 @@
 #include "SceneNode.h"
 #include "INodeComponent.h"
+#include "MeshRenderer.h"
 namespace Rendering
 {
 
@@ -117,6 +118,29 @@ namespace Rendering
 
 	void SceneNode::Deserialize(LuaPlus::LuaObject &luaObject)
 	{
+		using namespace LuaPlus;
+		using namespace std;
+
+		// Deserialize transform
+		LuaObject componentsObj = luaObject["Components"];
+		for (LuaTableIterator it(componentsObj); it; it.Next())
+		{
+			
+			const char* componentName = it.GetKey().GetString();
+			INodeComponent* pComponent = static_cast<INodeComponent*>(CREATE_CLASS(componentName));
+			
+			LuaObject &obj = it.GetValue();
+			pComponent->Deserialize(obj);
+
+			std::type_index index(typeid(pComponent));
+
+			std::type_index index2(typeid(Rendering::MeshRenderer));
+			int i = 0;
+
+		}
+
+
+
 
 	}
 

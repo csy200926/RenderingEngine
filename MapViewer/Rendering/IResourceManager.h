@@ -41,11 +41,12 @@ namespace Rendering
 
 		virtual void Serialize(LuaPlus::LuaObject &luaObject)
 		{
+			using namespace LuaPlus;
 			ResourceMap::iterator it = m_nameResMap.begin();
 			for (; it != m_nameResMap.end(); it++)
 			{
-				LuaObject resFile_lua = luaObject.CreateTable("ResourcesFile");
-
+				LuaObject resFile_lua = luaObject.CreateTable(it->second->m_name.c_str());
+				resFile_lua.SetString("Path", it->second->m_fileName.c_str());
 			}
 
 		}

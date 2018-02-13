@@ -62,7 +62,7 @@ namespace Rendering
 
 		void Deserialize(LuaPlus::LuaObject &luaObject)
 		{
-
+			int debug = 0;
 		}
 	private:
 		std::vector<MaterialPtr> m_pMaterials;
