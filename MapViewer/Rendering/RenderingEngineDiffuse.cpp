@@ -20,16 +20,17 @@ namespace Rendering
 
 	void RenderingEngineDiffuse::Render()
 	{
-		
+
+
 		glClearColor(0.1f, 1.0f, 0.1f, 1.0f);
 
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 
-		m_defaultMat->Activate();
+		//m_defaultMat->Activate();
 
 		m_pRootNode->Draw();
 
-	}
+ 	}
 
 
 	void RenderingEngineDiffuse::Initilize()

@@ -10,10 +10,10 @@ void RenderingGame::OnStart()
 	Game::OnStart();
 
 	LoadScene("Scene.lua");
-	return;
+	//return;
 	m_pTextureManager->Load("terrain", "Images/terrain.png");
 	
-	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/untitled.fbx");
+	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/Maskboy.fbx");
 	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
 	
@@ -23,21 +23,29 @@ void RenderingGame::OnStart()
 	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, tableMesh);
 	
 	//Point lights test
-	{
-		SceneNode *pLightNode_1 = new SceneNode("Light1");
-		m_pRootNode->AddChild(pLightNode_1);
+	{		
+	/*	SceneNode *pDirLightNode = new SceneNode("DirLight");
+		m_pRootNode->AddChild(pDirLightNode);
 
-		PointLight* pPointLight_1 = pLightNode_1->AddComponent<PointLight>();
-		pPointLight_1->SetColor(vec3(0.0f, 1.0f, 0.0f));
-		pLightNode_1->m_position = glm::vec3(0, -5, 0);
+		DirectionalLight* pDirLight = pDirLightNode->AddComponent<DirectionalLight>();
+		pDirLight->SetColor(vec3(0.0f, 1.0f, 0.0f));
+		pDirLightNode->m_position = glm::vec3(0, -5, 0);*/
 
 
-		SceneNode *pLightNode_2 = new SceneNode("Light2");
-		m_pRootNode->AddChild(pLightNode_2);
+		//SceneNode *pLightNode_1 = new SceneNode("Light1");
+		//m_pRootNode->AddChild(pLightNode_1);
 
-		PointLight* pPointLight_2 = pLightNode_2->AddComponent<PointLight>();
-		pPointLight_2->SetColor(vec3(0.0f, 0.0f, 1.0f));
-		pLightNode_2->m_position = glm::vec3(15, -5, 0);
+		//PointLight* pPointLight_1 = pLightNode_1->AddComponent<PointLight>();
+		//pPointLight_1->SetColor(vec3(0.0f, 1.0f, 0.0f));
+		//pLightNode_1->m_position = glm::vec3(0, -5, 0);
+
+
+		//SceneNode *pLightNode_2 = new SceneNode("Light2");
+		//m_pRootNode->AddChild(pLightNode_2);
+
+		//PointLight* pPointLight_2 = pLightNode_2->AddComponent<PointLight>();
+		//pPointLight_2->SetColor(vec3(0.0f, 0.0f, 1.0f));
+		//pLightNode_2->m_position = glm::vec3(15, -5, 0);
 	}
 
 

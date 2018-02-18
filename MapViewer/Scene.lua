@@ -27,9 +27,9 @@ Scene =
 						Constant = 0.20000000298023,
 						Diffuse = 
 						{
-							x = 1,
+							x = 0,
 							y = 1,
-							z = 1,
+							z = 0,
 						},
 						Enable = true,
 						Intensity = 1,
@@ -47,15 +47,15 @@ Scene =
 				Orientation = 
 				{
 					w = 1,
-					x = 1,
-					y = 1,
-					z = 1,
+					x = 0,
+					y = 0,
+					z = 0,
 				},
 				Position = 
 				{
-					x = 1,
-					y = 1,
-					z = 1,
+					x = 0,
+					y = -5,
+					z = 0,
 				},
 				Scale = 
 				{
@@ -73,8 +73,8 @@ Scene =
 						Constant = 0.20000000298023,
 						Diffuse = 
 						{
-							x = 1,
-							y = 1,
+							x = 0,
+							y = 0,
 							z = 1,
 						},
 						Enable = true,
@@ -93,15 +93,15 @@ Scene =
 				Orientation = 
 				{
 					w = 1,
-					x = 1,
-					y = 1,
-					z = 1,
+					x = 0,
+					y = 0,
+					z = 0,
 				},
 				Position = 
 				{
-					x = 1,
-					y = 1,
-					z = 1,
+					x = 15,
+					y = -5,
+					z = 0,
 				},
 				Scale = 
 				{
@@ -125,15 +125,15 @@ Scene =
 		Orientation = 
 		{
 			w = 1,
-			x = 1,
-			y = 1,
-			z = 1,
+			x = 0,
+			y = 0,
+			z = 0,
 		},
 		Position = 
 		{
-			x = 1,
-			y = 1,
-			z = 1,
+			x = 0,
+			y = 0,
+			z = 0,
 		},
 		Scale = 
 		{

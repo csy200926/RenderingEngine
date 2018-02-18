@@ -1,5 +1,7 @@
 #pragma once
 #include "INodeComponent.h"
+#include "MeshManager.h"
+#include "MaterialManager.h"
 
 #include <memory>
 #include "Material.h"
@@ -62,7 +64,19 @@ namespace Rendering
 
 		void Deserialize(LuaPlus::LuaObject &luaObject)
 		{
-			int debug = 0;
+			using namespace LuaPlus;
+			using namespace std;
+
+			LuaObject matObj = luaObject["Materials"];
+			string matName = matObj[0].ToString();
+			string mesName = luaObject["Mesh"].ToString();
+
+			MeshPtr meshPtr = MeshManager::GetInstance()->GetByName(mesName);
+			MaterialPtr matPtr = MaterialManager::GetInstance()->GetByName(matName);
+
+			m_pMesh = meshPtr;
+			m_pMaterials.push_back(matPtr);
+
 		}
 	private:
 		std::vector<MaterialPtr> m_pMaterials;

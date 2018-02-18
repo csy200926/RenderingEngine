@@ -82,7 +82,7 @@ namespace Rendering
 	{
 		using namespace LuaPlus;
 		using namespace std;
-
+		
 		// Serialize transform
 		LuaObject position_lua = luaObject.CreateTable("Position");
 		LuaObject scale_lua = luaObject.CreateTable("Scale");
@@ -132,15 +132,42 @@ namespace Rendering
 			LuaObject &obj = it.GetValue();
 			pComponent->Deserialize(obj);
 
-			std::type_index index(typeid(pComponent));
+			std::type_index index = SerializableFactory::GetTypeByString(componentName);
 
-			std::type_index index2(typeid(Rendering::MeshRenderer));
+			pComponent->SetNode(this);
+
+			if (m_components.find(index) == m_components.end())
+				m_components.insert(make_pair(index, pComponent));
+			else
+				printf("SceneNode-AddComponent:only one instance of each type can be added.");
+
 			int i = 0;
 
 		}
+		LuaObject orientationObj = luaObject["Orientation"];
+		m_orientation = ISerializable::DeserilizeQuat(orientationObj);
 
+		LuaObject positionObj = luaObject["Position"];
+		m_position = ISerializable::DeserilizeVec3(positionObj);
 
+		LuaObject scaleObj = luaObject["Scale"];
+		m_scale = ISerializable::DeserilizeVec3(scaleObj);
 
+		LuaObject childObj = luaObject["Children"]; 
+
+		if (childObj.IsNil() == false)
+		{
+			for (LuaTableIterator it(childObj); it; it.Next())
+			{
+				const char* nodeName = it.GetKey().GetString();
+				SceneNode *pChildNode = new SceneNode(nodeName);
+
+				LuaObject &obj = it.GetValue();
+				pChildNode->Deserialize(obj);
+
+				AddChild(pChildNode);
+			}
+		}
 
 	}
 

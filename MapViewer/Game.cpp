@@ -293,8 +293,8 @@ void Game::SaveScene()
 {
 	using namespace std;
 	using namespace LuaPlus;
+	
 	return;
-
 
 
 	LuaStateOwner state;
@@ -342,7 +342,7 @@ void Game::SaveScene()
 
 void Game::LoadScene(const char * i_pPath)
 {
-
+	return; 
 	using namespace LuaPlus;
 	LuaStateOwner luaState;
 	const int luaResult = luaState->DoFile(i_pPath);
@@ -381,6 +381,7 @@ void Game::LoadScene(const char * i_pPath)
 
 	LuaObject rootNodeObj = mainSceneObj["RootNode"];
 	m_pRootNode->Deserialize(rootNodeObj);
+	
 }
 
 #pragma endregion External Calls

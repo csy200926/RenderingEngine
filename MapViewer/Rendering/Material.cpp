@@ -125,34 +125,34 @@ namespace Rendering
 	{
 		glUseProgram(m_program);
 
-		for (auto const &it_vec3 : m_vector3Map)
-		{
-			glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()),
-				it_vec3.second.r,
-				it_vec3.second.g,
-				it_vec3.second.b);
-		}
+		//for (auto const &it_vec3 : m_vector3Map)
+		//{
+		//	glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()),
+		//		it_vec3.second.r,
+		//		it_vec3.second.g,
+		//		it_vec3.second.b);
+		//}
 
-		for (auto const &it_float : m_floatMap)
-		{
-			glUniform1f(glGetUniformLocation(m_program, it_float.first.c_str()), it_float.second);
-		}
+		//for (auto const &it_float : m_floatMap)
+		//{
+		//	glUniform1f(glGetUniformLocation(m_program, it_float.first.c_str()), it_float.second);
+		//}
 
-		int texIndex = 0;
-		for (auto const &it_tex : m_textureMap)
-		{
-			glActiveTexture(GL_TEXTURE0 + texIndex);
-			it_tex.second->Bind();
-			texIndex++;
-		}
+		//int texIndex = 0;
+		//for (auto const &it_tex : m_textureMap)
+		//{
+		//	glActiveTexture(GL_TEXTURE0 + texIndex);
+		//	it_tex.second->Bind();
+		//	texIndex++;
+		//}
 
 		glUniformMatrix4fv(m_PMatrixLocation, 1, GL_FALSE, &Camera::Projective_Matrix[0][0]);
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);
 		glUniformMatrix4fv(m_MMatrixLocation, 1, GL_FALSE, &Camera::ModelToWorld_Matrix[0][0]);
 
-		if (m_texture.get() != NULL)
+	/*	if (m_texture.get() != NULL)
 			m_texture->Activate();
-
+*/
 
 	}
 

@@ -4,4 +4,5 @@
 
 
 SerializableFactory::TypeConstructorMap SerializableFactory::s_classes;
-SerializableFactory::TypeNameMap SerializableFactory::s_nameMap;
+SerializableFactory::TypeNameMap SerializableFactory::s_typeNameMap;
+SerializableFactory::NameTypeMap SerializableFactory::s_nameTypeMap;

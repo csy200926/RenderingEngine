@@ -62,6 +62,8 @@ namespace Rendering
 
 		ResourcePtr Load(const std::string& i_name, const std::string& i_path)
 		{
+			if (m_nameResMap.find(i_name) != m_nameResMap.end())
+				return nullptr;
 
 			ResourcePtr resPtr = Create(i_path);
 			resPtr->m_name = i_name;

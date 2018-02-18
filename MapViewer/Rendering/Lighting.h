@@ -54,6 +54,14 @@ namespace Rendering
 
 		void Deserialize(LuaPlus::LuaObject &luaObject)
 		{
+			m_constant = luaObject["Constant"].ToNumber();
+			m_diffuse = ISerializable::DeserilizeVec3(luaObject["Diffuse"]);
+			m_isActivated = luaObject["Enable"].ToString() == "true" ? true : false;
+			m_intensity = luaObject["Intensity"].ToNumber();
+			m_linear = luaObject["Linear"].ToNumber();
+			m_quadratic = luaObject["Quadratic"].ToNumber();
+			m_specular = ISerializable::DeserilizeVec3(luaObject["Specular"]);
+			m_type = (LightType)luaObject["Type"].ToInteger();
 
 		}
 	protected:
@@ -84,7 +92,7 @@ namespace Rendering
 		DirectionalLight()
 		{
 			m_type = DIRECTIONAL;
-			AddToEngine();
+			AddToEngine(); 
 		}
 
 		// TODO: Hack
