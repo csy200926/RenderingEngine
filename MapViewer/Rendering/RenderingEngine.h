@@ -74,6 +74,8 @@ namespace Rendering
 		void UpdatePointLightUniform(Material *i_pMaterial);
 		void UpdateDirctLightUniform(Material *i_pMaterial);
 
+		void UpdateDirctLightUniform(GLint program);
+
 		MaterialPtr m_defaultMat;
 		MaterialPtr m_screenMat;
 

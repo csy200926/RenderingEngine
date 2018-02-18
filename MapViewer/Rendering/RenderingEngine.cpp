@@ -73,6 +73,24 @@ namespace Rendering
 		}
 	}
 
+	void RenderingEngine::UpdateDirctLightUniform(GLint program)
+	{
+
+
+		GLint viewPosLoc = glGetUniformLocation(program, "viewPos");
+		Camera *pCurrentCamera = Rendering::Camera::GetInstance();
+		glUniform3f(viewPosLoc, pCurrentCamera->cameraPos.x, pCurrentCamera->cameraPos.y, pCurrentCamera->cameraPos.z);
+
+		glm::vec3 position = m_pDirectionalLight->GetPosition();
+		glm::vec3 diffuse = m_pDirectionalLight->m_diffuse;
+		glm::vec3 specular = m_pDirectionalLight->m_specular;
+		glm::vec3 direction = m_pDirectionalLight->GetDirection();
+
+		glUniform3f(glGetUniformLocation(program, "dirLight.direction"), direction.x, direction.y, direction.z);
+		glUniform3f(glGetUniformLocation(program, "dirLight.diffuse"), diffuse.x, diffuse.y, diffuse.z);
+		glUniform3f(glGetUniformLocation(program, "dirLight.specular"), specular.x, specular.y, specular.z);
+	}
+
 	void RenderingEngine::UpdateDirctLightUniform(Material *i_pMaterial)
 	{
 		GLint program = i_pMaterial->GetProgram();

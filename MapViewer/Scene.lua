@@ -11,18 +11,18 @@ Scene =
 	{
 		Table = 
 		{
-			Path = "Models/untitled.fbx",
+			Path = "Models/test.obj",
 		},
 	},
 	RootNode = 
 	{
 		Children = 
 		{
-			Light1 = 
+			DirLight = 
 			{
 				Components = 
 				{
-					PointLight = 
+					DirectionalLight = 
 					{
 						Constant = 0.20000000298023,
 						Diffuse = 
@@ -41,7 +41,7 @@ Scene =
 							y = 1,
 							z = 1,
 						},
-						Type = 1,
+						Type = 0,
 					},
 				},
 				Orientation = 
@@ -52,55 +52,9 @@ Scene =
 					z = 0,
 				},
 				Position = 
-				{
-					x = 0,
-					y = -5,
-					z = 0,
-				},
-				Scale = 
 				{
 					x = 1,
-					y = 1,
-					z = 1,
-				},
-			},
-			Light2 = 
-			{
-				Components = 
-				{
-					PointLight = 
-					{
-						Constant = 0.20000000298023,
-						Diffuse = 
-						{
-							x = 0,
-							y = 0,
-							z = 1,
-						},
-						Enable = true,
-						Intensity = 1,
-						Linear = 0.029999999329448,
-						Quadratic = 0.0099999997764826,
-						Specular = 
-						{
-							x = 1,
-							y = 1,
-							z = 1,
-						},
-						Type = 1,
-					},
-				},
-				Orientation = 
-				{
-					w = 1,
-					x = 0,
 					y = 0,
-					z = 0,
-				},
-				Position = 
-				{
-					x = 15,
-					y = -5,
 					z = 0,
 				},
 				Scale = 

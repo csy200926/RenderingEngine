@@ -9,11 +9,11 @@ void RenderingGame::OnStart()
 	using namespace std;
 	Game::OnStart();
 
-	LoadScene("Scene.lua");
+	//LoadScene("Scene.lua");
 	//return;
 	m_pTextureManager->Load("terrain", "Images/terrain.png");
 	
-	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/Maskboy.fbx");
+	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/test.obj");
 	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
 	
@@ -24,12 +24,12 @@ void RenderingGame::OnStart()
 	
 	//Point lights test
 	{		
-	/*	SceneNode *pDirLightNode = new SceneNode("DirLight");
+		SceneNode *pDirLightNode = new SceneNode("DirLight");
 		m_pRootNode->AddChild(pDirLightNode);
 
 		DirectionalLight* pDirLight = pDirLightNode->AddComponent<DirectionalLight>();
 		pDirLight->SetColor(vec3(0.0f, 1.0f, 0.0f));
-		pDirLightNode->m_position = glm::vec3(0, -5, 0);*/
+		pDirLightNode->m_position = glm::vec3(1, 0, 0);
 
 
 		//SceneNode *pLightNode_1 = new SceneNode("Light1");

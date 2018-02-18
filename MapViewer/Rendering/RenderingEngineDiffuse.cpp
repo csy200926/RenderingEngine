@@ -27,6 +27,7 @@ namespace Rendering
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // We're not using stencil buffer now
 
 		//m_defaultMat->Activate();
+		UpdateDirctLightUniform(m_defaultMat->GetProgram());
 
 		m_pRootNode->Draw();
 
