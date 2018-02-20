@@ -7,7 +7,7 @@
   <PropertyGroup />
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(CoreDir)Includes\GLFW;$(CoreDir)Includes\GL;$(CoreDir)Includes\glm;$(CoreDir)Includes\assimp;$(CoreDir)Includes\LuaPlus;$(CoreDir)Includes;$(CoreDir)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(CoreDir)Includes\GLFW;$(CoreDir)Includes\GL;$(CoreDir)Includes\glm;$(CoreDir)Includes\assimp;$(CoreDir)Includes\LuaPlus;$(CoreDir)Includes;$(CoreDir);$(CoreDir)Includes\LuaPlus\lua</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;lua53.lib;%(AdditionalDependencies)</AdditionalDependencies>

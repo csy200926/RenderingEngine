@@ -1,9 +1,29 @@
 #include "Game.h"
 
+#include <glew.h> // include GLEW and new version of GL on Windows
+#include <glfw3.h> // GLFW helper library
+#include <glm.hpp>
+
+#include <vector>
+#include <map>
+
+#include "detail/func_common.hpp"
+#include "gtc/matrix_transform.hpp"
+#include "gtx/quaternion.hpp"
+
 #include "LuaPlus.h"
 #include "SDL/SDL.h"
 
 #include "Rendering/Components.h"
+#include "Rendering/RenderingEnginePbr.h"
+#include "Rendering/RenderingEngineDeferred.h"
+#include "Rendering/RenderingEngineDiffuse.h"
+
+#include "Rendering/MaterialManager.h"
+#include "Rendering/TextureManager.h"
+#include "Rendering/MeshManager.h"
+
+#include "Rendering/InputManager.h"
 
 int Game::screenWidth;
 int Game::screenHeight;
@@ -65,7 +85,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 
 	OnStart();
 
-
+	//LoadScene("Scene.lua");
 	
 
 }
@@ -293,9 +313,6 @@ void Game::SaveScene()
 {
 	using namespace std;
 	using namespace LuaPlus;
-	
-	
-
 
 	LuaStateOwner state;
 	LuaObject scene = state->GetGlobals().CreateTable("Scene");
@@ -316,28 +333,6 @@ void Game::SaveScene()
 	TextureManager::GetInstance()->Serialize(texMgrObj);
 
 	state->DumpObject("Scene.lua", "Scene", scene);
-
-
-
-	////example
-	//{
-	//	LuaStateOwner state;
-	//	LuaObject myTable = state->GetGlobals().CreateTable("Window");
-	//	
-	//	myTable.SetInteger("width", 640);
-	//	myTable.SetInteger("height", 480);
-	//	myTable.SetString("title", "My First Window");
-	//	myTable.SetBoolean("enabled", true);
-	//	myTable.SetInteger("alpha", 128);
-	//	myTable.SetString("backgroundimage", "bg.jpg");
-	//	
-	//	LuaObject testTable = state->GetGlobals().CreateTable("ff");
-	//	myTable.AssignNewTable(testTable);
-
-
-	//	state->DumpObject("FirstWindow.lua", "Window", myTable);
-	//}
-	
 }
 
 void Game::LoadScene(const char * i_pPath)

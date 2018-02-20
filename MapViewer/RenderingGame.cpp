@@ -3,12 +3,17 @@
 #include "Rendering/MeshRenderer.h"
 #include "Rendering/Lighting.h"
 
+#include "Rendering/MaterialManager.h"
+#include "Rendering/TextureManager.h"
+#include "Rendering/MeshManager.h"
+
+
 void RenderingGame::OnStart()
 {
 	using namespace glm;
 	using namespace std;
 	Game::OnStart();
-
+	//return;
 	//LoadScene("Scene.lua");
 	//return;
 	m_pTextureManager->Load("terrain", "Images/terrain.png");

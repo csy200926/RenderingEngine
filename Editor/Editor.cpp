@@ -1,22 +1,18 @@
-#include "Editor.h"
 #include "RenderingGame.h"
+#include "Editor.h"
+
 Editor::Editor(QWidget *parent)
-	: QMainWindow(parent), isGameRunning(false)
+	: QMainWindow(parent)
 {
 	ui.setupUi(this);
+	pRenderingGame = new RenderingGame();
+	pRenderingGame->Initilize(1024, 768);
 
 	connect(&myTimer, SIGNAL(timeout()), this, SLOT(Update()));
 	myTimer.start(0);
-
-	game.Initilize(100, 100);
-	isGameRunning = true;
 }
-
 void Editor::Update()
 {
-	if (isGameRunning)
-	{
-		game.StartRunning();
-		game.RenderFrame();
-	}
+	pRenderingGame->UpdateFrame();
+	pRenderingGame->RenderFrame();
 }

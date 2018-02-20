@@ -4,7 +4,7 @@
 class RenderingGame : public Game
 {
 public:
-
+	RenderingGame(){};
 protected:
 
 	virtual void OnStart();

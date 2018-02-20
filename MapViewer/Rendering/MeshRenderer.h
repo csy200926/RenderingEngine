@@ -60,7 +60,7 @@ namespace Rendering
 			}
 
 			luaObject.SetString("Mesh", m_pMesh->m_name.c_str());
-		}
+		} 
 
 		void Deserialize(LuaPlus::LuaObject &luaObject)
 		{

@@ -1,13 +1,10 @@
-
-
-#include "RenderingGame.h"
-#include <QtWidgets/QApplication>
 #include "Editor.h"
+#include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
-	QApplication a(argc, argv);
-	Editor w;
-	w.show();
-	return a.exec();
+    QApplication a(argc, argv);
+    Editor w;
+    w.show();
+    return a.exec();
 }

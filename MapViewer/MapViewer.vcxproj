@@ -17,13 +17,13 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <CharacterSet>MultiByte</CharacterSet>
     <PlatformToolset>v120</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
@@ -42,13 +42,13 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <EmbedManifest>false</EmbedManifest>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir>$(SolutionDir)Editor\Libs</OutDir>
     <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
-    <PostBuildEventUseInBuild>true</PostBuildEventUseInBuild>
+    <OutDir>$(SolutionDir)Editor\Libs</OutDir>
+    <PostBuildEventUseInBuild>false</PostBuildEventUseInBuild>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -68,11 +68,12 @@
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;lua53.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)
-xcopy /y $(ProjectDir)Images$(OutDir)Images
-xcopy /y $(ProjectDir)Materials $(OutDir)Materials
-xcopy /y $(ProjectDir)Models $(OutDir)Models
-xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
+      <Command>xcopy /y $(ProjectDir)Dlls $(SolutionDir)$(Configuration)\
+xcopy /y $(ProjectDir)Images $(SolutionDir)$(Configuration)\Images
+xcopy /y $(ProjectDir)Materials $(SolutionDir)$(Configuration)\Materials
+xcopy /y $(ProjectDir)Models $(SolutionDir)$(Configuration)\Models
+xcopy /y $(ProjectDir)Shaders $(SolutionDir)$(Configuration)\Shaders
+xcopy /y $(ProjectDir)Libs $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -97,11 +98,12 @@ xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
       <AdditionalDependencies>opengl32.lib;glu32.lib;glew32.lib;glfw3.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;SDL2.lib;SDL2main.lib;assimp.lib;lua53.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
     <PostBuildEvent>
-      <Command>xcopy /y $(ProjectDir)Dlls $(OutDir)
-xcopy /y $(ProjectDir)Images$(OutDir)Images
-xcopy /y $(ProjectDir)Materials $(OutDir)Materials
-xcopy /y $(ProjectDir)Models $(OutDir)Models
-xcopy /y $(ProjectDir)Shaders $(OutDir)Shaders</Command>
+      <Command>xcopy /y $(ProjectDir)Dlls $(SolutionDir)$(Configuration)\
+xcopy /y $(ProjectDir)Images $(SolutionDir)$(Configuration)\Images
+xcopy /y $(ProjectDir)Materials $(SolutionDir)$(Configuration)\Materials
+xcopy /y $(ProjectDir)Models $(SolutionDir)$(Configuration)\Models
+xcopy /y $(ProjectDir)Shaders $(SolutionDir)$(Configuration)\Shaders
+xcopy /y $(ProjectDir)Libs $(OutDir)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

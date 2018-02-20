@@ -31,7 +31,7 @@ Scene =
 							y = 1,
 							z = 0,
 						},
-						Enable = true,
+						Enable = false,
 						Intensity = 1,
 						Linear = 0.029999999329448,
 						Quadratic = 0.0099999997764826,

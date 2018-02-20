@@ -1,7 +1,7 @@
 /********************************************************************************
 ** Form generated from reading UI file 'Editor.ui'
 **
-** Created by: Qt User Interface Compiler version 5.7.1
+** Created by: Qt User Interface Compiler version 5.5.1
 **
 ** WARNING! All changes made in this file will be lost when recompiling UI file!
 ********************************************************************************/
@@ -16,7 +16,6 @@
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QToolBar>
 #include <QtWidgets/QWidget>
@@ -27,7 +26,6 @@ class Ui_EditorClass
 {
 public:
     QWidget *centralWidget;
-    QPushButton *pushButton;
     QMenuBar *menuBar;
     QToolBar *mainToolBar;
     QStatusBar *statusBar;
@@ -36,16 +34,13 @@ public:
     {
         if (EditorClass->objectName().isEmpty())
             EditorClass->setObjectName(QStringLiteral("EditorClass"));
-        EditorClass->resize(284, 738);
+        EditorClass->resize(576, 1369);
         centralWidget = new QWidget(EditorClass);
         centralWidget->setObjectName(QStringLiteral("centralWidget"));
-        pushButton = new QPushButton(centralWidget);
-        pushButton->setObjectName(QStringLiteral("pushButton"));
-        pushButton->setGeometry(QRect(70, 130, 75, 23));
         EditorClass->setCentralWidget(centralWidget);
         menuBar = new QMenuBar(EditorClass);
         menuBar->setObjectName(QStringLiteral("menuBar"));
-        menuBar->setGeometry(QRect(0, 0, 284, 17));
+        menuBar->setGeometry(QRect(0, 0, 576, 37));
         EditorClass->setMenuBar(menuBar);
         mainToolBar = new QToolBar(EditorClass);
         mainToolBar->setObjectName(QStringLiteral("mainToolBar"));
@@ -61,8 +56,7 @@ public:
 
     void retranslateUi(QMainWindow *EditorClass)
     {
-        EditorClass->setWindowTitle(QApplication::translate("EditorClass", "Editor", Q_NULLPTR));
-        pushButton->setText(QApplication::translate("EditorClass", "PushButton", Q_NULLPTR));
+        EditorClass->setWindowTitle(QApplication::translate("EditorClass", "Editor", 0));
     } // retranslateUi
 
 };

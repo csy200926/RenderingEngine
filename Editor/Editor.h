@@ -1,28 +1,22 @@
 #pragma once
 
 #include <QtWidgets/QMainWindow>
-
 #include "ui_Editor.h"
-
 #include <qtimer.h>
 
-#include "RenderingGame.h"
+class RenderingGame;
 
 class Editor : public QMainWindow
 {
-	Q_OBJECT
+    Q_OBJECT
 
 public:
-	Editor(QWidget *parent = Q_NULLPTR);
-
+    Editor(QWidget *parent = Q_NULLPTR);
+	RenderingGame* pRenderingGame;
 private:
-	Ui::EditorClass ui;
+    Ui::EditorClass ui;
+
 	QTimer myTimer;
-
-	RenderingGame game;
-
-	bool isGameRunning;
-
 private slots:
 	void Update();
 };
