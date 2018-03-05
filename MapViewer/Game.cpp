@@ -38,7 +38,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	using namespace glm;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
-	m_window = SDL_CreateWindow("STAY or TO GO", 200, 200, i_screenWidth, i_screenHeight, SDL_WINDOW_OPENGL);
+	m_window = SDL_CreateWindow("STAY or TO GO", 0, 0, i_screenWidth, i_screenHeight, SDL_WINDOW_OPENGL);
 	SDL_GLContext glContext = SDL_GL_CreateContext(m_window);
 
 	// Start GL context and O/S window using the GLFW helper library
@@ -65,7 +65,8 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 	vec3 up(0, 1, 0);
 
 	m_camera.SetLookAt(cameraPos, target, up);
-	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 0.1f, 1000.0f);
+	// zbuffer 不是线性的  zbuffer多数精度都集中在znear，所以znear太细会导致zbuffer精度不够，远处景物zfighting
+	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 10.0f, 10000.0f);
 
 	m_pInputManager = InputManager::CreateInstance();
 	m_pMaterialManager = MaterialManager::CreateInstance();

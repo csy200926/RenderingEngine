@@ -20,7 +20,7 @@ namespace Rendering
 
 	void RenderingEngineDiffuse::Render()
 	{
-
+		//glDisable(GL_DEPTH_TEST);
 
 		glClearColor(0.1f, 1.0f, 0.1f, 1.0f);
 

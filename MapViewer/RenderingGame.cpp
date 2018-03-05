@@ -17,8 +17,7 @@ void RenderingGame::OnStart()
 	//LoadScene("Scene.lua");
 	//return;
 	m_pTextureManager->Load("terrain", "Images/terrain.png");
-	
-	MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/test.obj");
+		MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/sponza.obj");
 	
 	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
 	

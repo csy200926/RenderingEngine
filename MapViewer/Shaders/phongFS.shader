@@ -37,5 +37,5 @@ void main(void)
 	vec3 specular = vec3(1,1,1) * pow( max(dot(viewDir,reflectDir),0.0), 5.0 );
 
 	// Final
-	color = vec4(diffuse + specular,1.0);
+	color = vec4(worldNormal,1.0);
 }
