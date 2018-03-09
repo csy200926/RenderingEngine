@@ -32,13 +32,37 @@ namespace Rendering
 		{
 			m_pMesh->Draw_Pre();
 			Camera::ModelToWorld_Matrix = GetTransform();
-			for (int i = 0; i < m_pMaterials.size(); i++)
+
+			//hack
+			int subMeshCount = m_pMesh->GetSubmeshCount();
+			if (subMeshCount > 1)
+			{
+				for (int i = 0; i < subMeshCount; i++)
+				{
+					int materialIndex = m_pMesh->GetMaterialIndex(i);
+					m_pMaterials[materialIndex]->Activate();
+					m_pMesh->Draw(i);
+				}
+			}
+			else
+			{
+				m_pMaterials[0]->Activate();
+				m_pMesh->Draw();
+			}
+
+
+		/*	for (int i = 0; i < m_pMaterials.size(); i++)
 			{
 				m_pMaterials[i]->Activate();
 				m_pMesh->Draw(i);
-			}
+			}*/
 			m_pMesh->Draw_Post();
 		} 
+
+		void SetMesh(MeshPtr i_pMesh)
+		{
+			m_pMesh = i_pMesh;
+		}
 
 		bool AddMaterial(MaterialPtr i_pMaterial)
 		{

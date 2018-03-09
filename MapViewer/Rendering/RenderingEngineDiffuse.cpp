@@ -36,8 +36,11 @@ namespace Rendering
 
 	void RenderingEngineDiffuse::Initilize()
 	{
+
 		m_defaultMat = MaterialManager::GetInstance()->Load("Default", "Materials/Diffuse.material");
 
+		TexturePtr defaultTex = TextureManager::GetInstance()->Load("Default", "Images/defaultTex.jpg");
+		m_defaultMat->SetTexture(defaultTex);
 		//m_UIManager.init("GUI");
 		//m_UIManager.loadScheme("OgreTray.scheme");
 		//m_UIManager.setFont("DejaVuSans-10");

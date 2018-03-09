@@ -3,11 +3,14 @@
 // Output
 layout (location = 0) out vec4 color;
 
+uniform sampler2D basic_texture;
+
 // Input from vertex shader
 in VS_OUT
 {
     vec3 worldPos;
     vec3 worldNormal;
+	vec2 texCoord;
 } fs_in;
 
 struct DirLight {
@@ -25,11 +28,11 @@ void main(void)
 	vec3 worldNormal = normalize(fs_in.worldNormal);
 	vec3 worldPos = fs_in.worldPos;
 
-	vec3 lightDirection = -dirLight.direction;
+	vec3 lightDirection = normalize(vec3(0.5, 1, 0.5));//-dirLight.direction;
 
 	// Diffuse
-	float NDL = max(dot(worldNormal,lightDirection),0.0);
-	vec3 diffuse = NDL * vec3(1,1,0);
+	float NDL = max(dot(worldNormal,lightDirection),0.0) * 0.5 + 0.5;
+	vec3 diffuse = NDL * texture(basic_texture, fs_in.texCoord).xyz;
 
 	// Specular
 	vec3 reflectDir = normalize(reflect(-lightDirection,worldNormal));
@@ -37,5 +40,5 @@ void main(void)
 	vec3 specular = vec3(1,1,1) * pow( max(dot(viewDir,reflectDir),0.0), 5.0 );
 
 	// Final
-	color = vec4(worldNormal,1.0);
+	color = vec4(diffuse,1.0);
 }

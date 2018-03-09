@@ -55,6 +55,9 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 
 	glViewport(0, 0, i_screenWidth, i_screenHeight);
 	glEnable(GL_DEPTH_TEST);
+	glEnable(GL_CULL_FACE);
+	glFrontFace(GL_CCW);
+	glCullFace(GL_BACK);
 
 	m_pRootNode = new SceneNode("Root");
 
@@ -66,7 +69,7 @@ void Game::Initilize(int i_screenWidth, int i_screenHeight)
 
 	m_camera.SetLookAt(cameraPos, target, up);
 	// zbuffer 不是线性的  zbuffer多数精度都集中在znear，所以znear太细会导致zbuffer精度不够，远处景物zfighting
-	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 10.0f, 10000.0f);
+	m_camera.SetPerspective(70, i_screenWidth / i_screenHeight, 10.0f, 2000.0f);
 
 	m_pInputManager = InputManager::CreateInstance();
 	m_pMaterialManager = MaterialManager::CreateInstance();

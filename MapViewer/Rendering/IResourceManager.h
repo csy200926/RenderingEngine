@@ -6,6 +6,8 @@
 #include "IResources.h"
 #include "../ISerializable.h"
 
+#include <fstream>
+
 namespace Rendering
 {
 
@@ -65,7 +67,12 @@ namespace Rendering
 			if (m_nameResMap.find(i_name) != m_nameResMap.end())
 				return nullptr;
 
+			if (IsFileExist(i_path.c_str()) == false)
+				return nullptr;
+
 			ResourcePtr resPtr = Create(i_path);
+			
+
 			resPtr->m_name = i_name;
 			resPtr->m_fileName = i_path;
 
@@ -75,6 +82,13 @@ namespace Rendering
 
 		}
 	private:
+
+
+		bool IsFileExist(std::string fileName)
+		{
+			std::ifstream infile(fileName.c_str());
+			return infile.good();
+		}
 		virtual ResourcePtr Create(const std::string& i_path)
 		{
 			ResourcePtr resPtr;

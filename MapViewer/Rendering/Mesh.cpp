@@ -4,6 +4,8 @@
 #include <fstream>
 #include <sstream>
 
+#include "MaterialManager.h"
+#include "TextureManager.h"
 
 #include "Material.h"
 #include "Camera.h"
@@ -22,13 +24,14 @@ namespace Rendering
 
 
 	//------------------------------------------------------------------------------------------------------------
-	Mesh::Mesh(std::string i_filePath)
+	Mesh::Mesh(std::string i_filePath)//Load from obj...  TODO:pack this to new function!!!
 	{
+		using namespace Rendering;
 		using namespace std;
 
 		// Read
-		Assimp::Importer importer;
-		const aiScene* scene = importer.ReadFile(i_filePath,aiProcess_OptimizeMeshes|  aiProcess_OptimizeGraph | aiProcess_Triangulate | aiProcess_FlipUVs);
+		Assimp::Importer importer; 
+		const aiScene* scene = importer.ReadFile(i_filePath, aiProcessPreset_TargetRealtime_Fast);
 		// Check for errors
 		if (!scene || scene->mFlags == AI_SCENE_FLAGS_INCOMPLETE || !scene->mRootNode)
 		{
@@ -38,11 +41,37 @@ namespace Rendering
 
 		using namespace std;
 
+		for (int i = 1; i < scene->mNumMaterials; i++)
+		{
+			// Load texPath
+			int texIndex = 0;
+			aiString texPath;	//contains filename of texture
+			scene->mMaterials[i]->GetTexture(aiTextureType_DIFFUSE, texIndex, &texPath);
+			string texPathFull = texPath.C_Str();
+			texPathFull = "Images/" + texPathFull;
+	
+			// Load tex
+			TexturePtr texPtr = TextureManager::GetInstance()->Load(i_filePath + std::to_string(i), texPathFull);
+
+			if (texPtr == nullptr)
+			{
+				texPtr = TextureManager::GetInstance()->GetByName("Default");
+			}
+
+			// Load material
+			MaterialPtr matPtr = MaterialManager::GetInstance()->Load(i_filePath + std::to_string(i), "Materials/Diffuse.material");
+			matPtr->SetTexture(texPtr);
+		}
+
 		int indexStart = 0;
 		for (int meshIndex = 0; meshIndex < scene->mNumMeshes; meshIndex++)
 		{
 			const aiMesh* mesh = scene->mMeshes[meshIndex];
 			indexStart = m_vertices.size();
+			mesh->mMaterialIndex;
+			scene->mNumMaterials;
+
+
 
 			for (GLuint i = 0; i < mesh->mNumVertices; i++)
 			{
@@ -85,6 +114,7 @@ namespace Rendering
 			}
 
 			SubMesh *pSubMesh = new SubMesh(indices);
+			pSubMesh->materialIndex = mesh->mMaterialIndex;
 			m_subMeshes.push_back(pSubMesh);
 		}
 
@@ -159,6 +189,8 @@ namespace Rendering
 
 	SubMesh::SubMesh(std::vector<GLuint> &i_indices)
 	{
+		materialIndex = 0;
+
 		m_indices = i_indices;
 
 		glGenBuffers(1, &EBO);
@@ -171,6 +203,7 @@ namespace Rendering
 
 	void SubMesh::Draw()
 	{
+		
 		using namespace std;
 		using namespace glm;
 

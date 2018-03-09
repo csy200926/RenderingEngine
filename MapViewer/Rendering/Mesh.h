@@ -43,6 +43,8 @@ namespace Rendering
 		SubMesh(std::vector<GLuint> &i_indices);
 		std::vector<GLuint> m_indices;
 
+		int materialIndex;//Material array use
+
 		void Draw();//Shader
 	private:
 		GLuint EBO;
@@ -67,7 +69,9 @@ namespace Rendering
 		void Draw(int submeshIndex)const;
 		void Draw_Post() const;
 
+		
 		int GetSubmeshCount() const { return m_subMeshes.size(); }
+		int GetMaterialIndex(int subMeshIndex)const { return m_subMeshes[subMeshIndex]->materialIndex; }
 
 	private:
 		std::vector<SubMesh *> m_subMeshes;

@@ -150,9 +150,9 @@ namespace Rendering
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);
 		glUniformMatrix4fv(m_MMatrixLocation, 1, GL_FALSE, &Camera::ModelToWorld_Matrix[0][0]);
 
-	/*	if (m_texture.get() != NULL)
+		if (m_texture.get() != NULL)
 			m_texture->Activate();
-*/
+
 
 	}
 

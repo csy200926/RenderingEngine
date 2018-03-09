@@ -16,16 +16,21 @@ void RenderingGame::OnStart()
 	//return;
 	//LoadScene("Scene.lua");
 	//return;
-	m_pTextureManager->Load("terrain", "Images/terrain.png");
-		MeshPtr tableMesh = m_pMeshManager->Load("Table", "Models/sponza.obj");
+
+	string sponzaPath = "Models/sponza.obj";
+	MeshPtr sponzaMesh = m_pMeshManager->Load("sponza", sponzaPath);
+	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");
 	
-	MaterialPtr defaultMat = m_pMaterialManager->GetByName("Default");//GetByName("Deferred_first");
-	
-	TexturePtr woodTexture = m_pTextureManager->Load("Wood", "Images/defaultTex.jpg");
-	defaultMat->SetTexture(woodTexture);
-	
-	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>(defaultMat, tableMesh);
-	
+	MeshRenderer *pMeshRenderer = m_pRootNode->AddComponent<MeshRenderer>();
+	pMeshRenderer->SetMesh(sponzaMesh);
+	for (int i = 0; i < 27; i++)
+	{
+		MaterialPtr matPtr = MaterialManager::GetInstance()->GetByName(sponzaPath + std::to_string(i));
+		pMeshRenderer->AddMaterial(matPtr);
+		int debug = 0;
+	}
+
+
 	//Point lights test
 	{		
 		SceneNode *pDirLightNode = new SceneNode("DirLight");
