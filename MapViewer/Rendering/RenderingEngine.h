@@ -69,12 +69,14 @@ namespace Rendering
 		static RenderingEngine* s_pRenderingEngine;
 
 		virtual ~RenderingEngine(){};
-	protected:
+
 
 		void UpdatePointLightUniform(Material *i_pMaterial);
 		void UpdateDirctLightUniform(Material *i_pMaterial);
 
 		void UpdateDirctLightUniform(GLint program);
+	protected:
+
 
 		MaterialPtr m_defaultMat;
 		MaterialPtr m_screenMat;

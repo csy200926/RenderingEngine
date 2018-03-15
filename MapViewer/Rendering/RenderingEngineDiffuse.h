@@ -12,12 +12,20 @@ namespace Rendering
 	{
 
 	public:
+
 		virtual void Render();
 
 		virtual void Initilize();
 		virtual void ShutDown();
+
 	private: 
-		GUI m_UIManager;
-		
+
+		MaterialPtr m_screenMat;
+
+		GLuint depthrenderBuffer;
+		GLuint quad_vertexbuffer;
+
+		GLuint framebuffer;
+		GLuint renderTexture;
 	};
 }

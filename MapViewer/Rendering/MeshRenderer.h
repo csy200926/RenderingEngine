@@ -40,6 +40,8 @@ namespace Rendering
 				for (int i = 0; i < subMeshCount; i++)
 				{
 					int materialIndex = m_pMesh->GetMaterialIndex(i);
+					if(materialIndex == 5)continue;
+
 					m_pMaterials[materialIndex]->Activate();
 					m_pMesh->Draw(i);
 				}

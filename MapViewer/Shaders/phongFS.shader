@@ -28,7 +28,7 @@ void main(void)
 	vec3 worldNormal = normalize(fs_in.worldNormal);
 	vec3 worldPos = fs_in.worldPos;
 
-	vec3 lightDirection = normalize(vec3(0.5, 1, 0.5));//-dirLight.direction;
+	vec3 lightDirection = -dirLight.direction;
 
 	// Diffuse
 	float NDL = max(dot(worldNormal,lightDirection),0.0) * 0.5 + 0.5;

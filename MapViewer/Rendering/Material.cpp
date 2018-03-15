@@ -8,6 +8,7 @@
 #include "TextureManager.h"
 #include "Texture.h"
 #include "Camera.h"
+#include "RenderingEngine.h"
 
 #include <iostream>
 #include <fstream>
@@ -125,6 +126,9 @@ namespace Rendering
 	{
 		glUseProgram(m_program);
 
+
+		//custom properties... temporarily disabled
+
 		//for (auto const &it_vec3 : m_vector3Map)
 		//{
 		//	glUniform3f(glGetUniformLocation(m_program, it_vec3.first.c_str()),
@@ -145,6 +149,7 @@ namespace Rendering
 		//	it_tex.second->Bind();
 		//	texIndex++;
 		//}
+		RenderingEngine::GetInstance()->UpdateDirctLightUniform(this);
 
 		glUniformMatrix4fv(m_PMatrixLocation, 1, GL_FALSE, &Camera::Projective_Matrix[0][0]);
 		glUniformMatrix4fv(m_VMatrixLocation, 1, GL_FALSE, &Camera::WorldToView_Matrix[0][0]);

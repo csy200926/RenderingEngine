@@ -110,6 +110,10 @@ Scene =
 		{
 			Path = "Materials/Diffuse.material",
 		},
+		Screen = 
+		{
+			Path = "Materials/Screen.material",
+		},
 	},
 	MeshManager = 
 	{
@@ -311,6 +315,10 @@ Scene =
 		["Models/sponza.obj4"] = 
 		{
 			Path = "Images/textures\\background.tga",
+		},
+		["Models/sponza.obj5"] = 
+		{
+			Path = "Images/textures\\gi_flag.tga",
 		},
 		["Models/sponza.obj6"] = 
 		{
