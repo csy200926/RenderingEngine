@@ -31,14 +31,14 @@ void main(void)
 	vec3 lightDirection = -dirLight.direction;
 
 	// Diffuse
-	float NDL = max(dot(worldNormal,lightDirection),0.0) * 0.5 + 0.5;
+	float NDL = max(dot(worldNormal,lightDirection),0.0) * 0.5 + 0.2;
 	vec3 diffuse = NDL * texture(basic_texture, fs_in.texCoord).xyz;
 
 	// Specular
 	vec3 reflectDir = normalize(reflect(-lightDirection,worldNormal));
 	vec3 viewDir = normalize(viewPos - worldPos);
-	vec3 specular = vec3(1,1,1) * pow( max(dot(viewDir,reflectDir),0.0), 5.0 );
+	vec3 specular = vec3(1,1,1) * pow( max(dot(viewDir,reflectDir),0.0), 15.0 );
 
 	// Final
-	color = vec4(diffuse,1.0);
+	color = vec4(diffuse+specular,1.0);
 }
