@@ -24,6 +24,7 @@
 |---|---|
 | `Source/Main.cpp` | 程序入口、相机更新和渲染循环 |
 | `Source/Scene.*` | 几何体、场景数据和变换 |
+| `Source/Camera.*` | 相机位置、朝向、移动和投影矩阵 |
 | `Source/Vulkan*.cpp` | Vulkan 设备、资源、命令录制和呈现 |
 | `Source/DX12*.cpp` | DX12 设备、资源、命令录制和呈现 |
 | `Shaders/Basic.hlsl` | 两个后端共用的 Shader |

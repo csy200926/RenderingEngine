@@ -2,7 +2,7 @@
 #include <windows.h>
 #include <glm.hpp>
 
-namespace Lite
+namespace Rendering
 {
 	class Window
 	{
@@ -21,4 +21,4 @@ namespace Lite
 		glm::vec2 m_mouseDelta = glm::vec2(0);
 		static LRESULT CALLBACK Procedure(HWND, UINT, WPARAM, LPARAM);
 	};
-} // namespace Lite
+}

@@ -9,3 +9,6 @@ AllowShortIfStatementsOnASingleLine: Never
 AllowShortLoopsOnASingleLine: false
 NamespaceIndentation: All
 SortIncludes: Never
+PointerAlignment: Left
+AccessModifierOffset: -4
+MaxEmptyLinesToKeep: 2

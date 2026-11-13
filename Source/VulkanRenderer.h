@@ -7,24 +7,24 @@
 #include <array>
 #include <stdexcept>
 
-namespace Lite
+namespace Rendering
 {
 	class VulkanRenderer final : public IRenderer
 	{
-	  public:
+	public:
 		~VulkanRenderer() override;
-		void Initialize(HWND, unsigned, unsigned, const MeshData &) override;
-		void Resize(unsigned, unsigned) override;
-		void Render(const FrameData &, bool) override;
-		void Capture(const std::filesystem::path &) override;
+		void Initialize(HWND i_window, unsigned i_width, unsigned i_height, const MeshData& i_mesh) override;
+		void Resize(unsigned i_width, unsigned i_height) override;
+		void Render(const FrameData& i_data, bool i_vsync) override;
+		void Capture(const std::filesystem::path& i_path) override;
 		void WaitIdle() override;
 
-	  private:
+	private:
 		struct Buffer
 		{
 			VkBuffer handle = VK_NULL_HANDLE;
 			VkDeviceMemory memory = VK_NULL_HANDLE;
-			void *mapped = nullptr;
+			void* mapped = nullptr;
 		};
 		struct Image
 		{
@@ -32,6 +32,7 @@ namespace Lite
 			VkDeviceMemory memory = VK_NULL_HANDLE;
 			VkImageView view = VK_NULL_HANDLE;
 		};
+
 		struct Frame
 		{
 			VkCommandPool pool = VK_NULL_HANDLE;
@@ -42,6 +43,7 @@ namespace Lite
 			Image depth;
 			uint64_t finished = 0;
 		};
+
 		struct SwapImage
 		{
 			VkImage handle = VK_NULL_HANDLE;
@@ -50,17 +52,25 @@ namespace Lite
 			VkFence presentFence = VK_NULL_HANDLE;
 			bool presentPending = false;
 		};
-		static void Check(VkResult, const char *);
-		uint32_t MemoryType(uint32_t, VkMemoryPropertyFlags);
-		void CreateBuffer(VkDeviceSize, VkBufferUsageFlags, Buffer &);
-		void DestroyBuffer(Buffer &);
-		void CreateDepth(Image &);
-		void DestroyImage(Image &);
+
+		static void Check(VkResult i_result, const char* i_operation);
+		uint32_t MemoryType(uint32_t i_bits, VkMemoryPropertyFlags i_flags);
+		void CreateBuffer(VkDeviceSize i_size, VkBufferUsageFlags i_usage, Buffer& i_buffer);
+		void DestroyBuffer(Buffer& i_buffer);
+		void CreateDepth(Image& i_image);
+		void DestroyImage(Image& i_image);
 		void CreateSwapchain();
 		void DestroySwapchain();
 		void CreatePipeline();
-		void WaitFrame(const Frame &);
+		void CreateShader(const char* i_name, VkShaderModule& i_module);
+
+		void ChangeImageLayout(VkCommandBuffer i_command, VkImage i_image,
+			VkImageAspectFlags i_aspect, VkImageLayout i_oldLayout, VkImageLayout i_newLayout,
+			VkPipelineStageFlags2 i_sourceStage, VkAccessFlags2 i_sourceAccess,
+			VkPipelineStageFlags2 i_destinationStage, VkAccessFlags2 i_destinationAccess);
+		void WaitFrame(const Frame& i_frame);
 		VkResult WaitPresentations();
+
 		HMODULE m_library = nullptr;
 		HWND m_window = nullptr;
 		VkInstance m_instance = VK_NULL_HANDLE;
@@ -69,6 +79,7 @@ namespace Lite
 		VkDevice m_device = VK_NULL_HANDLE;
 		VkQueue m_queue = VK_NULL_HANDLE;
 		uint32_t m_family = 0;
+
 		VkSwapchainKHR m_swapchain = VK_NULL_HANDLE;
 		VkFormat m_format = VK_FORMAT_UNDEFINED;
 		VkExtent2D m_extent{};
@@ -76,13 +87,16 @@ namespace Lite
 		VkPipelineLayout m_layout = VK_NULL_HANDLE;
 		VkDescriptorSetLayout m_descriptorLayout = VK_NULL_HANDLE;
 		VkDescriptorPool m_descriptorPool = VK_NULL_HANDLE;
+
 		VkSemaphore m_timeline = VK_NULL_HANDLE;
 		uint64_t m_serial = 0;
 		unsigned m_width = 0, m_height = 0, m_current = 0, m_latest = 0;
 		bool m_vsync = true, m_canCapture = false, m_hasFrame = false;
+
 		Buffer m_vertices, m_indices;
 		std::array<Frame, 2> m_frames{};
 		std::vector<SwapImage> m_images;
+
 		PFN_vkGetInstanceProcAddr vkGetInstanceProcAddr = nullptr;
 		PFN_vkCreateInstance vkCreateInstance = nullptr;
 		PFN_vkEnumerateInstanceVersion vkEnumerateInstanceVersion = nullptr;
@@ -91,4 +105,4 @@ namespace Lite
 		LITE_VK_DEVICE(DECLARE)
 #undef DECLARE
 	};
-} // namespace Lite
+}

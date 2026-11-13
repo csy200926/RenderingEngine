@@ -3,7 +3,7 @@
 #include <string>
 #include <vector>
 
-namespace Lite
+namespace Rendering
 {
 	// 所有运行时文件相对于 exe，换工作目录不会找错 Shader。
 	std::filesystem::path ShaderPath(const char *i_name);
@@ -13,4 +13,4 @@ namespace Lite
 				  bool i_bottomUp = false);
 	void SetLogFile(const std::filesystem::path &i_path);
 	void Log(const std::string &i_message);
-} // namespace Lite
+}

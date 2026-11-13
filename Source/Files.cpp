@@ -4,23 +4,26 @@
 #include <iostream>
 #include <stdexcept>
 
-namespace Lite
+namespace Rendering
 {
 	static std::ofstream s_log;
+
 	std::filesystem::path ShaderPath(const char *i_name)
 	{
 		std::vector<wchar_t> name(32768);
-		auto length = GetModuleFileNameW(nullptr, name.data(), static_cast<DWORD>(name.size()));
+		DWORD length = GetModuleFileNameW(nullptr, name.data(), (DWORD)name.size());
 		if (!length || length >= name.size())
 			throw std::runtime_error("Cannot locate executable");
-		return std::filesystem::path(std::wstring(name.data(), length)).parent_path() / L"Shaders" / i_name;
+		std::filesystem::path fileName(std::wstring(name.data(), length));
+		return fileName.parent_path() / L"Shaders" / i_name;
 	}
 	std::vector<unsigned char> ReadBytes(const std::filesystem::path &i_path)
 	{
 		std::ifstream file(i_path, std::ios::binary | std::ios::ate);
 		if (!file)
 			throw std::runtime_error("Cannot open file: " + i_path.u8string());
-		auto length = file.tellg();
+
+		std::streamoff length = file.tellg();
 		if (length < 0)
 			throw std::runtime_error("Cannot get file size");
 		std::vector<unsigned char> result(static_cast<size_t>(length));
@@ -31,7 +34,7 @@ namespace Lite
 	}
 	std::string ReadText(const std::filesystem::path &i_path)
 	{
-		auto bytes = ReadBytes(i_path);
+		std::vector<unsigned char> bytes = ReadBytes(i_path);
 		return std::string(bytes.begin(), bytes.end());
 	}
 	void SetLogFile(const std::filesystem::path &i_path)
@@ -48,7 +51,8 @@ namespace Lite
 		if (s_log)
 			s_log << i_message << std::endl;
 	}
-	void WriteBMP(const std::filesystem::path &i_path, unsigned i_width, unsigned i_height, const unsigned char *i_rgba,
+
+	void WriteBMP(const std::filesystem::path &i_path, unsigned i_width, unsigned i_height, const unsigned char* i_rgba,
 				  bool i_bottomUp)
 	{
 		if (i_path.has_parent_path())
@@ -63,18 +67,24 @@ namespace Lite
 		info.biHeight = -static_cast<LONG>(i_height);
 		info.biPlanes = 1;
 		info.biBitCount = 32;
+
+
 		std::ofstream file(i_path, std::ios::binary);
 		file.write(reinterpret_cast<const char *>(&header), sizeof(header));
 		file.write(reinterpret_cast<const char *>(&info), sizeof(info));
 		std::vector<unsigned char> row(i_width * 4);
-		for (unsigned y = 0; y < i_height; ++y)
+
+		for (unsigned y = 0; y < i_height; y++)
 		{
-			auto source = i_rgba + (i_bottomUp ? i_height - 1 - y : y) * i_width * 4;
-			for (unsigned x = 0; x < i_width; ++x)
+			unsigned sourceY = y;
+			if(i_bottomUp)
+				sourceY = i_height - 1 - y;
+			const unsigned char* pSource = i_rgba + sourceY * i_width * 4;
+			for (unsigned x = 0; x < i_width; x++)
 			{
-				row[4 * x] = source[4 * x + 2];
-				row[4 * x + 1] = source[4 * x + 1];
-				row[4 * x + 2] = source[4 * x];
+				row[4 * x] = pSource[4 * x + 2];
+				row[4 * x + 1] = pSource[4 * x + 1];
+				row[4 * x + 2] = pSource[4 * x];
 				row[4 * x + 3] = 255;
 			}
 			file.write(reinterpret_cast<const char *>(row.data()), row.size());
@@ -83,4 +93,4 @@ namespace Lite
 			throw std::runtime_error("Cannot write BMP");
 		Log("Captured: " + i_path.u8string());
 	}
-} // namespace Lite
+}
