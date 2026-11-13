@@ -1,6 +1,6 @@
 # RendererLite
 
-从原 Renderer 项目分出的小渲染器，只保留 Vulkan / DX12、方块、地面和相机。先把一帧的正常流程读懂，再加材质和阴影。
+轻量 Windows C++ 渲染器，提供 Vulkan 与 DirectX 12 两个后端，使用相同的场景数据和 HLSL Shader。当前包含基础几何体、自由相机、方向光、深度测试和截图。
 
 ## 开始
 
@@ -18,13 +18,20 @@
 ./Output/RendererLite.exe --renderer vulkan --hidden --frames 120 --capture frame.bmp --log run.log
 ```
 
-## 从哪读
+## 项目结构
 
-先看 [从 OpenGL 读懂 Vulkan / DX12](docs/READING.md)。文档假设你已会 OpenGL，用熟悉的 VAO/VBO、glUseProgram、uniform、FBO、glDrawElements 和 SwapBuffers 对照当前代码，再解释命令录制、显式资源状态与同步为何多出来。
+| 路径 | 内容 |
+|---|---|
+| `Source/Main.cpp` | 程序入口、相机更新和渲染循环 |
+| `Source/Scene.*` | 几何体、场景数据和变换 |
+| `Source/Vulkan*.cpp` | Vulkan 设备、资源、命令录制和呈现 |
+| `Source/DX12*.cpp` | DX12 设备、资源、命令录制和呈现 |
+| `Shaders/Basic.hlsl` | 两个后端共用的 Shader |
+| `ThirdParty` | 固定版本的本地依赖和编译工具 |
 
-发布包随附 `Source` 文本，文档可直接跳转代码；重新编译仍在完整工程根目录进行。
+发布包随附 `Source` 文本；重新编译在完整工程根目录进行。
 
-代码来自原工程的窗口/相机/几何体和两个后端的做法，重新整理为独立示例。没有复制 Actor、Director、场景树、Lua、Assimp、编辑器、Highlands 资源或旧引擎的资源系统。`Source/Scene.cpp` 是示例场景；`Shaders/Basic.hlsl` 是共享着色器。
+工程由原 RenderingEngine 精简整理，不依赖旧工程的 Actor、Director、编辑器、Lua 或 Assimp。
 
 ## 用了什么
 
@@ -33,6 +40,6 @@
 
 Command Buffer 和 Pipeline 是基础机制，不是 Vulkan 新增特性。动态渲染减少 RenderPass/Framebuffer 对象；新版同步把用途与等待写得更直观，时间线同步用递增的完成值回收帧资源。
 
-现在是简单方向光漫反射和小高光，不是 PBR；棋盘格由 Shader 算出，没有图片贴图、阴影、GI、光追、RenderGraph 或多线程录制。静态示例网格直接放在 CPU 可写的 GPU 可读内存，以减少上传代码；大型场景以后再改为 staging/default-device 内存。Vulkan 为让截图流程直观，支持时每帧复制到自己的 readback buffer，这有额外开销，不代表性能最优写法。
+当前使用简单方向光漫反射和高光，棋盘格由 Shader 生成，尚未加入 PBR、图片材质、阴影、GI 或光追。静态网格使用 CPU 可写、GPU 可读内存。Vulkan 在支持截图时每帧复制到独立的 readback buffer，有额外传输开销。
 
-设计与进度见 `PLAN.md`，实际核验范围见 `docs/VERIFICATION.md`。源码中的中文注释解释各步为什么要做；首次阅读可以跳过创建信息的大量枚举，从 `Render` 看一帧的顺序。
+资源与帧同步由各后端明确管理，两个在途帧分别持有可覆写的命令和常量资源。
