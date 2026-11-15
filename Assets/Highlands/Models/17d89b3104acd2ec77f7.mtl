@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Mushrooms_Flowers_17d89b3104acd2ec77f7_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.661383152
+d 1
+illum 2
+map_Kd ../Textures/17d89b3104acd2ec77f7_0.png
+map_Bump ../Textures/17d89b3104acd2ec77f7_0_normal.png

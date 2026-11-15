@@ -1,0 +1,8 @@
+Shaders/OpenGL/DefaultVS.shader
+Shaders/OpenGL/DefaultFS.shader
+DX11 = Shaders/DX11/Default.hlsl
+Texture = Images/Rendering/Wood.gif
+Color = 1, 1, 1, 1
+Metallic = 0.05
+Roughness = 0.6
+AO = 1

@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/House_8cd6e9f5879eac894004_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.421378553
+d 1
+illum 2
+map_Kd ../Textures/8cd6e9f5879eac894004_0.png
+map_Bump ../Textures/8cd6e9f5879eac894004_0_normal.png

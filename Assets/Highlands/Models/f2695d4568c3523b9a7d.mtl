@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Furniture_f2695d4568c3523b9a7d_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.00748578273
+Pr 0.787186921
+d 1
+illum 2
+map_Kd ../Textures/f2695d4568c3523b9a7d_0.png
+map_Bump ../Textures/f2695d4568c3523b9a7d_0_normal.png

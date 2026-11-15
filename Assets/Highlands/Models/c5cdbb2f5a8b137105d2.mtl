@@ -1,0 +1,17 @@
+# RendererMaterial material_0 ../Materials/Fences_c5cdbb2f5a8b137105d2_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0388344005
+Pr 0.823919535
+d 1
+illum 2
+map_Kd ../Textures/c5cdbb2f5a8b137105d2_0.png
+map_Bump ../Textures/c5cdbb2f5a8b137105d2_0_normal.png
+# RendererMaterial material_1 ../Materials/Glass_c5cdbb2f5a8b137105d2_1.material
+newmtl material_1
+Kd 1 1 1
+Pm 0.75
+Pr 0.0699999928
+d 0.349019617
+illum 2
+map_Kd ../Textures/c5cdbb2f5a8b137105d2_1.png

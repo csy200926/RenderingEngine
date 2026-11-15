@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Supports">
+      <UniqueIdentifier>{7fccd718-a9e6-49c2-be09-62401648e2f8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Optimizations">
+      <UniqueIdentifier>{a8f50921-2ba4-4a41-8011-9ccf2ce23c68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Supports\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Systems">
+      <UniqueIdentifier>{3882b219-4442-4644-aa3f-56a859692fd2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Actor.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AllocationOverride.h">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClInclude>
+    <ClInclude Include="BitArray.h">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClInclude>
+    <ClInclude Include="Extension.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="IActorController.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathStuff.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryPool.h">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClInclude>
+    <ClInclude Include="TemplateArray.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector3.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="UnitTest.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="RingBuffer.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="WinTiming.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="MySharedPointer.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="HashedString.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="NamedBitSet.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="Matrix.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector4.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="ICollisionCallBack.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Director.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageManager.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="IMessageCallBack.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="IIsA.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Profiling.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer3D.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Renderer2D.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Source Files\Supports</Filter>
+    </ClInclude>
+    <ClInclude Include="ScopedTimer.h">
+      <Filter>Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="TemplateArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector3.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="MathStuff.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="UnitTest.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="Extension.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="AllocationOverride.cpp">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryPool.cpp">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClCompile>
+    <ClCompile Include="BitArray.cpp">
+      <Filter>Source Files\Optimizations</Filter>
+    </ClCompile>
+    <ClCompile Include="RingBuffer.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="WinTiming.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="MySharedPointer.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="HashedString.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="Matrix.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector4.cpp">
+      <Filter>Source Files\Supports</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Director.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageManager.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="IIsA.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Profiling.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer3D.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="Renderer2D.cpp">
+      <Filter>Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Vector3.inl">
+      <Filter>Source Files\Supports</Filter>
+    </None>
+    <None Include="Actor.inl">
+      <Filter>Source Files</Filter>
+    </None>
+    <None Include="HashedString.inl">
+      <Filter>Source Files\Supports</Filter>
+    </None>
+    <None Include="NamedBitSet.inl">
+      <Filter>Source Files\Supports</Filter>
+    </None>
+    <None Include="Scene.inl">
+      <Filter>Systems</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Engine.rc">
+      <Filter>Source Files\Supports\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Dishes_700976e6ef524635b740_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0723187625
+Pr 0.668764591
+d 1
+illum 2
+map_Kd ../Textures/700976e6ef524635b740_0.png
+map_Bump ../Textures/700976e6ef524635b740_0_normal.png

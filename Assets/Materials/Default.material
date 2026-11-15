@@ -1,0 +1,8 @@
+Shaders/DefaultVS.shader
+Shaders/DefaultFS.shader
+# The first two lines preserve the user's original material file format.
+DX11 = Shaders/DX11/Default.hlsl
+Color = 1, 1, 1, 1
+Metallic = 0.1
+Roughness = 0.35
+AO = 1

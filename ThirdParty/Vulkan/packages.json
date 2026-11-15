@@ -1,0 +1,132 @@
+{
+  "files": [
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_av1std_decode.h",
+      "bytes": 4250,
+      "sha256": "96f923dc01cd3e266c081d88fa020525a20d63ffe4ce09a4c807a04ef3aaf97e"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_av1std.h",
+      "bytes": 16507,
+      "sha256": "f3ab53dbfdeb36a349f674656d50bd507f2e4b3c883343da74aace0df4f02a02"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h264std_decode.h",
+      "bytes": 2722,
+      "sha256": "e1708b3996a740eeedb79f51d0f0e379f9bcae13566538375acaf73301023b58"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h264std_encode.h",
+      "bytes": 6878,
+      "sha256": "052a6e357be8d88bf4be0db1b3da5a9cc1a6011cf4b3533759ff588e1e26f9f1"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h264std.h",
+      "bytes": 13853,
+      "sha256": "072ee6eac80e73d93bb4bfe0059f99e581fc8b55b1437236185bb4ff377914b1"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h265std_decode.h",
+      "bytes": 2428,
+      "sha256": "800946aa19d83d305d504e2e4141bc938f989e0cf8872cef97480238eefef1ea"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h265std_encode.h",
+      "bytes": 7462,
+      "sha256": "7239f9f4e811546639111e562a8be1ec73ad5bef1c23d5fad80889f35e125e9c"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codec_h265std.h",
+      "bytes": 23416,
+      "sha256": "0cbdfd6c45ee8ca902e9c961cd7e49a4d601d443ea0ef2a60a8496b127ed397c"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vk_video/vulkan_video_codecs_common.h",
+      "bytes": 660,
+      "sha256": "78cf3c99d3d57afa7ab1782ec6018b4bcdbe273f2843d76e3375282db875b71e"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vulkan/vk_platform.h",
+      "bytes": 2828,
+      "sha256": "c4cabbcf699c90cde344095ae54da9435d117951aad114ba3a540c5997d7906f"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vulkan/vulkan_core.h",
+      "bytes": 1038013,
+      "sha256": "50af5a157c8aab7d90dcd929a05758b4dc3e78a619f46552bfd5cde67b2d46c1"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vulkan/vulkan_win32.h",
+      "bytes": 15112,
+      "sha256": "fa3a9263d1764b82b634180ec5d3010adc216108bae11c02b157f733073f87f8"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Include/vulkan/vulkan.h",
+      "bytes": 1555,
+      "sha256": "52297513cc6b6cc8db2921aa849f72e3f55d678b3a58a2c3eb297c02ded7a837"
+    },
+    {
+      "path": "ThirdParty/Vulkan/LICENSE-Apache-2.0.txt",
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "ThirdParty/Vulkan/LICENSE-Headers.md",
+      "bytes": 458,
+      "sha256": "ac24e5ea920e4318e4d02c4086ae51f53cfb03feed06c18df1019e7ada1ec7bc"
+    },
+    {
+      "path": "ThirdParty/Vulkan/LICENSE-MIT.txt",
+      "bytes": 1084,
+      "sha256": "1ca3502222d967f3be5751c55f6b7ee735b5383909c3b501495f54b216dbf227"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/dxc.exe",
+      "bytes": 1258040,
+      "sha256": "ce11bb02f6027055e0b9f8c062d13b14f373c876a16557a4fa744314117d31e7"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/dxcompiler.dll",
+      "bytes": 17837088,
+      "sha256": "5888d3e590f5bfd8743484e7f31313996734adec5741506271a5c6368cbe8ba9"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/dxil.dll",
+      "bytes": 1494048,
+      "sha256": "0cf5fa4b90f74550166108b3870c883f4a85243976b246b1da3ea90ad5b92015"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/LICENSE-LLVM.txt",
+      "bytes": 1979,
+      "sha256": "729615317e28dd03907e46f0fc3b5e88f7853cee61d1a1471d2749335516b46f"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/LICENSE-MIT.txt",
+      "bytes": 1093,
+      "sha256": "903df5512f7d02609fed0c780a9b704f5a3eeb6e4d84ebe42a29845c81899a3c"
+    },
+    {
+      "path": "ThirdParty/Vulkan/Tools/LICENSE-MS.txt",
+      "bytes": 13163,
+      "sha256": "734f72f239fe7b07b4c7203f294c1a7ce27095687278bab7e56d630d7c672963"
+    }
+  ],
+  "packages": [
+    {
+      "version": "v1.3.296",
+      "name": "Vulkan-Headers",
+      "license": "Apache-2.0 OR MIT",
+      "files": "Include/*",
+      "source": "https://github.com/KhronosGroup/Vulkan-Headers/tree/v1.3.296"
+    },
+    {
+      "files": "Tools/*",
+      "version": "v1.8.2505.1",
+      "source": "https://github.com/microsoft/DirectXShaderCompiler/releases/download/v1.8.2505.1/dxc_2025_07_14.zip",
+      "purpose": "Offline SPIR-V compilation only",
+      "name": "DirectXShaderCompiler",
+      "license": "LLVM / MIT / Microsoft; see Tools/LICENSE-*.txt",
+      "archiveSha256": "9ad895a6b039e3a8f8c22a1009f866800b840a74b50db9218d13319e215ea8a4"
+    }
+  ]
+}

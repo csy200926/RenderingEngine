@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Fake_Sun_e6783bb674c2b4d63f4c_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 1
+d 1
+illum 2
+map_Kd ../Textures/e6783bb674c2b4d63f4c_0.png

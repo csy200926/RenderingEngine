@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Stones_Rocks_ecc7d84f4559f41acf07_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.800000012
+d 1
+illum 2
+map_Kd ../Textures/ecc7d84f4559f41acf07_0.png
+map_Bump ../Textures/ecc7d84f4559f41acf07_0_normal.png

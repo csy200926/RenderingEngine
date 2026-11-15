@@ -1,0 +1,17 @@
+# RendererMaterial material_0 ../Materials/House_4676e0d248887dbe3aa7_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.421378553
+d 1
+illum 2
+map_Kd ../Textures/4676e0d248887dbe3aa7_0.png
+map_Bump ../Textures/4676e0d248887dbe3aa7_0_normal.png
+# RendererMaterial material_1 ../Materials/Glass_4676e0d248887dbe3aa7_1.material
+newmtl material_1
+Kd 1 1 1
+Pm 0.75
+Pr 0.0699999928
+d 0.349019617
+illum 2
+map_Kd ../Textures/4676e0d248887dbe3aa7_1.png

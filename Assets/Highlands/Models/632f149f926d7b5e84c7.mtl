@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Box_632f149f926d7b5e84c7_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.858997047
+d 1
+illum 2
+map_Kd ../Textures/632f149f926d7b5e84c7_0.png
+map_Bump ../Textures/632f149f926d7b5e84c7_0_normal.png

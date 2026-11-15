@@ -1,0 +1,1940 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.22f1 (1c726e1fb402) revision 1864302'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'zh' Physical Memory: 62884 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20" at "2026-11-12T06:09:46.6757399Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-12T06:09:46Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+-executeMethod
+HighlandsExporter.RefreshColors
+-logFile
+E:/UEProjects/Renderer/Tools/Highlands/color-refresh.log
+Successfully changed project path to: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [35996]  Target information:
+
+Player connection [35996]  * "[IP] 172.18.208.1 [Port] 55504 [Flags] 2 [Guid] 2530483923 [EditorId] 2530483923 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35996]  * "[IP] 172.23.80.1 [Port] 55504 [Flags] 2 [Guid] 2530483923 [EditorId] 2530483923 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35996]  * "[IP] 192.168.3.150 [Port] 55504 [Flags] 2 [Guid] 2530483923 [EditorId] 2530483923 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [35996] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [35996] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-98228" after 0.2 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-csy20"
+[Licensing::IpcConnector] LicenseClient-csy20 channel disconnected successfully.
+[Licensing::IpcConnector] Channel LicenseClient-csy20-6000.3.22 doesn't exist
+[Licensing::Module] Successfully launched the LicensingClient (PId: 53768)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20-6000.3.22" at "2026-11-12T06:09:47.426082Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 53768, path: "C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              16aa9e8eef194c4e82bffd547e0eb308
+  Correlation Id:          a473e3d859e16fc0351228a63be421bf
+  External correlation Id: 2614491108803156753
+  Machine Id:              xCfiJLtP00H/9BU4tbWDxCxlu4o=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-csy20-6000.3.22" (connect: 0.16s, validation: 0.09s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20-6000.3.22-notifications" at "2026-11-12T06:09:47.5165586Z"
+[Licensing::Module] Connected to LicensingClient (PId: 53768, launch time: 0.00, total connection time: 0.25s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 1375874674035-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.01
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 0.87s
+[Licensing::Module] Licensing is initialized (took 0.35s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.22f1 (1c726e1fb402)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/UEProjects/Renderer/Artifacts/HighlandsExportProject/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56228
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.003066 seconds.
+- Loaded All Assemblies, in  0.222 seconds
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.220 seconds
+Domain Reload Profiling: 441ms
+	BeginReloadAssembly (62ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (7ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (8ms)
+	initialDomainReloadingComplete (30ms)
+	LoadAllAssembliesAndSetupDomain (99ms)
+		LoadAssemblies (54ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (96ms)
+			TypeCache.Refresh (95ms)
+				TypeCache.ScanAssembly (85ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (221ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (197ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (35ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (42ms)
+			ProcessInitializeOnLoadAttributes (73ms)
+			ProcessInitializeOnLoadMethodAttributes (44ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Restoring resolved packages state from cache
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Registered 7 packages:
+  Built-in packages:
+    com.unity.modules.terrain@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.imageconversion@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.physics@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.particlesystem@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.audio@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.animation@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.animation)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.02 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+DisplayProgressbar: Compiling Scripts
+ExitCode: 0 Duration: 0s229ms
+[147/150    0s] Csc Library/Bee/artifacts/1900b0aE.dag/Assembly-CSharp-Editor.dll (+2 others)
+[148/150    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.pdb
+[149/150    0s] CopyFiles Library/ScriptAssemblies/Assembly-CSharp-Editor.dll
+*** Tundra build success (0.21 seconds), 3 items updated, 150 evaluated
+AssetDatabase: script compilation time: 0.556049s
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.351 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.236 seconds
+Domain Reload Profiling: 586ms
+	BeginReloadAssembly (215ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (14ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (134ms)
+	RebuildCommonClasses (21ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (12ms)
+	LoadAllAssembliesAndSetupDomain (94ms)
+		LoadAssemblies (126ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (10ms)
+			TypeCache.Refresh (8ms)
+				TypeCache.ScanAssembly (5ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (236ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (159ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (20ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (58ms)
+			ProcessInitializeOnLoadMethodAttributes (19ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (12ms)
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=61ceff4dcc9ebd145bfe124498af678b): Total: 1.274 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=0 (actual=0, local cache=0, cache server=0)
+		Asset DB Process Time: managed=0 ms, native=301 ms
+		Asset DB Callback time: managed=33 ms, native=25 ms
+		Scripting: domain reloads=1, domain reload time=351 ms, compile time=557 ms, other=3 ms
+		Project Asset Count: scripts=71, non-scripts=535
+		Asset File Changes: new=0, changed=1, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.001ms
+	InvokePackagesCallback: 25.887ms
+	ApplyChangesToAssetFolders: 0.191ms
+	Scan: 19.720ms
+	OnSourceAssetsModified: 0.634ms
+	CategorizeAssetsWithTransientArtifact: 0.048ms
+	ProcessAssetsWithTransientArtifactChanges: 0.086ms
+	CategorizeAssets: 1.856ms
+	ImportOutOfDateAssets: 236.506ms (-320.925ms without children)
+		CompileScripts: 557.164ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.079ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.034ms
+		InitializingProgressBar: 0.001ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.154ms
+	PostProcessAllAssets: 33.886ms
+	Hotreload: 0.313ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.002ms
+	UnloadStreamsBegin: 0.886ms
+	PersistCurrentRevisions: 0.012ms
+	UnloadStreamsEnd: 0.001ms
+	GenerateScriptTypeHashes: 0.001ms
+	Untracked: 954.003ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 40.740ms
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HighlandsExportProject
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 16 unused Assets / (506.5 KB). Loaded Objects now: 649.
+Memory consumption went from 122.9 MB to 122.4 MB.
+Total: 3.013000 ms (FindLiveObjects: 0.032500 ms CreateObjectMapping: 0.002200 ms MarkObjects: 2.819300 ms  DeleteObjects: 0.158500 ms)
+
+Opening scene 'Assets/HIGHLANDS - Stylized Environment/Demo/Demo.unity'
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Assets/HIGHLANDS - Stylized Environment/Demo/Demo.unity'
+	Deserialize:            250.432 ms
+	Integration:            430.198 ms
+	Integration of assets:  0.027 ms
+	Thread Wait Time:       -0.009 ms
+	Total Operation Time:   680.649 ms
+Unloading 8 unused Assets / (0.9 MB). Loaded Objects now: 92100.
+Memory consumption went from 325.6 MB to 324.6 MB.
+Total: 11.227600 ms (FindLiveObjects: 5.016900 ms CreateObjectMapping: 0.888500 ms MarkObjects: 4.923300 ms  DeleteObjects: 0.398100 ms)
+
+HIGHLANDS_COLOR_MODEL 1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 2
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 3
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 4
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 5
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 6
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 7
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 8
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 9
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 10
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 11
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 12
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 13
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 14
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 15
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 16
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 17
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 18
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 19
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 20
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 21
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 22
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 23
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 24
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 25
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 26
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 27
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 28
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 29
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 30
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 31
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 32
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 33
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 34
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 35
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 36
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 37
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 38
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 39
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 40
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 41
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 42
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 43
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 44
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 45
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 46
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 47
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 48
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 49
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 50
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 51
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 52
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 53
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 54
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 55
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 56
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 57
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 58
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 59
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 60
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 61
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 62
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 63
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 64
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 65
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 66
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 67
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 68
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 69
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 70
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 71
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 72
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 73
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 74
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 75
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 76
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 77
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 78
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 79
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 80
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 81
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 82
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 83
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 84
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 85
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 86
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 87
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 88
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 89
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 90
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 91
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 92
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 93
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 94
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 95
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 96
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 97
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 98
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 99
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 100
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 101
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 102
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 103
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 104
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 105
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 106
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 107
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 108
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 109
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 110
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 111
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 112
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 113
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 114
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 115
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 116
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 117
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 118
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 119
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 120
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 121
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 122
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 123
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 124
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 125
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 126
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 127
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 128
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 129
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 130
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 131
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 132
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 133
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 134
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 135
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 136
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 137
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 138
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 139
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 140
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 141
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 142
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 143
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 144
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 145
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 146
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_MODEL 147
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1172)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1172)
+
+HIGHLANDS_COLOR_REFRESH_SUCCESS models=147 slots=159 terrains=1
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+HighlandsExporter:RefreshColors () (at Assets/Editor/HighlandsExporter.cs:1183)
+
+(Filename: Assets/Editor/HighlandsExporter.cs Line: 1183)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 2.0795367 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-csy20-6000.3.22-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-csy20-6000.3.22 channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0

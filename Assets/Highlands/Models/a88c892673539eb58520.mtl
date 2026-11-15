@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Bag_a88c892673539eb58520_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.905825138
+d 1
+illum 2
+map_Kd ../Textures/a88c892673539eb58520_0.png
+map_Bump ../Textures/a88c892673539eb58520_0_normal.png

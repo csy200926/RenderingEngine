@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Boiler_Bonfire_5e15ad17185b64a2cc78_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.133655742
+Pr 0.7325207
+d 1
+illum 2
+map_Kd ../Textures/5e15ad17185b64a2cc78_0.png
+map_Bump ../Textures/5e15ad17185b64a2cc78_0_normal.png

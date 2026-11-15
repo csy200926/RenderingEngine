@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Grass_2_f2bf6d0a073872803ea9_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.650647283
+d 1
+illum 2
+map_Kd ../Textures/f2bf6d0a073872803ea9_0.png

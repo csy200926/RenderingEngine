@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Dead_Bush_Bark_b578a9dd86cd7d7bfcba_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.744730651
+d 1
+illum 2
+map_Kd ../Textures/b578a9dd86cd7d7bfcba_0.png
+map_Bump ../Textures/b578a9dd86cd7d7bfcba_0_normal.png

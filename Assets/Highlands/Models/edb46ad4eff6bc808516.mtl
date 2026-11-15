@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Log_edb46ad4eff6bc808516_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.8223719
+d 1
+illum 2
+map_Kd ../Textures/edb46ad4eff6bc808516_0.png
+map_Bump ../Textures/edb46ad4eff6bc808516_0_normal.png

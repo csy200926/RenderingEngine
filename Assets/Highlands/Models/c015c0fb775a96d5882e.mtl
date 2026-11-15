@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Food_c015c0fb775a96d5882e_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.466068745
+d 1
+illum 2
+map_Kd ../Textures/c015c0fb775a96d5882e_0.png
+map_Bump ../Textures/c015c0fb775a96d5882e_0_normal.png

@@ -1,0 +1,14 @@
+[
+  {
+    "file": "sibenik.obj",
+    "sha256": "786134de73f1b40b0975af2e7bd969bc9a07d7411e6ad4ba1e30f3a5bde63bf8"
+  },
+  {
+    "file": "sibenik.mtl",
+    "sha256": "83c967016950ad25a420c4f277ec92b42c4b3f2524c4c6f19a8d366c10e76cd2"
+  },
+  {
+    "source": "Original SoftRendering local asset copy",
+    "original_author": "Marko Dabrovic (Sibenik cathedral)"
+  }
+]

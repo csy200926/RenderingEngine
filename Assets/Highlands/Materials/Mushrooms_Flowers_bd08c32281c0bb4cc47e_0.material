@@ -1,0 +1,12 @@
+Shaders/OpenGL/DefaultVS.shader
+Shaders/OpenGL/DefaultFS.shader
+DX11=Shaders/DX11/Default.hlsl
+Texture=Highlands/Textures/bd08c32281c0bb4cc47e_0.png
+NormalTexture=Highlands/Textures/bd08c32281c0bb4cc47e_0_normal.png
+OpacityTexture=
+Color=1,1,1,1
+Metallic=0
+Roughness=0.661383152
+AO=1
+AlphaCutoff=0.400000006
+Transparent=false

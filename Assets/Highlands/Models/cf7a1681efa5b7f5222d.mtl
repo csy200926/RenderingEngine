@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Clovers_cf7a1681efa5b7f5222d_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.505110025
+d 1
+illum 2
+map_Kd ../Textures/cf7a1681efa5b7f5222d_0.png

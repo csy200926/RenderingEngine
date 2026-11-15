@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Barrel_7d35e21b493bf8dcee26_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0945920497
+Pr 0.767850041
+d 1
+illum 2
+map_Kd ../Textures/7d35e21b493bf8dcee26_0.png
+map_Bump ../Textures/7d35e21b493bf8dcee26_0_normal.png

@@ -1,0 +1,17 @@
+# RendererMaterial material_0 ../Materials/Fir_Bark_6de74c814de753b5d484_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.600000024
+d 1
+illum 2
+map_Kd ../Textures/6de74c814de753b5d484_0.png
+map_Bump ../Textures/6de74c814de753b5d484_0_normal.png
+# RendererMaterial material_1 ../Materials/Tall_Fir_Branch_6de74c814de753b5d484_1.material
+newmtl material_1
+Kd 1 1 1
+Pm 0
+Pr 1
+d 1
+illum 2
+map_Kd ../Textures/6de74c814de753b5d484_1.png

@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Dryer_e9abfc8568d9314281c9_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.00846402068
+Pr 0.608062625
+d 1
+illum 2
+map_Kd ../Textures/e9abfc8568d9314281c9_0.png
+map_Bump ../Textures/e9abfc8568d9314281c9_0_normal.png

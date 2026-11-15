@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Mountain_4_3a2e4730863ffbb7992c_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 1
+d 1
+illum 2
+map_Kd ../Textures/3a2e4730863ffbb7992c_0.png
+map_Bump ../Textures/3a2e4730863ffbb7992c_0_normal.png

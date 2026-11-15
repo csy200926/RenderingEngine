@@ -1,0 +1,392 @@
+{
+  "repository": "https://github.com/csy200926/RenderingEngine",
+  "commit": "a885c4afa031e676e9a64a44bb6cebbc28148463",
+  "purpose": "原作者2019 MapViewer源码参考；未编入当前引擎，不代表功能已迁移。只保存自有核心源码/Shader/场景配置，不复制旧预编译依赖。",
+  "files": [
+    {
+      "path": "MapViewer/Block.cpp",
+      "sha256": "a620a3590d34d9b357703a5e7d9dcd06ca70bdc5b1c93b9a7e6bd7f9d9b3df9a",
+      "bytes": 47
+    },
+    {
+      "path": "MapViewer/FractalNoise.cpp",
+      "sha256": "d109f3063ae253e31c99862ee979c928d54b5d80229aea3cf0e84998df6bd3f8",
+      "bytes": 968
+    },
+    {
+      "path": "MapViewer/FractalNoise.h",
+      "sha256": "200efd773e7bb32269ff6ac32da28dbf1c840d35af8291781eb8bc234bacbef7",
+      "bytes": 1435
+    },
+    {
+      "path": "MapViewer/Game.cpp",
+      "sha256": "5d387dd3df3db8858e700a8c4285d22a2ceeeb760c5cabe0f48f62c08b710f88",
+      "bytes": 8570
+    },
+    {
+      "path": "MapViewer/Game.h",
+      "sha256": "b4840ba5d149e8e6a57ddf85f0b1cf927edc5107fa029ced24bec9cb2e99c50e",
+      "bytes": 1072
+    },
+    {
+      "path": "MapViewer/ISerializable.cpp",
+      "sha256": "c33894781293a9eb89a297b04c29c18bf0e2379d7c3dd0b9ff5cb901640d4399",
+      "bytes": 253
+    },
+    {
+      "path": "MapViewer/ISerializable.h",
+      "sha256": "3f9738ab7db4863ae884c868b1e36fdd9f09f2dfef73711fc9e187b66d325442",
+      "bytes": 3112
+    },
+    {
+      "path": "MapViewer/Perlin.cpp",
+      "sha256": "7c06d7c6bbbcc0f6bd431a60999ed4627c9a4454e6fb1af40b3a21f7db135cb7",
+      "bytes": 2778
+    },
+    {
+      "path": "MapViewer/Perlin.h",
+      "sha256": "0edfa85a8ccc0b17a82f6770d94d8ec4853145126538e12b08f1174ec1cd4c20",
+      "bytes": 581
+    },
+    {
+      "path": "MapViewer/RandomGenerator.cpp",
+      "sha256": "5d0ae8b4a408bde00c3e93359ab64606075d0ba7b02f9a8ba9dff2443f904a02",
+      "bytes": 28
+    },
+    {
+      "path": "MapViewer/RandomGenerator.h",
+      "sha256": "86e36242d02cfd3e066579a9e77b640bd25a217f7e4d247699c77e42a0d3d194",
+      "bytes": 638
+    },
+    {
+      "path": "MapViewer/Rendering/Camera.cpp",
+      "sha256": "0056199f0fe1a5b879f97559d255daa9730cbd86af819fb527a9738a7f489ac9",
+      "bytes": 1774
+    },
+    {
+      "path": "MapViewer/Rendering/Camera.h",
+      "sha256": "812328a8df93437308f7eba0d291ecad772ff6b0faaf8f1430a501cff30a777d",
+      "bytes": 1751
+    },
+    {
+      "path": "MapViewer/Rendering/Components.h",
+      "sha256": "0151fc4d58965d7d7553f1a19e67c87325d28d936845f14e775bfc845c5d7c82",
+      "bytes": 116
+    },
+    {
+      "path": "MapViewer/Rendering/GUI.cpp",
+      "sha256": "35bdc987361355e84f4fe66358c57a33301c7f8b052b6d1cacc532a74f32f3a4",
+      "bytes": 8932
+    },
+    {
+      "path": "MapViewer/Rendering/GUI.h",
+      "sha256": "4e5b1503babd506605e7882bb9d45749bf0c0b2121a81241904d86eeafba6ae5",
+      "bytes": 1234
+    },
+    {
+      "path": "MapViewer/Rendering/INodeComponent.h",
+      "sha256": "47b17292d7c48ec3207a628869920539005383056a822eeb2cc6cc65b71da929",
+      "bytes": 874
+    },
+    {
+      "path": "MapViewer/Rendering/IResourceManager.h",
+      "sha256": "5de0688c9c9c89896029bbe1616b7fad018ef5817c155d5cec846cd54ba33f2f",
+      "bytes": 1920
+    },
+    {
+      "path": "MapViewer/Rendering/IResources.h",
+      "sha256": "f2142e221ad29176dea820ce7844f4a3e4e31df925b54035adb6b408b74ba881",
+      "bytes": 497
+    },
+    {
+      "path": "MapViewer/Rendering/ISingleton.h",
+      "sha256": "ed1c334df4e5ff3c2117569b1105459d1abf2c3ab24f7473d83ad4ec222820b5",
+      "bytes": 834
+    },
+    {
+      "path": "MapViewer/Rendering/InputManager.cpp",
+      "sha256": "9405ad17e3bca603119d2595fee05a4764d52e4d32af8289ece5c162aedddee5",
+      "bytes": 1795
+    },
+    {
+      "path": "MapViewer/Rendering/InputManager.h",
+      "sha256": "41ffdb02f02333cb110620764ec44acfa411caada7966f7288308433829c5eac",
+      "bytes": 1103
+    },
+    {
+      "path": "MapViewer/Rendering/Lighting.cpp",
+      "sha256": "1ae237bcac601dd10a1a97019077c78886373c1cff7c9bc5fc9f2a8468f48b31",
+      "bytes": 407
+    },
+    {
+      "path": "MapViewer/Rendering/Lighting.h",
+      "sha256": "dcbd6aa7f68d4ecb08ba8b62b11305d45d555b97b83864fec5b601b15b24fb85",
+      "bytes": 2683
+    },
+    {
+      "path": "MapViewer/Rendering/Material.cpp",
+      "sha256": "1f51bcc9e5e8ba8a713d3b5e3d4e79c8799f1439644013ba4263e90d3e8796bc",
+      "bytes": 5639
+    },
+    {
+      "path": "MapViewer/Rendering/Material.h",
+      "sha256": "dee399b86a268e37416a46f097af69224fb53f3d66721f5066f945066661ea8a",
+      "bytes": 1517
+    },
+    {
+      "path": "MapViewer/Rendering/MaterialManager.h",
+      "sha256": "9335f10eb48c618901b6e1e6443e4884f603611d664b6a0ea8c944d63e739a41",
+      "bytes": 700
+    },
+    {
+      "path": "MapViewer/Rendering/Mesh.cpp",
+      "sha256": "fc62eafb54b47a725c98c47df32c9a22bf6120e426102a5c1363896930b0b410",
+      "bytes": 5672
+    },
+    {
+      "path": "MapViewer/Rendering/Mesh.h",
+      "sha256": "9db6c5873102acc74b83875ad468759660c24934b465f826cc3f4d885cac7f17",
+      "bytes": 1604
+    },
+    {
+      "path": "MapViewer/Rendering/MeshManager.h",
+      "sha256": "ef10bed3573767746892f167f4aa9a2e500f4631ca2f42ba37424d39e5b50ff5",
+      "bytes": 651
+    },
+    {
+      "path": "MapViewer/Rendering/MeshPoints.cpp",
+      "sha256": "a72cb0e7760db731f5d2518640a7072cc85432a3e1aea576da9500f011c1b83d",
+      "bytes": 1315
+    },
+    {
+      "path": "MapViewer/Rendering/MeshPoints.h",
+      "sha256": "e00a1fab263a75be0488345b67b00ade49b2867407109d2bcc7c1794e844cb56",
+      "bytes": 746
+    },
+    {
+      "path": "MapViewer/Rendering/MeshRenderer.h",
+      "sha256": "c201147f277ce0f3161c68e09a43713d93b53cacab1ae7ec080fb4a75241f24c",
+      "bytes": 2236
+    },
+    {
+      "path": "MapViewer/Rendering/RenderTarget.cpp",
+      "sha256": "dd23c6a4468c8e4892d30fb0ee4a45288a3b6d4033cc3ef784b654197dec9658",
+      "bytes": 25
+    },
+    {
+      "path": "MapViewer/Rendering/RenderTarget.h",
+      "sha256": "6a221112d7fd41cf3950158643c579b4548c047d28be1bb8086a245b2607f49c",
+      "bytes": 12
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngine.cpp",
+      "sha256": "d7efda145440848e4a8ac6feed470b24e1346ac595960ce280234a9cd7574b24",
+      "bytes": 4082
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngine.h",
+      "sha256": "4853669744fb69083b9bdbccb848ff81d9f4d5315414214432ee7caf0beb8938",
+      "bytes": 1947
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngineDeferred.cpp",
+      "sha256": "c33b796a4b1564c3653bef3ef9d5d43477b5084435ad8b2b7d99e97b250b8f61",
+      "bytes": 7533
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngineDeferred.h",
+      "sha256": "93609113ddd97a0ec57b3a3a4d04a17041cef39e801a3f46f1f4524ff621757d",
+      "bytes": 721
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngineDiffuse.cpp",
+      "sha256": "d06a7a20481146db0e898edcd5a64aa2997d0727bdd46f64ac8fb9a3ef3c385c",
+      "bytes": 3470
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEngineDiffuse.h",
+      "sha256": "4036562b40b5ec475438a0bcc2178b46fd973a9470375a03ef26e62f79c10c93",
+      "bytes": 467
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEnginePbr.cpp",
+      "sha256": "73c64b584385aba17992e730511f968a27bc0bccd1249dd142ef4cbb27d64472",
+      "bytes": 9353
+    },
+    {
+      "path": "MapViewer/Rendering/RenderingEnginePbr.h",
+      "sha256": "02f18cf188dba35b163ad9694b3be56ed0fcb39953727df0bdfb0c232be4e329",
+      "bytes": 723
+    },
+    {
+      "path": "MapViewer/Rendering/SceneNode.cpp",
+      "sha256": "4b08217ab25b6c309e3d4cb21f485733d0719dc3658f176583027b5467c85d1a",
+      "bytes": 4208
+    },
+    {
+      "path": "MapViewer/Rendering/SceneNode.h",
+      "sha256": "0844d687f9d2f40fffb9a820188518f04ea854bf066b98faf39f359687d437ee",
+      "bytes": 3125
+    },
+    {
+      "path": "MapViewer/Rendering/SimplePhysics.h",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "MapViewer/Rendering/SkyBox.cpp",
+      "sha256": "dd2c5d5e6d6039e208e9dc5157218b7215a4dd5ea28541c2aea067b1d4ae5377",
+      "bytes": 2482
+    },
+    {
+      "path": "MapViewer/Rendering/SkyBox.h",
+      "sha256": "275118e5facb59f9c30a250b0d482b39c823dbed1fc7d0d465918e4f2c541dcc",
+      "bytes": 889
+    },
+    {
+      "path": "MapViewer/Rendering/SpriteRenderer.h",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "MapViewer/Rendering/Texture.cpp",
+      "sha256": "f2b21ef190d0fd9f951d43d9b185252c3fb2bae2ac9c77e74f8eb56ea233469f",
+      "bytes": 2667
+    },
+    {
+      "path": "MapViewer/Rendering/Texture.h",
+      "sha256": "8126410bacf777f53219ec56dc05a0f341984d190fd94cea24b91b484a787c21",
+      "bytes": 482
+    },
+    {
+      "path": "MapViewer/Rendering/TextureCube.cpp",
+      "sha256": "2146ebc4694920b0dfd4606f863bff1e8cd70051a06847cac9fa28f0df164fbb",
+      "bytes": 2798
+    },
+    {
+      "path": "MapViewer/Rendering/TextureCube.h",
+      "sha256": "caf280e4a30dbdd8a3725f1e0986b03bad3671cb499b3bd7d1801d98a350d470",
+      "bytes": 619
+    },
+    {
+      "path": "MapViewer/Rendering/TextureManager.h",
+      "sha256": "456db66453da0308b5c1b5ec585682250e896d60586ddaa52e2f83c74f7c8c0e",
+      "bytes": 713
+    },
+    {
+      "path": "MapViewer/RenderingGame.cpp",
+      "sha256": "651f9eeabea8707abff3d4f44e7edfccc8b970100156b4a7f43debedd1ad9803",
+      "bytes": 1854
+    },
+    {
+      "path": "MapViewer/RenderingGame.h",
+      "sha256": "9d3b13a22c255412845dc4b52cd24bd1865950636f9e277d7e39c4d98b773315",
+      "bytes": 222
+    },
+    {
+      "path": "MapViewer/Scene.lua",
+      "sha256": "6156211a155376220e79464c898e807b06e25526b8df32a4ddc213b5f8355486",
+      "bytes": 6305
+    },
+    {
+      "path": "MapViewer/Shaders/DefaultFS.shader",
+      "sha256": "3ba78bd211caa11f037a825d2a40df84d6f7841f60f7d9edccc789e0f39d87d3",
+      "bytes": 3748
+    },
+    {
+      "path": "MapViewer/Shaders/DefaultVS.shader",
+      "sha256": "3013f19154118ecc014d2b38007f7503ee3c130deac58f3984273671ed2d4dde",
+      "bytes": 739
+    },
+    {
+      "path": "MapViewer/Shaders/RTShaderFS.shader",
+      "sha256": "c86ff6a4db5d39040a5b2d9a8986390cbd2585f185e77f7deea9bafd80499570",
+      "bytes": 1518
+    },
+    {
+      "path": "MapViewer/Shaders/RTShaderVS.shader",
+      "sha256": "03bd43193403e8a8073140cf93735e4ae1cfa15e03bb3932edd704e140ae1e95",
+      "bytes": 347
+    },
+    {
+      "path": "MapViewer/Shaders/cube_convolution_fs.shader",
+      "sha256": "9050364ec66f19731a0e45af29ffdebdd023d2a081c255dc7c326ff2f7d919ef",
+      "bytes": 1374
+    },
+    {
+      "path": "MapViewer/Shaders/cube_convolution_vs.shader",
+      "sha256": "4f187137d0b3b4d6619028e56a4d7dc8e2d572cbb2e760c68aa47b3f8ee840bd",
+      "bytes": 383
+    },
+    {
+      "path": "MapViewer/Shaders/cube_fs.shader",
+      "sha256": "0f0c6e92f782b698cde3b675fb6025aa889d1e5d9d8fd181f8302c550340658d",
+      "bytes": 252
+    },
+    {
+      "path": "MapViewer/Shaders/cube_vs.shader",
+      "sha256": "7b470ebba529c937ac4e5bc980104e415d0c9b7da61603c21faff13bc9d02fd2",
+      "bytes": 351
+    },
+    {
+      "path": "MapViewer/Shaders/deferred_first_fs.shader",
+      "sha256": "4bfd4083e49fe9bdf27a35ff8aeb1ee37fdacbf7791dd2f425f438524f74c5a7",
+      "bytes": 367
+    },
+    {
+      "path": "MapViewer/Shaders/deferred_first_vs.shader",
+      "sha256": "66de5755bef0a3e1bcda8fad24870e9c49342f3d40e551ea6d20cfe984a3e343",
+      "bytes": 673
+    },
+    {
+      "path": "MapViewer/Shaders/deferred_second_fs.shader",
+      "sha256": "b7187d4c67db20587ff41f127790a1beef60476f2a4860b1624eef95cad97107",
+      "bytes": 1644
+    },
+    {
+      "path": "MapViewer/Shaders/deferred_second_vs.shader",
+      "sha256": "bba97b2016527dc878561697977384208b5410e4afca2a02336ced62e0ffbb59",
+      "bytes": 424
+    },
+    {
+      "path": "MapViewer/Shaders/phongFS.shader",
+      "sha256": "f1ccff8a650aef6602b3f1a9543307b92093ab8b95110a022fbb90490a0255a3",
+      "bytes": 895
+    },
+    {
+      "path": "MapViewer/Shaders/phongVS.shader",
+      "sha256": "e5de4581570c9e5643210809bbead6b60860f91b125f8a1fd990209d81e3e2f1",
+      "bytes": 748
+    },
+    {
+      "path": "MapViewer/SimplexNoise.cpp",
+      "sha256": "b3db8197a513622976f4999dbb265e458754cd2d3d8405f8aaaa65fa0cadc374",
+      "bytes": 11780
+    },
+    {
+      "path": "MapViewer/SimplexNoise.h",
+      "sha256": "6eabcdc78fbc5c0354c707f3c7b07efbc82657bc3bdb3c408ee8faf76a1f5882",
+      "bytes": 2168
+    },
+    {
+      "path": "MapViewer/StrangeTree.cpp",
+      "sha256": "de1473ae0bc75cb96aea8bf34ec191fe1e9afefe7b3a77170874a23155b56070",
+      "bytes": 3573
+    },
+    {
+      "path": "MapViewer/StrangeTree.h",
+      "sha256": "059afd69d007261c3034710f8929f6ba6d1578e23dcb46381a11016e6b8714f5",
+      "bytes": 1871
+    },
+    {
+      "path": "MapViewer/Utilities.h",
+      "sha256": "bc421bc6861696f93a6daa2f3f4b24e93262485e166734615bde61e5e6b0dd92",
+      "bytes": 1105
+    },
+    {
+      "path": "MapViewer/main.cpp",
+      "sha256": "2e2ef34284b5665094f3c9f635f4ee464c4115ee29807e8ade7709c0055fe1e0",
+      "bytes": 7671
+    }
+  ]
+}

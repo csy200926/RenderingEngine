@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Props_d152f77c5d2393974877_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.359168231
+Pr 0.48268801
+d 1
+illum 2
+map_Kd ../Textures/d152f77c5d2393974877_0.png
+map_Bump ../Textures/d152f77c5d2393974877_0_normal.png

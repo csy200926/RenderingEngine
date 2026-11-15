@@ -1,0 +1,19 @@
+{
+  "model": "Crytek Sponza",
+  "original_author": "Frank Meinl / Crytek",
+  "mirror": "https://github.com/jimmiebergmann/Sponza",
+  "commit": "222338979d32f4f4818466291bdbc29f192b86ba",
+  "archive_url": "https://codeload.github.com/jimmiebergmann/Sponza/tar.gz/222338979d32f4f4818466291bdbc29f192b86ba",
+  "sha256": "76fa7f0371f0aaf4a838c5aa1b26f6d5a4b5f63ea6a320213aa972391509352a",
+  "local_adjustment": {
+    "file": "sponza.mtl",
+    "reason": "Restore opaque d=1 for 22 exported d=0 opaque materials; remove absent separate mask references because diffuse TGAs already contain the masks in alpha.",
+    "replaced_records": 22,
+    "adjusted_sha256": "651aa8345575aa725e38e29aa939e931ee40f734380e25fab22af2c8c1dc1026",
+    "absent_mask_references": [
+      "textures/vase_plant_mask.tga",
+      "textures/chain_texture_mask.tga",
+      "textures/sponza_thorn_mask.tga"
+    ]
+  }
+}

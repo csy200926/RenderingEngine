@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Cart_4e9023b16dd413a2b13a_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0403569266
+Pr 0.831442893
+d 1
+illum 2
+map_Kd ../Textures/4e9023b16dd413a2b13a_0.png
+map_Bump ../Textures/4e9023b16dd413a2b13a_0_normal.png

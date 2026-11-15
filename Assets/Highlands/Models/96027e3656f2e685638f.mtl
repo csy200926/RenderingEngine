@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Flower_1_96027e3656f2e685638f_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.656356931
+d 1
+illum 2
+map_Kd ../Textures/96027e3656f2e685638f_0.png

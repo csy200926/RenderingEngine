@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Tent_3_4_1ecffe8e05b776276320_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.00439453125
+Pr 0.902587891
+d 1
+illum 2
+map_Kd ../Textures/1ecffe8e05b776276320_0.png
+map_Bump ../Textures/1ecffe8e05b776276320_0_normal.png

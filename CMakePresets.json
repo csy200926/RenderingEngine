@@ -1,0 +1,5 @@
+{
+  "version": 3,
+  "configurePresets": [{"name":"windows-x64","displayName":"MyEngine / Visual Studio 2022 x64","generator":"Visual Studio 17 2022","architecture":"x64","binaryDir":"${sourceDir}/Build","cacheVariables":{"CMAKE_MSVC_RUNTIME_LIBRARY":"MultiThreaded$<$<CONFIG:Debug>:Debug>"}}],
+  "buildPresets": [{"name":"release","configurePreset":"windows-x64","configuration":"Release"},{"name":"debug","configurePreset":"windows-x64","configuration":"Debug"}]
+}

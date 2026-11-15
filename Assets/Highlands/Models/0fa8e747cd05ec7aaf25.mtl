@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Fences_0fa8e747cd05ec7aaf25_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0388344005
+Pr 0.823919535
+d 1
+illum 2
+map_Kd ../Textures/0fa8e747cd05ec7aaf25_0.png
+map_Bump ../Textures/0fa8e747cd05ec7aaf25_0_normal.png

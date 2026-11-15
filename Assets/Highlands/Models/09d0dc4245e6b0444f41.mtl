@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Fern_09d0dc4245e6b0444f41_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.32866472
+d 1
+illum 2
+map_Kd ../Textures/09d0dc4245e6b0444f41_0.png

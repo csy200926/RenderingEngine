@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Water_157ea826384c799c60fe_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.0500000119
+d 1
+illum 2
+map_Kd ../Textures/157ea826384c799c60fe_0.png

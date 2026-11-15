@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Weapon_02e0efdd26cc414daec1_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.461018443
+Pr 0.559352994
+d 1
+illum 2
+map_Kd ../Textures/02e0efdd26cc414daec1_0.png
+map_Bump ../Textures/02e0efdd26cc414daec1_0_normal.png

@@ -1,4 +1,10 @@
-Build/
-Build-*/
-Output/
-Artifacts/
+/Build/
+/Build-*/
+/*.log
+# Original Unity source package; only the converted assets under Assets/Highlands are used.
+/unity*/
+/Output/
+/Artifacts/
+/.vs/
+*.user
+*.suo

@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Table_30d26a07626530a37e31_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.000406422361
+Pr 0.842348337
+d 1
+illum 2
+map_Kd ../Textures/30d26a07626530a37e31_0.png
+map_Bump ../Textures/30d26a07626530a37e31_0_normal.png

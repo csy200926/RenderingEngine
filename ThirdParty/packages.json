@@ -1,0 +1,12 @@
+[
+  {
+    "name": "lua-5.4.8",
+    "url": "https://www.lua.org/ftp/lua-5.4.8.tar.gz",
+    "sha256": "4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae"
+  },
+  {
+    "name": "assimp-5.4.3",
+    "url": "https://codeload.github.com/assimp/assimp/tar.gz/refs/tags/v5.4.3",
+    "sha256": "66dfbaee288f2bc43172440a55d0235dfc7bf885dda6435c038e8000e79582cb"
+  }
+]

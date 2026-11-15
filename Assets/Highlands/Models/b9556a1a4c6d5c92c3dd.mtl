@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Fences_b9556a1a4c6d5c92c3dd_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.0388344005
+Pr 0.823919535
+d 1
+illum 2
+map_Kd ../Textures/b9556a1a4c6d5c92c3dd_0.png
+map_Bump ../Textures/b9556a1a4c6d5c92c3dd_0_normal.png

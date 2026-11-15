@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Gold_2d86bc32a31d95ed27e0_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.237609878
+Pr 0.794319868
+d 1
+illum 2
+map_Kd ../Textures/2d86bc32a31d95ed27e0_0.png
+map_Bump ../Textures/2d86bc32a31d95ed27e0_0_normal.png

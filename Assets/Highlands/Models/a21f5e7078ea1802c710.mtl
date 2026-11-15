@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Chest_a21f5e7078ea1802c710_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.290116638
+Pr 0.659474313
+d 1
+illum 2
+map_Kd ../Textures/a21f5e7078ea1802c710_0.png
+map_Bump ../Textures/a21f5e7078ea1802c710_0_normal.png

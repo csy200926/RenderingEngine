@@ -1,0 +1,2617 @@
+﻿[
+    {
+        "path":  "Demo/Demo.unity",
+        "bytes":  39013297,
+        "sha256":  "9f2d918445ec01468812583b4b8a28de12cb2ddad48c891f630e3f4f9d051b96"
+    },
+    {
+        "path":  "Demo/Demo/Demo_Terrain.asset",
+        "bytes":  6152928,
+        "sha256":  "5283f52c781b6ddfef0e488c06852af6808e839a26d7d9f5b7320faf9f382100"
+    },
+    {
+        "path":  "Demo/Demo/Fake_Sun.mat",
+        "bytes":  2655,
+        "sha256":  "2e34b5668a94774102e9aab0d7204a730f1fcc1a0dbddc895d5c6742fbd282d4"
+    },
+    {
+        "path":  "Demo/Demo/Fake_Sun.png",
+        "bytes":  19580,
+        "sha256":  "26499ba258404e8c5f6a8a957a57571f92d4baf0fef8784039f3922678462757"
+    },
+    {
+        "path":  "Demo/Demo/LightingData.asset",
+        "bytes":  18280,
+        "sha256":  "cb39a55301e8f5abd7eda6b6a369ec68fdf9668fe953a06d3fe43e988f86417b"
+    },
+    {
+        "path":  "Demo/Demo/OcclusionCullingData.asset",
+        "bytes":  3285009,
+        "sha256":  "0929c16f7b93b75695baeeb95b3acd492d2a8298390e2e4a19edd44cb6e9f762"
+    },
+    {
+        "path":  "Demo/Demo/ReflectionProbe-0.png",
+        "bytes":  478101,
+        "sha256":  "4f36211fcb2bc07c7a3ecfb261ecc35933a15997657f9da59d88d43d278bd97f"
+    },
+    {
+        "path":  "Demo/Settings/Highlands Indoor Post-Processing.asset",
+        "bytes":  2489,
+        "sha256":  "48d6fe3a37dd447904a0a8e771d61f36141e732f972dd8eeb514a6d0871c24c7"
+    },
+    {
+        "path":  "Demo/Settings/Highlands Outdoor Post-Processing.asset",
+        "bytes":  25140,
+        "sha256":  "def679dcf20df2d2f4118b199e077c73ad970c8f696b8d76aaddad37fa60674a"
+    },
+    {
+        "path":  "Materials/Camp/Bag.mat",
+        "bytes":  4174,
+        "sha256":  "3e0bccf927db2907d173540c185ee90b5f4b0c46ab8a6a11509bc5f345245bd3"
+    },
+    {
+        "path":  "Materials/Camp/Barrel.mat",
+        "bytes":  4177,
+        "sha256":  "814e02fdd40f16c64f8b1f4aeeef7aa9ada1345cbcdcaaccc39799ecc9172308"
+    },
+    {
+        "path":  "Materials/Camp/Boiler_Bonfire.mat",
+        "bytes":  4309,
+        "sha256":  "2ab495fd4dfa78462dc28cb9269ed1d75beb3e6ad255cf51661c63d1b9d81df0"
+    },
+    {
+        "path":  "Materials/Camp/Box.mat",
+        "bytes":  4174,
+        "sha256":  "47b9463879c2f26acd2be1b0ab3c56d994e55bc179e55ad3785e5c50053ee6e0"
+    },
+    {
+        "path":  "Materials/Camp/Cart.mat",
+        "bytes":  4175,
+        "sha256":  "213bd0ee62f02b7b5590dde2c3ddb25b161bc256338523c6ac49f1f4147ca29d"
+    },
+    {
+        "path":  "Materials/Camp/Chest.mat",
+        "bytes":  4176,
+        "sha256":  "4acb25c4d84428819800c2cc93a61252360dd5a453fbce2b1f3fbda8c81c4d6e"
+    },
+    {
+        "path":  "Materials/Camp/Dishes.mat",
+        "bytes":  4179,
+        "sha256":  "4c3ef0b8f54a5aca6468880ae0fd44e776e3c80a91fe268465040b9b8d804666"
+    },
+    {
+        "path":  "Materials/Camp/Dryer.mat",
+        "bytes":  4176,
+        "sha256":  "e8961d5f3e604d47d7e3bcefd9dcd71de7ff3b657640b039a145efecc02961ac"
+    },
+    {
+        "path":  "Materials/Camp/Food.mat",
+        "bytes":  4175,
+        "sha256":  "e50a498db9b0e4e924c277fef6fddf7f79e40bccf2baeb1522e5d4de701b7fd0"
+    },
+    {
+        "path":  "Materials/Camp/Gold.mat",
+        "bytes":  4175,
+        "sha256":  "07d5df74f7fcc51371aa3617159bc9d5b54f7da6e59d2db3a5dafd423c499028"
+    },
+    {
+        "path":  "Materials/Camp/Log.mat",
+        "bytes":  4174,
+        "sha256":  "1830a51bfe3656d749942583ad7c1000bbf7e603a4c30c22dee3126485c7aab2"
+    },
+    {
+        "path":  "Materials/Camp/Table.mat",
+        "bytes":  4176,
+        "sha256":  "85ccb9d6ab7847431cc77fbe5cc48dbc2f67733ed20f8d2f88284a5ad7a1feb8"
+    },
+    {
+        "path":  "Materials/Camp/Tent_1.mat",
+        "bytes":  4152,
+        "sha256":  "bb022557c3c576dc8a9c8fa2b63d869ed7b7d2a2d0e916a636942e73d3b9e8ae"
+    },
+    {
+        "path":  "Materials/Camp/Tent_2.mat",
+        "bytes":  4198,
+        "sha256":  "7ac770087eafc2730347c1bfbf05de095db120ad5e8f74e50d736bbdc03f6255"
+    },
+    {
+        "path":  "Materials/Camp/Tent_3_4.mat",
+        "bytes":  4117,
+        "sha256":  "e0b4b1e9b3897fb334f72d94164e6c7c6fa8552aec7579490c4ecdac84dd0c5d"
+    },
+    {
+        "path":  "Materials/Camp/Weapon.mat",
+        "bytes":  4202,
+        "sha256":  "34e9c60db9ff7fa2f7c24acfb969653e08bce3069932058094befdae528cc7da"
+    },
+    {
+        "path":  "Materials/Forest/Bush.mat",
+        "bytes":  4146,
+        "sha256":  "80112bfb403e71d4edd3cb128403a502b354bf3ef8a63e7773e0f15f9bbecf21"
+    },
+    {
+        "path":  "Materials/Forest/Clovers.mat",
+        "bytes":  3732,
+        "sha256":  "626b98dfb0c933a831a35771a9f221cd773cab7639658768eeead66a84307718"
+    },
+    {
+        "path":  "Materials/Forest/Dead_Bush_Bark.mat",
+        "bytes":  5201,
+        "sha256":  "fd754f4962647e84b94454d67e375233cf0a71741d0f2e06967f4f9a5990c26e"
+    },
+    {
+        "path":  "Materials/Forest/Fern.mat",
+        "bytes":  4010,
+        "sha256":  "54bc9d1acea8e4b36c80f520bd823ac09cc5a18b53e416ec2351f82bb11a7289"
+    },
+    {
+        "path":  "Materials/Forest/Fir_Bark.mat",
+        "bytes":  4025,
+        "sha256":  "4ae55f85d8792b366d143de03cc8eebef779fe6c0b05f02a1f0ba1aa9e68454f"
+    },
+    {
+        "path":  "Materials/Forest/Fir_Branch.mat",
+        "bytes":  3516,
+        "sha256":  "56d9cff3a2295b0de87249db192f0f157d67f96d6ba5f1a2e3bd7ca7820c3eef"
+    },
+    {
+        "path":  "Materials/Forest/Fir_Branch_2.mat",
+        "bytes":  3385,
+        "sha256":  "47429141cb1867de9a4737c46d919b336faeb311ae95b12c71518ee55b072eed"
+    },
+    {
+        "path":  "Materials/Forest/Flower_1.mat",
+        "bytes":  4009,
+        "sha256":  "a861c2ec10963dcddde367dde5fab8954b68b39aded631034345dd7f0c2e9a91"
+    },
+    {
+        "path":  "Materials/Forest/Grass_1.mat",
+        "bytes":  4281,
+        "sha256":  "d3c2d528d14de7cfccd2649425744316e80cf986d5f7e79d964f83bbd85acdd0"
+    },
+    {
+        "path":  "Materials/Forest/Grass_2.mat",
+        "bytes":  4386,
+        "sha256":  "216e7254f157e4cbfa5f34cbec734de9e82c3bdf079bac2b72513367f8b24296"
+    },
+    {
+        "path":  "Materials/Forest/Logs.mat",
+        "bytes":  4248,
+        "sha256":  "e24b65a5ab6e80557ee2733019cc5014c08816837dbcad59f84d2f54541599ea"
+    },
+    {
+        "path":  "Materials/Forest/Mushrooms_Flowers.mat",
+        "bytes":  4147,
+        "sha256":  "787e8cd38a03bb3c670d1a7bd340e779f1bdfbb36f231473ddd951964dc5da95"
+    },
+    {
+        "path":  "Materials/Forest/Skybox.hdr",
+        "bytes":  47247586,
+        "sha256":  "7df242e0517221bf93100dcd746fe9b641ddce46e33cbf2350a83c0a3c14d7bd"
+    },
+    {
+        "path":  "Materials/Forest/Skybox.mat",
+        "bytes":  3397,
+        "sha256":  "81d44b8cddeb29b47c9ea1faab7bdb8139417b644ad6cb8d861f9c9e6a247bff"
+    },
+    {
+        "path":  "Materials/Forest/Stones_Rocks(Grass).mat",
+        "bytes":  4107,
+        "sha256":  "553b0c6205c5bab02ee8eaf258abb598b5dd72eb442ab4b6313511eb8efb7a89"
+    },
+    {
+        "path":  "Materials/Forest/Stones_Rocks.mat",
+        "bytes":  4120,
+        "sha256":  "42e446aa51041be0d9c677dee43be9e7d01fa25deea279390bb60aaf0666afe2"
+    },
+    {
+        "path":  "Materials/Forest/Stumps.mat",
+        "bytes":  4154,
+        "sha256":  "a990a6c050666524b40cd0e84df5fe785ff416e64bcd3b934fff8c067b0181a4"
+    },
+    {
+        "path":  "Materials/Forest/Tall_Fir_Branch.mat",
+        "bytes":  3525,
+        "sha256":  "b0e7b49b1a20b66374f211566a6bfbf8e0dcb80761918e848818bee503297f6f"
+    },
+    {
+        "path":  "Materials/Forest/Water.mat",
+        "bytes":  3897,
+        "sha256":  "19ae60f2d64f82395325c12d14514084e8c20c055bb1e90c99383d7ff569f560"
+    },
+    {
+        "path":  "Materials/FX/Birds.mat",
+        "bytes":  4145,
+        "sha256":  "08d0fa0b9119201fbf3d161ba32f244c4626155b1fa243b40fc5ddfbcc5165b6"
+    },
+    {
+        "path":  "Materials/FX/Candle Fire.mat",
+        "bytes":  3980,
+        "sha256":  "6559de9ce69f99cb753def513d19aa9949877effab8978e672ecb209c6e40267"
+    },
+    {
+        "path":  "Materials/FX/Fire.mat",
+        "bytes":  3884,
+        "sha256":  "295b88da41c1e45d6c41ebdf12f6be0e69026eea8de27ccffa5b97ecc437f3f7"
+    },
+    {
+        "path":  "Materials/FX/Fire_Smoke.mat",
+        "bytes":  3870,
+        "sha256":  "e15fb39117a76f5e9b6bbdb56d5acc25c13175420183e39e09767a9ed8533f9b"
+    },
+    {
+        "path":  "Materials/FX/Fog.mat",
+        "bytes":  4157,
+        "sha256":  "8f8907a396d574ccf3f80953efd7c903efe1e7afe0f0e30c0328a8d288c1f25f"
+    },
+    {
+        "path":  "Materials/FX/GodRays_Glow.mat",
+        "bytes":  5842,
+        "sha256":  "f095115395a296d0acebd642f1f892bd7ab61671141d66db42ccbf10a1921d1d"
+    },
+    {
+        "path":  "Materials/FX/Sparks.mat",
+        "bytes":  3876,
+        "sha256":  "47e3b579ca8d5bd584500556056f0dd77e56e4aad8c2e87ef762af9c5c16ed9c"
+    },
+    {
+        "path":  "Materials/FX/Sparks_Trail.mat",
+        "bytes":  3842,
+        "sha256":  "2f915966f079616bb9eda829db4e9f4ec606e5728d5973bd0d4d58b596a587e2"
+    },
+    {
+        "path":  "Materials/Mountains/Mountain_1.mat",
+        "bytes":  3045,
+        "sha256":  "778284a8018c9c20687e2d9c8859cc9f069dd216cef4a29c05d2f67f570c4e89"
+    },
+    {
+        "path":  "Materials/Mountains/Mountain_2.mat",
+        "bytes":  2834,
+        "sha256":  "4d248cfda3d87e0e283b0e435e26c27f2e94a7bbe27d96348e34aaf4144fdbed"
+    },
+    {
+        "path":  "Materials/Mountains/Mountain_3.mat",
+        "bytes":  2815,
+        "sha256":  "b3f5c6e7a764d571c907cf933f1fed6e496ea8d339b37573d87d6004bc0b497a"
+    },
+    {
+        "path":  "Materials/Mountains/Mountain_4.mat",
+        "bytes":  2817,
+        "sha256":  "8b914929d791812aa6df490dd2c42dfcf9cbf75b232111bd43c8f5c020314e4b"
+    },
+    {
+        "path":  "Materials/Witches House/Fences.mat",
+        "bytes":  3978,
+        "sha256":  "0e7d0aca28c87c0e35633c1d0a2eefdf2b399b07fcadf0d96d8ccd8f1e459ad4"
+    },
+    {
+        "path":  "Materials/Witches House/Furniture.mat",
+        "bytes":  4200,
+        "sha256":  "c06db0e0e2f176ed96c8f7e48e7abf04658f6f5ed21b2e3228735f9041505d49"
+    },
+    {
+        "path":  "Materials/Witches House/Glass.mat",
+        "bytes":  4714,
+        "sha256":  "c876fc8a6d3f6ce318c95a491edfb8c6ae471d7129a9b4d3482fa0e8389161de"
+    },
+    {
+        "path":  "Materials/Witches House/House.mat",
+        "bytes":  4174,
+        "sha256":  "e5c0340e33f412760199dd108eb7013d2197ab8909774214cfa0f8939329cc80"
+    },
+    {
+        "path":  "Materials/Witches House/Props.mat",
+        "bytes":  4176,
+        "sha256":  "21b560abbfbc452ae450dd1f5652302c3b06a1bf900761fb5d9410422803147f"
+    },
+    {
+        "path":  "Meshes/Camp/Arrow.fbx",
+        "bytes":  19708,
+        "sha256":  "b86927edba44ec0703284e6fc98231b1a71dc378ac77e63b817ed4f0214d2602"
+    },
+    {
+        "path":  "Meshes/Camp/Axe.fbx",
+        "bytes":  28380,
+        "sha256":  "d44ca9335f02b0b80d6c736d9964e5ac3879499afc9b517dfdcdd1b5ea92f38c"
+    },
+    {
+        "path":  "Meshes/Camp/Bag_1.fbx",
+        "bytes":  36828,
+        "sha256":  "1c495759c27bcfe6a3d277ac42f003bf24fc371d5084bc67c5c08d48e28451d2"
+    },
+    {
+        "path":  "Meshes/Camp/Bag_2.fbx",
+        "bytes":  24108,
+        "sha256":  "d6404995754d5a08d7c27771e47cdc496a9c468d043e682c34e6d9eadea3303c"
+    },
+    {
+        "path":  "Meshes/Camp/Bag_3.fbx",
+        "bytes":  62044,
+        "sha256":  "ae75de01285c0d6511093f0be72924227b50b5cd760cd137bfe557305c47048c"
+    },
+    {
+        "path":  "Meshes/Camp/Barrel_1.fbx",
+        "bytes":  46076,
+        "sha256":  "9f129517a170e7049fee1f9a6af42fa1d695eeb3e07cd2b79e5d5ebf370fc9f6"
+    },
+    {
+        "path":  "Meshes/Camp/Barrel_2.fbx",
+        "bytes":  84444,
+        "sha256":  "e0695b93f56378080d8d1112eec84f25d24dac0893cf2463a057316025e192ab"
+    },
+    {
+        "path":  "Meshes/Camp/Barrel_3.fbx",
+        "bytes":  108572,
+        "sha256":  "4dd715ecc26bf611bb9420f8d2cc362181871f8fbcf1f54031ecd03afd811353"
+    },
+    {
+        "path":  "Meshes/Camp/Boiler.fbx",
+        "bytes":  113804,
+        "sha256":  "b8fde17a1e2bfc4e9d3daf498a4b86910da7cba11e6a2925bbcc0eb6062831c6"
+    },
+    {
+        "path":  "Meshes/Camp/Bonfire.fbx",
+        "bytes":  28220,
+        "sha256":  "2dcb296f7fbd8acfa93e062698a7f123c2ce2377bfa4e8913f247ea66cae91ef"
+    },
+    {
+        "path":  "Meshes/Camp/Bottle_1.fbx",
+        "bytes":  22412,
+        "sha256":  "fe00bd26724c239b948907a9b3ef4bb041845aca9a78e8761f430cd741feea24"
+    },
+    {
+        "path":  "Meshes/Camp/Bottle_2.fbx",
+        "bytes":  22044,
+        "sha256":  "2fd09233229b63301545910888612e0b7cbd77b48d0aa07b8d5af4cd18dca11f"
+    },
+    {
+        "path":  "Meshes/Camp/Bow.fbx",
+        "bytes":  40684,
+        "sha256":  "2ee10e11fec3848b13ee50d796f166a29ac0e0078ecd883306b76832d527ce93"
+    },
+    {
+        "path":  "Meshes/Camp/Box_1.fbx",
+        "bytes":  30460,
+        "sha256":  "1a9af97acd7fc2367a457d104df2a0758ae5f9215f6e18b883938df7976759fa"
+    },
+    {
+        "path":  "Meshes/Camp/Box_2.fbx",
+        "bytes":  32332,
+        "sha256":  "a72a07e1a0513412e685621049513f27e2158c739085e5b255e6b68c340bb2f6"
+    },
+    {
+        "path":  "Meshes/Camp/Box_3.fbx",
+        "bytes":  26908,
+        "sha256":  "26b1ed4dd2277118a63d99af9441c575f3371aa6b86b6039165243d0769e4f9f"
+    },
+    {
+        "path":  "Meshes/Camp/Box_4.fbx",
+        "bytes":  46492,
+        "sha256":  "ffea45e85627f062e5c1750500c469068ad86b213ecc52e6722186f43aa614c0"
+    },
+    {
+        "path":  "Meshes/Camp/Bread.fbx",
+        "bytes":  22348,
+        "sha256":  "9cdf158b8223f5c2bb7cd4b778e8f515ad74851140f6e4cb850370590e3c0d8c"
+    },
+    {
+        "path":  "Meshes/Camp/Bucket.fbx",
+        "bytes":  61068,
+        "sha256":  "ab84269b43438147c39aa92b15f9a558992a30cc063253bec706353e1635af20"
+    },
+    {
+        "path":  "Meshes/Camp/Cart.fbx",
+        "bytes":  113452,
+        "sha256":  "dfa1402f7dbfd8a3862ef34431411f223496b6476bbd5629a113e9ac697d95c9"
+    },
+    {
+        "path":  "Meshes/Camp/Chest.fbx",
+        "bytes":  108860,
+        "sha256":  "766570471072668a0e6c8529049143d0e0e3dfe362659d04625f1c6a666752d2"
+    },
+    {
+        "path":  "Meshes/Camp/Cup.fbx",
+        "bytes":  27596,
+        "sha256":  "0191f9b4b211aa23faa19485bdd8108eb2af2f38b55c5dee349b5e813e03a6b1"
+    },
+    {
+        "path":  "Meshes/Camp/Dagger.fbx",
+        "bytes":  23852,
+        "sha256":  "f6e70f2e07a35ef88d5e2135a194ce336d464033616498000425a5664f9686d9"
+    },
+    {
+        "path":  "Meshes/Camp/Dryer_1.fbx",
+        "bytes":  245244,
+        "sha256":  "52a6a0dbbb7129069f256a735210faa7144fc8efbf37d4376db285754e1d684e"
+    },
+    {
+        "path":  "Meshes/Camp/Dryer_2.fbx",
+        "bytes":  241564,
+        "sha256":  "5080fb72d8aa6771479c3987b25de7b7ff6268a82230b7d5a22d9d401297c5d8"
+    },
+    {
+        "path":  "Meshes/Camp/Fish.fbx",
+        "bytes":  30124,
+        "sha256":  "a5ac4e7f3d268f28c8d635fe2753e7e53c214c00241453465490547824b95771"
+    },
+    {
+        "path":  "Meshes/Camp/Fork.fbx",
+        "bytes":  14652,
+        "sha256":  "959eedad4e42117c334f8ab4034e52541db4cc9c43d57f41a9f5d6c590c5e32f"
+    },
+    {
+        "path":  "Meshes/Camp/Gold_1.fbx",
+        "bytes":  29100,
+        "sha256":  "52ebfe8f62b0cefeb832c74fe5406edf8eea9cfad25e6813249c573c6d7a0256"
+    },
+    {
+        "path":  "Meshes/Camp/Gold_2.fbx",
+        "bytes":  45884,
+        "sha256":  "06b264f4d268bbc85e30c0812f5d3bd20b545f1afac9182ce52e2dde404a9096"
+    },
+    {
+        "path":  "Meshes/Camp/Jug.fbx",
+        "bytes":  41548,
+        "sha256":  "87558bd3e43f7d4d5dc81bf11c683834d745ef4c31c7e840b16e0560b95299e6"
+    },
+    {
+        "path":  "Meshes/Camp/Knife.fbx",
+        "bytes":  16476,
+        "sha256":  "46ca1e936b6ce52a950493071638fcc061f1c6172e8aba75b855c2672716669b"
+    },
+    {
+        "path":  "Meshes/Camp/Log_1.fbx",
+        "bytes":  56028,
+        "sha256":  "f9e9afbbae37bed27f74f2218b30c88f81c79b43ddfa69900b4daddfa7c4e171"
+    },
+    {
+        "path":  "Meshes/Camp/Log_2.fbx",
+        "bytes":  35452,
+        "sha256":  "b76c58c120de590510d3ed7cf413c5a68e046d309c06c4acc71c4ff0af047145"
+    },
+    {
+        "path":  "Meshes/Camp/Log_3.fbx",
+        "bytes":  24860,
+        "sha256":  "3318dd2953539431285a5569192aff30497fb8fc32429baa3249563bbd4fcb00"
+    },
+    {
+        "path":  "Meshes/Camp/Meat.fbx",
+        "bytes":  36236,
+        "sha256":  "80914991d6faed731896a556d645259f79ba4a0c93af292c2f700cac0e187689"
+    },
+    {
+        "path":  "Meshes/Camp/Onion.fbx",
+        "bytes":  42460,
+        "sha256":  "4e08c084cf0066648824db15e4083dc237690da953622cf5c48c45ce72978384"
+    },
+    {
+        "path":  "Meshes/Camp/Plate.fbx",
+        "bytes":  18764,
+        "sha256":  "291b09de8bc4310705394b26063e132ace10efc9aaaa4265be01e103c3696ec7"
+    },
+    {
+        "path":  "Meshes/Camp/Pot.fbx",
+        "bytes":  25036,
+        "sha256":  "25c9aeb5194cd2b2f6f066d0d4cfdd648de2b4bee8e6ab6db7541aa3856498dc"
+    },
+    {
+        "path":  "Meshes/Camp/Pouch.fbx",
+        "bytes":  27564,
+        "sha256":  "cf8e9bc829b396395e619913dfde803d20a0622816fee3e05264bc5b42dab948"
+    },
+    {
+        "path":  "Meshes/Camp/Quiver.fbx",
+        "bytes":  66156,
+        "sha256":  "82761a30b91340cf6cbf3d5b7733f4f808fd383cdd0d3b35685c0b64153faf1f"
+    },
+    {
+        "path":  "Meshes/Camp/Shield.fbx",
+        "bytes":  48844,
+        "sha256":  "3fb387731d85eaa603faa3ae4485cf2b949dc2d0f4c2029b42859be04272e260"
+    },
+    {
+        "path":  "Meshes/Camp/Spoon.fbx",
+        "bytes":  14444,
+        "sha256":  "19e78b540d1dd36731763a92e53eefa39748c082e11e98eeb9c5069620c05365"
+    },
+    {
+        "path":  "Meshes/Camp/Sword.fbx",
+        "bytes":  26236,
+        "sha256":  "b180a8acf31c6fe1baa51bb81e0f2e0ebe8c6e7502949641d4ee0bbbd804ba64"
+    },
+    {
+        "path":  "Meshes/Camp/Table_1.fbx",
+        "bytes":  33500,
+        "sha256":  "8b2bed93fde009235c90f40b66bfa53a5072ac4a4fc99ac4336537ce53842b78"
+    },
+    {
+        "path":  "Meshes/Camp/Table_2.fbx",
+        "bytes":  25644,
+        "sha256":  "f58188e5336105f046331250360703a18c8681a66406382b88d3ed3e3b9c84ca"
+    },
+    {
+        "path":  "Meshes/Camp/Tent_1.fbx",
+        "bytes":  279404,
+        "sha256":  "f8c75c8e64bf8d418ae7080de9d55ccb838e4b0c64c459acc20a0f2f85076fe3"
+    },
+    {
+        "path":  "Meshes/Camp/Tent_2.fbx",
+        "bytes":  147356,
+        "sha256":  "37c30fdf341e3f900a8f2be05f8374d6d475473ecaa79e255f406f278ccc6230"
+    },
+    {
+        "path":  "Meshes/Camp/Tent_3.fbx",
+        "bytes":  130188,
+        "sha256":  "9bf1347f0d2c99177b99de9ae72ae8d4f49bac11b7888b369050a2b3c6918903"
+    },
+    {
+        "path":  "Meshes/Camp/Tent_4.fbx",
+        "bytes":  117340,
+        "sha256":  "4846f86c2cad82c5fd73ae916da68e95935e6dbb6bfa1841dba34947a9cdfaf6"
+    },
+    {
+        "path":  "Meshes/Camp/Trough.fbx",
+        "bytes":  19804,
+        "sha256":  "c3c1cc483e11fab2e6591ee7d8a504fab70de06386da1ead872185909ec7d6b7"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Boiler_Collider.fbx",
+        "bytes":  20172,
+        "sha256":  "3103d04a8587e8b7ac96aaed8005e148d435affb36eac0caaed5c49ca9500b25"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Cart_Collider.fbx",
+        "bytes":  16812,
+        "sha256":  "821541e5240cf3e2703967affbaa68433d87f3f274db2ac4f072a7de75b3c991"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Chair_Collider.fbx",
+        "bytes":  13644,
+        "sha256":  "4bfb0a481d3b9a623b9e2afc3ddfba2df914e61a232f44b69b69eebbca5366d4"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Dryer_1_Collider.fbx",
+        "bytes":  23628,
+        "sha256":  "5fbb0fc1c45b33a81d41eb34e6fc7c31e90e38a7a3fbdab5556cf1c68d8dd7f7"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Dryer_2_Collider.fbx",
+        "bytes":  20940,
+        "sha256":  "f2680cc46f7232ffe21063201561a977cd480a50c7c7dcbb03e764380cb21dee"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Fir_Tall_1_Collider.fbx",
+        "bytes":  12876,
+        "sha256":  "f08905096d29307fb4c120ae67cd63a7c62fd991ec545119704e6c643f2275b9"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Fir_Tall_2_Collider.fbx",
+        "bytes":  12332,
+        "sha256":  "f71d0457a4224598492618171763f455de8eb2a770ee2341c4c7c5d694081a23"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Fir_Tall_3_Collider.fbx",
+        "bytes":  12540,
+        "sha256":  "9b72d5cd2c2a06c19184664c4a7bd657dafc7df3dce7f0cf7b18653402bda169"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/House_Collider.fbx",
+        "bytes":  66924,
+        "sha256":  "d19811a0a9804c871ae3e9015520118786be9abadd9177e88a0cf6cac7261582"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Log_1_Collider.fbx",
+        "bytes":  22764,
+        "sha256":  "f41ecbb9f7726a69b4646d6f4c74431174f3ee89ec757b06d52ea54ebf409d46"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/PillarLamp_Collider.fbx",
+        "bytes":  13660,
+        "sha256":  "5eea6528516e24c341db6802eb8c5f6b6e812708a8889549dafd35c7f608b6e6"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Shelf_Collider.fbx",
+        "bytes":  12300,
+        "sha256":  "5d6dce4e3f2e73d9f6c56da4d9591737655010638a78208f8e0240831f64c402"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Stairs_Collider.fbx",
+        "bytes":  11836,
+        "sha256":  "e8d01bc31983b8d52af3e668485f8ff9072b29c76525e2bc664468f4e7bb8446"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Table_1_Collider.fbx",
+        "bytes":  13564,
+        "sha256":  "970783b8aa40e4b31f860dde3deffbca68e63d500ca384581610cdd5ed01de16"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Table_2_Collider.fbx",
+        "bytes":  13468,
+        "sha256":  "eeaa4c41e08d4c62f78c085236d1080b684a0a88e52f19310b8d0975c6aa9e53"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Table_Collider.fbx",
+        "bytes":  13436,
+        "sha256":  "8e60520665c70eddce7b55457a6c7a3e9a5989f502ea6fe3807f2d6642f4b533"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Tent_1_Collider.fbx",
+        "bytes":  36668,
+        "sha256":  "36cd10b158a427bffd70f2b284720e41d285b77fc2604b200a158bfa03246981"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Tent_2_Collider.fbx",
+        "bytes":  23916,
+        "sha256":  "bb726d3870ee1c2db67dbf97e539dd65df80dc84762c0b48e6b9a2a9a06d0a06"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Tent_3_Collider.fbx",
+        "bytes":  17036,
+        "sha256":  "c03a5962ec09d70393d52036f97b2aa2d6b28f1a7770cebdd8ae08d843d83390"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Tent_4_Collider.fbx",
+        "bytes":  17596,
+        "sha256":  "56913b715c9c28d99dcfef0134043cb17bca0ddd7703023365ddb4591d0285b4"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Trough_Collider.fbx",
+        "bytes":  13212,
+        "sha256":  "11ede685f6b4be37587aaecbc722b9a41fe9debd08b9212b4d87a25e57a572e8"
+    },
+    {
+        "path":  "Meshes/Custom Colliders/Сupboard_Collider.fbx",
+        "bytes":  14444,
+        "sha256":  "33b78eb2e7d64767b513b543315ebcbc17bd7f6bb16506b193a0e57bcb3fde8e"
+    },
+    {
+        "path":  "Meshes/Forest/Branches_1.fbx",
+        "bytes":  23692,
+        "sha256":  "aadf3026d5bafbb22b0b2202367f2cf8c31473cd00dfa113655c9797e6078b2c"
+    },
+    {
+        "path":  "Meshes/Forest/Branches_2.fbx",
+        "bytes":  63948,
+        "sha256":  "bd02b640841a6669e8b4b375a86e91293569e687d61d61ca91069c2581ca4343"
+    },
+    {
+        "path":  "Meshes/Forest/Branch_1.fbx",
+        "bytes":  23100,
+        "sha256":  "881ed05579cf556e548b79a64a16c11087883b170490ba3d063ca5ec8da639d2"
+    },
+    {
+        "path":  "Meshes/Forest/Branch_2.fbx",
+        "bytes":  24044,
+        "sha256":  "d1a0beb063d51748bce1431d3ee65ba336958bdcaa8698738c502418b29771ce"
+    },
+    {
+        "path":  "Meshes/Forest/Branch_3.fbx",
+        "bytes":  24492,
+        "sha256":  "c1e403d8707b2403a112fa92c36f455c5edfc50cccbd5a4b3fc36a2cf37c9a07"
+    },
+    {
+        "path":  "Meshes/Forest/Bush_1.fbx",
+        "bytes":  66988,
+        "sha256":  "06da361de9c78de0ea57ed08343b56f68bd6103ba233bdc29084eaff46188a1d"
+    },
+    {
+        "path":  "Meshes/Forest/Bush_2.fbx",
+        "bytes":  114348,
+        "sha256":  "2a85c9c7f3004be6973b90f1283e752a00a364a752b25c25cbe52490afacac5a"
+    },
+    {
+        "path":  "Meshes/Forest/Bush_3.fbx",
+        "bytes":  203500,
+        "sha256":  "33bbe41417a390863d23f10b5ee6a3e576881e75058cd62214237fedf1514517"
+    },
+    {
+        "path":  "Meshes/Forest/Clovers.fbx",
+        "bytes":  19372,
+        "sha256":  "a8bb85ad6759363ddca126aae8a3c83b518504fcf65f9f2f54a9be98473d5f1c"
+    },
+    {
+        "path":  "Meshes/Forest/Dead_Bush_1.fbx",
+        "bytes":  101852,
+        "sha256":  "ee353e6466279380f69215b331f8c5dc1bd9985d109a5272a8d44b3060d760c6"
+    },
+    {
+        "path":  "Meshes/Forest/Dead_Bush_2.fbx",
+        "bytes":  88508,
+        "sha256":  "aac6c09faa30515d29fb1f9a4608482fdcd46561f29ec8a9a4492067e93a0317"
+    },
+    {
+        "path":  "Meshes/Forest/Fern_1.fbx",
+        "bytes":  35900,
+        "sha256":  "e04476032dc2dc72aa2b4384c6c22f501d2103826bfcf1b3c5a1da234f52f5b7"
+    },
+    {
+        "path":  "Meshes/Forest/Fern_2.fbx",
+        "bytes":  33740,
+        "sha256":  "4debbc2f52610e68219d30f85125d3ae79759be6b88bd7a8ed44e30ac3b4e9e0"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_1.fbx",
+        "bytes":  112012,
+        "sha256":  "4642e7e53509c06e5ceb5cce4762b348034a95aadae865f7df5110495e3b4b06"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_2.fbx",
+        "bytes":  143820,
+        "sha256":  "72cdcc74cef9f538c8f6b1fb220e34f98d8d38b34d0864e87331fca774c81ba1"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_3.fbx",
+        "bytes":  171740,
+        "sha256":  "10752fefcd820037d572b8411feff41d6a2735b1624b2712f7a2eff58a66ba21"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Dead_1.fbx",
+        "bytes":  185516,
+        "sha256":  "6cc5b5d06f1cae2df22e3bfe2a2d3f625cd93e684a9e0234d9f712e53e35c9a6"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Dead_2.fbx",
+        "bytes":  221292,
+        "sha256":  "2ac4771169d203e9c820ed4e5100185b5979af9cfc9ff75afcb0c4aa6dbf44b7"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Tall_1.fbx",
+        "bytes":  194220,
+        "sha256":  "e215e79b63f35fc077bd8bbde3c2a79d4bb8a1d67184511d8b1a408011b5bf47"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Tall_2.fbx",
+        "bytes":  227100,
+        "sha256":  "5d696f099b478ea2b266b61c4c62443625281a4362ae26358ee0bedf5a26daed"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Tall_3.fbx",
+        "bytes":  268444,
+        "sha256":  "cea0781a660d85cea59c242c0b28410a6f066ea67fefcaef5fa8e30e0a75900c"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Tall_Dead_1.fbx",
+        "bytes":  197164,
+        "sha256":  "76bcba31ad3ee64001a42a0bf0ce7fbfe68f5f2565e577880f976bc306bee87d"
+    },
+    {
+        "path":  "Meshes/Forest/Fir_Tall_Dead_2.fbx",
+        "bytes":  216636,
+        "sha256":  "b98ceed8d465582ec1dfb022f73555ac5c4f51d090f5d6f5f1ec8bce2059e647"
+    },
+    {
+        "path":  "Meshes/Forest/Flowers_1.fbx",
+        "bytes":  17612,
+        "sha256":  "162cfa5807f60cc47a19135426b6d93883f81666563fa94d57e1131959e03cc4"
+    },
+    {
+        "path":  "Meshes/Forest/Flower_1.fbx",
+        "bytes":  34652,
+        "sha256":  "851bef0bc0dda574258a0d3fa65db19632b866a4d23a4c67b20f7869b71d5611"
+    },
+    {
+        "path":  "Meshes/Forest/Flower_2.fbx",
+        "bytes":  48652,
+        "sha256":  "6ba1f8d5c1710cf30f8952da63c0254134ee9c4b216a39cdcba291aed5dd9e52"
+    },
+    {
+        "path":  "Meshes/Forest/Flower_3.fbx",
+        "bytes":  56796,
+        "sha256":  "833c5bbe87a641c1d6b73a829bc6d7d79ee369be6df47f490fc15ef4c4f8c5bf"
+    },
+    {
+        "path":  "Meshes/Forest/Grass_1.fbx",
+        "bytes":  24124,
+        "sha256":  "e13214d67009e4244a87bde9c73484e2fd2016faed19ff77faf676947616b8ae"
+    },
+    {
+        "path":  "Meshes/Forest/Grass_2.fbx",
+        "bytes":  20956,
+        "sha256":  "b0290eca5e5c513add4369f9d306e9e21508fd87d3a322017ac3acdb21b808c6"
+    },
+    {
+        "path":  "Meshes/Forest/Log_1.fbx",
+        "bytes":  52396,
+        "sha256":  "f6533b4723cb89737e976f13f1a424cfaab2d1810567538d4c042e18ed24de87"
+    },
+    {
+        "path":  "Meshes/Forest/Log_2.fbx",
+        "bytes":  168796,
+        "sha256":  "b5ed1f65667a6b6b06cb0223c7d58c332eb1098b25bfaa56cfeca78407f87f35"
+    },
+    {
+        "path":  "Meshes/Forest/Mushrooms_1.fbx",
+        "bytes":  41420,
+        "sha256":  "5396b446eb021ec3f4d16c1b3eb56ce5edd9647e2e094c23e9250cd4190e2c70"
+    },
+    {
+        "path":  "Meshes/Forest/Mushrooms_2.fbx",
+        "bytes":  53868,
+        "sha256":  "aa957b52717c882d92e3448f42b7ad8ce095312602bc0687d3698049845b2658"
+    },
+    {
+        "path":  "Meshes/Forest/Mushrooms_3.fbx",
+        "bytes":  38940,
+        "sha256":  "c0b0dcf7716c34f6eb7d28b925e9a68fd78a5786c426a9597ed81d5c5e00b017"
+    },
+    {
+        "path":  "Meshes/Forest/Mushrooms_4.fbx",
+        "bytes":  37596,
+        "sha256":  "5288ad26a4c3ed7230efe7fefb6c5f52c5852aa935baeffb67df91df5ea7dbff"
+    },
+    {
+        "path":  "Meshes/Forest/Mushroom_1.fbx",
+        "bytes":  26348,
+        "sha256":  "9c294f55a63b216a7e9beb58ec9f5c713b14a0bbc83736c82eaa77f3c4ba014f"
+    },
+    {
+        "path":  "Meshes/Forest/Mushroom_2.fbx",
+        "bytes":  34348,
+        "sha256":  "052caccc1651499ded2f5e9e8ba1ee4e70926f015a4f3db507547cf6a3e1d574"
+    },
+    {
+        "path":  "Meshes/Forest/Mushroom_3.fbx",
+        "bytes":  25724,
+        "sha256":  "6276d64ded93d5e2e8a718be453258277e464fec3c772305c8f43e0e4c9a3095"
+    },
+    {
+        "path":  "Meshes/Forest/Mushroom_4.fbx",
+        "bytes":  24492,
+        "sha256":  "402179ef1c73c2dc5ee27718ae589b7c9473dfd1dd1fe9f6fa475ccb093b3840"
+    },
+    {
+        "path":  "Meshes/Forest/Rock_1.fbx",
+        "bytes":  33068,
+        "sha256":  "46f584425bc05685bfc46da6897bd42b010f07fd44dc2d8ef4264231e8742327"
+    },
+    {
+        "path":  "Meshes/Forest/Rock_2.fbx",
+        "bytes":  36316,
+        "sha256":  "a25e0c2af56d31c80411f057a60be0ef35431bd4f7dffe16228630353ea205dd"
+    },
+    {
+        "path":  "Meshes/Forest/Stones.fbx",
+        "bytes":  29628,
+        "sha256":  "e02aa0b8df4203fc8e70ac544493d8233ab6be39e92bf144b9e3d02276f56aa5"
+    },
+    {
+        "path":  "Meshes/Forest/Stone_1.fbx",
+        "bytes":  21948,
+        "sha256":  "f02c2021be637cf34e0fc6aacd13fff3da5095a6107eced198f3dff31473be06"
+    },
+    {
+        "path":  "Meshes/Forest/Stone_2.fbx",
+        "bytes":  21772,
+        "sha256":  "1623318a9065e78cdbb7e5061beb64ce6ecf987504e250b51938a6725389d701"
+    },
+    {
+        "path":  "Meshes/Forest/Stone_3.fbx",
+        "bytes":  20668,
+        "sha256":  "7f8fbbfd2dca7be123592dd3c8cb27581bd3f32de815afc9c68e812764c1eeb8"
+    },
+    {
+        "path":  "Meshes/Forest/Stone_4.fbx",
+        "bytes":  22492,
+        "sha256":  "2566658acb1d39a7aa8af2f27c6c9c9f6782c35076bbc4bffee0a6d35f621093"
+    },
+    {
+        "path":  "Meshes/Forest/Stump_1.fbx",
+        "bytes":  36316,
+        "sha256":  "a3ee9572912d1d038c438c7832a78d453cd235024f4181993686277616c40870"
+    },
+    {
+        "path":  "Meshes/Forest/Stump_2.fbx",
+        "bytes":  106364,
+        "sha256":  "8601939f0ed18532608e978f235abb7af7c9e0e54eef218a457a6a38edf04b0c"
+    },
+    {
+        "path":  "Meshes/Mountains/Mountain_1.fbx",
+        "bytes":  295404,
+        "sha256":  "3627cdf9c61448443eef3dc2bc8de145cd36e21e84e29ddeb8d44ec56c7b7260"
+    },
+    {
+        "path":  "Meshes/Mountains/Mountain_2.fbx",
+        "bytes":  297580,
+        "sha256":  "5be1211a31cb670a142412023e8174967880841ff62b18d3525e6ef9be7deec7"
+    },
+    {
+        "path":  "Meshes/Mountains/Mountain_3.fbx",
+        "bytes":  295020,
+        "sha256":  "33d9f471d5a14637172d36d02726727f6fb00395a19225eb3c12ad9ed35c93f9"
+    },
+    {
+        "path":  "Meshes/Mountains/Mountain_4.fbx",
+        "bytes":  294540,
+        "sha256":  "0febfb2722fbc862ed7b000313cb5003a61711d288d0cd0335b251ebbcd48323"
+    },
+    {
+        "path":  "Meshes/Witches House/Boiler_Cover.fbx",
+        "bytes":  24892,
+        "sha256":  "caa2ae92afae18b2538c80a48c31b30d2c3aa0238fff7053a231eead3eeb3581"
+    },
+    {
+        "path":  "Meshes/Witches House/Bone_1.fbx",
+        "bytes":  33020,
+        "sha256":  "dfd6ddd485cf70d6da01f8203785efccbdc9e76232ee53b7afbb9dc9cf01e743"
+    },
+    {
+        "path":  "Meshes/Witches House/Bone_2.fbx",
+        "bytes":  33388,
+        "sha256":  "e9f070e02de785ea9df120207fc15c201a829028c819dd70a2164058f40969e9"
+    },
+    {
+        "path":  "Meshes/Witches House/Book_1.fbx",
+        "bytes":  34604,
+        "sha256":  "a576663e11d0b3f2c169a10550d65116dcd2a75bb41c6a1fcc6bce38352034f3"
+    },
+    {
+        "path":  "Meshes/Witches House/Book_2.fbx",
+        "bytes":  61964,
+        "sha256":  "5312122eb3bd07041c3d8fbf68ae02edbdac75c7802c50f6aaccdb7b6957ab1c"
+    },
+    {
+        "path":  "Meshes/Witches House/Book_3.fbx",
+        "bytes":  111164,
+        "sha256":  "e6db4af65e23973e55f511560724665682c9282dc89d457627ea43dce4e04456"
+    },
+    {
+        "path":  "Meshes/Witches House/Candles_1.fbx",
+        "bytes":  23452,
+        "sha256":  "d815effb87a09e4d0547d545dd403a5ff4cb24b42c09f213982309b5c6818a54"
+    },
+    {
+        "path":  "Meshes/Witches House/Candles_2.fbx",
+        "bytes":  43964,
+        "sha256":  "5cb233e41c9676795fb541c5596284d394421fbdad44a8bd1c3e0e0affaf7bff"
+    },
+    {
+        "path":  "Meshes/Witches House/Chair.fbx",
+        "bytes":  30172,
+        "sha256":  "0b78fddc7183f535149ade2b9fa7a40dd082fd20c158d9ec66a716e08302bd5d"
+    },
+    {
+        "path":  "Meshes/Witches House/Dresser.fbx",
+        "bytes":  64572,
+        "sha256":  "f1aaa059663f73805bf487919772d8c21687fab1859a2c44b045b0ea568b4d6d"
+    },
+    {
+        "path":  "Meshes/Witches House/Fence_1.fbx",
+        "bytes":  89164,
+        "sha256":  "838bb09623865edf7370319b268b3afd4d35680d24b7cf881913a92b2f04f470"
+    },
+    {
+        "path":  "Meshes/Witches House/Fence_2.fbx",
+        "bytes":  91420,
+        "sha256":  "28490e5a1dae37689851c0fa40b49bdc8f31149ec59bbd09ac38c6002daeb7d0"
+    },
+    {
+        "path":  "Meshes/Witches House/Fence_3.fbx",
+        "bytes":  71916,
+        "sha256":  "f8c707bab2b3e5a9e8218bd1d01a21bf846d9013a15ca170bc75ae48b85506b6"
+    },
+    {
+        "path":  "Meshes/Witches House/Fence_4.fbx",
+        "bytes":  29084,
+        "sha256":  "29b7e302efdb07e1d0e13ee0e905358e6846cf00807260265b74cdc20e0928ea"
+    },
+    {
+        "path":  "Meshes/Witches House/Flask_1.fbx",
+        "bytes":  25532,
+        "sha256":  "fbda0afba049bcdb2e99c46af42c39c7f9499f2af86eb6602e3fde51343658ef"
+    },
+    {
+        "path":  "Meshes/Witches House/Flask_2.fbx",
+        "bytes":  25500,
+        "sha256":  "47064275ba9a28b2c814fab2568ea064e0624f0b9210034039853862e0caaff8"
+    },
+    {
+        "path":  "Meshes/Witches House/Flask_3.fbx",
+        "bytes":  22236,
+        "sha256":  "6bbf1007ade4a06fb6f2c57aa0b5c55ca7171b9406c275b2cd79c6894ec7eafd"
+    },
+    {
+        "path":  "Meshes/Witches House/Flask_4.fbx",
+        "bytes":  25580,
+        "sha256":  "e082c0f7873046ff7c6487a55840b7a283d19d86d0f0c877797e455d31eb7e07"
+    },
+    {
+        "path":  "Meshes/Witches House/Flask_5.fbx",
+        "bytes":  24668,
+        "sha256":  "a0fccaa01523b86e99087b3105406213cd9fa610b1413fc01f44f1964f7a3eb2"
+    },
+    {
+        "path":  "Meshes/Witches House/House.fbx",
+        "bytes":  500892,
+        "sha256":  "1595757e08fa348b24f3f411c6a6f53f5b532e453d63cce6ec8d03b3c8cad2fe"
+    },
+    {
+        "path":  "Meshes/Witches House/House_Door.fbx",
+        "bytes":  23292,
+        "sha256":  "7a64f2f38bdab00402f8e6c2cf443bd259e15f42f0d0cbfdede95b590baa2332"
+    },
+    {
+        "path":  "Meshes/Witches House/House_Stairs.fbx",
+        "bytes":  31260,
+        "sha256":  "e8e04316bebfefa6dcd19d0ce3220def6c6e3fa390900321ea00249ef493528a"
+    },
+    {
+        "path":  "Meshes/Witches House/Lamp.fbx",
+        "bytes":  123548,
+        "sha256":  "bead3bb11887e6f24293827597729e332719678cf13e30d09e14abb0970899ed"
+    },
+    {
+        "path":  "Meshes/Witches House/Mortar_and_pestle.fbx",
+        "bytes":  33788,
+        "sha256":  "35994c8c4ff971e220fe971e7e4597b19a0122e290989cdd8bcc276c713909da"
+    },
+    {
+        "path":  "Meshes/Witches House/Mushroom_1.fbx",
+        "bytes":  21164,
+        "sha256":  "b182a37e02a1aa7b80132d4dd24b4fdab757fb95290ad9036551eba5d693045d"
+    },
+    {
+        "path":  "Meshes/Witches House/Mushroom_2.fbx",
+        "bytes":  23484,
+        "sha256":  "0b9bf8144b7e6bfb79f7b55a03b977d575371cce12e66800fd42b19f7c8e584b"
+    },
+    {
+        "path":  "Meshes/Witches House/Mushroom_3.fbx",
+        "bytes":  24988,
+        "sha256":  "8ebd10c40f5466add4db6978e15152259299db5225295c5edfdc695e9e01302f"
+    },
+    {
+        "path":  "Meshes/Witches House/Pillar.fbx",
+        "bytes":  172028,
+        "sha256":  "5f8d5aa33dd354f4513996a876d15738b16fd972abfeda03d4038b2b0b59eb7b"
+    },
+    {
+        "path":  "Meshes/Witches House/Scroll_1.fbx",
+        "bytes":  57132,
+        "sha256":  "53efb9af8c45d067bd0f42e4ed55ac22133800f1311beae4960c69209d0948e9"
+    },
+    {
+        "path":  "Meshes/Witches House/Scroll_2.fbx",
+        "bytes":  37212,
+        "sha256":  "35886d4ea4f1ced1f0134bc5b1ae04fc608d411fb9be151b5b94bbc763eff453"
+    },
+    {
+        "path":  "Meshes/Witches House/Scull.fbx",
+        "bytes":  59948,
+        "sha256":  "3f02ddae06388d2d038f005c9ed5b02f6a42c68221e98339d61600bf84c6141f"
+    },
+    {
+        "path":  "Meshes/Witches House/Shelf.fbx",
+        "bytes":  32444,
+        "sha256":  "185a6d1fbc381fe54f1572b3c4a86b21d2c99f145626ea85a7a52fbb2ff78cf9"
+    },
+    {
+        "path":  "Meshes/Witches House/Stand.fbx",
+        "bytes":  24828,
+        "sha256":  "62de536e9c51650f3d9d8cb58c9773211eb4f2c6ec64555c7e5b71f621fb1c17"
+    },
+    {
+        "path":  "Meshes/Witches House/Table.fbx",
+        "bytes":  27740,
+        "sha256":  "a1c047d1516fb7137e0a8a040bf03aaa34a618200560b81adde520a73936c868"
+    },
+    {
+        "path":  "Meshes/Witches House/Witches_Boiler.fbx",
+        "bytes":  49580,
+        "sha256":  "e6b15c6bb02a81df168a27ebb4bf2434a49eac7b4a7d29d6c8e1abcf93663c1d"
+    },
+    {
+        "path":  "Meshes/Witches House/Сupboard.fbx",
+        "bytes":  42172,
+        "sha256":  "dfb33c70a1b1bd6d785989cffdd960f6cf4b40dfc6edc4c73ce8c1bd04c26274"
+    },
+    {
+        "path":  "Prefabs/Wind Settings.prefab",
+        "bytes":  1383,
+        "sha256":  "b94ca58ebe4ad27422683c26de317cf2bcd3526d901adfd3c06da89edb9ca697"
+    },
+    {
+        "path":  "Prefabs/Camp/Bag_1.prefab",
+        "bytes":  6060,
+        "sha256":  "afe31a35bd77d47b4469307598dda661c209f386b64d2385e784ba2191bd62c7"
+    },
+    {
+        "path":  "Prefabs/Camp/Bag_2.prefab",
+        "bytes":  6083,
+        "sha256":  "06677653ee5d7994940c7f358987d053a5687a302075a4e3e3dc2e23ac954ccc"
+    },
+    {
+        "path":  "Prefabs/Camp/Bag_3.prefab",
+        "bytes":  6083,
+        "sha256":  "b120b615c524f0c34fc81a3d69366b31e57dda41cafb35bdc04910ead59ccc02"
+    },
+    {
+        "path":  "Prefabs/Camp/Barrel_1.prefab",
+        "bytes":  8535,
+        "sha256":  "911fb107bbbdc5c96ecd80fa7001c20fe0036880879e50e667ea6b6735fa8ecb"
+    },
+    {
+        "path":  "Prefabs/Camp/Barrel_2.prefab",
+        "bytes":  8531,
+        "sha256":  "f916f23041f278f4b381823f7496bbd0c9408650be917b1c0f18d38a29add366"
+    },
+    {
+        "path":  "Prefabs/Camp/Barrel_3.prefab",
+        "bytes":  8707,
+        "sha256":  "f0a8f2d449c2df4db6123e124b02a355285e984f13d6d0aeb5367829e84d8cd1"
+    },
+    {
+        "path":  "Prefabs/Camp/Boiler.prefab",
+        "bytes":  8484,
+        "sha256":  "46500ab1cfcc56288c43f23cf5036e869229f011bbafc8a6b0250f475301518f"
+    },
+    {
+        "path":  "Prefabs/Camp/Bonfire.prefab",
+        "bytes":  5961,
+        "sha256":  "6187cbb0e06b898307825167ea08692256c8e62f7961072685c8910f570509d6"
+    },
+    {
+        "path":  "Prefabs/Camp/Bonfire_Light.prefab",
+        "bytes":  2612,
+        "sha256":  "eb6d684a1597ff941ff55b5493d7ba2b48948647706895bd5e9d188092a0d892"
+    },
+    {
+        "path":  "Prefabs/Camp/Box_3.prefab",
+        "bytes":  5974,
+        "sha256":  "f5a2086e85f9f6369eb8ed9d38d62f957cea62a2a50d8e4b54060484f0331232"
+    },
+    {
+        "path":  "Prefabs/Camp/Box_4.prefab",
+        "bytes":  5912,
+        "sha256":  "cf13d8dbcdfccd8993aa1e52ace9980a21f2c1c70b7cb67b1d43f34f872487d5"
+    },
+    {
+        "path":  "Prefabs/Camp/Cart.prefab",
+        "bytes":  8664,
+        "sha256":  "7f8d7cf123b97b6e6f6ba758b7410b23e872c1ee93a79715b8c5b9e76df7279d"
+    },
+    {
+        "path":  "Prefabs/Camp/Chest.prefab",
+        "bytes":  20100,
+        "sha256":  "a9c42368558ee214447f88176d9bf2c68622ce1edffb925e95ac09b03edc7ae1"
+    },
+    {
+        "path":  "Prefabs/Camp/Dryer_1.prefab",
+        "bytes":  8601,
+        "sha256":  "529050b0e416958ea2c296f0b0c36ab8f49502f1941b29cbbb47542726c6347d"
+    },
+    {
+        "path":  "Prefabs/Camp/Dryer_2.prefab",
+        "bytes":  8628,
+        "sha256":  "7a8fc2beba4ec56a24c5a6e4f0fbdef1fec349fbc9cc014e540e5261a29b2797"
+    },
+    {
+        "path":  "Prefabs/Camp/Gold_1.prefab",
+        "bytes":  5924,
+        "sha256":  "f9c0b9ed44ca33d89f6e8b7f1869b4473d16093aff7ff5fd482191b97df0de0e"
+    },
+    {
+        "path":  "Prefabs/Camp/Gold_2.prefab",
+        "bytes":  5937,
+        "sha256":  "c90808a3cfe7fcf82e0cc67b173c18aee39af6cdf132387c252a485b127585d7"
+    },
+    {
+        "path":  "Prefabs/Camp/Log_1.prefab",
+        "bytes":  5951,
+        "sha256":  "4acadc06078774d2a312117462d58e7725ee399708a20e11593760d7cba1bf14"
+    },
+    {
+        "path":  "Prefabs/Camp/Log_2.prefab",
+        "bytes":  5967,
+        "sha256":  "57814e84f7774732f485d75e02a418260d5a7aac9d5d0f0378c3c27c824ed92c"
+    },
+    {
+        "path":  "Prefabs/Camp/Log_3.prefab",
+        "bytes":  5934,
+        "sha256":  "b777c3b45c49325feb3fda8d6992c40a2ec5337aa59267adea4721cee90cddf0"
+    },
+    {
+        "path":  "Prefabs/Camp/Table_1.prefab",
+        "bytes":  5958,
+        "sha256":  "ec610cea1f8c10e96f9262bcefde6eead1c21b8e06083adf878b12cfc3f4e31f"
+    },
+    {
+        "path":  "Prefabs/Camp/Table_2.prefab",
+        "bytes":  5941,
+        "sha256":  "085a13f87e77e55721c4ed8a21d28403e0eb542d9da60c09e18340b30e61acab"
+    },
+    {
+        "path":  "Prefabs/Camp/Tent_1.prefab",
+        "bytes":  8634,
+        "sha256":  "38626933e6d063b643fbf3b0050014f283bdbbd933eb95055b8ddf27329a8916"
+    },
+    {
+        "path":  "Prefabs/Camp/Tent_2.prefab",
+        "bytes":  8696,
+        "sha256":  "bf294a1d84897d31e68633cff66221c6673ebd5cb5c94278d6e54b02dfcb4170"
+    },
+    {
+        "path":  "Prefabs/Camp/Tent_3.prefab",
+        "bytes":  8690,
+        "sha256":  "3895d3fd62882c300082e3bae4cae75567793712f594d17ec4a362b102299ac7"
+    },
+    {
+        "path":  "Prefabs/Camp/Tent_4.prefab",
+        "bytes":  8676,
+        "sha256":  "195e6c0745da4f3fea8df5c167f4a5fbc291ad46ecc9ed7cd69c2ba52857f7c2"
+    },
+    {
+        "path":  "Prefabs/Camp/Trough.prefab",
+        "bytes":  6013,
+        "sha256":  "a2c0761ca511a7341bcec14f1e1028eef9de6790cc2f36b72d3245bbbf24d61d"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Arrow.prefab",
+        "bytes":  6461,
+        "sha256":  "5d86589eaf4b628c375e5700a011e4bd013ab314a9d17381db24291672690ddd"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Axe.prefab",
+        "bytes":  6458,
+        "sha256":  "7390cc33a8207190391fabd0c9794de0082eb1146f38efd665901a8c97df2ee6"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Bottle_1.prefab",
+        "bytes":  6461,
+        "sha256":  "b8cffa60153812a24f12bdfd7260967e67352f64104462f0f6b7bf11f61c72ab"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Bottle_2.prefab",
+        "bytes":  6444,
+        "sha256":  "3e32e586c6c2733ad9bfc51edda5045accf053c02df99c2b64e00cabeb4bae66"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Bow.prefab",
+        "bytes":  6474,
+        "sha256":  "b4bdda22f850d7cb9f2726bbbe11a1f09db70e7d851f08ff7d35239ae47c3005"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Box_1.prefab",
+        "bytes":  6478,
+        "sha256":  "ccc14fa00dd039165c23ed17b77a5723b7d79d2607ff5818145e90628033580a"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Box_2.prefab",
+        "bytes":  6444,
+        "sha256":  "4d8eb6fc6d96173839db3f5a61cc6e377a83541cf9024e01c33c6a5f75f382ff"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Bread.prefab",
+        "bytes":  6455,
+        "sha256":  "52f8a609c0b7eec45b5aeca0a2dda06ded7d51ae58dd7a6fd8618f965ad989ef"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Bucket.prefab",
+        "bytes":  9039,
+        "sha256":  "bf9c6304f8f7b5851b03e543689b83f0ef283f2f85ef86537ef8fbd77a00e19d"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Cup.prefab",
+        "bytes":  6445,
+        "sha256":  "f91da029535e2907e3d55ab31ed33cd81ad9967cae410b512f678bf37b2e98ca"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Dagger.prefab",
+        "bytes":  6457,
+        "sha256":  "e9f697facd4c605a11cf76d634f9b59c43909f86fabcb01768d5b3abf915531d"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Fish.prefab",
+        "bytes":  6449,
+        "sha256":  "5ecfe7c1a287aa932f0deecc979002061491e52b984281a3e370330627863f5b"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Fork.prefab",
+        "bytes":  3875,
+        "sha256":  "23953e5ca52c0a83325b787c9f6c4d5989088472b1017099fdf40fa9a2c8642d"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Jug.prefab",
+        "bytes":  9037,
+        "sha256":  "d7af7ba3b4acefe00947f031750b4ebf2b21b4cefed968838aa14402d522f850"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Knife.prefab",
+        "bytes":  3874,
+        "sha256":  "6a1701c4cde3d00d1c9a8f518a06a1c9071aaaedd8a24b74fa0470aba0a7dc7d"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Meat.prefab",
+        "bytes":  6464,
+        "sha256":  "312081a3a031a111ff9f1b18981ce51792a0088c095c0ebd65702ad1ca3845f7"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Onion.prefab",
+        "bytes":  6461,
+        "sha256":  "bc086fa6dd1dea09a1773da45903e52a703930c2ab62a5e017fc4bd8450c2f78"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Plate.prefab",
+        "bytes":  6458,
+        "sha256":  "bb99673310feb1e7d043ea995bf80149c3e16d6cfa8643310588c28d25154ac5"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Pot.prefab",
+        "bytes":  6438,
+        "sha256":  "02c7da6e651a06a284aeaf8792d31b6be1655cfe0365a9333e32c28473b913bf"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Pouch.prefab",
+        "bytes":  6481,
+        "sha256":  "03f97151b50b3668a0cb1e2a08de4adf85945e8434073f4793148711bda81338"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Quiver.prefab",
+        "bytes":  9003,
+        "sha256":  "bae1a7adbf644a65a1f4cddece2e279e092a6d03faece4868abc3306c607669f"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Shield.prefab",
+        "bytes":  9070,
+        "sha256":  "b63d40b7d36e7cc4ff71a4930db7064e5b09423fc3c3ab13085acb9b3cc075eb"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Spoon.prefab",
+        "bytes":  3861,
+        "sha256":  "f722424ec9af71e8495183cb2c5d611d7a7e36e38b982318476eec272a71f99e"
+    },
+    {
+        "path":  "Prefabs/Camp Props/Sword.prefab",
+        "bytes":  6489,
+        "sha256":  "b3926abb7a179f01d1ee045324e05f4283230df667a9aff3a8dcfe4dce9e0013"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Arrow.prefab",
+        "bytes":  9378,
+        "sha256":  "2a37e996e17f5ac21f46a7f08b0b55a74c7b0f16ac53d538b3222e28bbcdf38c"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Axe.prefab",
+        "bytes":  9373,
+        "sha256":  "1139628e6e534180593cc5094899a7e770b54f5fd509170a7296ca744e3b9c31"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Bottle_1.prefab",
+        "bytes":  9370,
+        "sha256":  "fd41c39b5f924492aad8ee0aa0e9c24b76b95331402906d8951e46480938067d"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Bottle_2.prefab",
+        "bytes":  9361,
+        "sha256":  "e228b28c23b2cf12d247fdadffc21ef1fd41f76c5129c5dcbaa237fa057b8d01"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Bow.prefab",
+        "bytes":  9391,
+        "sha256":  "0f652c08ebc298fedbce926fd5398320e0077a2fdc746f5fb898d0fcbee3de23"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Box_1.prefab",
+        "bytes":  9393,
+        "sha256":  "bbdaeb4263d5beab7eac5f1d7de22fd7f2ac6e3bf9aa59e162e4d4add284a1d8"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Box_2.prefab",
+        "bytes":  9361,
+        "sha256":  "f46bab5ec933c44bdd8b290df41d16367db294e6561337e103ba6d990e16f0f9"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Bread.prefab",
+        "bytes":  9366,
+        "sha256":  "b1b17580cf77ce89cc3e7291b2bb67289f72ea919033edc11cac5064a179a294"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Bucket.prefab",
+        "bytes":  11956,
+        "sha256":  "1f5567fa06e51937f4d96a5ef259faf4f25ec6ed8add2519ff3d687148710c40"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Cup.prefab",
+        "bytes":  9362,
+        "sha256":  "8f3857eac446439c13b56861312633c02344fc1fabfa5708ba46ccc30d40bc16"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Dagger.prefab",
+        "bytes":  9374,
+        "sha256":  "0f517eec3a9e6ef0c7f641e1b30fd3c5e87d9287605c2d59afd0fcb0f5c907b6"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Fish.prefab",
+        "bytes":  9366,
+        "sha256":  "bceeb5cd58f7462c6f8219fc101f2abe60647c655744237c6e64b177cc6e9c16"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Fork.prefab",
+        "bytes":  6792,
+        "sha256":  "6d237570996bcd07b83f22c11c383b17d72519418e6b7d85579d8ab0c3df3b4c"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Jug.prefab",
+        "bytes":  11954,
+        "sha256":  "3e64b9b2f3ff7404fd530ef828218c5f4f6cdfc5b31f1756824bd4d6d42faf37"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Knife.prefab",
+        "bytes":  6791,
+        "sha256":  "c765895fb30e0670afc23c3fe77d6266ea76c8b02b8ccf94e9a13ced48d63572"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Meat.prefab",
+        "bytes":  9381,
+        "sha256":  "e41c228fed8c3a98d8aa345d56832763d2c90d70393e1d9c603ccd3e6bd4fbc6"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Onion.prefab",
+        "bytes":  9376,
+        "sha256":  "0366983b8918540d3dea27898d10679de5985f513db53d0e2d56d4ea36461415"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Plate.prefab",
+        "bytes":  9373,
+        "sha256":  "56b26e5edb0e73855d5315bb031f17c4aeb102834bd8a4dfc58edc807b35da49"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Pot.prefab",
+        "bytes":  9353,
+        "sha256":  "b2da35bc306ca7f8fca0a829f033bd477b7a576f04e8143d1d39d1f61d72bcdc"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Pouch.prefab",
+        "bytes":  9400,
+        "sha256":  "8aaa05f70de7cfd8415f0070af91eaca18fabfd4b79191a662ce8d140acaa175"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Quiver.prefab",
+        "bytes":  11920,
+        "sha256":  "027047800051b8dfd1dd90dc5b49e5c6cee6f91db84c8011e3f049de73edf389"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Shield.prefab",
+        "bytes":  11989,
+        "sha256":  "48f67902ce1c1fb7f704f1a3e76f02fe4699b1d767b82dc5e10da2d5f1288be4"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Spoon.prefab",
+        "bytes":  6780,
+        "sha256":  "efca756c77b82af8716095c10fc909bf632f6695ca9730b3d2eff4c0390a8d42"
+    },
+    {
+        "path":  "Prefabs/Camp Props (Interactable)/Sword.prefab",
+        "bytes":  9406,
+        "sha256":  "3d6c042ff33e0df1546c561771a3e962367a5d953a4415a1a02b56e1cbdda442"
+    },
+    {
+        "path":  "Prefabs/Forest/Branches_1.prefab",
+        "bytes":  3033,
+        "sha256":  "f2d726c104f4bd7942a8cc91f505f52fbd6577f8396258eb5eed144c4e75c7bb"
+    },
+    {
+        "path":  "Prefabs/Forest/Branches_2.prefab",
+        "bytes":  5601,
+        "sha256":  "4d4ef72e8ecebf1d088f423e3cdb961c6db3f7fa508d62a7bed74044d5f8e9b8"
+    },
+    {
+        "path":  "Prefabs/Forest/Branch_1.prefab",
+        "bytes":  3019,
+        "sha256":  "bb7638ccf68d49f0e2fe3668beb8b220f0f5aa0d1d5365bab8562f0971782411"
+    },
+    {
+        "path":  "Prefabs/Forest/Branch_2.prefab",
+        "bytes":  3019,
+        "sha256":  "0f6cb69dbf2d5f32a8f6ce838b1d866402b7c4436ccabb6fbb223d7003172172"
+    },
+    {
+        "path":  "Prefabs/Forest/Branch_3.prefab",
+        "bytes":  3022,
+        "sha256":  "6ffaedd0b8cfc80bcef58d08e18942c2da26ecedf261ff77c9f130ed69b62432"
+    },
+    {
+        "path":  "Prefabs/Forest/Bush_1.prefab",
+        "bytes":  8163,
+        "sha256":  "d578ef879fd8699549e7e13c922bd78e27014acf99e43de4dd0d59f1d3a199df"
+    },
+    {
+        "path":  "Prefabs/Forest/Bush_2.prefab",
+        "bytes":  8145,
+        "sha256":  "2746891fe3e5684374aea3b25fc9e719afe7de73e406a6dcf9d5381f9799cdfb"
+    },
+    {
+        "path":  "Prefabs/Forest/Bush_3.prefab",
+        "bytes":  8157,
+        "sha256":  "22647b41aa6e07cd7deb65d4b3bf0e8f3bc8b0de21dcfae244628c285b8e6e4d"
+    },
+    {
+        "path":  "Prefabs/Forest/Clovers.prefab",
+        "bytes":  3019,
+        "sha256":  "bba7c0d0c0d090f0b5ea74f5a3a6001d00a4c40484f8a5aba1ca389e8648492d"
+    },
+    {
+        "path":  "Prefabs/Forest/Dead_Bush_1.prefab",
+        "bytes":  8575,
+        "sha256":  "8f9c7b201b57cafb2a273a2e6ebde0262d1437d4baa0f6213c03fdc615560d84"
+    },
+    {
+        "path":  "Prefabs/Forest/Dead_Bush_2.prefab",
+        "bytes":  8618,
+        "sha256":  "89f1b90be477acfb71e63a4be74a7b18769b22c4fa4b0ac0ce19208d0b0c9d9f"
+    },
+    {
+        "path":  "Prefabs/Forest/Fern_1.prefab",
+        "bytes":  5583,
+        "sha256":  "26cc62e70cd09d6cedb673da28dff814b65a0b9265137a5094870c0cc02a82f9"
+    },
+    {
+        "path":  "Prefabs/Forest/Fern_2.prefab",
+        "bytes":  5590,
+        "sha256":  "88b345c793c57b9e7c9ddcefe913e3f7850dea302c6c855efdda18f9a084ea1c"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_1.prefab",
+        "bytes":  9681,
+        "sha256":  "e6be606322a7b71cfe963daab1f2972fbfaeef8e851eb5ed5c7242fb0da353d0"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_2.prefab",
+        "bytes":  9725,
+        "sha256":  "e68396e4e016ca38f376fb95ff0cc0bd06c37eccc4bb50ba13bea97deb47713b"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_3.prefab",
+        "bytes":  9719,
+        "sha256":  "12fd2734142135459e023f6432617d14c7df3025e57808c30a4d1607f6de9cfb"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Dead_1.prefab",
+        "bytes":  9772,
+        "sha256":  "a94398043849f25a9047c88f210e7abdede8911e1eb75357a8edbfaadf00ca61"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Dead_2.prefab",
+        "bytes":  9735,
+        "sha256":  "e69d9a89096e60e15288cb3ed17b02cd9b888b68902a2d957d3cb5738b5bc76f"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Tall_1.prefab",
+        "bytes":  9804,
+        "sha256":  "db490558d1ac996a96d1a558a2f3b453750935fff2f29c7605c761a4804362b1"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Tall_2.prefab",
+        "bytes":  9798,
+        "sha256":  "01fec7e2b5b5f70a742ed160e583ca086faeb90ec6bbbeda483b4bf71ae5ada4"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Tall_3.prefab",
+        "bytes":  9806,
+        "sha256":  "1cfaf08489c905fe80162ed6e2298a7f2c9f2a094781ff0fcf2c8c3cfb0e24cc"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Tall_Dead_1.prefab",
+        "bytes":  9791,
+        "sha256":  "73eca5ad90272956a7323710f30b404a6f09a08d7bca92e5c46ae6dcfa724dcb"
+    },
+    {
+        "path":  "Prefabs/Forest/Fir_Tall_Dead_2.prefab",
+        "bytes":  9802,
+        "sha256":  "fbe4845ce8f94159c4d19331fb089d1b7a617b5d225340c8c0d70dd5f7d3290e"
+    },
+    {
+        "path":  "Prefabs/Forest/Flowers_1.prefab",
+        "bytes":  3024,
+        "sha256":  "5a148ae1614a4e1c5b72e9e834880bb59d2db64558eb0dbbd9f7669a322e4a04"
+    },
+    {
+        "path":  "Prefabs/Forest/Flower_1.prefab",
+        "bytes":  5590,
+        "sha256":  "6fbba25fafa9fa10458bef3fd0c6453a845e0fe7014feb4e0d773917a74a33e9"
+    },
+    {
+        "path":  "Prefabs/Forest/Flower_2.prefab",
+        "bytes":  5593,
+        "sha256":  "8e727253c913a6186dace3ec57286029677dbf9ffaad4e39554c27b65b01355b"
+    },
+    {
+        "path":  "Prefabs/Forest/Flower_3.prefab",
+        "bytes":  5590,
+        "sha256":  "1cd411f3b93c8051478c73bb1daeb3b93fb2311df5cc15294207611433309743"
+    },
+    {
+        "path":  "Prefabs/Forest/Grass_1.prefab",
+        "bytes":  3023,
+        "sha256":  "9585f0b2564c5d26bc798eb1a00e8d563807cab2f24d346bfbe34e4307c337b5"
+    },
+    {
+        "path":  "Prefabs/Forest/Grass_2.prefab",
+        "bytes":  3021,
+        "sha256":  "5c7349c7b7fad8f4c7c29116de40c380b6b712b1dbe1000d983433f803564664"
+    },
+    {
+        "path":  "Prefabs/Forest/Log_1.prefab",
+        "bytes":  6045,
+        "sha256":  "9cd272aea2b96e7be6b40cbeb1c8127c15f835a37d2346ef392e815160c99831"
+    },
+    {
+        "path":  "Prefabs/Forest/Log_2.prefab",
+        "bytes":  8643,
+        "sha256":  "4a71dccd7d596fbf88b7cc24537e859877fb8ffb4c6b6b1255122b055d4a1a81"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushrooms_1.prefab",
+        "bytes":  5598,
+        "sha256":  "87d2a92d018ecfbe52b1879c98c389672b3280296956be2cbe27709aa16fb7a1"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushrooms_2.prefab",
+        "bytes":  5594,
+        "sha256":  "1ec4d75366e5df44cb4eaf521f6029ad6b4698a8d2397ff6ccaaff46a756b172"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushrooms_3.prefab",
+        "bytes":  5596,
+        "sha256":  "2cfaac7727850d1a02ad4ba34785fcb47c3889caf7323865d49e852fa5ad31fa"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushrooms_4.prefab",
+        "bytes":  5602,
+        "sha256":  "f233a7f55ec5d28e1f8d9ea2f84bfb5f21a1051ba91b649acb6995837e14471a"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushroom_1.prefab",
+        "bytes":  5597,
+        "sha256":  "eea785d8b715d9ad578577868439a645fff71ee2a317ec94c8c92f8d60fd1a1b"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushroom_2.prefab",
+        "bytes":  5595,
+        "sha256":  "13c897710f59f098889df8de774cd628416c912d3ea529b140942e2760baaa15"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushroom_3.prefab",
+        "bytes":  5602,
+        "sha256":  "253da9cb5f9502b233099f687ad058a8a5a740fe1eefdd819581d2d610e4924f"
+    },
+    {
+        "path":  "Prefabs/Forest/Mushroom_4.prefab",
+        "bytes":  5597,
+        "sha256":  "e1feac88b87122c4a70f4d490c272b80f46aae924f332cf5b629de18f06b0bce"
+    },
+    {
+        "path":  "Prefabs/Forest/Rock_1(Grass).prefab",
+        "bytes":  6066,
+        "sha256":  "32793b141b68f219b244e14e5de63930ce2712df5c800183f373bbd5b09076f2"
+    },
+    {
+        "path":  "Prefabs/Forest/Rock_1.prefab",
+        "bytes":  6075,
+        "sha256":  "66e3709f3749f23d2e489c0b2efbea9917e0b3bb5ac17eeda556e32d0755e1b9"
+    },
+    {
+        "path":  "Prefabs/Forest/Rock_2(Grass).prefab",
+        "bytes":  6039,
+        "sha256":  "32dcb8673cc358261a6f78eac89d61e7ef495a58e1abd0b29fb1a062f0ba5f76"
+    },
+    {
+        "path":  "Prefabs/Forest/Rock_2.prefab",
+        "bytes":  6032,
+        "sha256":  "e97bc5c3f91af0e9b1ec8c90c15a32e75fa5c5cc696848212dd57c4cb546a660"
+    },
+    {
+        "path":  "Prefabs/Forest/Stones.prefab",
+        "bytes":  5587,
+        "sha256":  "f1447d8248b3f9e14aea97d1955e7b554e7de85a5fd61da17ada578f1934779d"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_1(Grass).prefab",
+        "bytes":  5941,
+        "sha256":  "185d223965c63b6b7d4b20a37179cb2b4dd270fc699b751cca8b1cd31237c941"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_1.prefab",
+        "bytes":  5934,
+        "sha256":  "7af86d50ca11020498d753e8799b381db21a7411190e637c33d5dccee756c754"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_2(Grass).prefab",
+        "bytes":  5946,
+        "sha256":  "8e5186283ce3c2e224ce9b451d63184574779f2a7b3d0f8da5d9bfaa549fd15d"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_2.prefab",
+        "bytes":  6057,
+        "sha256":  "23204813840b663124cf59ad1c3caca0df9d16a50c0f7b8ec5d6ac6a2f6db4d2"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_3(Grass).prefab",
+        "bytes":  5950,
+        "sha256":  "c2a631dc0d21464c3c51333db22eaf6f52d3fc53e1ea4742d2284031310bb3c3"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_3.prefab",
+        "bytes":  6061,
+        "sha256":  "3dcbe7d40eeb2fa0154ed23218240bbda73544111f66af3b51dffe43cb00bbb9"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_4(Grass).prefab",
+        "bytes":  5951,
+        "sha256":  "633618a9dc2bc4f7377922361409ce74606c7fb8f9f34c0a6c2a6c64913f1ec4"
+    },
+    {
+        "path":  "Prefabs/Forest/Stone_4.prefab",
+        "bytes":  6062,
+        "sha256":  "cd82d994dd0fcd14670022f61b40f6118dd2b6319d74ecd22b57983ef2dd7b53"
+    },
+    {
+        "path":  "Prefabs/Forest/Stump_1.prefab",
+        "bytes":  6046,
+        "sha256":  "8c9d023c2f7cc696fd14dfe2775e65816a6e688bc7dbeb1142d6bc8276d41ec4"
+    },
+    {
+        "path":  "Prefabs/Forest/Stump_2.prefab",
+        "bytes":  8634,
+        "sha256":  "60ae067f734e8ed422ea5cce14d48a2b18875edb0359e815686575d3ad7ab469"
+    },
+    {
+        "path":  "Prefabs/FX/Birds.prefab",
+        "bytes":  119191,
+        "sha256":  "a216143317594b7d7e05c76396dba47b7abd5ca22d5811408234c824abe6f30c"
+    },
+    {
+        "path":  "Prefabs/FX/Candle Fire.prefab",
+        "bytes":  117089,
+        "sha256":  "505d73e6f0b80e2a7e6c380bf95b1db3e2f331a2636d0b54863fc820e755d956"
+    },
+    {
+        "path":  "Prefabs/FX/Fire.prefab",
+        "bytes":  355868,
+        "sha256":  "63245dea266457cf97dd9d3920fcde61b1afe33103e6b8d8320b912451744941"
+    },
+    {
+        "path":  "Prefabs/FX/Fog.prefab",
+        "bytes":  117324,
+        "sha256":  "8d7a3dddd4232972e26ad21e5c779a122ee9f08924f7032af459201d66feef68"
+    },
+    {
+        "path":  "Prefabs/FX/GodRays.prefab",
+        "bytes":  117347,
+        "sha256":  "0b664e7fd921996571ed0a92560d55452f3e3abb955af6bdceff18aeb5822cee"
+    },
+    {
+        "path":  "Prefabs/Mountains/Mountain_1.prefab",
+        "bytes":  2427,
+        "sha256":  "2faaa73bd2e33f71cfd3e0d054f0f08f15ebe1c93f8107d1599acdb2a3c058db"
+    },
+    {
+        "path":  "Prefabs/Mountains/Mountain_2.prefab",
+        "bytes":  2431,
+        "sha256":  "390e419ea7271f76e4bb8a0efe6e19cc6c31e62678ab8c5d928bd474b76c934b"
+    },
+    {
+        "path":  "Prefabs/Mountains/Mountain_3.prefab",
+        "bytes":  2431,
+        "sha256":  "d01e2cd064e5bce2cc8e0e9b3fd5f72c8325a52dec7e55e41bd1a1fd4a1ee366"
+    },
+    {
+        "path":  "Prefabs/Mountains/Mountain_4.prefab",
+        "bytes":  2431,
+        "sha256":  "3eb90c410f9118b2d3a85ec82448f2afd15ceb1714c6faa7ce2ba4f84c1089ea"
+    },
+    {
+        "path":  "Prefabs/Witches House/Books_1.prefab",
+        "bytes":  8462,
+        "sha256":  "ef501b8ecd04e634fe8aba21326d5580e58dc30204c64dd204f6349510c81e35"
+    },
+    {
+        "path":  "Prefabs/Witches House/Books_2.prefab",
+        "bytes":  8448,
+        "sha256":  "0c31b4f1eda6a1b8eac36ddb6228b3eaec215f003d1229447681af09de495886"
+    },
+    {
+        "path":  "Prefabs/Witches House/Candles_1(Light).prefab",
+        "bytes":  7146,
+        "sha256":  "980c976d3acac7c2465c41ef0f33d46aefc6d20cb159b78508f7ef315c4749af"
+    },
+    {
+        "path":  "Prefabs/Witches House/Candles_1.prefab",
+        "bytes":  5910,
+        "sha256":  "831145d17da1478f982c05b43fab8cca966e4102c2cfe49ddc5ad40f47067d4f"
+    },
+    {
+        "path":  "Prefabs/Witches House/Candles_2(Light).prefab",
+        "bytes":  14351,
+        "sha256":  "3edad2aa765505316d5475986d5f7a8e186ca528e6fbf7926f69242822aa11b2"
+    },
+    {
+        "path":  "Prefabs/Witches House/Candles_2.prefab",
+        "bytes":  5964,
+        "sha256":  "974b5a07a66d97b1bebfa6745f0ce8ed10ee096e04c530fe8d97ba89a055afd5"
+    },
+    {
+        "path":  "Prefabs/Witches House/Chair.prefab",
+        "bytes":  5946,
+        "sha256":  "daf30e38d4e0f21e074bf8852eb6a24192040b273b7b502a1238f31f1bae4d46"
+    },
+    {
+        "path":  "Prefabs/Witches House/Dresser.prefab",
+        "bytes":  5907,
+        "sha256":  "ce555f7cd1bc106bfb4af09fa5c40ff0938eb398d147902ab47270b46e7bd773"
+    },
+    {
+        "path":  "Prefabs/Witches House/Fence_1.prefab",
+        "bytes":  8620,
+        "sha256":  "596010d78a1eddb19d980be11fd9fc1ecb70cdec3a6256693746f5642e53e512"
+    },
+    {
+        "path":  "Prefabs/Witches House/Fence_2.prefab",
+        "bytes":  8626,
+        "sha256":  "3a3d574c87006cc77b2ee9007cb0c78cdefc6dd398684a73c6ce6e89f614281e"
+    },
+    {
+        "path":  "Prefabs/Witches House/Fence_3.prefab",
+        "bytes":  8659,
+        "sha256":  "bc2b2371be951bfcf963212d9ca0a84b888c8986f17b05e2795a02dc90241038"
+    },
+    {
+        "path":  "Prefabs/Witches House/Fence_4.prefab",
+        "bytes":  8594,
+        "sha256":  "f3f26aced2c5fd7c733812877abee4dd3b4dca1e835e1f78c0686cf3147616ed"
+    },
+    {
+        "path":  "Prefabs/Witches House/House.prefab",
+        "bytes":  14719,
+        "sha256":  "a85e44de12b33691f848f95768e247f46a187eb4bc6081cd341bd087f7e05517"
+    },
+    {
+        "path":  "Prefabs/Witches House/House_Door.prefab",
+        "bytes":  6936,
+        "sha256":  "b57452eb1056dde1bf4e4d2269a4419b459c73d6b850fab7793c318ce5803f0e"
+    },
+    {
+        "path":  "Prefabs/Witches House/House_Stairs.prefab",
+        "bytes":  5959,
+        "sha256":  "abd3823c2a412b88f1452682d1963a9a2409e8c72d6cfc7aa3b8c4bd5649a98b"
+    },
+    {
+        "path":  "Prefabs/Witches House/Lamp.prefab",
+        "bytes":  17455,
+        "sha256":  "21cc35ab19936dab4b477577ee9dd9b5a9ed980098ef9e246c6bcbf4f98121e1"
+    },
+    {
+        "path":  "Prefabs/Witches House/Pillar.prefab",
+        "bytes":  15797,
+        "sha256":  "6612e6bac65a771ff51a4d2314849b7d84ecbcc371cab8375d5bd810d12c26b5"
+    },
+    {
+        "path":  "Prefabs/Witches House/Scroll_2.prefab",
+        "bytes":  5508,
+        "sha256":  "a7c1aa0fd4d11748272feb4c1fef135c95903cd88c4df2fccdcf4a46988efa2f"
+    },
+    {
+        "path":  "Prefabs/Witches House/Shelf.prefab",
+        "bytes":  5969,
+        "sha256":  "8fd7fa873237f3ca1b374c840060abe92bfc14b46fd4154709aa7ef8cef5c83d"
+    },
+    {
+        "path":  "Prefabs/Witches House/Stand.prefab",
+        "bytes":  5904,
+        "sha256":  "f48f21fe30bd0c9e86cead60aa5b2b7d62ab081e098171bb57db7d44ba2ddaf6"
+    },
+    {
+        "path":  "Prefabs/Witches House/Table.prefab",
+        "bytes":  5915,
+        "sha256":  "10fb1926018c32be5f52702a22f8e90fa53a0530d2e0546a006a88f6c72ab4ff"
+    },
+    {
+        "path":  "Prefabs/Witches House/Witches_Boiler.prefab",
+        "bytes":  6535,
+        "sha256":  "acdf91e635146dbe185fcf00d25063189f209f178c91aea2df4f3f64d4b6a9e0"
+    },
+    {
+        "path":  "Prefabs/Witches House/Сupboard.prefab",
+        "bytes":  5961,
+        "sha256":  "60ea76a632645359b0b37fa077929d9e0db7a9bbb642643e3de815703c3d9fc8"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Boiler_Cover.prefab",
+        "bytes":  6552,
+        "sha256":  "bab0d3e58eb64cdca00bc81ee574999bfae9f83a3b9d93edcb681256c9331fd9"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Bone_1.prefab",
+        "bytes":  6479,
+        "sha256":  "08cd8ae1396285939ba279ecbcfa26993565916ebf28f941c36df902917be214"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Bone_2.prefab",
+        "bytes":  6489,
+        "sha256":  "536875444f014feae5967d14fe2b831fed0f088bb453543d46c21e1f759f87d0"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Book.prefab",
+        "bytes":  9081,
+        "sha256":  "937bb8a1622d550772430b911103767327fd1beadc6c40c35abf94eb4fddb556"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Flask_1.prefab",
+        "bytes":  6525,
+        "sha256":  "64e2b0d4f9ac06f27a88dcd60a61ede02ebf35dce26ac8e1e0e4c806c6198ef0"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Flask_2.prefab",
+        "bytes":  6512,
+        "sha256":  "32028b1e3630fd8a02144c26ae7a1bed4029aabeb88b70f897b440dd6bc50631"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Flask_3.prefab",
+        "bytes":  6480,
+        "sha256":  "e8938e3d3e398f8a083e19141dbf48c22b33e346591980fee247c772c1dba3a5"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Flask_4.prefab",
+        "bytes":  6496,
+        "sha256":  "af05fbd23be14c4251bfe38a40c263c169089fc7a22c2bb2dc53d9eb91aa6470"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Flask_5.prefab",
+        "bytes":  6478,
+        "sha256":  "5c25267b1e6b4adda45d1ca07004d2cc807c4a6f51f6724bbb86e8c4952f40c6"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Mortar_And_Pestle.prefab",
+        "bytes":  6535,
+        "sha256":  "c35e6cb68e09b6bfa68cf809896bafbff3f6876a57311df757fd6bb1e4a5fcc4"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Mushroom_1.prefab",
+        "bytes":  6543,
+        "sha256":  "5b3e358b0ee612507384cb6042fb6192d364f95720988cdfc22f9ba64e999622"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Mushroom_2.prefab",
+        "bytes":  6510,
+        "sha256":  "2d230f277bf3883c25cb7472561e541890aca38563b01dd58e0e8e3d06252167"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Mushroom_3.prefab",
+        "bytes":  6508,
+        "sha256":  "3454efc13cb9665d146ee9c62dacb422e22065b0ebd3de3b4a5919699279bf89"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Scroll_1.prefab",
+        "bytes":  6488,
+        "sha256":  "b9e96bbff889d6b55d5d8f8ed90bd35459960a77fc4fa5e59bb6a8dc4f35f4c5"
+    },
+    {
+        "path":  "Prefabs/Witches House Props/Scull.prefab",
+        "bytes":  6524,
+        "sha256":  "694f1ffbcf0a449765cbfe9622103b80985082ee0390f31c345b11a1fc4052da"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Boiler_Cover.prefab",
+        "bytes":  9353,
+        "sha256":  "b5b1c5f747c9deababab9960489ef844709d5b4a1bf9d25d5ff6b6c90d672bad"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Bone_1.prefab",
+        "bytes":  9278,
+        "sha256":  "1a29c5df16626c7457cfac51b9f34b5f7c925befd87f8b70494e6a6c6b6d031c"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Bone_2.prefab",
+        "bytes":  9290,
+        "sha256":  "d2c7bc9e7bbff9db1d149e6ed67469c5d3def7133103f60f8a80d607e76d111a"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Book.prefab",
+        "bytes":  11819,
+        "sha256":  "782ac4c2b5b65eb2be178aa007296122d39f73de72ce5ed504a213e3753f3995"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Flask_1.prefab",
+        "bytes":  9324,
+        "sha256":  "71958e4ab61b52f2b5e5ada651d9baaae016c844450077ed9a78abfb308e2254"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Flask_2.prefab",
+        "bytes":  9309,
+        "sha256":  "e21c15dfa8f232aaf0ad93236fceb875e6329276099c9c32ac14adcd313ae0e5"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Flask_3.prefab",
+        "bytes":  9277,
+        "sha256":  "d904a18bb41753437fce53d2cbff8594f790558f10f69c7401c7e3db6952f450"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Flask_4.prefab",
+        "bytes":  9293,
+        "sha256":  "94f0989db6a1295af5cf1f289b7e7dac57c2b8b02268f4a1d345141c99d9e151"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Flask_5.prefab",
+        "bytes":  9277,
+        "sha256":  "76594f7a3b6334b1615939bbe9151d76608766d8629a31a04194fea0551eb6d4"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Mortar_And_Pestle.prefab",
+        "bytes":  9332,
+        "sha256":  "80966c6e95ffbb81ff560984d747389128c30769f70a26d306bc58c59da376d1"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Mushroom_1.prefab",
+        "bytes":  9342,
+        "sha256":  "f7da9b5f4a33cf760284ded08e876fee41d72b77a73295421e9f8861dc03f79b"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Mushroom_2.prefab",
+        "bytes":  9305,
+        "sha256":  "c67d8bb725f2ea3e053d99d9a3b3535d63c8ea02e9e9ae14e333949f045c7987"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Mushroom_3.prefab",
+        "bytes":  9305,
+        "sha256":  "80eeab78463215f0a4d7a6e22ba1b42deda073933479a3f1d2e3c961ec4e86da"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Scroll_1.prefab",
+        "bytes":  9285,
+        "sha256":  "d2cffb9805f7d52df042ef59c963a6ee56fe683d5e18f06d1b5aadd1a5108bff"
+    },
+    {
+        "path":  "Prefabs/Witches House Props (Interactable)/Scull.prefab",
+        "bytes":  9323,
+        "sha256":  "4f97f4533b2cf52a5d7850b411ae66e6cbdcfca58f241e0bd2d3ef91d133313e"
+    },
+    {
+        "path":  "Terrain Layers/Grass_1.terrainlayer",
+        "bytes":  779,
+        "sha256":  "528b1f7f4b0aebff68babb015d25bb06d435ee583d89667a77df06a9fe86500b"
+    },
+    {
+        "path":  "Terrain Layers/Grass_2.terrainlayer",
+        "bytes":  779,
+        "sha256":  "1854944e2a57768d2a9bc7b4367a3cb3cd3d08ab9a10771d9e3acfaafcd85836"
+    },
+    {
+        "path":  "Terrain Layers/Mud_1.terrainlayer",
+        "bytes":  777,
+        "sha256":  "4f070ab4219299c2b5acdea0ce9f0448d180d63bcd90737c6d80f99e9f0eb5b2"
+    },
+    {
+        "path":  "Terrain Layers/Mud_2.terrainlayer",
+        "bytes":  777,
+        "sha256":  "e026f7946fc338811ed1dcab65d677a9db5bdf433ed0724b4e366eef15805bfe"
+    },
+    {
+        "path":  "Textures/Camp/Bag_AlbedoTransparency.png",
+        "bytes":  1636635,
+        "sha256":  "2d2bf4267d4bc2b00ff9526b9ae18a2c6842cc825f28e3b9491966c42f185693"
+    },
+    {
+        "path":  "Textures/Camp/Bag_MetallicSmoothness.png",
+        "bytes":  893581,
+        "sha256":  "5f904e438ad8892011cbab22ee3ad80f2250871794ec76a7934d0c702d86e0cd"
+    },
+    {
+        "path":  "Textures/Camp/Bag_Normal.png",
+        "bytes":  1252980,
+        "sha256":  "530bf96760886b02d02e44513da6998a9cde1727dbefa50d387536855a30b8d7"
+    },
+    {
+        "path":  "Textures/Camp/Barrel_AlbedoTransparency.png",
+        "bytes":  1048843,
+        "sha256":  "bc9d754adad30c709694f16c1c861a57b303b8ddf4b78161f15b5564ece46b82"
+    },
+    {
+        "path":  "Textures/Camp/Barrel_MetallicSmoothness.png",
+        "bytes":  648523,
+        "sha256":  "f29fcc802ef712d2563577fb974c16cec1720b7bf66e1ad65b6d8ddfa050d079"
+    },
+    {
+        "path":  "Textures/Camp/Barrel_Normal.png",
+        "bytes":  940563,
+        "sha256":  "9fa0603bfeff0662eef2ff1c2eaf631f71ee11b47e6e16de66fd48e92b0eb662"
+    },
+    {
+        "path":  "Textures/Camp/Boiler_Bonfire_Albedo.png",
+        "bytes":  1272835,
+        "sha256":  "ae0e9accc1433ba3a71893f59066fc46bf5b705a9884e6b9a714df42f90f84d2"
+    },
+    {
+        "path":  "Textures/Camp/Boiler_Bonfire_Emission.png",
+        "bytes":  46861,
+        "sha256":  "55863fa86322825c42632a4f41e29264a074170f6241b6065e522acddf111818"
+    },
+    {
+        "path":  "Textures/Camp/Boiler_Bonfire_MetallicSmoothness.png",
+        "bytes":  663599,
+        "sha256":  "936b1558b07cb59d6e25b7ff987fd21752803ed771ea2f70d89d4fdd5a8bbed2"
+    },
+    {
+        "path":  "Textures/Camp/Boiler_Bonfire_Normal.png",
+        "bytes":  1067882,
+        "sha256":  "22383ec512dd58b38265f0d37d4c145900a3a3f9d3748f440a92eaf2c8d9ee30"
+    },
+    {
+        "path":  "Textures/Camp/Box_Albedo.png",
+        "bytes":  1013505,
+        "sha256":  "b192d8a5949f9c6dae4fd86555e6553be0e5fb63a4c373337e8c7663db930370"
+    },
+    {
+        "path":  "Textures/Camp/Box_MetallicSmoothness.png",
+        "bytes":  352402,
+        "sha256":  "8a4f8f10dbfd079408e9b7c91748d1b0be554f9f515d3194ff09adb224c029d1"
+    },
+    {
+        "path":  "Textures/Camp/Box_Normal.png",
+        "bytes":  816278,
+        "sha256":  "f4f5391d0975c32d65aab0b9b57f11a2afd24a934f047a399154eaadacf545a7"
+    },
+    {
+        "path":  "Textures/Camp/Cart_Albedo.png",
+        "bytes":  1027802,
+        "sha256":  "14af7455fbd49f1158c7aae237f74706822d323b4cab0b69cacb03ce083e3ec9"
+    },
+    {
+        "path":  "Textures/Camp/Cart_MetallicSmoothness.png",
+        "bytes":  395456,
+        "sha256":  "a5196ab36550895c76f0a14ae94f0e0d6b4efa61c834d0e2bf85d1bdc74d0f1c"
+    },
+    {
+        "path":  "Textures/Camp/Cart_Normal.png",
+        "bytes":  673422,
+        "sha256":  "6ec6203dedd8de8267ce5f506ea460a843d571c6ba1e17f2927d9a4e695d57c7"
+    },
+    {
+        "path":  "Textures/Camp/Chest_Albedo.png",
+        "bytes":  1039542,
+        "sha256":  "9410123cb23626a130f2ad43afa711b395a5e6cce119ae86bc5e3a234a012564"
+    },
+    {
+        "path":  "Textures/Camp/Chest_MetallicSmoothness.png",
+        "bytes":  1132356,
+        "sha256":  "4a66d99f6248ea17dee83f5062e5b31a67d2c3bf88029a5fcf3cf63d22cd6d8e"
+    },
+    {
+        "path":  "Textures/Camp/Chest_Normal.png",
+        "bytes":  1107296,
+        "sha256":  "8427f0c6a010cd3667b7fddbffea163efbea3b3988bbe56ebf93a6bf0e130cb8"
+    },
+    {
+        "path":  "Textures/Camp/Dishes_Albedo.png",
+        "bytes":  1090509,
+        "sha256":  "ab8f333f543996bd43188c1554e8307be9cd8577dbb5e419e413e48473bcb6c0"
+    },
+    {
+        "path":  "Textures/Camp/Dishes_MetallicSmoothness.png",
+        "bytes":  661048,
+        "sha256":  "d19bb76257ad93b36fd00c0a5ec173b688f42188c584d09c3d3fac9d4e53c508"
+    },
+    {
+        "path":  "Textures/Camp/Dishes_Normal.png",
+        "bytes":  1033948,
+        "sha256":  "3b977aab955bfbe266e36b36d364fb55274c3409d40d284100d4ac8c3b189749"
+    },
+    {
+        "path":  "Textures/Camp/Dryer_Albedo.png",
+        "bytes":  949773,
+        "sha256":  "ef15a324481239a85aba324e393d06bd9704ba3d1fe2521d4ac18f0e19fc48d4"
+    },
+    {
+        "path":  "Textures/Camp/Dryer_MetallicSmoothness.png",
+        "bytes":  336036,
+        "sha256":  "469a61105f50361275faf59bff04a540b72da16930bc2c2fb3ee80c14f641d05"
+    },
+    {
+        "path":  "Textures/Camp/Dryer_Normal.png",
+        "bytes":  867968,
+        "sha256":  "31e3b50d9d4767629ce06c5b656da0583d48fd19d9cf8630639b2862cb0f827d"
+    },
+    {
+        "path":  "Textures/Camp/Food_Albedo.png",
+        "bytes":  873951,
+        "sha256":  "52036306010650a611884634a2373fb0287e40027a4ed7a7cbde6c33143d54c0"
+    },
+    {
+        "path":  "Textures/Camp/Food_MetallicSmoothness.png",
+        "bytes":  581701,
+        "sha256":  "1deb7aa9faec91366244855bb4f045a43bb03f3e6008d891a743136d312b40b3"
+    },
+    {
+        "path":  "Textures/Camp/Food_Normal.png",
+        "bytes":  1134839,
+        "sha256":  "0fdc92903564766379f32ea0a6e097198dd20604d6fd4037af640ceee3475b8e"
+    },
+    {
+        "path":  "Textures/Camp/Gold_Albedo.png",
+        "bytes":  911303,
+        "sha256":  "25e9ce8b471d53f0cda81b6912e6161969f364a1f52bf59dbc52107c4df637d8"
+    },
+    {
+        "path":  "Textures/Camp/Gold_MetallicSmoothness.png",
+        "bytes":  781024,
+        "sha256":  "6ff6763b569143fada7db062f67f8e1f5ebb0c0ff12254a1f8a994dbff4c3d41"
+    },
+    {
+        "path":  "Textures/Camp/Gold_Normal.png",
+        "bytes":  1483657,
+        "sha256":  "98b2c0c47d3dacf92d07755bf343f76006bf868c2f21c9c4ea6b35ebf59d39ba"
+    },
+    {
+        "path":  "Textures/Camp/Log_Albedo.png",
+        "bytes":  5009001,
+        "sha256":  "ef232ef7b364e69c99b45789cf8967ca254f486c9c2c8865e36e8650c71e69a5"
+    },
+    {
+        "path":  "Textures/Camp/Log_MetallicSmoothness.png",
+        "bytes":  1258897,
+        "sha256":  "f6f4fc15abedd106c5cbf7b2781da1c6c629568b36cca298fd6b6a33aa9eb363"
+    },
+    {
+        "path":  "Textures/Camp/Log_Normal.png",
+        "bytes":  2917977,
+        "sha256":  "7e32d4fce2516af9a7bb331842f69174e0b57254bf51317bb3686066dbccc43f"
+    },
+    {
+        "path":  "Textures/Camp/Table_Albedo.png",
+        "bytes":  939585,
+        "sha256":  "7c1edf346b9ecb0bdb07568251f849c2702721205dc6a4890a45fc34e876ace1"
+    },
+    {
+        "path":  "Textures/Camp/Table_MetallicSmoothness.png",
+        "bytes":  256260,
+        "sha256":  "11088bae9571742ed086632f0360ed52a611d9fc30db2c16d09c8cccddeda770"
+    },
+    {
+        "path":  "Textures/Camp/Table_Normal.png",
+        "bytes":  572548,
+        "sha256":  "6b0e2e5172d094d37a4dc0de807cf1a73eb9fb55d77f3dd6197a2a5bac2e3a84"
+    },
+    {
+        "path":  "Textures/Camp/Tent_1_Albedo.png",
+        "bytes":  3952099,
+        "sha256":  "1b5776360dc5665beb99e0b6a57b2b2b10833aa20839ce8fb0d5784def21b52c"
+    },
+    {
+        "path":  "Textures/Camp/Tent_1_MetallicSmoothness.png",
+        "bytes":  2415991,
+        "sha256":  "9bacc12835ba7a06a04b1280ce2b3cd414f47b91de12bb03f65a65f9fc58da3a"
+    },
+    {
+        "path":  "Textures/Camp/Tent_1_Normal.png",
+        "bytes":  5134599,
+        "sha256":  "617bcbd9d20416c0b324452b3ef857b9ca9e3518814bb80caaaa5306419b82b2"
+    },
+    {
+        "path":  "Textures/Camp/Tent_2_Albedo.png",
+        "bytes":  1093662,
+        "sha256":  "46c9148ff4ae39fae55b20f3e70b54874d6d49cdf1574485551876585bebf20b"
+    },
+    {
+        "path":  "Textures/Camp/Tent_2_MetallicSmoothness.png",
+        "bytes":  763303,
+        "sha256":  "8aebdb20bc7fb6b5734af22d11e9bd9ea0f46d432532443afcdc410f80a3fee4"
+    },
+    {
+        "path":  "Textures/Camp/Tent_2_Normal.png",
+        "bytes":  1527241,
+        "sha256":  "59e53e4f127f801e2e1e14f2f6aceb2e5546764310daadbc36c804b4ef3fd07b"
+    },
+    {
+        "path":  "Textures/Camp/Tent_3_4_Albedo.png",
+        "bytes":  966233,
+        "sha256":  "18c062201202ea98838772b535d55f69cd8ea35d4d6967aeda92483795a80265"
+    },
+    {
+        "path":  "Textures/Camp/Tent_3_4_MetallicSmoothness.png",
+        "bytes":  747913,
+        "sha256":  "ab5167baf76b547fbb929b6ecff3c4c79e9f2dfb86c6bc331c52cca95a947c70"
+    },
+    {
+        "path":  "Textures/Camp/Tent_3_4_Normal.png",
+        "bytes":  1853562,
+        "sha256":  "d93e223ae150dc6b3beaa8d0c1d52a6ae7bdb9b7ed83f47fabc439ec177a79ba"
+    },
+    {
+        "path":  "Textures/Camp/Weapon_Albedo.png",
+        "bytes":  1060861,
+        "sha256":  "31c0b63cf0e4b4c09919a59c97713082176449d7047b316ba31e4355d3b3a940"
+    },
+    {
+        "path":  "Textures/Camp/Weapon_MetallicSmoothness.png",
+        "bytes":  690001,
+        "sha256":  "c24918c64213869cf08178db5781f2f29321f0f9ea7d12294d4429db8129d0b9"
+    },
+    {
+        "path":  "Textures/Camp/Weapon_Normal.png",
+        "bytes":  656702,
+        "sha256":  "b7b8a6a6b7a3ec40533bb3480b790239762d04a99ca1933b48ded6a57a5006d6"
+    },
+    {
+        "path":  "Textures/Forest/Bark_Albedo.png",
+        "bytes":  4987036,
+        "sha256":  "2d1d582ef7b9a0b139c5ae416d67ba78f1a13cc51957b6ca0105844a785d6ac4"
+    },
+    {
+        "path":  "Textures/Forest/Bark_Normal.png",
+        "bytes":  4599112,
+        "sha256":  "8c3ce77310a953097bea8627ee04a0ea820f899a58897ea114fe2a8cb757b4db"
+    },
+    {
+        "path":  "Textures/Forest/Bush_Leafs.png",
+        "bytes":  16387,
+        "sha256":  "2c29357c02f99d39efc7020cd8e9dec61a869860f7bc658eead95dfb5b42965f"
+    },
+    {
+        "path":  "Textures/Forest/Cloud_Shadow.png",
+        "bytes":  7789459,
+        "sha256":  "2109253c10f31382f2d56bf8b61f62e8cf8976c75486989b3e8574829845b6f7"
+    },
+    {
+        "path":  "Textures/Forest/Cloud_Shadow_URP.png",
+        "bytes":  1308989,
+        "sha256":  "e7b884a7e59a7350d279e386814181eee5b7363b322e9aee35349c20727572ad"
+    },
+    {
+        "path":  "Textures/Forest/Clover.png",
+        "bytes":  9206,
+        "sha256":  "227f00afa842571bab7f0bf809cf0cd6a9d5254db978125cf7febb3afd58c18d"
+    },
+    {
+        "path":  "Textures/Forest/FernBranch.PNG",
+        "bytes":  227726,
+        "sha256":  "778d468dbba27060bf9cacfa6c1706cd6c74c891adc1684999a5060526e51334"
+    },
+    {
+        "path":  "Textures/Forest/FernBranchSmothness.png",
+        "bytes":  58734,
+        "sha256":  "d04b2999fadf7466ae5c838499b22e0e9872dae89dbd5e94d19000a0d4a6c785"
+    },
+    {
+        "path":  "Textures/Forest/Flower_1.png",
+        "bytes":  36504,
+        "sha256":  "1cf3e6f03e2d7930a6fda07ef57b2459ea7920e3eeacc3cb5fa71396d72f7d05"
+    },
+    {
+        "path":  "Textures/Forest/Grass_1.png",
+        "bytes":  39318,
+        "sha256":  "d1f5c0123bbf2bdbfbfd315c7f72749d25429efa415d35e36c0b287f34e7bf39"
+    },
+    {
+        "path":  "Textures/Forest/Grass_2.png",
+        "bytes":  16683,
+        "sha256":  "51f1b5d38f83d059128aaf016bff9011e8c1521c0075bf745f53d9f2311ccbf1"
+    },
+    {
+        "path":  "Textures/Forest/Grass_Smoothness.png",
+        "bytes":  2259,
+        "sha256":  "fdca5f2d42d4d09efdd3f4fb466df9a26c08db75c27ffac3cc9787f585615dcf"
+    },
+    {
+        "path":  "Textures/Forest/Logs_Albedo.png",
+        "bytes":  2752366,
+        "sha256":  "1e46ee67b371a0d50c2f095bec73ef161c438b83f8612e40c43d594cdb4ba245"
+    },
+    {
+        "path":  "Textures/Forest/Logs_MetallicSmoothness.png",
+        "bytes":  1436567,
+        "sha256":  "a6fc237fe5b4e0a9b85e290a2efc72b583918d25f45d04ebaaa9bf7d6c14ad90"
+    },
+    {
+        "path":  "Textures/Forest/Logs_Normal.png",
+        "bytes":  3568795,
+        "sha256":  "c173f507d206ce93c04da7dc2f3c06672fa7da1a5c379d813265eaa15a0abb7e"
+    },
+    {
+        "path":  "Textures/Forest/Moss_Albedo.png",
+        "bytes":  6705734,
+        "sha256":  "c9b68a3cbc291a503064a7c81725ac473792c0eee80e61f33976ecb62c44d083"
+    },
+    {
+        "path":  "Textures/Forest/Moss_Normal.png",
+        "bytes":  16500452,
+        "sha256":  "e212230b12702ceae5b8bff0647047b8b69b73e220a31638598b17bcbcc15474"
+    },
+    {
+        "path":  "Textures/Forest/MushroomsFlowers_Albedo.png",
+        "bytes":  259734,
+        "sha256":  "a5b6c94c8a33e55438ffd1d40cf3b2f7b3917cda1e3f13685c212088246091ea"
+    },
+    {
+        "path":  "Textures/Forest/MushroomsFlowers_MetallicSmoothness.png",
+        "bytes":  320706,
+        "sha256":  "709ca1ed7416d73fa835c4588cb3363b728998550e009c828af52cf3aad5a3b7"
+    },
+    {
+        "path":  "Textures/Forest/MushroomsFlowers_Normal.png",
+        "bytes":  695410,
+        "sha256":  "101394abc3cb973a2d4c6d0d98839e545d3c78d8f5b7c869843f1a28351edcd3"
+    },
+    {
+        "path":  "Textures/Forest/StonesRocks_Normal.png",
+        "bytes":  13509734,
+        "sha256":  "cf2dae85d66c929fbbf0a398cd071e6c55112fbd3e9d698818e7d5bbe04ef239"
+    },
+    {
+        "path":  "Textures/Forest/Stumps_Albedo.png",
+        "bytes":  323135,
+        "sha256":  "be210bd625f1e5a608e14779f3869bbbf6f9ab11ea13511ac6ba09025fd2aa63"
+    },
+    {
+        "path":  "Textures/Forest/Stumps_MetallicSmoothness.png",
+        "bytes":  185344,
+        "sha256":  "26f30a4602f6b254a104526b632295502375cca4c491478d2cecf40959a209d2"
+    },
+    {
+        "path":  "Textures/Forest/Stumps_Normal.png",
+        "bytes":  644456,
+        "sha256":  "55ee007d57aa55c936ad662708be26d0919060ba1a22110a31c2689aa04d722f"
+    },
+    {
+        "path":  "Textures/Forest/Trees_Atlas_Color.png",
+        "bytes":  15297981,
+        "sha256":  "85c680dc3dd0b7fbb01660e402f7a393d17746393e46b112edf9a9d9581d44bf"
+    },
+    {
+        "path":  "Textures/Forest/Trees_Atlas_Normal.png",
+        "bytes":  8928969,
+        "sha256":  "757201be63c4feabdcf976ff94cae0cac2c6ae60fa7d49775dbd3ae414468e71"
+    },
+    {
+        "path":  "Textures/FX/Birds.png",
+        "bytes":  120359,
+        "sha256":  "03d7390f4e2eabe5b934036de38a60be8a6a4f47764d99fa3ebcdffa3f4bb3cd"
+    },
+    {
+        "path":  "Textures/FX/Glow.png",
+        "bytes":  21064,
+        "sha256":  "d66b24ba561dbe680ecdbe703377445fe59c873c67d0a6dc268f96f3d19775bd"
+    },
+    {
+        "path":  "Textures/FX/Smoke.png",
+        "bytes":  12065,
+        "sha256":  "49129b6b24a6932a575ff5b0347c01544fe19b442d3c44ef0f148dd3044f89ad"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_1_Albedo.png",
+        "bytes":  1270885,
+        "sha256":  "9f9845c4b4b8f2d0d1e4ad9e5704814c1965132424152f6a9c7341606eaafbac"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_1_Normal.PNG",
+        "bytes":  6775753,
+        "sha256":  "0e8f8aac62a27f67a98e7022c6f05d295f1537f4a90b96d76c1c19ba0b1a0748"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_2_Albedo.png",
+        "bytes":  1907647,
+        "sha256":  "4ab00e314d3f7b8152d199a5c502964292cf840faeaf03386d195974b454eb59"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_2_Normal.PNG",
+        "bytes":  6653506,
+        "sha256":  "13478c60d6fbcba9208db2d4182a5d16d728f43fd526760f5635e534a4caa8c5"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_3_Albedo.png",
+        "bytes":  1110826,
+        "sha256":  "025e85cfac09aaaa82bbd2a1d6b30f8faf2760ef898c759fa934a7f149ede328"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_3_Normal.PNG",
+        "bytes":  5799729,
+        "sha256":  "f7cfa6e6d3560e4089f915941d41e1bb9d32cea9d6c07142a3e95b62f7b9cfb3"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_4_Albedo.png",
+        "bytes":  1056007,
+        "sha256":  "781b0e516f9fa702ba9a8e970ee5cccbb74e2623f500b1574078288281729c51"
+    },
+    {
+        "path":  "Textures/Mountains/Mountain_4_Normal.PNG",
+        "bytes":  5943362,
+        "sha256":  "41f8b04d82c0b159f2e7e4c5b74e62033428b53443b64fdd2d4385b638e44d7c"
+    },
+    {
+        "path":  "Textures/Terrain/Grass_1_AlbedoSmoothness.png",
+        "bytes":  5780932,
+        "sha256":  "9b25a490c100f225b8568042bdf1dbdb8a0ffede79119916286c3348a2ecfcc4"
+    },
+    {
+        "path":  "Textures/Terrain/Grass_1_Normal.png",
+        "bytes":  6125229,
+        "sha256":  "0a6a5dbded325ad945053341f0ae657a54d5ce711fb00ad20b0ef54262574521"
+    },
+    {
+        "path":  "Textures/Terrain/Grass_2_AlbedoSmoothness.png",
+        "bytes":  5768645,
+        "sha256":  "3eb839b65d96214f78caa66da52d6fca8e1e02da9f38c99d69542e3050e097ce"
+    },
+    {
+        "path":  "Textures/Terrain/Grass_2_Normal.png",
+        "bytes":  6938731,
+        "sha256":  "96a2b7d41569f779befcd13410fca8d0f0fc3a32883f8c6af4949c8b7e35bfd5"
+    },
+    {
+        "path":  "Textures/Terrain/Mud_1_AlbedoSmoothness.png",
+        "bytes":  4632770,
+        "sha256":  "e69bc9512003b0b7efa159013d6283b76a868273ed0fa7ca4c40ef8e572d2f4a"
+    },
+    {
+        "path":  "Textures/Terrain/Mud_1_Normal.png",
+        "bytes":  5809508,
+        "sha256":  "ca76ec76e21c5f29e40a3b30fde2e8c1f1b256b1d4448bd27b3d82fa7f261b45"
+    },
+    {
+        "path":  "Textures/Terrain/Mud_2_AlbedoSmoothness.png",
+        "bytes":  4689368,
+        "sha256":  "df7259385f0751f9e094747782cc5ebc3cf606507b4f69331533a826b1d4017d"
+    },
+    {
+        "path":  "Textures/Terrain/Mud_2_Normal.png",
+        "bytes":  5806014,
+        "sha256":  "bb3755565205ee63fe9740d8765ec5535b1960e318aa27cd6a92a4c8ae43c576"
+    },
+    {
+        "path":  "Textures/Witches House/Fences_Albedo.png",
+        "bytes":  5039182,
+        "sha256":  "2c8b66fd5bcf027f7ddae9fb1e665b6e2e557f4f2152cdfc7fb377a9f4b6af46"
+    },
+    {
+        "path":  "Textures/Witches House/Fences_MetallicSmoothness.png",
+        "bytes":  3176697,
+        "sha256":  "74920fc1463a11b95daef9bb7f3f0b030942150479474dc49359a206f0f1588b"
+    },
+    {
+        "path":  "Textures/Witches House/Fences_Normal.png",
+        "bytes":  5746921,
+        "sha256":  "4aa0bdbba090dc7c63ad673cf3bd083b6615dadf39b301105ee0470e1e03f6a7"
+    },
+    {
+        "path":  "Textures/Witches House/Furniture_1_Albedo.png",
+        "bytes":  4585325,
+        "sha256":  "e1cca81472a888b28beaef2d21ec82a62ad2ad526c5b0f20d5d22d531b834698"
+    },
+    {
+        "path":  "Textures/Witches House/Furniture_1_MetallicSmoothness.png",
+        "bytes":  2082964,
+        "sha256":  "dc2b694cb931f95679a120f3c7167acc5d7e62b9a86a4b408a00843d98b0bfd2"
+    },
+    {
+        "path":  "Textures/Witches House/Furniture_1_Normal.png",
+        "bytes":  3978421,
+        "sha256":  "bfe2eb4fffa51d29bb79c85e989309c6b30e24f8794cc218fa7d377d3e6c0a3c"
+    },
+    {
+        "path":  "Textures/Witches House/House_Albedo.png",
+        "bytes":  2494147,
+        "sha256":  "0d7731215dbf0538cae238cec6387e5213328b2a79dd1b8f4d252f6b5a54772e"
+    },
+    {
+        "path":  "Textures/Witches House/House_Normal.png",
+        "bytes":  1450762,
+        "sha256":  "66753d3800717d5fb29e77677fc64f951850af94159e85d7f8159e63705bd775"
+    },
+    {
+        "path":  "Textures/Witches House/House_Smoothness.png",
+        "bytes":  1423557,
+        "sha256":  "8e82ab3dbce8d46a349e92c2fbfba827f27c58affcac763ae6a36a75defdd137"
+    },
+    {
+        "path":  "Textures/Witches House/Stuff_Albedo.png",
+        "bytes":  3634280,
+        "sha256":  "20a1337c1df7976d5b49c8ba2aea9d1f895b2672517f1a4048c752419a5f7004"
+    },
+    {
+        "path":  "Textures/Witches House/Stuff_MetallicSmoothness.png",
+        "bytes":  3393574,
+        "sha256":  "deab4a87dd803dd8ee745f2987de266cdbe31a30e7d57484cdcfcde6ba5d2fad"
+    },
+    {
+        "path":  "Textures/Witches House/Stuff_Normal.png",
+        "bytes":  4498890,
+        "sha256":  "e84ec7199500743015c0b9fa09044100835ff50cfd9462eafabd9c638d8467ff"
+    }
+]

@@ -1,0 +1,8 @@
+# RendererMaterial material_0 ../Materials/Bush_bfd3e65d8d2f3e5ad3c1_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.75
+d 1
+illum 2
+map_Kd ../Textures/bfd3e65d8d2f3e5ad3c1_0.png

@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Props_c9e0e511682023ac5e3d_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0.359168231
+Pr 0.48268801
+d 1
+illum 2
+map_Kd ../Textures/c9e0e511682023ac5e3d_0.png
+map_Bump ../Textures/c9e0e511682023ac5e3d_0_normal.png

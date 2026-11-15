@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Stones_Rocks(Grass)_6213b98cb46dd5f4d7ae_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 0.700309098
+d 1
+illum 2
+map_Kd ../Textures/6213b98cb46dd5f4d7ae_0.png
+map_Bump ../Textures/6213b98cb46dd5f4d7ae_0_normal.png

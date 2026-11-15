@@ -1,0 +1,9 @@
+# RendererMaterial material_0 ../Materials/Mountain_2_08086d353420b95066a9_0.material
+newmtl material_0
+Kd 1 1 1
+Pm 0
+Pr 1
+d 1
+illum 2
+map_Kd ../Textures/08086d353420b95066a9_0.png
+map_Bump ../Textures/08086d353420b95066a9_0_normal.png

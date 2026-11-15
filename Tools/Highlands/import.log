@@ -1,0 +1,929 @@
+[Licensing::Module] Trying to connect to existing licensing client channel...
+Built from '6000.3/staging' branch; Version is '6000.3.22f1 (1c726e1fb402) revision 1864302'; Using compiler version '194234433'; Build Type 'Release'
+OS: 'Windows 11  (10.0.26200) Professional' Language: 'zh' Physical Memory: 62884 MB
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20" at "2026-11-11T21:10:58.4212394Z"
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1
+System  architecture: x64
+Process architecture: x64
+Date: 2026-11-11T21:10:58Z
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Unity.exe
+-batchmode
+-nographics
+-quit
+-projectPath
+E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+-logFile
+E:/UEProjects/Renderer/Tools/Highlands/import.log
+Successfully changed project path to: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-gfx=262144"
+    "memorysetup-allocator-temp-initial-block-size-main=262144"
+    "memorysetup-allocator-temp-initial-block-size-worker=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+Player connection [94420]  Target information:
+
+Player connection [94420]  * "[IP] 172.18.208.1 [Port] 55504 [Flags] 2 [Guid] 579651720 [EditorId] 579651720 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [94420]  * "[IP] 172.23.80.1 [Port] 55504 [Flags] 2 [Guid] 579651720 [EditorId] 579651720 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [94420]  * "[IP] 192.168.3.150 [Port] 55504 [Flags] 2 [Guid] 579651720 [EditorId] 579651720 [Version] 1048832 [Id] WindowsEditor(7,奶油的电脑) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [94420] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [94420] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Input System module state changed to: Initialized.
+[Physics::Module] Initialized fallback backend.
+[Physics::Module] Id: 0xdecafbad
+[Package Manager] Connected to IPC stream "Upm-53412" after 0.2 seconds.
+[Licensing::Module] Licensing is not yet initialized.
+[Licensing::Client] Error: HandshakeResponse reported an error:
+	ResponseCode: 505
+	ResponseStatus: Unsupported protocol version '1.18.1'.
+[Licensing::Module] Error: Failed to handshake to channel: "LicenseClient-csy20"
+[Licensing::IpcConnector] LicenseClient-csy20 channel disconnected successfully.
+[Licensing::IpcConnector] Channel LicenseClient-csy20-6000.3.22 doesn't exist
+[Licensing::Module] Successfully launched the LicensingClient (PId: 91384)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20-6000.3.22" at "2026-11-11T21:11:00.9795361Z"
+[Licensing::Client] Code 10 while verifying Licensing Client signature (process Id: 91384, path: "C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Resources/Licensing/Client/Unity.Licensing.Client.exe")
+[Licensing::Module] LicensingClient has failed validation; ignoring
+[Licensing::Client] Handshaking with LicensingClient:
+  Version:                 1.18.1+9fbee8e
+  Session Id:              9c4033da7d76416295678142daa4c2c7
+  Correlation Id:          b369b3b9b699688fec9d92ea4a94919a
+  External correlation Id: 3457936128118285280
+  Machine Id:              xCfiJLtP00H/9BU4tbWDxCxlu4o=
+[Licensing::Module] Successfully connected to LicensingClient on channel: "LicenseClient-csy20-6000.3.22" (connect: 1.93s, validation: 0.11s, handshake: 0.00s)
+[Licensing::IpcConnector] Successfully connected to: "LicenseClient-csy20-6000.3.22-notifications" at "2026-11-11T21:11:01.0974142Z"
+[Licensing::Module] Connected to LicensingClient (PId: 91384, launch time: 0.00, total connection time: 2.05s)
+[Licensing::Module] Error: Access token is unavailable; failed to update
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] License group:
+  Id: 1375874674035-UnityPersXXXX
+  Product: Unity Personal
+  Type: Assigned
+  Expiration: Unlimited
+[Licensing::Client] Successfully updated license, isAsync: True, time: 0.00
+[Licensing::Client] Successfully resolved entitlement details
+[Licensing::Module] Licensing Background thread has ended after 2.69s
+[Licensing::Module] Licensing is initialized (took 2.18s).
+[Licensing::Client] Successfully resolved entitlement details
+Library Redirect Path: Library/
+Rebuilding Library because the asset database could not be found!
+[Physics::Module] Selected backend.
+[Physics::Module] Name: PhysX
+[Physics::Module] Id: 0xf2b8ea05
+[Physics::Module] SDK Version: 4.1.2
+[Physics::Module] Integration Version: 1.0.0
+[Physics::Module] Threading Mode: Multi-Threaded
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 6000.3.22f1 (1c726e1fb402)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path E:/UEProjects/Renderer/Artifacts/HighlandsExportProject/Assets
+Forcing GfxDevice: Null
+GfxDevice: creating device client; kGfxThreadingModeNonThreaded
+NullGfxDevice:
+    Version:  NULL 1.0 [1.0]
+    Renderer: Null Device
+    Vendor:   Unity Technologies
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56412
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+Using cacheserver namespaces - metadata:defaultmetadata, artifacts:defaultartifacts
+ImportWorker Server TCP listen port: 0
+AcceleratorClientConnectionCallback - disconnected - :0
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+[Licensing::Client] Successfully resolved entitlement details
+Register platform support module: C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
+Registered in 0.003772 seconds.
+- Loaded All Assemblies, in  0.374 seconds
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+Package Manager log level set to [2]
+ScheduleIndexationOnStartup MainProcess:False IndexOnStartup:False
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.231 seconds
+Domain Reload Profiling: 603ms
+	BeginReloadAssembly (75ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (0ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (20ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (32ms)
+	LoadAllAssembliesAndSetupDomain (235ms)
+		LoadAssemblies (53ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (233ms)
+			TypeCache.Refresh (232ms)
+				TypeCache.ScanAssembly (92ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (232ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (209ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (39ms)
+			SetLoadedEditorAssemblies (3ms)
+			BeforeProcessingInitializeOnLoad (44ms)
+			ProcessInitializeOnLoadAttributes (77ms)
+			ProcessInitializeOnLoadMethodAttributes (46ms)
+			AfterProcessingInitializeOnLoad (0ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (0ms)
+[Licensing::Client] Successfully resolved entitlement details
+Application.AssetDatabase Initial Refresh Start
+[Package Manager] Done resolving packages in 0.24 seconds
+[Licensing::Client] Successfully resolved entitlement details
+[Package Manager] Lock file was created
+[Package Manager] Registered 7 packages:
+  Built-in packages:
+    com.unity.modules.terrain@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.terrain)
+    com.unity.modules.terrainphysics@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.terrainphysics)
+    com.unity.modules.imageconversion@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.imageconversion)
+    com.unity.modules.physics@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.physics)
+    com.unity.modules.particlesystem@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.particlesystem)
+    com.unity.modules.audio@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.audio)
+    com.unity.modules.animation@1.0.0 (location: E:\UEProjects\Renderer\Artifacts\HighlandsExportProject\Library\PackageCache\com.unity.modules.animation)
+[Subsystems] No new subsystems found in resolved package list.
+[Package Manager] Done registering packages in 0.00 seconds
+[ScriptCompilation] Requested script compilation because: Assetdatabase observed changes in script compilation related files
+AssetDatabase: script compilation time: 0.000669s
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --profile="Library/Bee/backend1.traceevents" ScriptAssemblies
+WorkingDir: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+ExitCode: 4 Duration: 0s29ms
+[             ] Require frontend run.  Library/Bee/1900b0aE.dag couldn't be loaded
+DisplayProgressbar: Compiling Scripts
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\netcorerun\netcorerun.exe "C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\ScriptCompilationBuildProgram.exe" "Library/Bee/1900b0aE.dag.json" "Library/Bee/1900b0aE-inputdata.json" "Library\Bee\buildprogram0.traceevents"
+WorkingDir: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+ExitCode: 0 Duration: 0s643ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.22f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --defer-dag-verification --dagfile="Library/Bee/1900b0aE.dag" --continue-on-failure --dagfilejson="Library\Bee\1900b0aE.dag.json" --profile="Library/Bee/backend2.traceevents" ScriptAssemblies
+WorkingDir: E:/UEProjects/Renderer/Artifacts/HighlandsExportProject
+ExitCode: 0 Duration: 0s30ms
+Finished compiling graph: 3 nodes, 3 flattened edges (3 ToBuild, 0 ToUse), maximum node priority 3
+*** Tundra build success (0.01 seconds), 0 items updated, 1 evaluated
+Begin MonoManager ReloadAssembly
+- Loaded All Assemblies, in  0.323 seconds
+Start importing Assets using Guid(00000000000000001000000000000000) (DefaultImporter) -> (artifact id: '4b55c7cb15071bfc086d0e52a7664a41') in 0.0087704 seconds
+Start importing ProjectSettings/InputManager.asset using Guid(00000000000000002000000000000000) (LibraryAssetImporter) -> (artifact id: '3d278bdfa729973ecf92c670ca181c88') in 0.0012788 seconds
+Start importing ProjectSettings/TagManager.asset using Guid(00000000000000003000000000000000) (LibraryAssetImporter) -> (artifact id: '4aa03ef27a83f311e598313a3ec2fbc3') in 0.0008984 seconds
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '27848162a0cc0b2f4bf9cfeb164b02dd') in 0.0015394 seconds
+Start importing ProjectSettings/AudioManager.asset using Guid(00000000000000006000000000000000) (LibraryAssetImporter) -> (artifact id: '7bb8de31f311db17f0fefe3abfd595f1') in 0.0008415 seconds
+Start importing ProjectSettings/TimeManager.asset using Guid(00000000000000007000000000000000) (LibraryAssetImporter) -> (artifact id: '52c307e924e96ceef905bcc2cea85a00') in 0.0007609 seconds
+Start importing ProjectSettings/DynamicsManager.asset using Guid(00000000000000008000000000000000) (LibraryAssetImporter) -> (artifact id: '913ceedd18932e74f6c2ac19d4bebe5c') in 0.0008079 seconds
+Start importing ProjectSettings/QualitySettings.asset using Guid(00000000000000009000000000000000) (LibraryAssetImporter) -> (artifact id: '3d22d777d340243128ed3ffa349fb55a') in 0.0010493 seconds
+Start importing ProjectSettings/EditorBuildSettings.asset using Guid(0000000000000000b000000000000000) (LibraryAssetImporter) -> (artifact id: '1923232d45cb936aef47cec131f33975') in 0.0008419 seconds
+Start importing ProjectSettings/EditorSettings.asset using Guid(0000000000000000c000000000000000) (LibraryAssetImporter) -> (artifact id: 'fdcca38f5f1944c9bec0b9f00395ab39') in 0.0007815 seconds
+Start importing ProjectSettings/NavMeshAreas.asset using Guid(00000000000000004100000000000000) (LibraryAssetImporter) -> (artifact id: '4ba0a6bb5cc18b1619eb3b3f4ce570d1') in 0.0008717 seconds
+Start importing ProjectSettings/Physics2DSettings.asset using Guid(00000000000000005100000000000000) (LibraryAssetImporter) -> (artifact id: 'bb8ce7f5b2d944741959db20200075a7') in 0.0008606 seconds
+Start importing ProjectSettings/GraphicsSettings.asset using Guid(00000000000000006100000000000000) (LibraryAssetImporter) -> (artifact id: 'b7a369a9c0780e3bb2635b3b3f88ffe1') in 0.0007936 seconds
+Start importing ProjectSettings/ClusterInputManager.asset using Guid(00000000000000007100000000000000) (LibraryAssetImporter) -> (artifact id: '5a028a71a6163b7bc9a46219c48662ec') in 0.0007089 seconds
+Start importing ProjectSettings/UnityConnectSettings.asset using Guid(0000000000000000a100000000000000) (LibraryAssetImporter) -> (artifact id: '5a6e69f8200d884ded3f19f546ea756a') in 0.0007655 seconds
+Start importing ProjectSettings/PresetManager.asset using Guid(0000000000000000b100000000000000) (LibraryAssetImporter) -> (artifact id: '669bd2cb5cdf99ef516d1350fa42393e') in 0.0007347 seconds
+Start importing ProjectSettings/VFXManager.asset using Guid(0000000000000000c100000000000000) (LibraryAssetImporter) -> (artifact id: 'dd6732d958402095937fd19a0cecb735') in 0.0007143 seconds
+Start importing ProjectSettings/VersionControlSettings.asset using Guid(0000000000000000d100000000000000) (LibraryAssetImporter) -> (artifact id: 'b89f810c452b248c014f182ae5caa680') in 0.0007056 seconds
+Start importing ProjectSettings/MemorySettings.asset using Guid(0000000000000000f100000000000000) (LibraryAssetImporter) -> (artifact id: '19f032dc933bd79e61da5c81f7ddd1ac') in 0.000747 seconds
+Start importing ProjectSettings/MultiplayerManager.asset using Guid(00000000000000000200000000000000) (LibraryAssetImporter) -> (artifact id: 'f060d13f2990d90fc35c577bb4111c66') in 0.0007203 seconds
+Start importing Library/BuildInstructions using Guid(00000000000000002300000000000000) (DefaultImporter) -> (artifact id: 'ade3aeda13ad9960ede0e143cb33502a') in 0.0002657 seconds
+Start importing Packages/com.unity.modules.animation using Guid(1158e311a3101950348dcecb1bebc42d) (DefaultImporter) -> (artifact id: 'ad15220686cb46a8486da5a82128437e') in 0.000304 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment using Guid(63bc3e1bf84beb94da4c3e6d3599647d) (DefaultImporter) -> (artifact id: '10b793d4e56d0d945103d025482573d8') in 0.0066089 seconds
+Start importing Packages/com.unity.modules.imageconversion using Guid(850c54ee0b9e1aa740b1c67792eb1f26) (DefaultImporter) -> (artifact id: '77f78b27bd9bac81a00a007ef6f28867') in 0.0003269 seconds
+Start importing Packages/com.unity.modules.terrainphysics using Guid(95f85adeda79e994f011eb2152cf4fc9) (DefaultImporter) -> (artifact id: '361f0b2a768839d40a5a079492e0ff7f') in 0.0002787 seconds
+Start importing Packages/com.unity.modules.physics using Guid(d6db7caf2e852b75ebb9c6098418179c) (DefaultImporter) -> (artifact id: 'b562405fb5bd1c9305c356f8cfe7a672') in 0.0002536 seconds
+Start importing Assets/Editor using Guid(e7d3350795f49f944b6dd0bbfe8651c9) (DefaultImporter) -> (artifact id: '423473c4a533131fb17b847318bfaeef') in 0.0038386 seconds
+Start importing Packages/com.unity.modules.particlesystem using Guid(48b10b41f58d5b49717f376cda59eeb8) (DefaultImporter) -> (artifact id: '52931c3585e961751803a41152ba5f0c') in 0.0002926 seconds
+Start importing Packages/com.unity.modules.audio using Guid(2d6ba5cbe47e6ad3c87474c56174d4e0) (DefaultImporter) -> (artifact id: '2ad5535b0c9fde796c0a268a703c42c8') in 0.0002569 seconds
+Start importing Packages/com.unity.modules.terrain using Guid(6e1c8b97ec8aa0464e92506ffe099558) (DefaultImporter) -> (artifact id: 'd262e4fb78f6fff54404eb87b88b9ac4') in 0.0002548 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs using Guid(315127aa25927ac4fb4fd43fa28e8cf5) (DefaultImporter) -> (artifact id: 'a2e279309a13387b5ffcc121511b0bce') in 0.0039869 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures using Guid(15d0c694ebff7374fbad4c1e228f24cb) (DefaultImporter) -> (artifact id: 'e9661e1ce62438e6eae64122c3d8217a') in 0.0034835 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes using Guid(67710cf320a33ba4a9911d1d6ba2e2f8) (DefaultImporter) -> (artifact id: 'bb705991345f45705efce7b5ed9c5a68') in 0.0038736 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Terrain Layers using Guid(4c250ec3f0c70d341989f646f542145f) (DefaultImporter) -> (artifact id: '19c759965d9565900d4688578020d427') in 0.0036148 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials using Guid(2e8191cb7c0e84343a13ef4839deb099) (DefaultImporter) -> (artifact id: 'c491e611b08d2c7f1ca9aa1e02fc8d3f') in 0.0038473 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo using Guid(6f79a254d96f3f84bb8a208dc44212a7) (DefaultImporter) -> (artifact id: 'f4ab181f4b912e9508051eca8ed050be') in 0.0033327 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Mountains using Guid(4022cd79c43fb974e963d21b2d888809) (DefaultImporter) -> (artifact id: '5529aa8e49c4b665e0375c5bc320061f') in 0.0036997 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo using Guid(7043c8300820d404ea309df481eb7c25) (DefaultImporter) -> (artifact id: '23dccad707fa7ac1b96241d425133f47') in 0.0035345 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Mountains using Guid(c0b7c1ad613c18c4a88acd19fbd911af) (DefaultImporter) -> (artifact id: '0741320d3dd83c330fe385b956430230') in 0.0038204 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains using Guid(43806116eacb6364387187313ba145fb) (DefaultImporter) -> (artifact id: '5188870f7b025b19eac0b3b748fa98cd') in 0.0036576 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable) using Guid(54ce2efc679399243b256a12cf62f727) (DefaultImporter) -> (artifact id: 'dded7bab10c5394e22de459cf2ca9972') in 0.0037438 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX using Guid(b4b6999e9d785694d8d81c826d3e7f49) (DefaultImporter) -> (artifact id: '29493da47de16475e19b06cb59280aeb') in 0.0036978 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props using Guid(b43ad45f8d37bf5468e0e3950696f9ae) (DefaultImporter) -> (artifact id: 'e015fab9ed3298651e08c30e20f431b1') in 0.003302 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props using Guid(058d40e4441203c4f9ce8e88c885b9da) (DefaultImporter) -> (artifact id: 'aac827635562c503266c3bc655be875b') in 0.0037783 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp using Guid(a536fee5910fe414e91360d3f8ff44a6) (DefaultImporter) -> (artifact id: '859082807300d1dfca09242d729933a1') in 0.0035873 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House using Guid(b519de58c043dd049a60fecb8a23d636) (DefaultImporter) -> (artifact id: '141dab92279bfa3e9cd972298c6acff8') in 0.0039046 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp using Guid(f56e577574ec370429a1339dc5e3634e) (DefaultImporter) -> (artifact id: '2ec06bde1f9609cd4d966ab08ec22530') in 0.0034686 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp using Guid(3689e5028898537478e2b06282f2f45d) (DefaultImporter) -> (artifact id: '282abef4e7a75bbd0af7cd73883fa1ee') in 0.0039775 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Mountains using Guid(96fe8d94a1b196648b3c35ca2e0677f3) (DefaultImporter) -> (artifact id: 'e7fdc62eddc58c6a68fe84feba922af2') in 0.0037516 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest using Guid(f6aa846b37f7cc146b2c7db80fac734f) (DefaultImporter) -> (artifact id: '2e6f44b15431e50a0c71f7b87df6b19c') in 0.0036093 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX using Guid(87be3d537c17908439fc82029f4e6a97) (DefaultImporter) -> (artifact id: '74910f9b962e3f5c4226f22546ba055b') in 0.0042334 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest using Guid(491600bf911c67b48bae8185e768bb09) (DefaultImporter) -> (artifact id: '2d96533661d37442171b21260a27ba0c') in 0.0034792 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders using Guid(49bbafc25dbbb2d42b947487c23db5eb) (DefaultImporter) -> (artifact id: '1744b447ccfe89b2b5f5f1b876de3d6b') in 0.003453 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp using Guid(c95b6671ab8a2d443b93a299ca5ad5de) (DefaultImporter) -> (artifact id: '7ca8baf53cab9792df5a905e9d4874af') in 0.0036502 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain using Guid(3b6b6f756ddc87d4696fb10af14b8fd4) (DefaultImporter) -> (artifact id: '15aa7e4991f4dbb864c101f2ca65208f') in 0.0031855 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest using Guid(6c1cca3010aa8284c86d507e25302a79) (DefaultImporter) -> (artifact id: 'f78267e640e9cb4bcee77b46149fbf19') in 0.0036065 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest using Guid(8c15088101bf6c2449bb390094e67861) (DefaultImporter) -> (artifact id: 'f1a4e3209e5361fa397ffac3de0e05a0') in 0.0032398 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House using Guid(2e363de5f8032c94496b7e4d17883db6) (DefaultImporter) -> (artifact id: '3648ee15c82bd2f942cd9bbfc81eb0e7') in 0.0035872 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House using Guid(4ed3cfdda4c07014d8fe720c6c78de62) (DefaultImporter) -> (artifact id: 'd07b0e17256ed5d13165bc98ad2883ba') in 0.0040597 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House using Guid(ee546e3c4526e2c4dafa242b1013184f) (DefaultImporter) -> (artifact id: 'c6c8eafa3833f94bc0b7e9078f9bb20a') in 0.0042256 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/FX using Guid(1f7a3f8516250814384a0f83f7add3eb) (DefaultImporter) -> (artifact id: '7e4ce3ce332e183ba8c9b5aac49f0049') in 0.0036723 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Settings using Guid(2fc8b4340aa4aca43bf116868fa379a8) (DefaultImporter) -> (artifact id: '9f94decbec13d2e1a948864b573e371e') in 0.0040735 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable) using Guid(4f8cc2ce2617a0144987223f5bd73a3d) (DefaultImporter) -> (artifact id: 'fb478991bfc91f10d0ede8f18585694b') in 0.0039766 seconds
+Start importing Packages/com.unity.modules.terrain/package.ModuleCompilationTrigger using Guid(23032f4383e95e772bce465c5896d0fd) (DefaultImporter) -> (artifact id: '491a7f75d3e9187fba07a3d515b1da29') in 0.0213754 seconds
+Start importing Packages/com.unity.modules.imageconversion/package.ModuleCompilationTrigger using Guid(830a36a23cf3ab1e61fa47940a6dc35e) (DefaultImporter) -> (artifact id: 'ee0f0c801f95c19382d8b454dc7586e1') in 0.0005131 seconds
+Start importing Packages/com.unity.modules.audio/package.ModuleCompilationTrigger using Guid(042dc296246916648e55a43d0eeb2036) (DefaultImporter) -> (artifact id: '93cfeb7be8bf6df4dc4fc167223dc2d5') in 0.0003738 seconds
+Start importing Packages/com.unity.modules.particlesystem/package.ModuleCompilationTrigger using Guid(17f093324b67f5bd57e55b546736750e) (DefaultImporter) -> (artifact id: '2ff549dcfdc7b1fa23811cebe1444f07') in 0.0003556 seconds
+Start importing Packages/com.unity.modules.terrainphysics/package.ModuleCompilationTrigger using Guid(cbb1a39d56ce4d9ac1a46ac505893fa7) (DefaultImporter) -> (artifact id: '8d1d3ac1946fa5f9233e968059d3fb13') in 0.0003907 seconds
+Start importing Packages/com.unity.modules.animation/package.ModuleCompilationTrigger using Guid(db8e609a39b9b231fccc54e5fa4cbd1b) (DefaultImporter) -> (artifact id: '76194af19b6b83e46d258b902c79f26f') in 0.0004401 seconds
+Start importing Packages/com.unity.modules.physics/package.ModuleCompilationTrigger using Guid(5c1ee4056d0ac7ad3c5a16597fcaa38a) (DefaultImporter) -> (artifact id: '288b7a03d6481d4e92cee0ae908758ad') in 0.0004506 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Native extension for Android target not found
+Native extension for WindowsStandalone target not found
+ScheduleIndexationOnStartup MainProcess:True IndexOnStartup:True
+Mono: successfully reloaded assembly
+- Finished resetting the current domain, in  0.252 seconds
+Domain Reload Profiling: 574ms
+	BeginReloadAssembly (202ms)
+		ExecutionOrderSort (0ms)
+		DisableScriptedObjects (13ms)
+		BackupInstance (0ms)
+		ReleaseScriptingObjects (0ms)
+		CreateAndSetChildDomain (126ms)
+	RebuildCommonClasses (22ms)
+	RebuildNativeTypeToScriptingClass (7ms)
+	initialDomainReloadingComplete (13ms)
+	LoadAllAssembliesAndSetupDomain (77ms)
+		LoadAssemblies (45ms)
+		RebuildTransferFunctionScriptingTraits (0ms)
+		AnalyzeDomain (74ms)
+			TypeCache.Refresh (72ms)
+				TypeCache.ScanAssembly (69ms)
+			BuildScriptInfoCaches (0ms)
+			ResolveRequiredComponents (0ms)
+	FinalizeReload (253ms)
+		ReleaseScriptCaches (0ms)
+		RebuildScriptCaches (0ms)
+		SetupLoadedEditorAssemblies (160ms)
+			LogAssemblyErrors (0ms)
+			InitializePlatformSupportModulesInManaged (21ms)
+			SetLoadedEditorAssemblies (2ms)
+			BeforeProcessingInitializeOnLoad (55ms)
+			ProcessInitializeOnLoadAttributes (58ms)
+			ProcessInitializeOnLoadMethodAttributes (20ms)
+			AfterProcessingInitializeOnLoad (4ms)
+			EditorAssembliesLoaded (0ms)
+		ExecutionOrderSort2 (0ms)
+		AwakeInstancesAfterBackupRestoration (13ms)
+Start importing Library/BuildPlayer.prefs using Guid(00000000000000005000000000000000) (DefaultImporter) -> (artifact id: '083d37eb6b0e82b8f5c1ec86344d848d') in 0.0024497 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo.unity using Guid(8305710aa8f09634cb838cb3ba404c7f) (DefaultImporter) -> (artifact id: '322380d17b59aa839a0cf6ebdcb05038') in 0.0004355 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Log_Normal.png using Guid(50e30eb0e803e6549966dd5c9c6234db) (TextureImporter) -> (artifact id: 'a157fd9f6ff0e015069f70402ae49487') in 0.0686455 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Moss_Normal.png using Guid(a050c74b858db0845a90f393385999d1) (TextureImporter) -> (artifact id: '47dc685387ee76ebb88c2c40d1d2e0c3') in 0.1879079 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_1_Albedo.png using Guid(f027e578e1641b24d9a09ab39165d621) (TextureImporter) -> (artifact id: 'f600157c3aa2fc5b38a08f6af9ecbb41') in 0.0756355 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_2_MetallicSmoothness.png using Guid(41920f0f4c0c9c243a0f612bbc4eb2a1) (TextureImporter) -> (artifact id: '7fc468cec8cbc8871d042c6bf33a8253') in 0.012448 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Stuff_MetallicSmoothness.png using Guid(41f985779b68eca47996f033039d2ac7) (TextureImporter) -> (artifact id: '5bb4db85df627669670fda3e0e6de40e') in 0.0542204 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Stuff_Normal.png using Guid(b1df9cecfb60b35419e63f5653cdc6b2) (TextureImporter) -> (artifact id: '60d16c86d7d849f8085d67de9f251545') in 0.0723981 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Grass_1.png using Guid(c16bab6edba1a684fb082ee3c6bfdebe) (TextureImporter) -> (artifact id: '461f4cd5fc55c287ef2a2b49cb092a9b') in 0.0099622 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dishes_Albedo.png using Guid(d1a107c528bc6d64b8beb08ea56b08ed) (TextureImporter) -> (artifact id: 'f3fcfb46177f4b2129cc67fe312b7690') in 0.0212522 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Mud_1_Normal.png using Guid(228943738a6e933469dfd0192b532246) (TextureImporter) -> (artifact id: '8059fb776fd662676d6d9c12e60ec94b') in 0.0770386 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Logs_Normal.png using Guid(8267de4850f7de44691c2fcc025d148f) (TextureImporter) -> (artifact id: '649bd6d9a96156fbc82ab35250fa8b58') in 0.0737214 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dryer_Albedo.png using Guid(a2000f7b3819cd74da969d968e578216) (TextureImporter) -> (artifact id: '7f0c4f548d5b447e7355129e2b7db7b7') in 0.0203272 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Boiler_Bonfire_Albedo.png using Guid(139ad8e5baea6694fae9e0a4e755affe) (TextureImporter) -> (artifact id: '7b4bd79a037ece43c2cb3220635953e6') in 0.0217113 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Moss_Albedo.png using Guid(23e13916fca698c41a77b6bac9959ad5) (TextureImporter) -> (artifact id: 'c3980b30298e5e7d28e1e7eb3b316321') in 0.0840723 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Bush_Leafs.png using Guid(230781886057c5b4e9aaae22def4b437) (TextureImporter) -> (artifact id: '28e9128363da71ece388bfd55c8bf000') in 0.0047562 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Boiler_Bonfire_Emission.png using Guid(6324e5dd9ae789849bb123e814533592) (TextureImporter) -> (artifact id: 'fd0fbdeb4fb1c58211877de308adcb49') in 0.0118464 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Chest_MetallicSmoothness.png using Guid(83516ff70db22324cb0f718b26fa72c7) (TextureImporter) -> (artifact id: 'dd2b99cbc6067845d6abbbf595ce0231') in 0.0186836 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/FX/Smoke.png using Guid(e377543f29a2e3846b6a9ee32a68fe5c) (TextureImporter) -> (artifact id: 'e8c376694996b023aba7a0846e85f8a9') in 0.0027051 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Fences_Normal.png using Guid(e3be4abb8be0e234ba3d9daa89c1d9b2) (TextureImporter) -> (artifact id: 'a14ebbac620c3d808f52ccc9cbf0840c') in 0.0831457 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Grass_2_AlbedoSmoothness.png using Guid(247dd3941cad880489b91508ae65fc44) (TextureImporter) -> (artifact id: '5005ef7dfbc69ceb20a39f4f12b30d27') in 0.0804003 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Chest_Normal.png using Guid(64672491eb94ddd458f9bf9798814670) (TextureImporter) -> (artifact id: '1b176b2e13d6373cd8cb579e82b8d5e1') in 0.0208616 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Weapon_MetallicSmoothness.png using Guid(646f38b1a173fa84da07dbaba36f9d41) (TextureImporter) -> (artifact id: '7a952be29702fb3b3829fcd29adaa6e1') in 0.0165187 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dishes_Normal.png using Guid(7417dd33b05bd294281baa21ba81f61d) (TextureImporter) -> (artifact id: 'c96c265747cef36b32acb87e7e752501') in 0.0205275 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/Fake_Sun.png using Guid(a4581a66bbcec8741a708461a8bd8f3e) (TextureImporter) -> (artifact id: '969229fff130eab540e38a35512ce286') in 0.0027935 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_1_MetallicSmoothness.png using Guid(b4cd48aa8c9716f4e957cd4724482ae5) (TextureImporter) -> (artifact id: '37dd49d17a1380d495ec022b66bb89fe') in 0.0592476 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_1_Normal.PNG using Guid(45577e093d5c840419b36c5502bff95f) (TextureImporter) -> (artifact id: '9fe6f92ac0ea3ebf186e8915af67f6c6') in 0.0755661 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Grass_2.png using Guid(55722177a9e26114c9df16c3af5aedaa) (TextureImporter) -> (artifact id: '7703a949c562ca4882a6c3e56e6dcb92') in 0.0046973 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Log_Albedo.png using Guid(55a72b8a647ff42429c75122d438154c) (TextureImporter) -> (artifact id: '1027df603b2792fed2f1fb49cda1a695') in 0.0812003 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Mud_1_AlbedoSmoothness.png using Guid(557acf014b6c3344ca268ba48d44de48) (TextureImporter) -> (artifact id: 'e294cb3aa7fcf08741644c606925fbdc') in 0.0775349 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Barrel_Normal.png using Guid(75b0271b53f64d548bd072e42409b944) (TextureImporter) -> (artifact id: '3c4da048fba9cf27fc1ed38b236fe33e') in 0.0199771 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Grass_Smoothness.png using Guid(75732da13e951aa4f9911230ef457210) (TextureImporter) -> (artifact id: '1fbbc74c932e2ba5e139b7c4fdce47c2') in 0.0048834 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Box_MetallicSmoothness.png using Guid(75b5f8e00b787f049b737bf12b65dbb2) (TextureImporter) -> (artifact id: 'b5dd34dd98069d58dea6accdb8799297') in 0.0131638 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/MushroomsFlowers_Albedo.png using Guid(a5049b674887e5a4d83612ed0fb14625) (TextureImporter) -> (artifact id: 'a59fc70e2b4ae8b072f7ba4885f0419d') in 0.0158824 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Table_Albedo.png using Guid(a5c81c2f046413a489d141c04b2a92e3) (TextureImporter) -> (artifact id: '39e80a1928990a3776a7d1a8745378c5') in 0.0205093 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_3_4_Albedo.png using Guid(a5db2e47bb02ab54c89069dc3ca6a6c0) (TextureImporter) -> (artifact id: 'e310b806c7df70aebf58018fb36ce285') in 0.0194901 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/ReflectionProbe-0.png using Guid(167b08fea6e4f4245be91112f3e2e25f) (TextureImporter)Starting cubemap convolution for '' (size 256)
+...took 0.062 seconds
+ -> (artifact id: 'cfac485e3bc1d85b14caabd39b8158dd') in 0.0709637 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Food_MetallicSmoothness.png using Guid(26147bf650528214ab0c252b8f111fb1) (TextureImporter) -> (artifact id: 'aa1a4290a0bebfc2adc390f49d73ff52') in 0.0138601 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Logs_MetallicSmoothness.png using Guid(360312169377ebe42af2dcb7a6bf51e4) (TextureImporter) -> (artifact id: 'b2c5092f47acedf35b9304e3702da663') in 0.0452278 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Gold_Albedo.png using Guid(661a84778b071d6409ad65ae0771d751) (TextureImporter) -> (artifact id: 'c717c7e6a8a83fd42f79662b8e85a80c') in 0.020726 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Cart_Albedo.png using Guid(86943712ac89b0942a99a9750686d755) (TextureImporter) -> (artifact id: 'dba27f2b44d82c0a4bae04d4463eb352') in 0.0209871 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Bag_MetallicSmoothness.png using Guid(c6d631b640b4e8842915d12e2848ec5e) (TextureImporter) -> (artifact id: '4f326624d47d8770243808762933f7e1') in 0.016494 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Fences_Albedo.png using Guid(d62372d85c817374084ad0a61eedd6e0) (TextureImporter) -> (artifact id: 'a33c4e8b22ade263d569995ccf7310dd') in 0.078071 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Food_Albedo.png using Guid(f66cc667a5d191844a909ba7a5ce6399) (TextureImporter) -> (artifact id: 'f485872e401c8cf8c7abbaca89360cfa') in 0.0207732 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Barrel_MetallicSmoothness.png using Guid(f6ce6e8121585b14db9a3f0e2b49c0e3) (TextureImporter) -> (artifact id: '577856ada2c975bf963cb56ce544f83f') in 0.0156896 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_1_Albedo.png using Guid(07a6a70a7384a1d408f28685f74f69de) (TextureImporter) -> (artifact id: '9846155d5e4da1be35c3d86daa04177c') in 0.0581717 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Trees_Atlas_Color.png using Guid(17add36904ebba141b4e088ea9253452) (TextureImporter) -> (artifact id: '8bc7ea96e445e1d6d4bc67ea65165cd7') in 0.2980008 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Box_Normal.png using Guid(276104bdb19f12e44aff60913b38e192) (TextureImporter) -> (artifact id: '335d547fb6de535e2476f6484af3ae86') in 0.0196888 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Stumps_Albedo.png using Guid(2749470a5db6aa2429f3501f1effe7a0) (TextureImporter) -> (artifact id: 'ea7e638362bfe77bbf3663fce9df47bc') in 0.0168871 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Cloud_Shadow_URP.png using Guid(471b4787027c71b40a2af4c73bbdc4d4) (TextureImporter) -> (artifact id: '95d2b272be042aacc1e8d4f12d658791') in 0.053971 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/StonesRocks_Normal.png using Guid(5788985df048a7344a7b3584587bca04) (TextureImporter) -> (artifact id: 'd9a87c01296cdba66809b7c8837d55f5') in 0.2365123 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_2_Albedo.png using Guid(5759286c0a45ea74f8f69cbdea766469) (TextureImporter) -> (artifact id: '08c37f5bb45f0bb337c25aa7a578d9c8') in 0.0202454 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/FernBranchSmothness.png using Guid(77db51ddc5b56af43a2f94da72506339) (TextureImporter) -> (artifact id: 'c45ff367790ecc6699162ea4c184d48c') in 0.009025 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Gold_MetallicSmoothness.png using Guid(a7e3544f9c8c2ae4a83a30cf5a9d15ac) (TextureImporter) -> (artifact id: '3941737292a0a5ef7dbdf05bebac3d67') in 0.0160996 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Log_MetallicSmoothness.png using Guid(b72b8b454c624734e9312cc32c967a78) (TextureImporter) -> (artifact id: '473665a777e841581b2997721f991187') in 0.0467255 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Barrel_AlbedoTransparency.png using Guid(c7d371ef4edb73340a228f7429ce601e) (TextureImporter) -> (artifact id: '850745b67017061c6f152f2f5f3a4d31') in 0.0210822 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dryer_Normal.png using Guid(c7989dce16c00e94fb8a07716b98069a) (TextureImporter) -> (artifact id: '9d87f728911b929e4d243e24225972aa') in 0.0209239 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Fences_MetallicSmoothness.png using Guid(08a4acccd31811f47984a896311f5e28) (TextureImporter) -> (artifact id: 'e7088b1baae07d2acebc5e1415d4fba7') in 0.0650769 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Stumps_MetallicSmoothness.png using Guid(2842d4a4ba619e04dae5c4c4babdc6e6) (TextureImporter) -> (artifact id: 'a402726dff512977a972d1685da678a0') in 0.0132685 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_3_Albedo.png using Guid(d8e089e028ecd264c80df1b76560fdd8) (TextureImporter) -> (artifact id: '970bdbe226218b12960fe6c160bd25df') in 0.0600337 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/House_Normal.png using Guid(d85bfc504e9263249ab956f35addfd25) (TextureImporter) -> (artifact id: 'a6afc904dc7e719fe720af2b0f9940d4') in 0.080097 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Boiler_Bonfire_Normal.png using Guid(d8ef72a19547bba419357fdd87cff4e8) (TextureImporter) -> (artifact id: '0293a66246a1979714fce7beeb4f8143') in 0.020477 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/FX/Glow.png using Guid(e8d031225b3662e49a083b31e192cdfe) (TextureImporter) -> (artifact id: '9ca7c21032ca7273503b683f5f3aff6e') in 0.0028536 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Chest_Albedo.png using Guid(f8465c56074bc224aa842b7442bb780a) (TextureImporter) -> (artifact id: '793c08583943ff5f44ed1d24142c8b2c') in 0.0212009 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Weapon_Normal.png using Guid(29d7c310d4d8d5549945a864f576787e) (TextureImporter) -> (artifact id: '195c472a28b0c6117393425bca7b7fd6') in 0.0183162 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_3_4_MetallicSmoothness.png using Guid(6945f73f1c5b4c64097b6e716576e2ef) (TextureImporter) -> (artifact id: '66b5157971f6a1b462fef6301fe7c04a') in 0.0123616 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/FernBranch.PNG using Guid(79777bcdfed8ba04faccdb133fb2112d) (TextureImporter) -> (artifact id: '7e4431c53a57bf5bbbcb7511675e916a') in 0.0087771 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Mud_2_AlbedoSmoothness.png using Guid(99c35aca611664c4ba048e5278c11133) (TextureImporter) -> (artifact id: '889ba327b3986bc5258fccd2d45d8a5a') in 0.0791916 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_4_Normal.PNG using Guid(a916cf9632ae6454a948a7113cdd549c) (TextureImporter) -> (artifact id: '46b7351b01f8c9943963bc6a48754302') in 0.0724459 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Trees_Atlas_Normal.png using Guid(a90cc093361563c49b093650417754b3) (TextureImporter) -> (artifact id: '2847d266e7f0a9be05a26c75812c358f') in 0.2327678 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_3_Normal.PNG using Guid(0a5674331dc3f41459ee804ba7cdf0c5) (TextureImporter) -> (artifact id: 'bf13d7c71c5edb2be047f9f10bc86675') in 0.0714677 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Gold_Normal.png using Guid(2a0986af195fd3f4db75ae257d9e27cb) (TextureImporter) -> (artifact id: 'e353c17b27cda4524de17c9e8ad43049') in 0.0205554 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Box_Albedo.png using Guid(3a009f839881eec4cb2ebff5513b3c29) (TextureImporter) -> (artifact id: 'bdf721a05bfe081f0c2d691a3607dbeb') in 0.0214265 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_2_Normal.png using Guid(3a04d7b80086ab94187b4ee65f9d6fcc) (TextureImporter) -> (artifact id: '09754ff67a1a24f3de6ce4d39a0beece') in 0.0206172 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Bag_Normal.png using Guid(4ad4d682fcafca143bf13b63c87c1426) (TextureImporter) -> (artifact id: '376caa8f643ca36ae56d4f4dd247c37d') in 0.0213914 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Bark_Albedo.png using Guid(6a900d677377db64c824e5ff2c2e6994) (TextureImporter) -> (artifact id: '083ef62578b3b0e93354febcac9073b6') in 0.0704714 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_2_Normal.PNG using Guid(7a78d858cff46d44da2702c1b3357112) (TextureImporter) -> (artifact id: 'c8de74613d27014502b92b808e466b71') in 0.0737035 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Clover.png using Guid(da2989c08bb3821478e3ef38ed1f7192) (TextureImporter) -> (artifact id: 'a3e99b3e588fd7d3c0feb93ae7aec7a4') in 0.003226 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Furniture_1_MetallicSmoothness.png using Guid(2b85584821ba8914f85ac9129d70c04d) (TextureImporter) -> (artifact id: '1f900a4fa57ca3ede18276abcc7063ad') in 0.0593576 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Table_Normal.png using Guid(abfc917e03b6afa4186d3c5aa7e1620b) (TextureImporter) -> (artifact id: '9343f2b898d6d62edda4b38a77c9d745') in 0.016577 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_4_Albedo.png using Guid(dbda6acb513c4f1458628cbc4ff63292) (TextureImporter) -> (artifact id: 'de11985463dff7ce52007ed4fd9c61f3') in 0.0569468 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Cart_MetallicSmoothness.png using Guid(eb5e4b29297c36d45939b7cdf8b48907) (TextureImporter) -> (artifact id: '7afd1e7b7aca3d2efe3a409fe356af2e') in 0.0146066 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Weapon_Albedo.png using Guid(fb51379c3e6e1b94198e3ba21692a1ef) (TextureImporter) -> (artifact id: '18f1b79403d26c5cceaf701de923ec23') in 0.0212118 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Bark_Normal.png using Guid(fb4cb7e8c7f603043bb76118c978dd6f) (TextureImporter) -> (artifact id: 'fe6549ec2b998f605e5e8537e9703e02') in 0.08072 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Stumps_Normal.png using Guid(0c65425be990654429a04f9d2a5befa3) (TextureImporter) -> (artifact id: '5ace958a938a296bb15757e6a38fb2d9') in 0.0188723 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Mountains/Mountain_2_Albedo.png using Guid(acdb07300e8973745a006ce051df4c60) (TextureImporter) -> (artifact id: 'b809dec6c68cabaa65dbdea6c213640e') in 0.0647373 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Cloud_Shadow.png using Guid(cc4186679441c2f4a851ada7fcd7a751) (TextureImporter) -> (artifact id: '9dd189ca0fd9773ab0153d9a03dd31ee') in 0.1296096 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/FX/Birds.png using Guid(dcf7d4ba31e13c2438a6b9222f2fee77) (TextureImporter) -> (artifact id: '27d8bd5653f38835e7c973be820956bf') in 0.006064 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Table_MetallicSmoothness.png using Guid(3d12f866d06dbe64e96b8194f9c66a2b) (TextureImporter) -> (artifact id: 'ee5f11a988de35f004c2c3bc69112382') in 0.0138524 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Flower_1.png using Guid(7df38e9e5dd6beb4ea0febfaea913b1f) (TextureImporter) -> (artifact id: '0c1b00feb4acb4c1a1aa6922ed3a6f28') in 0.0030523 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dishes_MetallicSmoothness.png using Guid(9d60867b1e5f00a4b91a08bd34e41698) (TextureImporter) -> (artifact id: '9ed67c10f08ba6f62126afdbcf79483b') in 0.016418 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/MushroomsFlowers_Normal.png using Guid(9d15cbad498cb0243845de2099358c40) (TextureImporter) -> (artifact id: '97a6ed34a69036c39873811e573b4d90') in 0.0189503 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Furniture_1_Albedo.png using Guid(add888db4fccd444898f8fd992698a9a) (TextureImporter) -> (artifact id: 'f4537b0b8d3dcf8030a2110f4cbd5067') in 0.0808311 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Mud_2_Normal.png using Guid(1e5a3f41d56fc574da3966306844c9e4) (TextureImporter) -> (artifact id: 'ce4b36688605220a98d66284b89a5101') in 0.0778943 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_1_Normal.png using Guid(2e81cacbe4ce0d947bebba9de410814a) (TextureImporter) -> (artifact id: 'b52c677355b607d3b24550a384648fa7') in 0.0752804 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/House_Albedo.png using Guid(4ef3c99f757637648981d1bf7bbd16bb) (TextureImporter) -> (artifact id: '747554757522494b1439932f65af546e') in 0.0859021 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Bag_AlbedoTransparency.png using Guid(6e453e1945ab0414281ca9425b1445b1) (TextureImporter) -> (artifact id: 'ac4fd2d3552457e8c670547d79a2e141') in 0.0223042 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/Logs_Albedo.png using Guid(ae8dabb1202caa24795c4dbf8f275e64) (TextureImporter) -> (artifact id: '5c9470b884c023d1e9f8799731430e13') in 0.064045 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Food_Normal.png using Guid(1fec84fdde076c34584284864162ccd3) (TextureImporter) -> (artifact id: '240cd4d27301a29769e21ccc742942b7') in 0.0203267 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Cart_Normal.png using Guid(3fb4a76dd3aef3a44b1b39efc69d5f84) (TextureImporter) -> (artifact id: '7b3626e4114c089d079ce096e34cd073') in 0.0184331 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/House_Smoothness.png using Guid(4f3e594ebc8cf994893ef84816e19e82) (TextureImporter) -> (artifact id: 'cf1660b1b4b25498d47ff81580a43b23') in 0.0787738 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Tent_3_4_Normal.png using Guid(5f746ee4e07dff041a0fc52a3592e443) (TextureImporter) -> (artifact id: '920361a94ff5f7e90f64a93129b58f29') in 0.0192085 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Dryer_MetallicSmoothness.png using Guid(5f2f22cdfb77bff4bb44a27f03fb8c76) (TextureImporter) -> (artifact id: 'cb79fc0d6dd669dea9117d93c62af0db') in 0.0142024 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Furniture_1_Normal.png using Guid(7fc060f8ee755dc47b36b6f488393691) (TextureImporter) -> (artifact id: '9de1ac0df57c3a7244932900ff353d54') in 0.0736645 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Camp/Boiler_Bonfire_MetallicSmoothness.png using Guid(bfd4fea35f40d784fbe092886904c763) (TextureImporter) -> (artifact id: 'c2d6e43170721c6007b6888f4f856676') in 0.0161828 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Grass_1_Normal.png using Guid(cf2bd95fa057a2d419ded8ce428e7ddc) (TextureImporter) -> (artifact id: 'b91464e4f15f8c2f07d4deb3ccca0c7d') in 0.0770955 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Grass_1_AlbedoSmoothness.png using Guid(dfd4b1d9e2f80464eb14a14b76c4c504) (TextureImporter) -> (artifact id: '93b49027f822823a3cb7ce454ef670a2') in 0.0821671 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Terrain/Grass_2_Normal.png using Guid(df36f7bd4b98b154fa0ce4eb390de48c) (TextureImporter) -> (artifact id: '1374e86a78f0506171a0c9c0a8114786') in 0.0799348 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Witches House/Stuff_Albedo.png using Guid(ff25a36dbe240674e95cc18032c6f008) (TextureImporter) -> (artifact id: '69fea051c9cfc643d2bb2bbe455df02f') in 0.0694339 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Textures/Forest/MushroomsFlowers_MetallicSmoothness.png using Guid(fff5381d3e3dc524da370fb3fcabfb11) (TextureImporter) -> (artifact id: 'f44f049f722ad50826b087dcee5a4740') in 0.0124293 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Mountains/Mountain_4.mat using Guid(c0cf4ada5369a934894906c4b9540846) (NativeFormatImporter) -> (artifact id: 'd43ef66bea1c9ea8844839a026106019') in 0.0012434 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Dead_Bush_Bark.mat using Guid(71bff8b4531fa1248b3d1192bff507fa) (NativeFormatImporter) -> (artifact id: '454a1a43be41d14e8ddb8f7eeef636e9') in 0.0011161 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Table.mat using Guid(9119cceaa60a72b45860ea15e9da972a) (NativeFormatImporter) -> (artifact id: '5cac76dd961992b241ae55bae5143a9f') in 0.0008915 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Tent_2.mat using Guid(1244cfe82b7a29b498ef271c0fecd29a) (NativeFormatImporter) -> (artifact id: '0f3f71dc6b249db932cfe81f17933edf') in 0.0008836 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Fir_Branch_2.mat using Guid(220d1a80aa018bb4c8e445d5a51b69ca) (NativeFormatImporter) -> (artifact id: '952771e2c6a92aa11a63722534115f8d') in 0.0008343 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Stumps.mat using Guid(6206f939b9a7dc040a186ae82094e058) (NativeFormatImporter) -> (artifact id: '7712c34326541dec44192d67c8ec6257') in 0.0008916 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Weapon.mat using Guid(a288b2afea684914081029aeb938b936) (NativeFormatImporter) -> (artifact id: '4e7a4b849e9aa07916978c3700a5d195') in 0.0008272 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Clovers.mat using Guid(83cba273fa549a14ea4c51c5fb3f454b) (NativeFormatImporter) -> (artifact id: 'f789c20da3b0ee5846654fa00577cc77') in 0.0008413 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Fern.mat using Guid(b32bc720c1ef1704cbbbc474501b34d6) (NativeFormatImporter) -> (artifact id: '9cafc8ba6ce22ec821f3141ba8b4045a') in 0.0008014 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Gold.mat using Guid(e343b2cf5333a5b419b3a28b1455c3d8) (NativeFormatImporter) -> (artifact id: '9bafabf0abe9c9cf6d501a51891cc70f') in 0.001104 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Mountains/Mountain_3.mat using Guid(94a488982bdde454882ef74b1c296282) (NativeFormatImporter) -> (artifact id: '9777f94f85de5a10602506c9f7aabc5b') in 0.0011639 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Dishes.mat using Guid(d453897783ba83a48961ff17e2c52c07) (NativeFormatImporter) -> (artifact id: '2b2d915608912e6781a6be41797982cf') in 0.0008842 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Stones_Rocks(Grass).mat using Guid(35a784c4327446346abf4905d46c65de) (NativeFormatImporter) -> (artifact id: 'e48a2bd801c589729e4b7d5188a4e4be') in 0.0007798 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Candle Fire.mat using Guid(45b1c75473dba304db788c9def882c59) (NativeFormatImporter) -> (artifact id: '5f5447347c5adfd6671e0ef2fe290693') in 0.0008552 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Tent_1.mat using Guid(45f34af5c2430774887cddf4c225668c) (NativeFormatImporter) -> (artifact id: 'f2311d74faadda21fea8063811c25b66') in 0.0007666 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House/Props.mat using Guid(b53658c2b35444d4998f0fc8860a8aa0) (NativeFormatImporter) -> (artifact id: '6c3d536451d6b52b7e6780f5b53e225f') in 0.0008012 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Birds.mat using Guid(d59093261c33186449f42adacde96d31) (NativeFormatImporter) -> (artifact id: 'b56e6dbfb3335824c1aa6a57dab3e1f4') in 0.0008362 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Terrain Layers/Mud_2.terrainlayer using Guid(a622ed81e884d1b4198fc95538f0b06d) (NativeFormatImporter) -> (artifact id: 'a1828a1104876bedadc3dffdeed84cbb') in 0.0008758 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Barrel.mat using Guid(b6b3bab5790a145429015960bd75b379) (NativeFormatImporter) -> (artifact id: 'a484e7245c48e936c056bdc405d5b0e0') in 0.0009277 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Chest.mat using Guid(d67789d8d32f9654dbcea7db99b0bd28) (NativeFormatImporter) -> (artifact id: '9202e83edde4d518c64994aeae3f031a') in 0.0007914 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/Fake_Sun.mat using Guid(0739f13af208c3749be2188a2afa6b5d) (NativeFormatImporter) -> (artifact id: '63fc923e416fe2f7383d4a718affc127') in 0.0007767 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Box.mat using Guid(47ce525740d10374fb25923cd26d9eb1) (NativeFormatImporter) -> (artifact id: 'f6bb6849c08c36a4d829a7813de465a4') in 0.0007864 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Grass_2.mat using Guid(77acc4cda6368ce4990c66054a097583) (NativeFormatImporter) -> (artifact id: '7ebf48a95110fff7e6129d0d569069b9') in 0.0008099 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Sparks_Trail.mat using Guid(c77438c9836f4a740b6720f726cd3283) (NativeFormatImporter) -> (artifact id: 'ef443886af19f2cb20005b099b861c2b') in 0.0008188 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Terrain Layers/Grass_1.terrainlayer using Guid(d7871d4486098324daab0b6646b5c5b3) (NativeFormatImporter) -> (artifact id: '121b402636bfcacf984added7f69aef3') in 0.00112 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Terrain Layers/Mud_1.terrainlayer using Guid(18162f50811eefa4f881095eee243174) (NativeFormatImporter) -> (artifact id: 'b18c4966ce15f67309aa8582338c5f28') in 0.0018443 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Grass_1.mat using Guid(3805f20af5803d04db6fa559a7a079fe) (NativeFormatImporter) -> (artifact id: 'ac02c452181aed6684abffdea24f91c8') in 0.0009261 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Stones_Rocks.mat using Guid(48235a3bec1ffac42b238feb64e16aba) (NativeFormatImporter) -> (artifact id: 'fd52b435fcc95cd7c375cf5d8aff885d') in 0.0009905 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House/Furniture.mat using Guid(487d7267f146b8d49bb4e53f0e9a2c48) (NativeFormatImporter) -> (artifact id: '44b482a5f2a9ed686eca35c1f31f54a8') in 0.0008515 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House/House.mat using Guid(5890dc85f046dd0408755d6871e1a525) (NativeFormatImporter) -> (artifact id: '692be737b6fbd61a7500afebe23952b3') in 0.000805 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Sparks.mat using Guid(9819152eb57000c439ca8affcce4d249) (NativeFormatImporter) -> (artifact id: '8fec6d278aa4807c00d925c00197c619') in 0.000887 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Cart.mat using Guid(98aa2e6b276d63644a7b1a63b9258dda) (NativeFormatImporter) -> (artifact id: '1218006ec37fd856774c074d226dd3e1') in 0.0008211 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Food.mat using Guid(3964cd9c6ce05154bbc6d21b40df6622) (NativeFormatImporter) -> (artifact id: '2246fc988e6c953354187c1e6f3809c0') in 0.0009365 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Fir_Branch.mat using Guid(497a6728df998d44bac3f3376ceb03fb) (NativeFormatImporter) -> (artifact id: '01b4b814af69f0353ded4f42d8c225bf') in 0.0008208 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Flower_1.mat using Guid(d9b4daaeaf71b934bb9f134f373792f2) (NativeFormatImporter) -> (artifact id: 'f35b55292dbce9bf1d40334701570247') in 0.0008301 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Mountains/Mountain_1.mat using Guid(0ab2db07ec5191e4499d625d3a11f77f) (NativeFormatImporter) -> (artifact id: '96462be51f71a3f01c013da2cfa2ac0a') in 0.0008059 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Mushrooms_Flowers.mat using Guid(3a308754e318f8141b82cc1d0e126ccf) (NativeFormatImporter) -> (artifact id: '950618339f6c60df82b21c164230755d') in 0.0007963 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Mountains/Mountain_2.mat using Guid(4aa986f82271b8645a2eebaf61bc8897) (NativeFormatImporter) -> (artifact id: 'dbbe1854f6db3fd1e10cc9de7c41a2a8') in 0.0007927 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Skybox.mat using Guid(fa4f6d9fa050c6048ad6ff23382a6365) (NativeFormatImporter) -> (artifact id: '19d169699717dafe763e834bd11dc2fa') in 0.0018159 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Dryer.mat using Guid(0bd823882b27ee64899a6040aa63b7e6) (NativeFormatImporter) -> (artifact id: 'f3a86ecd445f57a83cc38953f96c00d8') in 0.0009131 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Bag.mat using Guid(3babb7d45e8ce234d83fdc602996ee14) (NativeFormatImporter) -> (artifact id: '5d36f0c81a1e6bc33297f3050a1edaaf') in 0.0008489 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Fire_Smoke.mat using Guid(4be1d00819ea6f44491b1a52239b0309) (NativeFormatImporter) -> (artifact id: 'fb0db09af9564f8339ec557e714d8fba') in 0.0009606 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Terrain Layers/Grass_2.terrainlayer using Guid(1cc75ff9d17c15541adfead278e63954) (NativeFormatImporter) -> (artifact id: '3879f758b1e1029d9186c931fe0ad7eb') in 0.0007935 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Fire.mat using Guid(5cfe716e58337424a9a6aec6024ac83b) (NativeFormatImporter) -> (artifact id: 'd2c134530bd40fb53bb3db7b186f7556') in 0.0008202 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Tent_3_4.mat using Guid(fc2cd876864c49447bd024350ff9c2b5) (NativeFormatImporter) -> (artifact id: 'f7a878e62171f17b3fc11127c2b0581a') in 0.0008289 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Boiler_Bonfire.mat using Guid(1deae3953c9613f4b9178a63413aac0b) (NativeFormatImporter) -> (artifact id: '07b2168c045b7dbe12dbd1a310be95fa') in 0.0007819 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Tall_Fir_Branch.mat using Guid(5d6cb861c78e2464c9ad921d2a24b318) (NativeFormatImporter) -> (artifact id: 'ee218ebe86a07a6f3f9e5390583d1a13') in 0.0007762 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Water.mat using Guid(adea0dedcb58e2e4590575eeabbfd486) (NativeFormatImporter) -> (artifact id: '772666cef623dbe697b1e90f84564d99') in 0.0007868 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/GodRays_Glow.mat using Guid(bd59d5e971617944bb951333d28a4780) (NativeFormatImporter) -> (artifact id: '33759a85e26e40e48d90b91c2aac6524') in 0.0008461 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Fir_Bark.mat using Guid(1e3a5c0f4bf78bb428fc8d87d2d383c2) (NativeFormatImporter) -> (artifact id: '23f000bdbd73553599df0f5c283fbeb8') in 0.0007676 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House/Glass.mat using Guid(9ef132f572b052140bb0c14307616a61) (NativeFormatImporter) -> (artifact id: 'cdfc201f9b527c6766548a9d8d6e9dcd') in 0.0008364 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Bush.mat using Guid(be211544f6b894d43ad8b4424a24034a) (NativeFormatImporter) -> (artifact id: 'e80d0e1af879659852a4fa1fd6f33df2') in 0.000773 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Forest/Logs.mat using Guid(1f351f80c81ccf64e84d21868af3864f) (NativeFormatImporter) -> (artifact id: 'b1decd8c7599ba83faa31ac21e628ce8') in 0.0007626 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Witches House/Fences.mat using Guid(3f88c43e2881cd743abe4f4205fbff86) (NativeFormatImporter) -> (artifact id: '90d86c6627eb5f4f8d40a6ba76a9aafe') in 0.0007581 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/Camp/Log.mat using Guid(6fef00e80d4c3d741b9507afaf047dec) (NativeFormatImporter) -> (artifact id: '1f2a3644f44327777781799d96479b89') in 0.0007742 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Materials/FX/Fog.mat using Guid(af5e474e11841104a84a3fb73c502919) (NativeFormatImporter) -> (artifact id: '142e0f53cdd41e07716b75ed095f10d5') in 0.0008114 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Mountains/Mountain_3.fbx using Guid(00e9f59455da790428febf20c71e9339) (FBXImporter)Launched and connected shader compiler UnityShaderCompiler.exe after 0.02 seconds
+ -> (artifact id: '41c03ebce10a34b6b6f5e550c1bfc126') in 0.3229652 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Log_1_Collider.fbx using Guid(30b59ae0647fe9844a7e3becdd6fa2b8) (FBXImporter) -> (artifact id: 'cb9ff0234e98b3b49486806414565528') in 0.0079453 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bag_3.fbx using Guid(4020041698668114bbe054cbeb88cb61) (FBXImporter) -> (artifact id: '97cf803b5d6558746f0e99ec46935c3c') in 0.0094701 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Fir_Tall_1_Collider.fbx using Guid(40551cf71d852474a873382f9d4e8627) (FBXImporter) -> (artifact id: '6d8dc1f055a8a1d891c00a44587f01d4') in 0.0074503 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Fence_2.fbx using Guid(40e66d404856c48418760d57891d5929) (FBXImporter) -> (artifact id: '8f58fecfba6ec808727169efdff5b3e3') in 0.0101842 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bow.fbx using Guid(80442c56725f5c44ab4a9d416e6f494e) (FBXImporter) -> (artifact id: '0566090104dc7ba151f3737baf6785e7') in 0.0086168 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Tent_3_Collider.fbx using Guid(a071be6cb4ebafb4993f94a1732aac30) (FBXImporter) -> (artifact id: 'd70c2a12adbc2e683452db0cd31226f7') in 0.0075067 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Trough.fbx using Guid(a0a37072dfd7ff148b87318916bd8db7) (FBXImporter) -> (artifact id: '9be02620ad95e419c0ba23d3b3cb4def') in 0.0077309 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Book_1.fbx using Guid(a0a4389d789ee334a8d42fc75592ecf3) (FBXImporter) -> (artifact id: 'df8c7bd13d8ed0766a6f90e220219dc6') in 0.0081852 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Gold_2.fbx using Guid(b0a15604f1e5ad64096c610d0d30ad4c) (FBXImporter) -> (artifact id: '3333d643eca18efb99de1a3ff47baf3b') in 0.0089459 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Candles_2.fbx using Guid(b0230f73a6719eb43b6c180d90cd4286) (FBXImporter) -> (artifact id: '32046aa908129500d9db8975770c2ebd') in 0.0082502 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Branch_2.fbx using Guid(b0b3c23b26610364794b7ab4e8fc471a) (FBXImporter) -> (artifact id: '8d0c4d1946fd58d49df89152f1bca4cb') in 0.0076383 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Tent_1.fbx using Guid(e086d120c2b43ce468d8ac19f55b9d88) (FBXImporter)Launched and connected uv unwrapper C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Tools/UnwrapCL.exe after 0.03 seconds
+Launched and connected uv unwrapper C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Tools/UnwrapCL.exe after 0.03 seconds
+Launched and connected uv unwrapper C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Tools/UnwrapCL.exe after 0.03 seconds
+ -> (artifact id: '362314f1f188b456a99b8d225a879ff1') in 0.1690265 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Dryer_1.fbx using Guid(e068ce451f52f6046b608e848a050271) (FBXImporter) -> (artifact id: 'f456cff670ba7d51303c7d854638dc13') in 0.0133166 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Mushroom_2.fbx using Guid(217c2c77b664e314aa84765a4e3f8270) (FBXImporter) -> (artifact id: '3d71be5a7bf16fe121a25f4e7a62ecf8') in 0.0081004 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/House.fbx using Guid(3199083f517340341b0503232c60a328) (FBXImporter)Launched and connected uv unwrapper C:/Program Files/Unity/Hub/Editor/6000.3.22f1/Editor/Data/Tools/UnwrapCL.exe after 0.01 seconds
+ -> (artifact id: '09a0bf275510cc93379de68042a3c43e') in 0.1612149 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Pot.fbx using Guid(411f559d48f974b4886fac85beeb87a0) (FBXImporter) -> (artifact id: 'dd20fd5bffc2f006ff10f51aa9c375a4') in 0.0081696 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/House_Door.fbx using Guid(5187d23f84f369045a98e4a6211ee184) (FBXImporter) -> (artifact id: '46ee0503a3918c3704b8eff81130cd0d') in 0.0080402 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Meat.fbx using Guid(7143dc4ca87427a4a9b585d072d65f05) (FBXImporter) -> (artifact id: '6ebbc0e3f1fc53f90cfa7cd7356a5769') in 0.0086353 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Dagger.fbx using Guid(91c6cd4d1670690499ef51ed06c931e4) (FBXImporter) -> (artifact id: '9a70fccf906748443ec46fe32a74b4bf') in 0.0080773 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Grass_2.fbx using Guid(a1cd2f42d6cc3594d96845d7d5921bd3) (FBXImporter) -> (artifact id: '57770fa2176db8101c6353e43aa25690') in 0.0076972 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Flask_4.fbx using Guid(c1ca5fdc888d2fe4c9cb5450fab6603b) (FBXImporter) -> (artifact id: '3c6f33cb86d670a55f94c05628eadd68') in 0.007989 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Dresser.fbx using Guid(e1801ad786422fb48bcc132245774e95) (FBXImporter) -> (artifact id: '193483d12ad38a1c3559b14c533018fb') in 0.0092386 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stone_1.fbx using Guid(02a56b81851b59840b43761deffbe5c4) (FBXImporter) -> (artifact id: 'f93748c7c04f22a8c6203bab177e2f52') in 0.0078369 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Table.fbx using Guid(22bdcf1d605d86242ae878513c5a05c1) (FBXImporter) -> (artifact id: '3e8832061b3040849794419b8e2f20f6') in 0.0078524 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bottle_2.fbx using Guid(7294f4f90a6ad654191d5fdb17aff21a) (FBXImporter) -> (artifact id: '62236c94ed03fbf3fd6d42364fec22ce') in 0.0082907 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/House_Stairs.fbx using Guid(82978621ff29ca141a11e682b7b8fa38) (FBXImporter) -> (artifact id: '51f985266d1f73faf51ab4488f99b3ac') in 0.0112561 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Mountains/Mountain_4.fbx using Guid(e26b5cf55de77e149b9e36fb41d29855) (FBXImporter) -> (artifact id: 'dc59230718aea63444bafb6926c96712') in 0.0172667 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_3.fbx using Guid(f2360ba37b0d23b4391662d90b7c5429) (FBXImporter) -> (artifact id: 'cb24d15ba12162342f11e315e4a71d25') in 0.0106885 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Fence_4.fbx using Guid(f25c1fc0eade8954f86cb7a639767fb7) (FBXImporter) -> (artifact id: '6ab57d75097431dc2db1763b18f10eeb') in 0.0082032 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushroom_1.fbx using Guid(03f6167261d7eac4f9c5480559e4f92d) (FBXImporter) -> (artifact id: 'e31ae73e7e379b2e7489060dd4222c4d') in 0.0078581 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Bush_3.fbx using Guid(13fdb9bf19ae3a74c953ecd63e4a6029) (FBXImporter) -> (artifact id: 'ab5bb8b9a78cac13d637456609980140') in 0.009992 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Log_2.fbx using Guid(536ecf2464e362b429891e2069b4ac64) (FBXImporter) -> (artifact id: 'c98115c94ae3d227b5d51b7eecda8c77') in 0.0090302 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/House_Collider.fbx using Guid(53be71ba944f53743ba7434ea0fbcebd) (FBXImporter) -> (artifact id: '6104c1caa0a230d4b254b7ec91dbdbe4') in 0.0095926 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Flask_3.fbx using Guid(63e55116646c3954aafd9f21dd59f3cc) (FBXImporter) -> (artifact id: '959abb0f4a4deee8f0c944252227f243') in 0.0085108 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Scroll_1.fbx using Guid(83d1151af1e973d44bdd1255810d79df) (FBXImporter) -> (artifact id: '995ffa95ba4675568265b0c00f855a5e') in 0.0091876 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Dead_Bush_1.fbx using Guid(a33e8cb3a62056d4ea913cfc9248485c) (FBXImporter) -> (artifact id: '7331ebae4fbc76b8d186ef3f34e7405c') in 0.0097474 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Tall_3.fbx using Guid(e36130ce5c8d5e843823b512fc1dbc5a) (FBXImporter) -> (artifact id: '899ba01f5742bb37dabfbb8c9c2f61a4') in 0.0122995 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Tent_4.fbx using Guid(f38204dcc7b76c94ab9e24d53a7d583f) (FBXImporter) -> (artifact id: '1d32cf754b03236591bc7ce2d2d36254') in 0.0529082 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Boiler_Collider.fbx using Guid(f30dc69077f79274bb1ab6f10adfbcd1) (FBXImporter) -> (artifact id: '50efe860c3445a9118e0b862dd7cdcd1') in 0.0086085 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Flower_2.fbx using Guid(3450621acc1cb3e4a8c663910571ce4c) (FBXImporter) -> (artifact id: 'f1f395aa767e7cefa7c865b889e4d0ec') in 0.0102967 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Book_3.fbx using Guid(549bac9dad2d5ca4da2b7bd4feacfc2b) (FBXImporter) -> (artifact id: '84740aee0c7d61790a71854fb5fd796c') in 0.0104644 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Сupboard_Collider.fbx using Guid(64a05252ba591c741abcb17ad3398362) (FBXImporter) -> (artifact id: '0736766e30e62952fbdcbd0f8e1d997f') in 0.0085905 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Branch_3.fbx using Guid(74ec19ff2f797914aa8b4cf5d3436f67) (FBXImporter) -> (artifact id: '0acd51df29e314522e1241ee38d65a17') in 0.0078278 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Tent_1_Collider.fbx using Guid(a400764c243f36040bc4a071c63387be) (FBXImporter) -> (artifact id: '83dc277c25f8eb78710a23851e4f448f') in 0.0081027 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Bush_1.fbx using Guid(b423abfc7b5797449bdc44c2d31d86f7) (FBXImporter) -> (artifact id: '1a33bec04c788785fbc02e6540b88f61') in 0.008664 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Box_4.fbx using Guid(b4693bebb8a2cb14bbb6841cae9fb45b) (FBXImporter) -> (artifact id: '675ef4af98c9a3471732b3791f38fdbc') in 0.008429 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Log_1.fbx using Guid(c44b1b8701ba0cd43863e5ec0832b603) (FBXImporter) -> (artifact id: 'c1cf12fdfbe1deea3a6dedd8665760c0') in 0.0092006 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Trough_Collider.fbx using Guid(d4af3d5944eaa4845b0b1641e3a90b1a) (FBXImporter) -> (artifact id: 'bd39994028955685068c477769734051') in 0.0075641 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Grass_1.fbx using Guid(e424d8a8a33487f428af7d2fe96da36d) (FBXImporter) -> (artifact id: '0021fc4a1f82f3ff4195699cb2207d21') in 0.0078672 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushrooms_1.fbx using Guid(f4269df5d6e3b7e44a948915fb8bf1d5) (FBXImporter) -> (artifact id: 'b03fe9c2d80cedb6e21df460867c5d61') in 0.008275 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Branch_1.fbx using Guid(15d0ee5c6bb83d84e93c51a4a760b26a) (FBXImporter) -> (artifact id: 'cc6ccf1b56fa453b109e43c7a79b7360') in 0.0076211 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Shield.fbx using Guid(45cf41d68de07994292d6ddd8f3149d8) (FBXImporter) -> (artifact id: 'b35172c1c37dcdbc68d55ef7d0359759') in 0.008125 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Tent_3.fbx using Guid(55b48ff5f91517846b9a3d4eb02b0327) (FBXImporter) -> (artifact id: '9e36f8ae2fa66ca36911b0db4f527bb4') in 0.0102131 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fern_1.fbx using Guid(55de2679ca0a9f248bad3690ab131e63) (FBXImporter) -> (artifact id: 'e75d683585b096bab57a8fc5f1a4fa52') in 0.0078209 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Pillar.fbx using Guid(759e592dfd67c3349b23a23e1eba93fb) (FBXImporter)Keyframe reduction: Ratio: 2.337236%;
+ -> (artifact id: 'b60607aa2d64705da60bdc90c24e594c') in 0.0213129 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Branches_2.fbx using Guid(a585132636bb1094c965e91c942da3df) (FBXImporter) -> (artifact id: 'a750b3e17928ae3ac81b63ac98b52bf8') in 0.0097297 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Mortar_and_pestle.fbx using Guid(b5f5eeb86a99c164baad4aa301f822ad) (FBXImporter) -> (artifact id: 'a717e39f807b1c218fb181b69be837f3') in 0.0087343 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stone_2.fbx using Guid(b5fe0a02ec5817645bc872f16f993f45) (FBXImporter) -> (artifact id: 'd2f784b6bed6616882c8b03ef6ba308c') in 0.007846 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stone_4.fbx using Guid(e5fbb9848f8c8bf4d84ecf3f6d91b8ee) (FBXImporter) -> (artifact id: 'e17589237d40db8d37cb141d80739fdb') in 0.007951 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Flower_3.fbx using Guid(e55c3a3a81c74b642b754b78dff28ca5) (FBXImporter) -> (artifact id: '7311fe7cec61b2cab166e116ce2ace3f') in 0.008186 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Fir_Tall_3_Collider.fbx using Guid(f5977ec1f53c2a2488ea6953182021c1) (FBXImporter) -> (artifact id: 'fdb070e476767f59e10fb4953e2ff84e') in 0.0071972 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Cart_Collider.fbx using Guid(f50e9a1a3bc4b0a4dbf1635036871f6d) (FBXImporter) -> (artifact id: '7d42ad0a911173643fe8b095baef42f3') in 0.0074675 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Scull.fbx using Guid(067bb515c2fe85d48a82b62d03531987) (FBXImporter) -> (artifact id: 'f1600b11d50b402d46dc04523eb85d12') in 0.0089177 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Spoon.fbx using Guid(16bd692a773d92c42bfaa6299107a12a) (FBXImporter) -> (artifact id: 'dba56c2324faecda6f0b1e03d02444e3') in 0.0074346 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_2.fbx using Guid(3660eba21182f34439ffcc859acdb3be) (FBXImporter) -> (artifact id: '301adac6ad24440cb60c75e9c13fd17c') in 0.0103654 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Tall_Dead_2.fbx using Guid(461e047e31def4640aeb693a79f415da) (FBXImporter) -> (artifact id: 'c1544c21b2790645c6a608b017aaecd1') in 0.0116674 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Log_2.fbx using Guid(56f47270e0e27524fa0a6b73888f57b5) (FBXImporter) -> (artifact id: '415475cca287d12b9240e1842f8c235a') in 0.0117836 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stump_1.fbx using Guid(76efb7149622d6d49b08f87bb2f0bb99) (FBXImporter) -> (artifact id: '08f74a4fa6128f55e936446abaab6ae0') in 0.0082697 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Fence_3.fbx using Guid(8675152870e38764c8ec58a25c83d3d9) (FBXImporter) -> (artifact id: 'bd42221124c0be7135180aff270b3125') in 0.0092003 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bag_1.fbx using Guid(a6acda1972febb444ba10cd81c38290b) (FBXImporter) -> (artifact id: 'a92d5d3b073e52f791166b674b65628b') in 0.0082286 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushrooms_3.fbx using Guid(b65fee64b8e1e754c99011ac72c94078) (FBXImporter) -> (artifact id: '86d6f790215c586628a19e800af3eca6') in 0.0082444 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Stand.fbx using Guid(d6bb7d6d8f02eb34aaeb6ca782956db0) (FBXImporter) -> (artifact id: '28e9e82e71ec73b0d4f86adff721fa6a') in 0.0084695 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Onion.fbx using Guid(f68f30bd3c1568c48b924ed1704e41aa) (FBXImporter) -> (artifact id: '65c2cae4ae47fee13646e7933b7f4a00') in 0.0085572 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Chair_Collider.fbx using Guid(07367888d664b52489f349900571f98f) (FBXImporter) -> (artifact id: 'bf1c3fcc45f35b21f9123c688c66f1ff') in 0.0074422 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Sword.fbx using Guid(07cf02631a5f3364aa78c3aee1b03a06) (FBXImporter) -> (artifact id: 'b9b9ddfa8c122f2671590bd68756ef87') in 0.007779 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Table_1_Collider.fbx using Guid(8723b2a91444f1a46a8555efd84b9bfa) (FBXImporter) -> (artifact id: '26009f65de6893bcafbcdbba380d52b5') in 0.0074113 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Rock_1.fbx using Guid(97788248928a2aa44a00dd20efee487e) (FBXImporter) -> (artifact id: 'fa244d717686754cb4a414ddf74328c8') in 0.008384 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Quiver.fbx using Guid(b75608fd5ff747c43a9a562f4c339bed) (FBXImporter) -> (artifact id: 'cb32fecb3f60a20630c72f8c33227fdc') in 0.0088314 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fern_2.fbx using Guid(f7c0a3db8b74d4247bb5df4de4b89613) (FBXImporter) -> (artifact id: 'e4513a0b63e1612f8f9ad05f80f30ee0') in 0.0081379 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Table_2.fbx using Guid(f7410f307e2056c45ad47fea3306aa80) (FBXImporter) -> (artifact id: 'a62b497f840564152da74c25b9e05787') in 0.008204 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Barrel_1.fbx using Guid(f7ca92edd3e38514cbb24ef195cc5acf) (FBXImporter) -> (artifact id: 'c246da03b418a450c922dbdcfedfa111') in 0.008758 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Cup.fbx using Guid(f79d554bac47dc441a86736519c119e9) (FBXImporter) -> (artifact id: 'bc6b04dbb9f18cda052c49133d9ae1fe') in 0.0081284 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Chair.fbx using Guid(281011cd94715594b8a7fa0880f827f1) (FBXImporter) -> (artifact id: 'ff6b1e1b3f95ebc3ba40d94ca33b1511') in 0.0080696 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Stairs_Collider.fbx using Guid(68ff31925d4089741a7b0aeb289eff1a) (FBXImporter) -> (artifact id: '5254f3b3ec72e04cb70efd48912b2493') in 0.0073942 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Flask_2.fbx using Guid(7865eea01e7427e488b8e6d8116693e9) (FBXImporter) -> (artifact id: '496ef778123f1878e211e1972ea4f271') in 0.0082719 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Candles_1.fbx using Guid(88b432ba90d06e24792a75cfd56d486f) (FBXImporter) -> (artifact id: '3f78fb00dbf0325cbfbe73d7d95b3ac3') in 0.0078553 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Clovers.fbx using Guid(8836275230947684eaa574ce2c54ede9) (FBXImporter) -> (artifact id: 'd247544ddb00f65d2fcb88c265b0f7ad') in 0.0073585 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushrooms_2.fbx using Guid(a8d10cb910bf85446a51b5555bb8169f) (FBXImporter) -> (artifact id: '2152eb167beed700373fc227b851f98f') in 0.0088864 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Plate.fbx using Guid(e8329891de381b0488add8713e011964) (FBXImporter) -> (artifact id: 'fa028f8a68d0febe966664cc34f3a999') in 0.007628 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Сupboard.fbx using Guid(f89e6be996e90404e88a4afd6c9bd89a) (FBXImporter) -> (artifact id: '7bd2063c84b44ccd60ed469c9e975f00') in 0.0086056 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Branches_1.fbx using Guid(091045e2bd71ed640895a38d1d1f6135) (FBXImporter) -> (artifact id: '99ab6781c3b0ef9e80044c9cc01b3d58') in 0.0079146 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Tent_4_Collider.fbx using Guid(095e75351f89fac41b5f3b2d1a4a669d) (FBXImporter) -> (artifact id: '47fa405d393fb92ef961a7c2604827dd') in 0.0077006 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Fish.fbx using Guid(3958d07bf93636847959fed55574a809) (FBXImporter) -> (artifact id: 'c63d4b9351b609abb0960a12595c59b2') in 0.0089963 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Dryer_1_Collider.fbx using Guid(999b39a53fa62c746bbbf2a64cc14f06) (FBXImporter) -> (artifact id: 'a6d91342292690688cab5609d5eb2952') in 0.0080467 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Shelf_Collider.fbx using Guid(a97026e1f9c546a46b8121bdc780afdb) (FBXImporter) -> (artifact id: 'bb6e9e7423a68d547f097bff48c5a1c5') in 0.0075564 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Barrel_3.fbx using Guid(a93cd43aa976c914dbcb11ead676dfa4) (FBXImporter) -> (artifact id: '9e8dba21931119c1df7138320198b4c6') in 0.0499629 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Bush_2.fbx using Guid(c9663e969525a814d906defbd84c7811) (FBXImporter) -> (artifact id: 'e258e8938139b27f690c902429e710d6') in 0.0094114 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Cart.fbx using Guid(d96143b4327b6c84196e2fb03e28229c) (FBXImporter) -> (artifact id: 'ca72698a3f3de36c1ed883b4f0155c54') in 0.0102673 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Witches_Boiler.fbx using Guid(1aeefe9597b4d524da283dc0864007a0) (FBXImporter) -> (artifact id: '973a2b1a29ec1ad2affed98dcae27424') in 0.0087648 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stump_2.fbx using Guid(2ac8b338c69ccf04eae0b5ffe5b2418d) (FBXImporter) -> (artifact id: '0869bbd842c3528f94be7d4c078b39e1') in 0.0109427 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Mountains/Mountain_2.fbx using Guid(5a82f5063edb2c149a53a7af4ded7736) (FBXImporter) -> (artifact id: '74778fda342d59aeb1679cce2822ddea') in 0.0176401 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Axe.fbx using Guid(7a5b2e27494e74046aaa37e0ad050af9) (FBXImporter) -> (artifact id: '81b62e4c35094fab44d5699d671d31b0') in 0.0082321 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Flowers_1.fbx using Guid(8a91025db1cdffd4c97c4a57dc1932f7) (FBXImporter) -> (artifact id: '05976ff6841302c30a118095c6f5c40a') in 0.0074059 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Mountains/Mountain_1.fbx using Guid(9a0f8634a812d7f4caed3bf28b39dd66) (FBXImporter) -> (artifact id: 'be114dead9441ed99ee5db24c05f5677') in 0.017316 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Bone_1.fbx using Guid(baa6b3f5aa0181445985491d14e45438) (FBXImporter) -> (artifact id: '8e0980928a01b702dd80521dafe7b1a3') in 0.0081457 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Mushroom_1.fbx using Guid(ca8dfb5b728859f45a45e4e31b7e47f6) (FBXImporter) -> (artifact id: '8e04f77ca3e6aa23e9453e1773932e5c') in 0.0078171 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Box_1.fbx using Guid(da1e21e8ed1b4234a969144a5419e1ff) (FBXImporter) -> (artifact id: '3416029ada960017d327195d32c78e4d') in 0.0079219 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Flower_1.fbx using Guid(4be088b8d3e898047a4a05f91091d76f) (FBXImporter) -> (artifact id: '73954c6ffeac8dfe3a231190f523b0d9') in 0.0080848 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Fence_1.fbx using Guid(4bb3eb1477a19dc40be1d934df2acfd9) (FBXImporter) -> (artifact id: 'bd8d8b2b17f478d0ea73305b60a875b2') in 0.0096054 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushrooms_4.fbx using Guid(6b27749e6f472b1479c7edb609c69aab) (FBXImporter) -> (artifact id: 'ebdbd63191f8ab0021b27c274fcf74dc') in 0.008645 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bucket.fbx using Guid(ab445897929e8924c958497e95e86b26) (FBXImporter) -> (artifact id: '061bb11fdf2bcf09714e088aeabbdb68') in 0.0085174 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Boiler_Cover.fbx using Guid(bb8990d2f0d2ec94ba0e148a0fcef53e) (FBXImporter) -> (artifact id: 'c0b9404edc002f629195cd9aecc653bf') in 0.0078719 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/PillarLamp_Collider.fbx using Guid(cb3be88718e2b904f806ae9b527ee6f7) (FBXImporter) -> (artifact id: 'b86efb50a410793696ec8c5c6a4f57ca') in 0.0074798 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Fork.fbx using Guid(eb06fe95876a2c946afcdc54c9047263) (FBXImporter) -> (artifact id: 'de19f38996c1a32b46b7b8de1c28b43d') in 0.0076076 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Dryer_2_Collider.fbx using Guid(fb8493b2c565c754788b138ad522b33a) (FBXImporter) -> (artifact id: '3ca80788114481aa5974002880f92426') in 0.0074873 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Log_3.fbx using Guid(0cb9b61844ebf2947bb2a0ee675ad291) (FBXImporter) -> (artifact id: '9f7b071cca35c043ff4f6a154e63cd39') in 0.0077207 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Box_2.fbx using Guid(8c6737e532f05c044b2dffc9bf41aaa1) (FBXImporter) -> (artifact id: '14db42b8bbb54908b42094efc9fa0804') in 0.0081473 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Tent_2.fbx using Guid(8c1c0fb4d8792de4d94e847225e10e33) (FBXImporter) -> (artifact id: 'bc34986c44a5b44126fa45b6e1e1fbea') in 0.0113599 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Flask_1.fbx using Guid(cce929c9e4f5d574d9ce85a0bc9d3739) (FBXImporter) -> (artifact id: '18c9ef73e8db90526ad9267115332032') in 0.0080089 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Dead_2.fbx using Guid(dc415c8a1a604b2498ded52e33c42c15) (FBXImporter) -> (artifact id: 'af7bb4f81c6e3b719016e999bb98796f') in 0.0118958 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Mushroom_3.fbx using Guid(1d25f0d64161c934bad65d33ca94c0da) (FBXImporter) -> (artifact id: '85af040fad2fcb6bad236ce9d5c933fd') in 0.0078009 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Dead_Bush_2.fbx using Guid(2d9c7bf3fb9a9f64bb591952b6162a83) (FBXImporter) -> (artifact id: '0b7b8135ace4382e2d0a613154963591') in 0.0091356 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Fir_Tall_2_Collider.fbx using Guid(2dbef3a70bc083341a32e99029fd5d69) (FBXImporter) -> (artifact id: '79686fd3788d1fc6a64740afd3d1c7c0') in 0.0074434 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Gold_1.fbx using Guid(2dffa59f3ffe1d744a3fc1b34d842072) (FBXImporter) -> (artifact id: '53309056ccc618532c8b773c13136bfb') in 0.0081661 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Book_2.fbx using Guid(5dcc8a98361ddc84fbc3a0e108034c76) (FBXImporter) -> (artifact id: 'a373b0872a338f14de92d454ca7f9297') in 0.00859 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushroom_4.fbx using Guid(7de277fd74905824d9afbdfc56005eb7) (FBXImporter) -> (artifact id: '1197bf63fb9f9d74a61a2a34e5425b7e') in 0.0085003 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Table_2_Collider.fbx using Guid(7d8c27fdd4de90a4ea044058ffd4453f) (FBXImporter) -> (artifact id: 'b3e999180491e84871f63f3bf19aa558') in 0.0071286 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Knife.fbx using Guid(9d13824dcbd9e244d9233359bec0d0ee) (FBXImporter) -> (artifact id: 'acd12b47878587964aceaf8f8c76a920') in 0.0074219 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Log_1.fbx using Guid(ad08da952ef9bff408a9f0e5d1a21fc2) (FBXImporter) -> (artifact id: '52b87f2df228bd847bff350ed8813e3d') in 0.0086403 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Scroll_2.fbx using Guid(adeaa88aa754adc4db5a40074e1c2abe) (FBXImporter) -> (artifact id: '14e8951412cccd68fece99e55fb07caa') in 0.0078919 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Dead_1.fbx using Guid(adef7eae246ddbf45888ff488fc45c54) (FBXImporter) -> (artifact id: '94fb84c821ecd40ea18f88b4985ecf49') in 0.0108993 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Bone_2.fbx using Guid(cda9798349a267c4c9cb1b93ad48cc41) (FBXImporter) -> (artifact id: 'c9936f7ebc7c5ad5a8a9a929d21eaceb') in 0.0081888 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Tall_1.fbx using Guid(cd4b847b6302e7a40b885d02f58174c7) (FBXImporter) -> (artifact id: '60441790eca1d98989736dfb029fac6f') in 0.0108528 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Lamp.fbx using Guid(fdf757ba6a654784c95a9ce7a7bb7632) (FBXImporter)Keyframe reduction: Ratio: 2.349486%;
+ -> (artifact id: 'aa5e5f89d09976c07c4ebf9cc6b3c512') in 0.0140576 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stones.fbx using Guid(1ea303834b63a404289733a22d2ebea0) (FBXImporter) -> (artifact id: '8afed274b08f9c385b96737eb26eb779') in 0.0152367 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Box_3.fbx using Guid(1eb64e922cd9f9a45b571f058aed4378) (FBXImporter) -> (artifact id: '316aa11d1e0a871c82f14a81d192f7e5') in 0.008027 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Chest.fbx using Guid(4e1c279d02be63f44978d9ac167bf612) (FBXImporter) -> (artifact id: '69e49e95650c53bc73d3744fcef2e342') in 0.0100593 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Jug.fbx using Guid(5ed4a44b7e6b9004c8992a20d598fbfb) (FBXImporter) -> (artifact id: '8d70aec1d30bd9af74a807ded645d6a7') in 0.0087307 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_1.fbx using Guid(5edb358f2de6c884d8743844fa8d44e5) (FBXImporter) -> (artifact id: 'dc5064248b53b9ebae714aa649b67c39') in 0.0102241 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Arrow.fbx using Guid(6e14b4e78d2193d4ca1b842dd45cdbc2) (FBXImporter) -> (artifact id: 'b542416c9e5b1136869173678ab5109e') in 0.0080324 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Rock_2.fbx using Guid(7e5233458219e2946b88e2c3986faa85) (FBXImporter) -> (artifact id: '71d0cb73180ff83fc8787562e96c18f7') in 0.008333 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Boiler.fbx using Guid(7e83ce15f0a3fa64baa5e93ec920ba75) (FBXImporter) -> (artifact id: 'bdcf9bcfaa5b9f936ce92fac4a52787b') in 0.0096444 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bottle_1.fbx using Guid(8e5be7634df09734d886b423ea97c7bf) (FBXImporter) -> (artifact id: 'c232dd38d6150d764467352fe5d4af9b') in 0.0076112 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Table_Collider.fbx using Guid(9e65c8511cf243249aa3d6772fe52476) (FBXImporter) -> (artifact id: 'fb1f26741d846d2a66cd4dab5679f90a') in 0.0072674 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Stone_3.fbx using Guid(be883d816d5ff80499d001501f38af7a) (FBXImporter) -> (artifact id: 'f2c1d06b3d45b3ae415772587dc9ee3c') in 0.0074869 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Tall_Dead_1.fbx using Guid(ce584a3c5f87a114c9c8dfaaf4b7128c) (FBXImporter) -> (artifact id: 'b60401b2903ff71ac06fcb1278847dc6') in 0.0109471 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushroom_2.fbx using Guid(ded280e66d2103243b6dfb72c41d30ec) (FBXImporter) -> (artifact id: 'ecb19245d0069e598395c780565e0685') in 0.0080548 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Pouch.fbx using Guid(deaa30b0d89606444aa1c1bb08a74919) (FBXImporter) -> (artifact id: 'ee0575cec6a640f890bc5790fed63ca0') in 0.0085967 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bonfire.fbx using Guid(fe226adaf4f479d4a839fc017aca1713) (FBXImporter) -> (artifact id: 'a29c418912a6e8e6628e0d03e7921305') in 0.0086146 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Custom Colliders/Tent_2_Collider.fbx using Guid(fe48e3dff38740b429492d5a7653c49a) (FBXImporter) -> (artifact id: '07371956269da64fa5fdff9f6b6db917') in 0.0080354 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Flask_5.fbx using Guid(5f400186b32ef3342912a8af09ee8777) (FBXImporter) -> (artifact id: '9277cccfeb893a3d7ac0d7145c8ede82') in 0.0078492 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Mushroom_3.fbx using Guid(6f45284ae9a48604eac502979879db98) (FBXImporter) -> (artifact id: '58d609648ee3c650f4e6042f8d8a0054') in 0.0080994 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bread.fbx using Guid(7fc3c78b0dabe6544953352b08a5590a) (FBXImporter) -> (artifact id: 'd515aea0dd54f66ccba9f9b41dd53058') in 0.0079274 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Dryer_2.fbx using Guid(af109dc7ff752134bbabcf13104cdd0a) (FBXImporter) -> (artifact id: 'd8679608559af812c72b30c4b0ed9907') in 0.0127829 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Forest/Fir_Tall_2.fbx using Guid(cf1f37c59d59a5240a54e8b7ff318b96) (FBXImporter) -> (artifact id: 'fe092c8e834fef98f2b8dbc6ba8df16e') in 0.012126 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Witches House/Shelf.fbx using Guid(df058595f3a517e4cafc5c77e96571b2) (FBXImporter) -> (artifact id: '6b0cfb270337c487d454d79aa1f41bb6') in 0.0083201 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Table_1.fbx using Guid(dfe88bf5976200b4ea52f8516e24bec5) (FBXImporter) -> (artifact id: 'b33b6a2b488772d991c71beac8ebf688') in 0.008055 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Barrel_2.fbx using Guid(ff90588a819b760479a0b9c257ed9910) (FBXImporter) -> (artifact id: 'de7142cf6a27b825f422f1ad555a9d76') in 0.0088809 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Meshes/Camp/Bag_2.fbx using Guid(ff3da22aecc909f4dad3fbbf64f816f0) (FBXImporter) -> (artifact id: 'a265ff411e0c029a7221f708afd2cf63') in 0.0078978 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/Demo_Terrain.asset using Guid(c2cef055ac2e2da478f57547c98e509e) (NativeFormatImporter) -> (artifact id: '3a58336fba84aa62b3280b697a9c457d') in 0.0062085 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/OcclusionCullingData.asset using Guid(677992f5daaf9e24b85536647d2793eb) (NativeFormatImporter) -> (artifact id: 'e8b50cee05fe4268eee75ddb6c181626') in 0.0084243 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Demo/LightingData.asset using Guid(ce2a83c7daa67f1428105d9c76af9d3b) (NativeFormatImporter) -> (artifact id: '17932586bceb65fedbb2eda23a7a34a3') in 0.0012574 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Settings/Highlands Indoor Post-Processing.asset using Guid(5fb8dc074e990a74f9ca99f8ca4bacea) (NativeFormatImporter) -> (artifact id: 'b2c8491df9e7ece27dda72b10a4148cd') in 0.0010872 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Demo/Settings/Highlands Outdoor Post-Processing.asset using Guid(df104ac0d35c2f44d831e57e0f29e4ae) (NativeFormatImporter) -> (artifact id: '93460ac6724f76154d5f99973f130ec6') in 0.0013422 seconds
+Start importing Packages/com.unity.modules.terrainphysics/package.json using Guid(d3cbe921f7b3d9a3257e7c61a5761796) (PackageManifestImporter) -> (artifact id: 'f5e2c961ee3d9c345b9cfb0721893363') in 0.0009842 seconds
+Start importing Packages/com.unity.modules.imageconversion/package.json using Guid(953fab16d15d5885b3600fcd6388b2ad) (PackageManifestImporter) -> (artifact id: '4914195fadd462954a635b65250787ed') in 0.0007948 seconds
+Start importing Packages/com.unity.modules.particlesystem/package.json using Guid(87d720faa37005c08600090e04d8c739) (PackageManifestImporter) -> (artifact id: 'd6aa8c20d84b997ec285a739a17be19d') in 0.0007943 seconds
+Start importing Packages/com.unity.modules.audio/package.json using Guid(e9df95f53f1c1d0c9199e235d6c42b50) (PackageManifestImporter) -> (artifact id: '14bdb854ae6daae762f5873a0a889a4a') in 0.0008026 seconds
+Start importing Packages/com.unity.modules.physics/package.json using Guid(1a4266815e998967becf686f9c71f0a6) (PackageManifestImporter) -> (artifact id: '4fbeefd29956a8cb2b920ec02d72eda6') in 0.0008139 seconds
+Start importing Packages/com.unity.modules.terrain/package.json using Guid(6d56244f8c39a851975d3c0bd432c66f) (PackageManifestImporter) -> (artifact id: '7f03c5409fa603fad1c4d8ccf7d0f4c3') in 0.0009329 seconds
+Start importing Packages/com.unity.modules.animation/package.json using Guid(7ef8348b8ea834d7e1bc214b07f7fb87) (PackageManifestImporter) -> (artifact id: '0ce165297b0905ed3c714c8d81c161e8') in 0.0009805 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Fork.prefab using Guid(20e6eb0ecefc692499e27e36c4e84d96) (PrefabImporter) -> (artifact id: '71591a28c8d059b5b86ed5aaaf9cef8c') in 0.00187 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Tent_2.prefab using Guid(20babfa15e5757d48a1fc360c6ffde22) (PrefabImporter) -> (artifact id: '8af10b83a7821d4b80fee87cf03e3280') in 0.0016726 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Fence_1.prefab using Guid(30a888f8d2fd0154197b6176011b96ab) (PrefabImporter) -> (artifact id: 'aecc653be4364099a6b63df904310b8b') in 0.0015087 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Bottle_2.prefab using Guid(4045878ac645ec34baa450ef2edc5d78) (PrefabImporter) -> (artifact id: 'def5e7dbf33e95ab5fd7dc986142a8ac') in 0.001446 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Meat.prefab using Guid(6040f72a517eeaf42b3208e7f8122b57) (PrefabImporter) -> (artifact id: '77816579e19f7ef19422fb1c8e5c8f73') in 0.0018494 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Flask_3.prefab using Guid(60cd8f79631b96844909111da5f8939e) (PrefabImporter) -> (artifact id: 'bcfbcb81be172478acadc649987986ab') in 0.0014335 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Bucket.prefab using Guid(70d72f7ecf1865f42b620acb998dc92f) (PrefabImporter) -> (artifact id: 'aa9a359d9964a5e4383f0440dd91f9a8') in 0.0016384 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Log_1.prefab using Guid(90a56fc27be526b4395d224dbbcc96f1) (PrefabImporter) -> (artifact id: '2bbcdeb926aae2e7a71168b45e1cf46c') in 0.0015475 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Barrel_3.prefab using Guid(906a313b95ff21b469fbdee7b19a7647) (PrefabImporter) -> (artifact id: 'a3070954e7d1387ad65217f062c6fd45') in 0.0015244 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_1.prefab using Guid(a0017caa72220ff4f93c241218720f79) (PrefabImporter) -> (artifact id: '9b90cd3237fc4b75df4ed65af5d9a8fe') in 0.0014328 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Dead_Bush_2.prefab using Guid(b04f6cbcaeecf6d48879f155a6e44fbd) (PrefabImporter) -> (artifact id: 'f679d147c827acb19fa4c19fbb992f0b') in 0.0014933 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Barrel_2.prefab using Guid(c011617c86292864c89780cf0d4dd4c3) (PrefabImporter) -> (artifact id: '0bbe8e839f893200d50e5dd127b2fe9f') in 0.0014546 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Mortar_And_Pestle.prefab using Guid(e0ca6d96b2352b34db56b2f319d54a67) (PrefabImporter) -> (artifact id: 'c010aefe449afe858121d5908f5621e6') in 0.0016024 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Plate.prefab using Guid(019de9418a622ab478bde35373b856bd) (PrefabImporter) -> (artifact id: '641d43610cc2a3d16266adb2e7af8e2c') in 0.0016475 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Bush_2.prefab using Guid(116583573be3eb14ea880463f56c747a) (PrefabImporter) -> (artifact id: 'e5252687b87d98b239a898d052a362d9') in 0.0014864 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Pot.prefab using Guid(11bdd1d20930ddb44b147d019bc9e2f4) (PrefabImporter) -> (artifact id: 'be9b97187338e6055501f1c6113b5a71') in 0.0014879 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Branch_1.prefab using Guid(112f8df6254fe1e4eb0c841e41a6af9e) (PrefabImporter) -> (artifact id: 'a4dd23241ec2a85b8a37eeadbade2a84') in 0.0014941 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Box_2.prefab using Guid(3131030a3c0ddc34ea8bb0c47db1fe67) (PrefabImporter) -> (artifact id: '9519dd9eaad6c1600edcd68040883df6') in 0.0016948 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_1(Grass).prefab using Guid(31898a4bd42ea28409e84c71ef9dcfd5) (PrefabImporter) -> (artifact id: '6cf4fcfc1a2aa1ad375b572bad2ba4ab') in 0.0018785 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Mortar_And_Pestle.prefab using Guid(51af3e93c44edcf47a1a0ac28ded35b2) (PrefabImporter) -> (artifact id: '830408f9c494ef163f0fe97d4f471591') in 0.0016354 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Mushroom_3.prefab using Guid(916e0ae7b6f90834280ee62422f72a2f) (PrefabImporter) -> (artifact id: '7d8dfce16528554152f71a886c0773d8') in 0.0019977 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Pouch.prefab using Guid(b161d640ead49ae479a9e4cbf81ccaef) (PrefabImporter) -> (artifact id: '05bb78201e907e3591f206917ba8e7a3') in 0.0016584 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Fence_2.prefab using Guid(c16ae3c9ba4e5594fbb6388f7f92030c) (PrefabImporter) -> (artifact id: 'eef345909e59b81ec3a0e3d844a13a24') in 0.0016975 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Bow.prefab using Guid(d19e2725bf1929643933f0e292a4dd20) (PrefabImporter) -> (artifact id: '06794f84e36d5ecdf4a8111a59d2b165') in 0.0018123 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Mushroom_2.prefab using Guid(e1bcee2b8c1b7cd4dac6c38114520e03) (PrefabImporter) -> (artifact id: '272e2320c1aac3d4b4ba427935ab671a') in 0.0018558 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Quiver.prefab using Guid(0288277be26f66d479ac7cdb55ca06ed) (PrefabImporter) -> (artifact id: '5e85e342c8d7b4aadd4ac87dc584379a') in 0.0016473 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Chair.prefab using Guid(42518d73635baef438cb951b04bceb86) (PrefabImporter) -> (artifact id: 'bd1cfdb987d31c05f64eeac475a4146a') in 0.0015218 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Grass_1.prefab using Guid(527160e0bc56c944e9c8a380c6d749f0) (PrefabImporter) -> (artifact id: 'd8eb4890c8b83714cd68a235142e85d6') in 0.0014226 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Table_1.prefab using Guid(82058273d45297d4e81d4ee0ece9fdb9) (PrefabImporter) -> (artifact id: 'a8a98cb751434f26b6a72c64eda0b009') in 0.0016403 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Books_1.prefab using Guid(a291b0af416d37b499b55e6aa88e5e6e) (PrefabImporter) -> (artifact id: '7deb50fcbf43448b9b327c41496e404e') in 0.0015612 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Dryer_1.prefab using Guid(a254519f8c63aa7438f0285927ad1a51) (PrefabImporter) -> (artifact id: '2812c170f0fd49ba87878c52dccb9223') in 0.0017198 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Boiler.prefab using Guid(a25f84c53c7e5974793fdc9b7faf534a) (PrefabImporter) -> (artifact id: '1c44e46142e0c604acd0c2ce124bd54d') in 0.0016303 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Shield.prefab using Guid(c2b5034ab6effee4882bd04780ecdca0) (PrefabImporter) -> (artifact id: 'ceda51a68379566db2bd91d85adc5e5f') in 0.001505 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_2.prefab using Guid(c2374b37e98aa8d44b879f9f38d88474) (PrefabImporter) -> (artifact id: '0a867d3455940f4f4193454f542ca1d1') in 0.0014565 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Onion.prefab using Guid(e286d6f2d8b82834eae418d41af5eee5) (PrefabImporter) -> (artifact id: 'e03c97fc325a694440bff63806dbfd60') in 0.0016386 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Mushroom_1.prefab using Guid(e23a272b6404b4e4cb8bbaebf99cbca7) (PrefabImporter) -> (artifact id: '797790bd1becc15634f80bb671a0fd04') in 0.0019405 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Scull.prefab using Guid(f21c030a6bbe20446ac348327025d193) (PrefabImporter) -> (artifact id: '501ce9eb139ec1adf1890d7cdb891f54') in 0.0017056 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Candles_1.prefab using Guid(e8788378ef175954ba4e89860199b2ad) (PrefabImporter) -> (artifact id: 'f2afaca9d7c78c85175930baf0825b39') in 0.0014201 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX/Candle Fire.prefab using Guid(27f645301903cce498f858e8e012a656) (PrefabImporter) -> (artifact id: 'eb40249df3a5463af6623dfdd476a436') in 0.0035262 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Candles_1(Light).prefab using Guid(0319d89b117239643bf53442bbf2e643) (PrefabImporter) -> (artifact id: '8fd52131c00b768e3d6b1f0cf6e95b88') in 0.0067349 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Mountains/Mountain_2.prefab using Guid(233830ccb83c8824c900e9078f565d21) (PrefabImporter) -> (artifact id: '0b7ca3d1f02d443b973798c04fbc1a73') in 0.0014372 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Arrow.prefab using Guid(23380c4f05aa652458a8680739295987) (PrefabImporter) -> (artifact id: '5e39d00eb188fb47c0e0b4a9a262e84f') in 0.0014663 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Candles_2.prefab using Guid(635128da23144ca4998fdde5da0c2cf3) (PrefabImporter) -> (artifact id: '14b9f87eeeecbd23d6f3740c6cfb41ac') in 0.0013953 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Barrel_1.prefab using Guid(73a1d856aed07a544b56bbbc01eb4025) (PrefabImporter) -> (artifact id: '1d1791fe11e362fb33268e8cc05b3529') in 0.0015459 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Bag_1.prefab using Guid(737c5df932ec2b646924cc44130034ce) (PrefabImporter) -> (artifact id: '47ceada1f47a9f319d10c21177e6e818') in 0.0014377 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Bottle_1.prefab using Guid(830b41838ce5a26418788f818fbe4b63) (PrefabImporter) -> (artifact id: '6f08ff065d9570c9d8ed9da67a007712') in 0.0014596 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Chest.prefab using Guid(837c363e6ae91444cab0a3ba49e35cc0) (PrefabImporter) -> (artifact id: 'dd9ce9e6d4f6956f3c8f0521be0c36c4') in 0.0018295 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Dresser.prefab using Guid(a3ee687752aa16740b6df313e0b47c5b) (PrefabImporter) -> (artifact id: '2e96820bff341b7f186d7899a5d6ef18') in 0.001407 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stump_2.prefab using Guid(b398b57820760bb4eac3bc6d816785b2) (PrefabImporter) -> (artifact id: '1f0a5e58ea153794cee99c9822d124de') in 0.0014939 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Bonfire.prefab using Guid(5b47feeb30930574f8f43b91dc9a981c) (PrefabImporter) -> (artifact id: '5190591d483a8ec76dacbefddb4c9cef') in 0.0014417 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Bonfire_Light.prefab using Guid(d3c67f908d18b21418f852cea5ed2252) (PrefabImporter) -> (artifact id: '1c41a6c6ed00c8324a129330d5e8f86c') in 0.0034878 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Boiler_Cover.prefab using Guid(f3b2f75051365474c919d7aad04d11b1) (PrefabImporter) -> (artifact id: 'd4fc96c94dc0643510efe6110ed33ecc') in 0.0014611 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Meat.prefab using Guid(04b5b53e02a9d9e46830091bbb197ee9) (PrefabImporter) -> (artifact id: '651714a58e259fe2ce3f7c449eba3593') in 0.0014197 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Log_2.prefab using Guid(0467242ab11747d47862e11d154500c4) (PrefabImporter) -> (artifact id: '28545f4b610caa737e32ed7d47d4a5e9') in 0.0014261 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX/Fire.prefab using Guid(04fe343a407050d41a9ab86e574c1231) (PrefabImporter) -> (artifact id: '844bb491c78518f189b495a9c63a8c47') in 0.0045737 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Flask_1.prefab using Guid(1499820f381fd704d928f6a9b302ea05) (PrefabImporter) -> (artifact id: 'c461c249d8bf4c7c06966cc512bb3fd0') in 0.0014497 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Tall_1.prefab using Guid(141f2fb1590a2c14bb4d20d467643b45) (PrefabImporter) -> (artifact id: 'b3df91a80ae4a52c81118f214325334f') in 0.0014506 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fern_2.prefab using Guid(2486b78c40f9dd64b9beca44ec6ed305) (PrefabImporter) -> (artifact id: '10fb6444d7b550b33daee710fbca3984') in 0.0013749 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Quiver.prefab using Guid(34523d3f8844b85478315639cd0e229d) (PrefabImporter) -> (artifact id: '0dea214c848b1682859f33230479dbd9') in 0.0014253 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Bow.prefab using Guid(4449e840653f0f94d8be76ca49242195) (PrefabImporter) -> (artifact id: 'ee6b4d9bdfc7936aee8e493b9616c66d') in 0.0011949 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Bread.prefab using Guid(64caf32811b724b4b8e94607419c48be) (PrefabImporter) -> (artifact id: '31299ab6cf475f6d1fa0b3201fc93070') in 0.0016188 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Log_1.prefab using Guid(74228cd3f2bda2b49864f297e9bf2d58) (PrefabImporter) -> (artifact id: '558a639372304c00c531b9baa07a0a08') in 0.0015567 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Dagger.prefab using Guid(746674167c452484ab9449b55cefb2a9) (PrefabImporter) -> (artifact id: '17ece31497beeeb7517a2dd546c8a8b4') in 0.0021773 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Shelf.prefab using Guid(b4a63df7e1834454f965fd3634104df8) (PrefabImporter) -> (artifact id: '24bcd371045f00ff14abee0b53e0d823') in 0.001484 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Rock_2(Grass).prefab using Guid(b4dabbab59e276644bd5fe1038367344) (PrefabImporter) -> (artifact id: '33f948fedf26ba7ca45bfd6f4dfe57d3') in 0.0015042 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/House_Stairs.prefab using Guid(b49e405fb583ec5419e9483852228897) (PrefabImporter) -> (artifact id: 'b8eabcfea3ffba4078d3ffa0840b41e4') in 0.0014318 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Fish.prefab using Guid(c4bdbaed28613374b8e9aea54c868fda) (PrefabImporter) -> (artifact id: '35b6515b8cf874b6f4287e5fc51523f9') in 0.0016966 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stump_1.prefab using Guid(e43328d69447de947b4ff577a9514465) (PrefabImporter) -> (artifact id: '7c1fdd0ff4308ec34071504fe7316ab0') in 0.0015397 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Candles_2(Light).prefab using Guid(e4daa016b9e69674a8f6e61535b50500) (PrefabImporter) -> (artifact id: 'bc3db676e3aeebe96f858d2f3ae96147') in 0.0027044 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Flowers_1.prefab using Guid(05a59811817587648891f5b22067a225) (PrefabImporter) -> (artifact id: '5d3dc917a588ec42127bcaa92e114535') in 0.0015803 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Bush_1.prefab using Guid(1521795c5f4c82244b7fc692b92d85ec) (PrefabImporter) -> (artifact id: 'aea2b6d21670ae125f9b6cbfd1562949') in 0.002139 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Fence_4.prefab using Guid(15da0e5df1e7b30469a6ac7654f2f716) (PrefabImporter) -> (artifact id: '212660265fa0f068c9d0276f9a29982e') in 0.001871 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Tent_3.prefab using Guid(35456aed993631f4ca2a1191d763795b) (PrefabImporter) -> (artifact id: 'b23027c139985953223c7891569615fa') in 0.0014996 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Plate.prefab using Guid(6584dfc9b27267c4b9d80404bcedc508) (PrefabImporter) -> (artifact id: 'f10c8943ff14e9d4e3ab2b999f305a76') in 0.0012469 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Fork.prefab using Guid(658d606e48d204748b6b0a9345eecef8) (PrefabImporter) -> (artifact id: '5d853a5a02fceb93f647e668d1a37659') in 0.0014331 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Dead_2.prefab using Guid(75f76e75e07e352439fc1f1c4803133d) (PrefabImporter) -> (artifact id: '64f55406fca4b6a1fb5578aa5824a58a') in 0.0015845 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Mountains/Mountain_3.prefab using Guid(8536890394f32884684644cfc134828d) (PrefabImporter) -> (artifact id: '48b4d626d144c951374aff5d45f536b3') in 0.0014782 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Axe.prefab using Guid(a551a67d1a8add34f995e4c90d754eec) (PrefabImporter) -> (artifact id: '9190deff2e3abb4ab549de2283d51542') in 0.0016326 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Bottle_2.prefab using Guid(b54a50f61002ad946be4c695bda3b0bf) (PrefabImporter) -> (artifact id: '621ac5fb8ac8781aa58993671fa66222') in 0.0014301 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Pot.prefab using Guid(1682ff570d8098d41aed096ded8a4719) (PrefabImporter) -> (artifact id: '8b9a7eeca56c7f78d8a745b0c5b03802') in 0.0015156 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Mountains/Mountain_4.prefab using Guid(16ea86151254d9b4a88b6b15d1b9472e) (PrefabImporter) -> (artifact id: 'fe10c8c344b758500ca170c092f54c67') in 0.0014498 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Cup.prefab using Guid(26e503e4ea4ae764b85a3c4a221e6a79) (PrefabImporter) -> (artifact id: '9bfeb099c1598549dc37a16f7c1679fe') in 0.0016309 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Sword.prefab using Guid(26fdbf515d9ead940bf83aee2997cc04) (PrefabImporter) -> (artifact id: '9ab877401bbb1daddfbeb6266f688834') in 0.0015416 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Flask_3.prefab using Guid(56504e57eee8ae646a23e6276838caf6) (PrefabImporter) -> (artifact id: '5e4758d2e347b7cb645e70de9639fc7c') in 0.0016326 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Axe.prefab using Guid(566699fee49cd7c4cbd54067b794823c) (PrefabImporter) -> (artifact id: '59c29b881fb986e59549920fac34f8fb') in 0.0014536 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Mushroom_3.prefab using Guid(56bb1fdabe634b14887ecea3882087a6) (PrefabImporter) -> (artifact id: 'd5bc1fe53e96c636799ee2bf5dc0cce0') in 0.0013235 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_4(Grass).prefab using Guid(76b0eea6abbc5024691439f49fd8527d) (PrefabImporter) -> (artifact id: '17c6b1652e2dbb65cd9beb66f76aafd0') in 0.0013826 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Bucket.prefab using Guid(86a1b6e101470ec4e9b79ee9ac20a1c6) (PrefabImporter) -> (artifact id: 'e76e58a8bb9e5f73f7003faa0441c873') in 0.0013098 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Clovers.prefab using Guid(863a13137546f4f4c8b0c76464563348) (PrefabImporter) -> (artifact id: '9e901c6ec02bcb34347e6bee1209c539') in 0.0015072 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Box_4.prefab using Guid(a63c8eda4a204b041badf2e1b7071393) (PrefabImporter) -> (artifact id: '30ecbc45cfb60a50cf826ee5b741db59') in 0.001663 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Branch_2.prefab using Guid(c6665299240d36744bc0d5310e80091d) (PrefabImporter) -> (artifact id: '953064998a3bbd7c8d332e72e695da21') in 0.0014613 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX/Birds.prefab using Guid(e68549bed024cba44b8d7809fbffd963) (PrefabImporter) -> (artifact id: '91cac4642b72d334f37a80ae7b0e768c') in 0.0025283 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Сupboard.prefab using Guid(075a6d84232755e48aee3892aac2ec27) (PrefabImporter) -> (artifact id: 'c99109768f45605a18a50f53bd985f19') in 0.0014615 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Fish.prefab using Guid(070c26a2886159b439e9723ef8ecde97) (PrefabImporter) -> (artifact id: '33c7fffe8f12134181d58fb5af52df50') in 0.0012767 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Box_3.prefab using Guid(17117f1c4f9d1024e8b03af2c57e293c) (PrefabImporter) -> (artifact id: 'a2e88afffbca83c83a7afa6645760dcf') in 0.0014711 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Book.prefab using Guid(1763bafdb1fa24d4680071cd19865450) (PrefabImporter) -> (artifact id: '05062f0424ba5bfbf7dfeb606d6d6be0') in 0.0019064 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Bottle_1.prefab using Guid(17e70ecb01160364abe417bdb36b83a8) (PrefabImporter) -> (artifact id: 'fc81829d56f5fe4b98e3dbcc059d1a42') in 0.0014473 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Tent_4.prefab using Guid(171bbd9aad7db734db87b10982666332) (PrefabImporter) -> (artifact id: '6893aca9b521620e383eb565f57617c3') in 0.001629 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Flask_2.prefab using Guid(27cc433a6722c33478081ed829f45235) (PrefabImporter) -> (artifact id: 'cac9afbb5b0be1ceb4af112994256f5e') in 0.0015488 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Wind Settings.prefab using Guid(273e7909e84eb6441af3ddd326dd60d1) (PrefabImporter) -> (artifact id: 'afdb09205132f83e2b3f44ee0fa7b0dd') in 0.001254 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Table.prefab using Guid(473547bf95be29f4f8e5bedfbd95c1ae) (PrefabImporter) -> (artifact id: 'a4b82d5cf872136d74c28a3eeb4e8969') in 0.0014906 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Knife.prefab using Guid(57dd35e693168094ea365dd4df5b49ac) (PrefabImporter) -> (artifact id: 'a2c81b13eacef11dcc6f5f54545dd80e') in 0.0013493 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Flower_1.prefab using Guid(676ac3cf6bf1b8c40ac6a43d9ff3c13f) (PrefabImporter) -> (artifact id: '228af72f6af053e77777218be13c47ac') in 0.0013664 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Gold_2.prefab using Guid(775223507430a794495d2ba0db556c6d) (PrefabImporter) -> (artifact id: '3523b5ae435e8ce99a93530d61d272df') in 0.0014764 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stones.prefab using Guid(77c3171a0dce8e949971f33f7089db07) (PrefabImporter) -> (artifact id: '1d1dd4afc45d3823bbb9e7fac797ce22') in 0.0013575 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Witches_Boiler.prefab using Guid(975c06e2161777d47945bb5a2c7b3fbe) (PrefabImporter) -> (artifact id: '734dc2c8ac0b868b9f2725baa9172686') in 0.0014207 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Flask_4.prefab using Guid(97fc986122b06374eba7e35ff372cfab) (PrefabImporter) -> (artifact id: 'e4b2a4ad811711fbd26883e97207c8e3') in 0.0015799 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushrooms_1.prefab using Guid(a7d95df6a1559f6479ca6d6e18bccfc1) (PrefabImporter) -> (artifact id: '7aadf02231fe5543ecabc8a3534fb2b7') in 0.0014019 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Jug.prefab using Guid(a7cd09dff53e6f844b49c9e2f993db43) (PrefabImporter) -> (artifact id: '26a2df3633ac742d01fa99ecf34f0df5') in 0.0016319 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Scroll_2.prefab using Guid(d7b10d08bf0cb31469c47a5d49536a35) (PrefabImporter) -> (artifact id: '7ec00e8105abe1bf0653eeeb139a553d') in 0.0013821 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Branch_3.prefab using Guid(d71bbf1f6f45a9640836e0a241da5e98) (PrefabImporter) -> (artifact id: '814d96e1a5c862a931d503a3d83ea3ef') in 0.0014541 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Bone_2.prefab using Guid(d7bcb3a4f74aaf544a19370271562c10) (PrefabImporter) -> (artifact id: '85f78e8dcb9dec27cb8cbf2c8591bd57') in 0.0016837 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Tall_2.prefab using Guid(e70e51cf9fe68d244b37d574516a4db0) (PrefabImporter) -> (artifact id: 'f8069ecfe78f3bb7bd765acbf6fdd5aa') in 0.0015675 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Flask_2.prefab using Guid(0861b6b5c95a59040bbcadc6d517b96d) (PrefabImporter) -> (artifact id: '5bd316b755e66bd72a7445a6eec2d52d') in 0.0014043 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Tall_Dead_2.prefab using Guid(08bd00157b689ff45a2463343f160891) (PrefabImporter) -> (artifact id: '09eb360a8de736bcdbe33dee4dc1def0') in 0.0016391 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Onion.prefab using Guid(28f99ac9173c3714ab0a3c428a999e90) (PrefabImporter) -> (artifact id: 'a5dc8ff544a1947c8854fc0cee3b0d6a') in 0.0013818 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Dead_1.prefab using Guid(38fb3f5cf9afca14e8298862fec72a7d) (PrefabImporter) -> (artifact id: '794f63bc91ede2379c7850f453e3909a') in 0.0015305 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Box_1.prefab using Guid(5863beed18fcd1443a521ba94a2091bf) (PrefabImporter) -> (artifact id: '79867a7aa72170816eb5e40f50a7dc71') in 0.001531 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Branches_2.prefab using Guid(58b8965426ec1074181409926efee1af) (PrefabImporter) -> (artifact id: '759127ab4f8fd5654bee5619d29248e0') in 0.0015357 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_3.prefab using Guid(68bc6f7a123c0384290c0fb56d3a6d95) (PrefabImporter) -> (artifact id: '6bb8e4f7fe0328427ef5a76672608ad7') in 0.0016455 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Flower_2.prefab using Guid(789276301e60eab45803077e92bc503c) (PrefabImporter) -> (artifact id: 'b4b58ebfaba7185788ac55797713d89c') in 0.0016379 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/House_Door.prefab using Guid(8e3be80bd5d469c4e9c99f0e63361066) (PrefabImporter) -> (artifact id: '31bd04557509618a1e9a44848ea781e6') in 0.0021867 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/House.prefab using Guid(78770e97e37fac245953fb2a4d605e3f) (PrefabImporter) -> (artifact id: '28dbc4a7bb0bb85b4ff8e635c14f638d') in 0.0039521 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Spoon.prefab using Guid(b874c6f00d6e2bf46aadc26905661801) (PrefabImporter) -> (artifact id: 'fc15997ef36edb754d52b3a8f3ab8eb3') in 0.0015332 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Bone_1.prefab using Guid(c86ee97f05750394ca01487022df6318) (PrefabImporter) -> (artifact id: 'c09c79c67d53b6cd3e16830a0728870b') in 0.0013621 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushroom_2.prefab using Guid(d8433626b12d8974cbb940b3436e12dd) (PrefabImporter) -> (artifact id: '705e8960c5776346c83ea2090a9da60e') in 0.0013502 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Dryer_2.prefab using Guid(d879b8b16a66e1341b9d68b6e070a810) (PrefabImporter) -> (artifact id: '52c25e3bfe364efeaa2a88e2244b63df') in 0.001497 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX/Fog.prefab using Guid(e846f277b7995a34fbc420aaead1d9ce) (PrefabImporter) -> (artifact id: '4444186564a45f8698a3e97731cdfef7') in 0.0023457 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_3(Grass).prefab using Guid(e89dd78271643d5458c48bb358594f3f) (PrefabImporter) -> (artifact id: 'a2f8d4663102dad823804f8a8483308d') in 0.0015268 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Flask_5.prefab using Guid(19a1f41fd695c5d4197d9cd74352469b) (PrefabImporter) -> (artifact id: '94b23e3fe8ffdab3be41c7eb033d025c') in 0.001604 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Stand.prefab using Guid(1902c46b7e945284c909edf73c78e3ed) (PrefabImporter) -> (artifact id: 'ac26bb57989e7dc433e117f0c2240807') in 0.0014729 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Scull.prefab using Guid(19d47358b8d9662448e6c9cdfa8e6c4c) (PrefabImporter) -> (artifact id: '69297c81a62a3425591642cde706d0b1') in 0.0013742 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Flask_4.prefab using Guid(499ff281eb0458849bb9368ff53725a5) (PrefabImporter) -> (artifact id: '273b55060c6dd08c91f25c2f8aec3a44') in 0.0012157 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Box_1.prefab using Guid(59af287b6cc1cd14baa84de3c1b187d6) (PrefabImporter) -> (artifact id: 'ac7dcbe7593bcd288de7614562babe8f') in 0.0015579 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Flask_1.prefab using Guid(897dbbd3f5ed34b4c801526598e0ab5b) (PrefabImporter) -> (artifact id: '3d92df8439a9d6c6312e26ff550f1012') in 0.0014843 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Box_2.prefab using Guid(0ac25131bb3acc948a7ce4bb4c5077f1) (PrefabImporter) -> (artifact id: 'be6692cf42f4f061f24d63d4d7a1e0c8') in 0.0014493 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Scroll_1.prefab using Guid(0a45a7844e87756468d041113d12e981) (PrefabImporter) -> (artifact id: 'b0eb7658f0cc81b29a44a7f6bb783381') in 0.0015877 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Branches_1.prefab using Guid(2a479078a8412a54cbb0f7f709dd2815) (PrefabImporter) -> (artifact id: '2d36c5fa163a9b325fb05a4c1c6d75b8') in 0.0014139 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Fence_3.prefab using Guid(2a4b451eaeee6574294d34a9d516ff23) (PrefabImporter) -> (artifact id: 'c08ca793d585235632ec106558c3b1cc') in 0.0015624 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Jug.prefab using Guid(2a9b8c1e284a35c4b8c26918845f9e00) (PrefabImporter) -> (artifact id: 'ed41f18e92b3e8c553aeb6b3717470cf') in 0.0012825 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Rock_2.prefab using Guid(7a56db3bdcec604409171c917c2a0052) (PrefabImporter) -> (artifact id: '7d50e856172ac6beb39986e26f5008e3') in 0.00118 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Shield.prefab using Guid(8a06a81c97833834e8b00b2e0115aa6e) (PrefabImporter) -> (artifact id: 'b21d4224845a46a6f8315d92091c66da') in 0.0014104 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Knife.prefab using Guid(ca6a03a5bfdcebb43979cebdcc554ae8) (PrefabImporter) -> (artifact id: 'b4bf74c098d4426caed145d98666610d') in 0.0013069 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushroom_1.prefab using Guid(ca0ed3edfca05e745a45a7e13e82f075) (PrefabImporter) -> (artifact id: 'bbb0b816e2cbc7e8b18bbeb7a8ee4722') in 0.0016643 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Flask_5.prefab using Guid(ca5fa106c9c984c46abb3a996e4e2acc) (PrefabImporter) -> (artifact id: '4fd7ebe954eae7be46cf3b354abb5ee6') in 0.0013021 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Log_2.prefab using Guid(ea36fe9384b515a4f870e62da9de3152) (PrefabImporter) -> (artifact id: 'af51f501240e5d261ce1dd8ccf75bfb4') in 0.0014319 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_4.prefab using Guid(2bdba0d2cfc89924491dd44826759183) (PrefabImporter) -> (artifact id: '14149915f8db1252afb67615dfe39d19') in 0.0013433 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushroom_3.prefab using Guid(4b325c6361179be44b72afdf3bd74202) (PrefabImporter) -> (artifact id: '041862b43cf14203d42cf3a251ddf8d1') in 0.0019154 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Mushroom_2.prefab using Guid(4bb3649358de9564caec4fa425be46c1) (PrefabImporter) -> (artifact id: '41993275d8a8c3c87f5e740e8601ee77') in 0.0016629 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_2.prefab using Guid(8b00fe718f6724246a1ce539ed28c6fa) (PrefabImporter) -> (artifact id: 'e7f18bc28468cb514340e341f2e135fe') in 0.0016636 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Books_2.prefab using Guid(bb91fc3dbd8d03e4cbadfbb6f5dee7ff) (PrefabImporter) -> (artifact id: 'e4f14c133fcb7d2b26d332f9e75d8718') in 0.0014757 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Flower_3.prefab using Guid(cb891c36279e25f44841f779c667d695) (PrefabImporter) -> (artifact id: 'f5b1e1f99e1eaf5d7234c142ee29eb98') in 0.0014533 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Cart.prefab using Guid(cb1c3a836f5554e4993c478254f5abdd) (PrefabImporter) -> (artifact id: 'c56beadcd859c10b9cc8d9cfe1bc427a') in 0.0015459 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Mountains/Mountain_1.prefab using Guid(eb83d5fc0ef6b3649b37132a43709220) (PrefabImporter) -> (artifact id: 'c778d9b035c2732fdf92337f47676358') in 0.0014112 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushrooms_4.prefab using Guid(fb013e4d50b40e94cb2a123be56ce716) (PrefabImporter) -> (artifact id: 'e8348c4819290dc1098cfc5b9095bd71') in 0.001364 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Dead_Bush_1.prefab using Guid(1cee0e8f64ae4674fb4077c9749fca8e) (PrefabImporter) -> (artifact id: 'f9da2ad7bc1448e4251c5f20c92c60df') in 0.0015582 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Tall_3.prefab using Guid(2c0b684abc2775f40a28ec636c59d079) (PrefabImporter) -> (artifact id: '438ef4499734e9f63b8337409bcf7d88') in 0.0015093 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Dagger.prefab using Guid(4c1790d132c26cf4db6ccd2335646c20) (PrefabImporter) -> (artifact id: '2ecdf3dceba438e6d3429172d3e86817') in 0.0012299 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Bone_1.prefab using Guid(8c4001c1e124c6b4287914f5fc05863f) (PrefabImporter) -> (artifact id: '1b9bfa60dd50e4c0496c0c317de7ab76') in 0.0014221 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_2(Grass).prefab using Guid(8c90b79c1f594184cb689fcb7dffa13a) (PrefabImporter) -> (artifact id: '1580cc31768b010a0d408a8c19cc2df9') in 0.0012491 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Arrow.prefab using Guid(cc435fc0e1fab774597f0ec418c6a321) (PrefabImporter) -> (artifact id: '93cef1260dc698ac2b10a62e9d49ef5e') in 0.0013438 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Trough.prefab using Guid(dc3cbccf4fb249b40b7fb3bb00937af6) (PrefabImporter) -> (artifact id: 'e5e72833a1cdea04b8a4f0f067c5aad7') in 0.0013522 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fern_1.prefab using Guid(ecfa7b8db097d524ea1eea5c33e21b4b) (PrefabImporter) -> (artifact id: '3020a9e202fb14339ee0a030efcaa415') in 0.0013082 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Bag_2.prefab using Guid(ec0b906b49891d84497b3a77df2a0b6c) (PrefabImporter) -> (artifact id: '4d7889c0f14fc99e8bc5e145b3bc8fcb') in 0.0013249 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_Tall_Dead_1.prefab using Guid(0d034eeb50615a44dad5b77f4b88630c) (PrefabImporter) -> (artifact id: 'a5364102be799e367580db242ac481e8') in 0.0015558 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/FX/GodRays.prefab using Guid(1db3c35651e532a45a71fb6d2b2db427) (PrefabImporter) -> (artifact id: '8e86fcc490ae25c56563c8385002d001') in 0.002487 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Grass_2.prefab using Guid(5d1145579a412f94a9b76e30d6075fe0) (PrefabImporter) -> (artifact id: '8518f4bdf03d00dee0fc8d52e1166c5d') in 0.0013213 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Rock_1(Grass).prefab using Guid(6dcbe6917d35deb4ab0325d8c61cf95b) (PrefabImporter) -> (artifact id: '5b83325ba7582b89296d435ea06e064b') in 0.0013581 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Fir_1.prefab using Guid(7d975aa620250e74c86e071ff1544174) (PrefabImporter) -> (artifact id: '5d5ae3f341082cb6cc557f7684a4d01f') in 0.0013985 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushroom_4.prefab using Guid(ad7b9b30835c6704b89fee8cda9cb665) (PrefabImporter) -> (artifact id: 'eaef7fab414d2de5616038372078df71') in 0.0013011 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushrooms_3.prefab using Guid(bd51f5f316382da4994ddc1c6efe00e5) (PrefabImporter) -> (artifact id: '49685eba6562e14ca45c57d9a86a9ee7') in 0.0012973 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Stone_3.prefab using Guid(cd6a123b898b5ad44aab9500a7c2c369) (PrefabImporter) -> (artifact id: 'b387d14f9a6927c79629ffa69dc2ba95') in 0.0012395 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Sword.prefab using Guid(fd2e6a2dddf498e4a804b2e7cd8acd4c) (PrefabImporter) -> (artifact id: 'f3a84201a3863a0821ce52999ab52949') in 0.001539 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Pillar.prefab using Guid(0e9a345e04a27b1429a9e4dc896b5d1e) (PrefabImporter) -> (artifact id: 'f02ae398e2588d82df3b7b827962b3ac') in 0.0016364 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Bag_3.prefab using Guid(1ef8e2fb8e73acb49b569e9af1394f70) (PrefabImporter) -> (artifact id: '8fb441a5194b80db0645269d75d9db61') in 0.0013894 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Log_3.prefab using Guid(2ec426cfd922a9c4c9245a94a91487fa) (PrefabImporter) -> (artifact id: 'cc1a5860fb6c03654c7444aa08665c6b') in 0.0014013 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Mushroom_1.prefab using Guid(2e4eb2b39ae0c66429c90cf98143939d) (PrefabImporter) -> (artifact id: 'ea97472d5dcc2a9c5fd6646c503e9dd3') in 0.0014505 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Spoon.prefab using Guid(3e8586b2d9fa6a941aaec3d5c3c36238) (PrefabImporter) -> (artifact id: '2ff67a72753fb57a85e24ad4d846d675') in 0.0013863 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Scroll_1.prefab using Guid(4e72a810484a99a4297fd1b873dab025) (PrefabImporter) -> (artifact id: '0f70ebbab5f718386494f8522628a616') in 0.0013541 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props (Interactable)/Boiler_Cover.prefab using Guid(5efa324036cb7674f9ebcd6a39a5c1b3) (PrefabImporter) -> (artifact id: '2879b0fc6bdde8ee13415658c27201fb') in 0.0014158 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Cup.prefab using Guid(7eb7ad86c45336a438a0b8140d0911ca) (PrefabImporter) -> (artifact id: '8256f1ee2164eae51cfef17679fbd851') in 0.0012585 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props/Bread.prefab using Guid(8ec88cb39a11c3b4aa10c5c3285f733b) (PrefabImporter) -> (artifact id: '09b3df6a571a94278fe29f0668b7e4e6') in 0.0012485 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Bone_2.prefab using Guid(9e0851fa4ba12304393bc35e7a85a5b3) (PrefabImporter) -> (artifact id: '6a2f6d0cbed3909709a7df6c9925b161') in 0.0013503 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House/Lamp.prefab using Guid(be402a00756742b408e5e53d0a8b5a5e) (PrefabImporter) -> (artifact id: '093ae2273c46300a8d75e6f0d8933b79') in 0.0025804 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Mushrooms_2.prefab using Guid(be7f438a72bd95748940ba65230b4f08) (PrefabImporter) -> (artifact id: '4d16e292bc39b6ac64f6512e1350fb55') in 0.0014206 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Table_2.prefab using Guid(0fb638f93407d6442ac14f6325e7ef35) (PrefabImporter) -> (artifact id: 'b322c5ae06409dc766253351d9fc4e6e') in 0.0014473 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Rock_1.prefab using Guid(2f1f1a99a03849746adb662fa05676c2) (PrefabImporter) -> (artifact id: '1ffc979b2fc54906d52beedca5b87cb1') in 0.0012607 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Forest/Bush_3.prefab using Guid(afb3131e0adae92489560501c36cf05b) (PrefabImporter) -> (artifact id: 'c47f093f6bc361c3e0d144ff77bd21c5') in 0.0015724 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Tent_1.prefab using Guid(bfcd0cbcec4ca2e4cb375ec63bb133f6) (PrefabImporter) -> (artifact id: '4c47b635edb72cf65663680a6d7adf80') in 0.0015165 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Witches House Props/Book.prefab using Guid(dff861242c762ec4ab98dbfcfa1d140a) (PrefabImporter) -> (artifact id: 'ae3c3a26860c32ff80c51fa043446327') in 0.0015879 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp/Gold_1.prefab using Guid(ef4ba70a5a9c21d46a6eb5cc6a0f8782) (PrefabImporter) -> (artifact id: '42d800edef75a4471329a1c3e32e9551') in 0.0014469 seconds
+Start importing Assets/HIGHLANDS - Stylized Environment/Prefabs/Camp Props (Interactable)/Pouch.prefab using Guid(ff90a3610bf0bda4485d16e46c207544) (PrefabImporter) -> (artifact id: 'ea04bb76f5554671d02f0f43ebe682c1') in 0.0017578 seconds
+Loading style catalogs (6)
+	StyleSheets/Extensions/base/common.uss
+	UIPackageResources/StyleSheets/Default/Variables/Public/common.uss
+	StyleSheets/Northstar/common.uss
+	StyleSheets/Extensions/fonts/inter.uss
+	StyleSheets/Extensions/base/dark.uss
+	UIPackageResources/StyleSheets/Default/Northstar/Palette/dark.uss
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=cde7b2fa5e809d642b969468695fab24): Total: 10.218 seconds - Initiated by InitialRefreshV2(ForceSynchronousImport)
+	Summary:
+		Imports: total=600 (actual=600, local cache=0, cache server=0)
+		Asset DB Process Time: managed=41 ms, native=8384 ms
+		Asset DB Callback time: managed=89 ms, native=295 ms
+		Scripting: domain reloads=1, domain reload time=323 ms, compile time=1079 ms, other=4 ms
+		Project Asset Count: scripts=70, non-scripts=530
+		Asset File Changes: new=600, changed=600, moved=0, deleted=0
+		Scan Filter Count: 0
+	InvokeCustomDependenciesCallbacks: 0.002ms
+	InvokePackagesCallback: 251.922ms
+	ApplyChangesToAssetFolders: 0.212ms
+	Scan: 179.001ms
+	OnSourceAssetsModified: 1.302ms
+	CategorizeAssetsWithTransientArtifact: 0.077ms
+	ProcessAssetsWithTransientArtifactChanges: 0.035ms
+	CategorizeAssets: 2.328ms
+	ImportOutOfDateAssets: 8206.691ms (-712.358ms without children)
+		ImportManagerImport: 7839.822ms (29.921ms without children)
+			ImportInProcess: 7808.919ms
+			UpdateCategorizedAssets: 0.982ms
+		CompileScripts: 1078.655ms
+		ReloadNativeAssets: 0.001ms
+		UnloadImportedAssets: 0.130ms
+		ReloadImportedAssets: 0.114ms
+		EnsureUptoDateAssetsAreRegisteredWithGuidPM: 0.048ms
+		InitializingProgressBar: 0.005ms
+		PostProcessAllAssetNotificationsAddChangedAssets: 0.001ms
+		OnDemandSchedulerStart: 0.274ms
+	PostProcessAllAssets: 136.773ms
+	Hotreload: 0.760ms
+	GatherAllCurrentPrimaryArtifactRevisions: 0.015ms
+	UnloadStreamsBegin: 1.979ms
+	PersistCurrentRevisions: 0.261ms
+	UnloadStreamsEnd: 1.266ms
+	GenerateScriptTypeHashes: 0.001ms
+	Untracked: 1435.263ms
+
+Application.AssetDatabase Initial Refresh End
+Scanning for USB devices : 39.838ms
+Start importing ProjectSettings/ProjectSettings.asset using Guid(00000000000000004000000000000000) (LibraryAssetImporter) -> (artifact id: '9e365d3674a1bd6e9bd8b9a0eefda482') in 0.0015394 seconds
+Refreshing native plugins compatible for Editor in 0.00 ms, found 0 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=12e3fb84b839d944d88a2ab6e2029d5c): Total: 0.009 seconds - Initiated by StopAssetImportingV2(NoUpdateAssetOptions)
+Initializing Unity extensions:
+[MODES] ModeService[none].Initialize
+[MODES] ModeService[none].LoadModes
+[MODES] Loading mode Default (0) for mode-current-id-HighlandsExportProject
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 179 unused Assets / (1.2 MB). Loaded Objects now: 653.
+Memory consumption went from 104.3 MB to 103.2 MB.
+Total: 4.091700 ms (FindLiveObjects: 0.040400 ms CreateObjectMapping: 0.004300 ms MarkObjects: 3.591200 ms  DeleteObjects: 0.455100 ms)
+
+Batchmode quit successfully invoked - shutting down!
+Killing ADB server in 2.0701882 seconds.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Licensing::IpcConnector] LicenseClient-csy20-6000.3.22-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-csy20-6000.3.22 channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+Exiting batchmode successfully now!
+Exiting without the bug reporter. Application will terminate with return code 0
