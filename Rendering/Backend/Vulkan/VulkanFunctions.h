@@ -85,6 +85,7 @@
     X(vkCmdSetScissor) \
     X(vkCmdBindPipeline) \
     X(vkCmdBindDescriptorSets) \
+    X(vkCmdPushConstants) \
     X(vkCmdBindVertexBuffers) \
     X(vkCmdBindIndexBuffer) \
     X(vkCmdDrawIndexed) \

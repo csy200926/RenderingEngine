@@ -11,6 +11,7 @@
 #include <array>
 #include <cstring>
 #include <fstream>
+#include <gtc/matrix_inverse.hpp>
 #include <gtc/matrix_transform.hpp>
 #include <limits>
 #include <map>
@@ -23,6 +24,27 @@ namespace Rendering
 		if (result != VK_SUCCESS)
 			throw std::runtime_error(std::string(operation) + ": VkResult=" + std::to_string(result));
 	}
+	// Constant for the whole frame: written once, bound as a plain uniform buffer.
+	struct alignas(16) FrameConstants
+	{
+		glm::mat4 m_view, m_projection, m_spriteProjection, m_lightViewProjection;
+		glm::vec4 m_viewPosition, m_sunDirection, m_sunColor;
+		glm::vec4 m_pointPosition[4], m_pointColor[4], m_pointAttenuation[4];
+		glm::vec4 m_shadowParams;
+	};
+	// Changes per object: one array element each, read from a storage buffer by index.
+	struct alignas(16) ObjectConstants
+	{
+		glm::mat4 m_model, m_normal;
+		glm::vec4 m_color, m_material, m_surface;
+	};
+	// The only data sent per draw call.
+	struct DrawPush
+	{
+		uint32_t m_object, m_mode;
+	};
+	static_assert(sizeof(FrameConstants) == 512, "Must match PerFrame in Default.hlsl");
+	static_assert(sizeof(ObjectConstants) == 176, "Must match ObjectData in Default.hlsl");
 	class VulkanBackend final : public IRenderBackend
 	{
 	  public:
@@ -95,9 +117,9 @@ namespace Rendering
 		VkPipeline m_pipelines[5] = {};
 		VkSampler m_sampler = VK_NULL_HANDLE, m_cubeSampler = VK_NULL_HANDLE;
 		VkQueryPool m_queries = VK_NULL_HANDLE;
-		Buffer m_constants;
-		void *m_constantData = nullptr;
-		VkDeviceSize m_constantStride = 0;
+		Buffer m_frameConstants, m_objects;
+		FrameConstants *m_frameData = nullptr;
+		ObjectConstants *m_objectData = nullptr;
 		uint32_t m_drawIndex = 0;
 		std::map<uint64_t, MeshBuffers> m_meshes;
 		std::map<uint64_t, Image> m_textures, m_cubes;
@@ -106,6 +128,7 @@ namespace Rendering
 		bool m_rayQuery = false;
 		double m_gpuTime = -1;
 		static constexpr uint32_t MaxDraws = 65536;
+		static constexpr uint32_t MaxObjects = 65536;
 		static constexpr uint32_t ShadowSize = 2048;
 		uint32_t MemoryType(uint32_t bits, VkMemoryPropertyFlags flags);
 		Buffer CreateBuffer(VkDeviceSize size, VkBufferUsageFlags usage, const void *data = nullptr);
@@ -127,7 +150,9 @@ namespace Rendering
 		void CreatePipelines();
 		void CreateShadowMap();
 		VkShaderModule LoadShader(const char *path);
-		void Draw(const RenderFrame &frame, const DrawItem &item, int mode);
+		ObjectConstants MakeObject(const DrawItem &item);
+		void WriteConstants(const RenderFrame &frame);
+		void Draw(const RenderFrame &frame, const DrawItem &item, int mode, uint32_t object);
 	};
 
 	uint32_t VulkanBackend::MemoryType(uint32_t bits, VkMemoryPropertyFlags flags)
@@ -534,8 +559,10 @@ namespace Rendering
 		CheckVK(vkCreateSemaphore(m_device, &semaphore, nullptr, &m_finished), "Create render semaphore");
 		// 描述符与离线 DXC shift 固定对应：0 常量、1..6 贴图、7..8 sampler。
 		// 每帧重建 descriptor set；复用前先等 fence，不能覆盖 GPU 仍在使用的描述符和常量。
-		std::array<VkDescriptorSetLayoutBinding, 9> bindings = {};
-		bindings[0] = {0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, 1,
+		std::array<VkDescriptorSetLayoutBinding, 10> bindings = {};
+		bindings[0] = {0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1,
+					   VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
+		bindings[9] = {9, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1,
 					   VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
 		for (uint32_t i = 1; i <= 6; ++i)
 			bindings[i] = {i, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
@@ -546,24 +573,31 @@ namespace Rendering
 		layout.pBindings = bindings.data();
 		CheckVK(vkCreateDescriptorSetLayout(m_device, &layout, nullptr, &m_descriptorLayout),
 				"Create descriptor layout");
-		VkDescriptorPoolSize sizes[] = {{VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC, MaxDraws},
+		VkDescriptorPoolSize sizes[] = {{VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, MaxDraws},
+										{VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, MaxDraws},
 										{VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, MaxDraws * 6},
 										{VK_DESCRIPTOR_TYPE_SAMPLER, MaxDraws * 2}};
 		VkDescriptorPoolCreateInfo descriptors = {VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO};
 		descriptors.maxSets = MaxDraws;
-		descriptors.poolSizeCount = 3;
+		descriptors.poolSizeCount = 4;
 		descriptors.pPoolSizes = sizes;
 		CheckVK(vkCreateDescriptorPool(m_device, &descriptors, nullptr, &m_descriptorPool), "Create descriptor pool");
 		VkPipelineLayoutCreateInfo pipelineLayout = {VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO};
 		pipelineLayout.setLayoutCount = 1;
 		pipelineLayout.pSetLayouts = &m_descriptorLayout;
+		VkPushConstantRange push = {VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(DrawPush)};
+		pipelineLayout.pushConstantRangeCount = 1;
+		pipelineLayout.pPushConstantRanges = &push;
 		CheckVK(vkCreatePipelineLayout(m_device, &pipelineLayout, nullptr, &m_pipelineLayout),
 				"Create pipeline layout");
-		// 按共享常量大小和硬件要求计算每条 draw 的 dynamic UBO 间隔。
-		VkDeviceSize alignment = m_properties.limits.minUniformBufferOffsetAlignment;
-		m_constantStride = (sizeof(DrawConstants) + alignment - 1) / alignment * alignment;
-		m_constants = CreateBuffer(m_constantStride * MaxDraws, VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
-		CheckVK(vkMapMemory(m_device, m_constants.memory, 0, VK_WHOLE_SIZE, 0, &m_constantData), "Map draw constants");
+		// One small uniform buffer for the frame, one storage buffer holding every object.
+		m_frameConstants = CreateBuffer(sizeof(FrameConstants), VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
+		m_objects = CreateBuffer(sizeof(ObjectConstants) * MaxObjects, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+		void *mapped = nullptr;
+		CheckVK(vkMapMemory(m_device, m_frameConstants.memory, 0, VK_WHOLE_SIZE, 0, &mapped), "Map frame constants");
+		m_frameData = static_cast<FrameConstants *>(mapped);
+		CheckVK(vkMapMemory(m_device, m_objects.memory, 0, VK_WHOLE_SIZE, 0, &mapped), "Map object constants");
+		m_objectData = static_cast<ObjectConstants *>(mapped);
 		VkSamplerCreateInfo sampler = {VK_STRUCTURE_TYPE_SAMPLER_CREATE_INFO};
 		sampler.magFilter = sampler.minFilter = VK_FILTER_LINEAR;
 		sampler.mipmapMode = VK_SAMPLER_MIPMAP_MODE_LINEAR;
@@ -972,16 +1006,54 @@ namespace Rendering
 		vkDestroyShaderModule(m_device, pixel, nullptr);
 		vkDestroyShaderModule(m_device, vertex, nullptr);
 	}
-	void VulkanBackend::Draw(const RenderFrame &frame, const DrawItem &item, int mode)
+	ObjectConstants VulkanBackend::MakeObject(const DrawItem &item)
+	{
+		ObjectConstants result = {};
+		auto *material = item.m_material.get();
+		result.m_model = item.m_transform;
+		result.m_normal = glm::inverseTranspose(result.m_model);
+		result.m_color = material ? material->m_color : glm::vec4(1);
+		result.m_material = glm::vec4(material ? material->m_metallic : 0,
+									  material ? glm::clamp(material->m_roughness, .045f, 1.f) : .5f,
+									  material ? material->m_ao : 1, 0);
+		result.m_surface = glm::vec4(material ? material->m_alphaCutoff : 0,
+									 material && material->m_opacityTexture ? 1.f : 0.f,
+									 material && material->m_normalTexture ? 1.f : 0.f, 0);
+		return result;
+	}
+	void VulkanBackend::WriteConstants(const RenderFrame &frame)
+	{
+		// Frame data once. The shadow pass and the main pass both read this same block.
+		FrameConstants constants = {};
+		constants.m_view = frame.m_camera.WorldToView_Matrix;
+		constants.m_projection = frame.m_camera.Projective_Matrix;
+		constants.m_spriteProjection = frame.m_spriteProjection;
+		constants.m_lightViewProjection = frame.m_lightViewProjection;
+		constants.m_viewPosition = glm::vec4(frame.m_camera.cameraPos, 1);
+		constants.m_sunDirection = glm::vec4(glm::normalize(frame.m_sunDirection), 0);
+		constants.m_sunColor = glm::vec4(frame.m_sunColor, 0);
+		for (int i = 0; i < 4; ++i)
+		{
+			constants.m_pointPosition[i] = frame.m_pointLights[i].m_position;
+			constants.m_pointColor[i] = frame.m_pointLights[i].m_color;
+			constants.m_pointAttenuation[i] = frame.m_pointLights[i].m_attenuation;
+		}
+		constants.m_shadowParams = frame.m_shadowParams;
+		*m_frameData = constants;
+		// Object data once per object, however many passes draw it. One slot is kept for the sky.
+		if (frame.m_items.size() + 1 > MaxObjects)
+			throw std::runtime_error("Vulkan: object count exceeds 65535");
+		for (size_t i = 0; i < frame.m_items.size(); ++i)
+			m_objectData[i] = MakeObject(frame.m_items[i]);
+	}
+	void VulkanBackend::Draw(const RenderFrame &frame, const DrawItem &item, int mode, uint32_t object)
 	{
 		// 共用 CPU 矩阵和 PBR 参数。Vulkan 深度 0..1 与屏幕 Y 翻转在离线顶点 Shader 完成。
 		if (!item.m_mesh || item.m_submesh >= item.m_mesh->m_subMeshes.size())
 			return;
 		if (m_drawIndex >= MaxDraws)
 			throw std::runtime_error("Vulkan: per-frame draw count exceeds 65536 (including shadows)");
-		auto constants = MakeConstants(frame, item, mode);
-		uint32_t offset = static_cast<uint32_t>(m_constantStride * m_drawIndex++);
-		std::memcpy(static_cast<unsigned char *>(m_constantData) + offset, &constants, sizeof(constants));
+		++m_drawIndex;
 		VkDescriptorSetAllocateInfo allocation = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO};
 		allocation.descriptorPool = m_descriptorPool;
 		allocation.descriptorSetCount = 1;
@@ -1001,27 +1073,35 @@ namespace Rendering
 			images[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
 		images[6].sampler = m_sampler;
 		images[7].sampler = m_cubeSampler;
-		VkDescriptorBufferInfo buffer = {m_constants.buffer, 0, sizeof(DrawConstants)};
-		VkWriteDescriptorSet writes[9] = {};
-		for (uint32_t i = 0; i < 9; ++i)
+		VkDescriptorBufferInfo frameBuffer = {m_frameConstants.buffer, 0, sizeof(FrameConstants)};
+		VkDescriptorBufferInfo objectBuffer = {m_objects.buffer, 0, VK_WHOLE_SIZE};
+		VkWriteDescriptorSet writes[10] = {};
+		for (uint32_t i = 0; i < 10; ++i)
 		{
 			writes[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
 			writes[i].dstSet = set;
 			writes[i].dstBinding = i;
 			writes[i].descriptorCount = 1;
-			writes[i].descriptorType = i == 0
-										   ? VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER_DYNAMIC
-										   : (i <= 6 ? VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE : VK_DESCRIPTOR_TYPE_SAMPLER);
+			writes[i].descriptorType =
+				i == 0 ? VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER
+					   : i == 9 ? VK_DESCRIPTOR_TYPE_STORAGE_BUFFER
+								: (i <= 6 ? VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE : VK_DESCRIPTOR_TYPE_SAMPLER);
 			if (i == 0)
-				writes[i].pBufferInfo = &buffer;
+				writes[i].pBufferInfo = &frameBuffer;
+			else if (i == 9)
+				writes[i].pBufferInfo = &objectBuffer;
 			else
 				writes[i].pImageInfo = &images[i - 1];
 		}
-		vkUpdateDescriptorSets(m_device, 9, writes, 0, nullptr);
+		vkUpdateDescriptorSets(m_device, 10, writes, 0, nullptr);
 		bool transparent = material && material->m_transparent;
 		int pipeline = mode == 3 ? 4 : mode == 1 ? 3 : mode == 2 ? 1 : transparent ? 2 : 0;
 		vkCmdBindPipeline(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelines[pipeline]);
-		vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 1, &set, 1, &offset);
+		vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 1, &set, 0, nullptr);
+		// Per draw the shader only needs to know which array element is its own, and the pass.
+		DrawPush push = {object, static_cast<uint32_t>(mode)};
+		vkCmdPushConstants(m_commands, m_pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0,
+						   sizeof(push), &push);
 		auto &mesh = GetMesh(item.m_mesh);
 		VkDeviceSize vertexOffset = 0;
 		vkCmdBindVertexBuffers(m_commands, 0, 1, &mesh.vertices.buffer, &vertexOffset);
@@ -1089,6 +1169,7 @@ namespace Rendering
 			vkCmdWriteTimestamp(m_commands, VK_PIPELINE_STAGE_TOP_OF_PIPE_BIT, m_queries, 0);
 		}
 		m_drawIndex = 0;
+		WriteConstants(frame);
 		if (frame.m_shadowParams.w > 0 || !m_shadowInitialized)
 		{
 			VkClearValue shadowClear[2] = {};
@@ -1105,9 +1186,9 @@ namespace Rendering
 			VkRect2D shadowScissor = {{0, 0}, {ShadowSize, ShadowSize}};
 			vkCmdSetViewport(m_commands, 0, 1, &shadowViewport);
 			vkCmdSetScissor(m_commands, 0, 1, &shadowScissor);
-			for (const auto &item : frame.m_items)
-				if (CastsShadow(frame, item))
-					Draw(frame, item, 3);
+			for (size_t i = 0; i < frame.m_items.size(); ++i)
+				if (CastsShadow(frame, frame.m_items[i]))
+					Draw(frame, frame.m_items[i], 3, static_cast<uint32_t>(i));
 			vkCmdEndRenderPass(m_commands);
 			m_shadowInitialized = true;
 		}
@@ -1131,10 +1212,13 @@ namespace Rendering
 			sky.m_mesh = frame.m_skyMesh;
 			sky.m_transform =
 				glm::translate(glm::mat4(1), frame.m_camera.cameraPos) * glm::scale(glm::mat4(1), glm::vec3(100));
-			Draw(frame, sky, 2);
+			// The sky uses the element after the scene objects.
+			uint32_t skyIndex = static_cast<uint32_t>(frame.m_items.size());
+			m_objectData[skyIndex] = MakeObject(sky);
+			Draw(frame, sky, 2, skyIndex);
 		}
-		for (auto &item : frame.m_items)
-			Draw(frame, item, item.m_sprite ? 1 : 0);
+		for (size_t i = 0; i < frame.m_items.size(); ++i)
+			Draw(frame, frame.m_items[i], frame.m_items[i].m_sprite ? 1 : 0, static_cast<uint32_t>(i));
 		vkCmdEndRenderPass(m_commands);
 		// 交换链图像获取后放弃旧内容，完整覆盖并在交还 present 前转换布局。
 		Barrier(m_commands, m_swapImages[m_imageIndex], VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
@@ -1249,10 +1333,14 @@ namespace Rendering
 				DestroyImage(entry.second);
 			m_cubes.clear();
 			DestroyImage(m_blackCube);
-			if (m_constantData)
-				vkUnmapMemory(m_device, m_constants.memory);
-			m_constantData = nullptr;
-			DestroyBuffer(m_constants);
+			if (m_frameData)
+				vkUnmapMemory(m_device, m_frameConstants.memory);
+			if (m_objectData)
+				vkUnmapMemory(m_device, m_objects.memory);
+			m_frameData = nullptr;
+			m_objectData = nullptr;
+			DestroyBuffer(m_frameConstants);
+			DestroyBuffer(m_objects);
 			if (m_queries)
 				vkDestroyQueryPool(m_device, m_queries, nullptr);
 			m_queries = VK_NULL_HANDLE;

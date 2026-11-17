@@ -1,21 +1,32 @@
-cbuffer PerDraw : register(b0)
+// Same for every draw in the frame: one uniform buffer, written once.
+cbuffer PerFrame : register(b0)
 {
-    column_major float4x4 ModelToWorld_Matrix;
     column_major float4x4 WorldToView_Matrix;
     column_major float4x4 Projective_Matrix;
-    column_major float4x4 Normal_Matrix;
+    column_major float4x4 SpriteProjective_Matrix;
+    column_major float4x4 LightViewProjection_Matrix;
     float4 viewPosition;
-    float4 materialColor;
-    float4 materialParams;
-    float4 surfaceParams;
     float4 sunDirection;
     float4 sunColor;
     float4 pointPosition[4];
     float4 pointColor[4];
     float4 pointAttenuation[4];
-    column_major float4x4 LightViewProjection_Matrix;
     float4 shadowParams;
 };
+// Different for every object: one array element each in a storage buffer.
+struct ObjectData
+{
+    column_major float4x4 ModelToWorld_Matrix;
+    column_major float4x4 Normal_Matrix;
+    float4 materialColor;
+    float4 materialParams;
+    float4 surfaceParams;
+};
+[[vk::binding(9,0)]] StructuredBuffer<ObjectData> objects;
+// Sent with each draw: which element is mine, and which pass this is
+// (0 lit, 1 sprite, 2 sky, 3 shadow).
+struct DrawData { uint object; uint mode; };
+[[vk::push_constant]] DrawData draw;
 Texture2D basic_texture : register(t0);
 TextureCube irradiance_texture : register(t1);
 TextureCube cube_texture : register(t2);
@@ -36,16 +47,18 @@ struct VSOutput
 VSOutput VSMain(VSInput input)
 {
     VSOutput output;
-    float4 world = mul(ModelToWorld_Matrix,float4(input.position,1));
+    ObjectData object = objects[draw.object];
+    float4 world = mul(object.ModelToWorld_Matrix,float4(input.position,1));
     output.position = mul(Projective_Matrix,mul(WorldToView_Matrix,world));
+    if (draw.mode == 1) output.position = mul(SpriteProjective_Matrix,world);
     // 阴影时从太阳方向观察场景，天空仍放在相机最远处。
-    if (materialParams.w > 2.5) output.position = mul(LightViewProjection_Matrix,world);
-    else if (materialParams.w > 1.5) output.position.z = output.position.w;
+    if (draw.mode == 3) output.position = mul(LightViewProjection_Matrix,world);
+    else if (draw.mode == 2) output.position.z = output.position.w;
     // CPU 使用共享 RH / OpenGL 投影，深度从 [-w,w] 转为 Vulkan 的 [0,w]。
     // 屏幕 Y 由固定离线 DXC 的 -fvk-invert-y 翻转，不改 CPU 矩阵或纹理坐标。
     output.position.z = (output.position.z+output.position.w)*0.5;
     output.FragPos = world.xyz;
-    output.Normal = mul((float3x3)Normal_Matrix,input.normal);
+    output.Normal = mul((float3x3)object.Normal_Matrix,input.normal);
     output.TexCoords = input.texCoords;
     output.CubeDirection = input.position;
     return output;
@@ -120,7 +133,11 @@ float SunVisibility(float3 worldPosition, float3 geometricNormal)
 }
 float4 PSMain(VSOutput input):SV_TARGET
 {
-    if (materialParams.w > 2.5)
+    ObjectData object = objects[draw.object];
+    float4 materialColor = object.materialColor;
+    float4 materialParams = object.materialParams;
+    float4 surfaceParams = object.surfaceParams;
+    if (draw.mode == 3)
     {
         // 叶片与草仍按原贴图剪裁，不能让整块四边形投下方形阴影。
         float alpha = basic_texture.Sample(linearSampler,input.TexCoords).a*materialColor.a;
@@ -128,9 +145,9 @@ float4 PSMain(VSOutput input):SV_TARGET
         if (surfaceParams.x > 0.0) clip(alpha-surfaceParams.x);
         return float4(input.position.z,0,0,1);
     }
-    if (materialParams.w > 1.5) return float4(cube_texture.Sample(cubeSampler,normalize(input.CubeDirection)).rgb,1);
+    if (draw.mode == 2) return float4(cube_texture.Sample(cubeSampler,normalize(input.CubeDirection)).rgb,1);
     float4 texel = basic_texture.Sample(linearSampler,input.TexCoords)*materialColor;
-    if (materialParams.w > 0.5)
+    if (draw.mode == 1)
     {
         clip(texel.a-0.005);
         return texel;
