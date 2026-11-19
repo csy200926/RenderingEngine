@@ -1,5 +1,5 @@
 // Same for every draw in the frame: one uniform buffer, written once.
-cbuffer PerFrame : register(b0)
+[[vk::binding(0,0)]] cbuffer PerFrame : register(b0)
 {
     column_major float4x4 WorldToView_Matrix;
     column_major float4x4 Projective_Matrix;
@@ -22,20 +22,27 @@ struct ObjectData
     float4 materialParams;
     float4 surfaceParams;
 };
-[[vk::binding(9,0)]] StructuredBuffer<ObjectData> objects;
-// Sent with each draw: which element is mine, and which pass this is
-// (0 lit, 1 sprite, 2 sky, 3 shadow).
-struct DrawData { uint object; uint mode; };
+[[vk::binding(1,0)]] StructuredBuffer<ObjectData> objects;
+// 只传绘制模式：0 lit, 1 sprite, 2 sky, 3 shadow。物体编号从实例顶点流读取。
+struct DrawData { uint mode; };
 [[vk::push_constant]] DrawData draw;
-Texture2D basic_texture : register(t0);
-TextureCube irradiance_texture : register(t1);
-TextureCube cube_texture : register(t2);
-Texture2D opacity_texture : register(t3);
-Texture2D normal_texture : register(t4);
-Texture2D shadow_texture : register(t5);
-SamplerState linearSampler : register(s0);
-SamplerState cubeSampler : register(s1);
-struct VSInput { float3 position:POSITION; float3 normal:NORMAL; float2 texCoords:TEXCOORD0; };
+// vk::binding(binding, set) 直接对应 C++ 布局，不再依靠编译参数偏移寄存器编号。
+// Set 0 公共资源；Set 1 材质贴图；Set 2 当前 Pass 的环境与阴影。
+[[vk::binding(2,0)]] SamplerState linearSampler : register(s0);
+[[vk::binding(3,0)]] SamplerState cubeSampler : register(s1);
+[[vk::binding(0,1)]] Texture2D basic_texture : register(t0);
+[[vk::binding(1,1)]] Texture2D opacity_texture : register(t3);
+[[vk::binding(2,1)]] Texture2D normal_texture : register(t4);
+[[vk::binding(0,2)]] TextureCube irradiance_texture : register(t1);
+[[vk::binding(1,2)]] TextureCube cube_texture : register(t2);
+[[vk::binding(2,2)]] Texture2D shadow_texture : register(t5);
+struct VSInput
+{
+    [[vk::location(0)]] float3 position:POSITION;
+    [[vk::location(1)]] float3 normal:NORMAL;
+    [[vk::location(2)]] float2 texCoords:TEXCOORD0;
+    [[vk::location(3)]] uint PrimitiveId:TEXCOORD1;
+};
 struct VSOutput
 {
     float4 position:SV_POSITION;
@@ -43,11 +50,14 @@ struct VSOutput
     float3 Normal:TEXCOORD1;
     float2 TexCoords:TEXCOORD2;
     float3 CubeDirection:TEXCOORD3;
+    // 一个物体的编号不能在三角形里插值，PS用它读取同一份物体数据。
+    nointerpolation uint PrimitiveId:TEXCOORD4;
 };
 VSOutput VSMain(VSInput input)
 {
     VSOutput output;
-    ObjectData object = objects[draw.object];
+    ObjectData object = objects[input.PrimitiveId];
+    output.PrimitiveId = input.PrimitiveId;
     float4 world = mul(object.ModelToWorld_Matrix,float4(input.position,1));
     output.position = mul(Projective_Matrix,mul(WorldToView_Matrix,world));
     if (draw.mode == 1) output.position = mul(SpriteProjective_Matrix,world);
@@ -133,7 +143,7 @@ float SunVisibility(float3 worldPosition, float3 geometricNormal)
 }
 float4 PSMain(VSOutput input):SV_TARGET
 {
-    ObjectData object = objects[draw.object];
+    ObjectData object = objects[input.PrimitiveId];
     float4 materialColor = object.materialColor;
     float4 materialParams = object.materialParams;
     float4 surfaceParams = object.surfaceParams;

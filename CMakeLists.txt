@@ -49,8 +49,8 @@ set(VULKAN_SHADER_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/Assets/Shaders/Vulkan/Defa
 set(VULKAN_SHADER_OUTPUT "${CMAKE_BINARY_DIR}/Shaders/Vulkan")
 add_custom_command(OUTPUT "${VULKAN_SHADER_OUTPUT}/Default.vert.spv" "${VULKAN_SHADER_OUTPUT}/Default.frag.spv"
     COMMAND ${CMAKE_COMMAND} -E make_directory "${VULKAN_SHADER_OUTPUT}"
-    COMMAND "${LOCAL_DXC}" -spirv -fspv-target-env=vulkan1.1 -fvk-use-dx-layout -fvk-b-shift 0 0 -fvk-t-shift 1 0 -fvk-s-shift 7 0 -fvk-invert-y -T vs_6_0 -E VSMain -Fo "${VULKAN_SHADER_OUTPUT}/Default.vert.spv" "${VULKAN_SHADER_SOURCE}"
-    COMMAND "${LOCAL_DXC}" -spirv -fspv-target-env=vulkan1.1 -fvk-use-dx-layout -fvk-b-shift 0 0 -fvk-t-shift 1 0 -fvk-s-shift 7 0 -T ps_6_0 -E PSMain -Fo "${VULKAN_SHADER_OUTPUT}/Default.frag.spv" "${VULKAN_SHADER_SOURCE}"
+    COMMAND "${LOCAL_DXC}" -spirv -fspv-target-env=vulkan1.1 -fvk-use-dx-layout -fvk-invert-y -T vs_6_0 -E VSMain -Fo "${VULKAN_SHADER_OUTPUT}/Default.vert.spv" "${VULKAN_SHADER_SOURCE}"
+    COMMAND "${LOCAL_DXC}" -spirv -fspv-target-env=vulkan1.1 -fvk-use-dx-layout -T ps_6_0 -E PSMain -Fo "${VULKAN_SHADER_OUTPUT}/Default.frag.spv" "${VULKAN_SHADER_SOURCE}"
     DEPENDS "${VULKAN_SHADER_SOURCE}" "${LOCAL_DXC}" VERBATIM)
 add_custom_target(VulkanShaders DEPENDS "${VULKAN_SHADER_OUTPUT}/Default.vert.spv" "${VULKAN_SHADER_OUTPUT}/Default.frag.spv")
 add_dependencies(Renderer VulkanShaders)

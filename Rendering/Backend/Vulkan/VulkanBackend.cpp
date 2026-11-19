@@ -38,11 +38,12 @@ namespace Rendering
 		glm::mat4 m_model, m_normal;
 		glm::vec4 m_color, m_material, m_surface;
 	};
-	// The only data sent per draw call.
+	// 物体编号改走实例顶点流，这里只传本次绘制的模式。
 	struct DrawPush
 	{
-		uint32_t m_object, m_mode;
+		uint32_t m_mode;
 	};
+	static_assert(sizeof(DrawPush) == 4, "Must match DrawData in Default.hlsl");
 	static_assert(sizeof(FrameConstants) == 512, "Must match PerFrame in Default.hlsl");
 	static_assert(sizeof(ObjectConstants) == 176, "Must match ObjectData in Default.hlsl");
 	class VulkanBackend final : public IRenderBackend
@@ -112,12 +113,19 @@ namespace Rendering
 		VkFence m_fence = VK_NULL_HANDLE;
 		VkSemaphore m_acquired = VK_NULL_HANDLE, m_finished = VK_NULL_HANDLE;
 		VkDescriptorPool m_descriptorPool = VK_NULL_HANDLE;
-		VkDescriptorSetLayout m_descriptorLayout = VK_NULL_HANDLE;
+		// 三种布局共用一个 PipelineLayout。Set 的内容不变时，跨帧也能继续用。
+		VkDescriptorSetLayout m_descriptorLayouts[3] = {};
+		VkDescriptorSet m_sceneSet = VK_NULL_HANDLE, m_passSets[2] = {};
+		VkDescriptorSet m_boundMaterial = VK_NULL_HANDLE;
+		std::array<VkImageView, 3> m_passViews[2] = {};
+		std::vector<VkDescriptorPool> m_materialPools;
+		std::map<std::array<uint64_t, 3>, VkDescriptorSet> m_materialSets;
+		uint32_t m_newMaterialSets = 0, m_passUpdates = 0;
 		VkPipelineLayout m_pipelineLayout = VK_NULL_HANDLE;
 		VkPipeline m_pipelines[5] = {};
 		VkSampler m_sampler = VK_NULL_HANDLE, m_cubeSampler = VK_NULL_HANDLE;
 		VkQueryPool m_queries = VK_NULL_HANDLE;
-		Buffer m_frameConstants, m_objects;
+		Buffer m_frameConstants, m_objects, m_primitiveIds;
 		FrameConstants *m_frameData = nullptr;
 		ObjectConstants *m_objectData = nullptr;
 		uint32_t m_drawIndex = 0;
@@ -127,7 +135,7 @@ namespace Rendering
 		bool m_vsync = true, m_profiling = false, m_pending = false, m_rendered = false, m_resize = false;
 		bool m_rayQuery = false;
 		double m_gpuTime = -1;
-		static constexpr uint32_t MaxDraws = 65536;
+		static constexpr uint32_t MaterialsPerPool = 256;
 		static constexpr uint32_t MaxObjects = 65536;
 		static constexpr uint32_t ShadowSize = 2048;
 		uint32_t MemoryType(uint32_t bits, VkMemoryPropertyFlags flags);
@@ -149,10 +157,13 @@ namespace Rendering
 		void DestroySwapchain();
 		void CreatePipelines();
 		void CreateShadowMap();
+		void CreateDescriptors();
+		void UpdatePassDescriptors(const RenderFrame &i_frame);
+		VkDescriptorSet GetMaterialDescriptors(const MaterialPtr &i_material);
 		VkShaderModule LoadShader(const char *path);
 		ObjectConstants MakeObject(const DrawItem &item);
 		void WriteConstants(const RenderFrame &frame);
-		void Draw(const RenderFrame &frame, const DrawItem &item, int mode, uint32_t object);
+		void Draw(const DrawItem &item, int mode, uint32_t object);
 	};
 
 	uint32_t VulkanBackend::MemoryType(uint32_t bits, VkMemoryPropertyFlags flags)
@@ -557,42 +568,15 @@ namespace Rendering
 		VkSemaphoreCreateInfo semaphore = {VK_STRUCTURE_TYPE_SEMAPHORE_CREATE_INFO};
 		CheckVK(vkCreateSemaphore(m_device, &semaphore, nullptr, &m_acquired), "Create acquire semaphore");
 		CheckVK(vkCreateSemaphore(m_device, &semaphore, nullptr, &m_finished), "Create render semaphore");
-		// 描述符与离线 DXC shift 固定对应：0 常量、1..6 贴图、7..8 sampler。
-		// 每帧重建 descriptor set；复用前先等 fence，不能覆盖 GPU 仍在使用的描述符和常量。
-		std::array<VkDescriptorSetLayoutBinding, 10> bindings = {};
-		bindings[0] = {0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1,
-					   VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
-		bindings[9] = {9, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1,
-					   VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
-		for (uint32_t i = 1; i <= 6; ++i)
-			bindings[i] = {i, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
-		for (uint32_t i = 7; i <= 8; ++i)
-			bindings[i] = {i, VK_DESCRIPTOR_TYPE_SAMPLER, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
-		VkDescriptorSetLayoutCreateInfo layout = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO};
-		layout.bindingCount = static_cast<uint32_t>(bindings.size());
-		layout.pBindings = bindings.data();
-		CheckVK(vkCreateDescriptorSetLayout(m_device, &layout, nullptr, &m_descriptorLayout),
-				"Create descriptor layout");
-		VkDescriptorPoolSize sizes[] = {{VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, MaxDraws},
-										{VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, MaxDraws},
-										{VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, MaxDraws * 6},
-										{VK_DESCRIPTOR_TYPE_SAMPLER, MaxDraws * 2}};
-		VkDescriptorPoolCreateInfo descriptors = {VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO};
-		descriptors.maxSets = MaxDraws;
-		descriptors.poolSizeCount = 4;
-		descriptors.pPoolSizes = sizes;
-		CheckVK(vkCreateDescriptorPool(m_device, &descriptors, nullptr, &m_descriptorPool), "Create descriptor pool");
-		VkPipelineLayoutCreateInfo pipelineLayout = {VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO};
-		pipelineLayout.setLayoutCount = 1;
-		pipelineLayout.pSetLayouts = &m_descriptorLayout;
-		VkPushConstantRange push = {VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(DrawPush)};
-		pipelineLayout.pushConstantRangeCount = 1;
-		pipelineLayout.pPushConstantRanges = &push;
-		CheckVK(vkCreatePipelineLayout(m_device, &pipelineLayout, nullptr, &m_pipelineLayout),
-				"Create pipeline layout");
 		// One small uniform buffer for the frame, one storage buffer holding every object.
 		m_frameConstants = CreateBuffer(sizeof(FrameConstants), VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT);
 		m_objects = CreateBuffer(sizeof(ObjectConstants) * MaxObjects, VK_BUFFER_USAGE_STORAGE_BUFFER_BIT);
+		// 每个元素只存物体数组下标。绘制时绑定对应偏移，按实例读取一个 uint。
+		std::vector<uint32_t> primitiveIds(MaxObjects);
+		for (uint32_t i = 0; i < MaxObjects; i++)
+			primitiveIds[i] = i;
+		m_primitiveIds = CreateBuffer(sizeof(uint32_t) * MaxObjects, VK_BUFFER_USAGE_VERTEX_BUFFER_BIT,
+			primitiveIds.data());
 		void *mapped = nullptr;
 		CheckVK(vkMapMemory(m_device, m_frameConstants.memory, 0, VK_WHOLE_SIZE, 0, &mapped), "Map frame constants");
 		m_frameData = static_cast<FrameConstants *>(mapped);
@@ -606,6 +590,7 @@ namespace Rendering
 		CheckVK(vkCreateSampler(m_device, &sampler, nullptr, &m_sampler), "Create texture sampler");
 		sampler.addressModeU = sampler.addressModeV = sampler.addressModeW = VK_SAMPLER_ADDRESS_MODE_CLAMP_TO_EDGE;
 		CheckVK(vkCreateSampler(m_device, &sampler, nullptr, &m_cubeSampler), "Create cube sampler");
+		CreateDescriptors();
 		if (m_timestampBits)
 		{
 			VkQueryPoolCreateInfo query = {VK_STRUCTURE_TYPE_QUERY_POOL_CREATE_INFO};
@@ -631,6 +616,157 @@ namespace Rendering
 					  "; no ray tracing is executed by this backend");
 	}
 
+	void VulkanBackend::CreateDescriptors()
+	{
+		// Set 0：每个物体都用同一份相机、物体数组和采样器。
+		// Buffer 内的数据会变，但句柄、范围没有变，所以这里只需填写一次。
+		VkDescriptorSetLayoutBinding sceneBindings[] = {
+			{0, VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr},
+			{1, VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, nullptr},
+			{2, VK_DESCRIPTOR_TYPE_SAMPLER, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr},
+			{3, VK_DESCRIPTOR_TYPE_SAMPLER, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr}};
+		VkDescriptorSetLayoutCreateInfo layout = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_LAYOUT_CREATE_INFO};
+		layout.bindingCount = 4;
+		layout.pBindings = sceneBindings;
+		CheckVK(vkCreateDescriptorSetLayout(m_device, &layout, nullptr, &m_descriptorLayouts[0]), "Create scene layout");
+
+		// Set 1：颜色、透明遮罩、法线。Set 2：环境、天空、阴影。
+		// 两组恰好都是三张图，但保留各自的布局，方便读出它们的用途。
+		VkDescriptorSetLayoutBinding imageBindings[3] = {};
+		for (uint32_t i = 0; i < 3; i++)
+			imageBindings[i] = {i, VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 1, VK_SHADER_STAGE_FRAGMENT_BIT, nullptr};
+		layout.bindingCount = 3;
+		layout.pBindings = imageBindings;
+		CheckVK(vkCreateDescriptorSetLayout(m_device, &layout, nullptr, &m_descriptorLayouts[1]), "Create material layout");
+		CheckVK(vkCreateDescriptorSetLayout(m_device, &layout, nullptr, &m_descriptorLayouts[2]), "Create pass layout");
+		VkPipelineLayoutCreateInfo pipelineLayout = {VK_STRUCTURE_TYPE_PIPELINE_LAYOUT_CREATE_INFO};
+		pipelineLayout.setLayoutCount = 3;
+		pipelineLayout.pSetLayouts = m_descriptorLayouts;
+		VkPushConstantRange push = {VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0, sizeof(DrawPush)};
+		pipelineLayout.pushConstantRangeCount = 1;
+		pipelineLayout.pPushConstantRanges = &push;
+		CheckVK(vkCreatePipelineLayout(m_device, &pipelineLayout, nullptr, &m_pipelineLayout), "Create pipeline layout");
+
+		// 固定池只分配一个公共 Set 和两个 Pass Set，不再按 Draw 数预留几十万条描述符。
+		VkDescriptorPoolSize sizes[] = {{VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER, 1},
+			{VK_DESCRIPTOR_TYPE_STORAGE_BUFFER, 1}, {VK_DESCRIPTOR_TYPE_SAMPLER, 2},
+			{VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, 6}};
+		VkDescriptorPoolCreateInfo pool = {VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO};
+		pool.maxSets = 3;
+		pool.poolSizeCount = 4;
+		pool.pPoolSizes = sizes;
+		CheckVK(vkCreateDescriptorPool(m_device, &pool, nullptr, &m_descriptorPool), "Create scene/pass pool");
+		VkDescriptorSetLayout layouts[] = {m_descriptorLayouts[0], m_descriptorLayouts[2], m_descriptorLayouts[2]};
+		VkDescriptorSet sets[3] = {};
+		VkDescriptorSetAllocateInfo allocation = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO};
+		allocation.descriptorPool = m_descriptorPool;
+		allocation.descriptorSetCount = 3;
+		allocation.pSetLayouts = layouts;
+		CheckVK(vkAllocateDescriptorSets(m_device, &allocation, sets), "Allocate scene/pass sets");
+		m_sceneSet = sets[0];
+		m_passSets[0] = sets[1];
+		m_passSets[1] = sets[2];
+
+		VkDescriptorBufferInfo buffers[] = {{m_frameConstants.buffer, 0, sizeof(FrameConstants)},
+			{m_objects.buffer, 0, VK_WHOLE_SIZE}};
+		VkDescriptorImageInfo samplers[2] = {};
+		samplers[0].sampler = m_sampler;
+		samplers[1].sampler = m_cubeSampler;
+		VkWriteDescriptorSet writes[4] = {};
+		for (uint32_t i = 0; i < 4; i++)
+		{
+			writes[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+			writes[i].dstSet = m_sceneSet;
+			writes[i].dstBinding = i;
+			writes[i].descriptorCount = 1;
+			writes[i].descriptorType = sceneBindings[i].descriptorType;
+			if (i < 2)
+				writes[i].pBufferInfo = &buffers[i];
+			else
+				writes[i].pImageInfo = &samplers[i - 2];
+		}
+		vkUpdateDescriptorSets(m_device, 4, writes, 0, nullptr);
+	}
+
+	VkDescriptorSet VulkanBackend::GetMaterialDescriptors(const MaterialPtr &i_material)
+	{
+		// 颜色/粗糙度等标量仍在物体 SSBO。这里只按实际贴图组合查缓存，换标量不用建新 Set。
+		auto white = TextureManager::GetInstance()->GetWhiteTexture();
+		TexturePtr textures[] = {i_material && i_material->m_texture ? i_material->m_texture : white,
+			i_material && i_material->m_opacityTexture ? i_material->m_opacityTexture : white,
+			i_material && i_material->m_normalTexture ? i_material->m_normalTexture : white};
+		std::array<uint64_t, 3> key = {textures[0]->GetHandle(), textures[1]->GetHandle(), textures[2]->GetHandle()};
+		auto found = m_materialSets.find(key);
+		if (found != m_materialSets.end())
+			return found->second;
+
+		// 每池容纳256种贴图组合，用完再加池；已有 Set 保持有效，不因每帧结束就释放。
+		if (m_materialSets.size() % MaterialsPerPool == 0)
+		{
+			VkDescriptorPoolSize size = {VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE, MaterialsPerPool * 3};
+			VkDescriptorPoolCreateInfo info = {VK_STRUCTURE_TYPE_DESCRIPTOR_POOL_CREATE_INFO};
+			info.maxSets = MaterialsPerPool;
+			info.poolSizeCount = 1;
+			info.pPoolSizes = &size;
+			VkDescriptorPool pool;
+			CheckVK(vkCreateDescriptorPool(m_device, &info, nullptr, &pool), "Create material pool");
+			m_materialPools.push_back(pool);
+		}
+		VkDescriptorSetAllocateInfo allocation = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO};
+		allocation.descriptorPool = m_materialPools.back();
+		allocation.descriptorSetCount = 1;
+		allocation.pSetLayouts = &m_descriptorLayouts[1];
+		VkDescriptorSet set;
+		CheckVK(vkAllocateDescriptorSets(m_device, &allocation, &set), "Allocate material set");
+		VkDescriptorImageInfo images[3] = {};
+		VkWriteDescriptorSet writes[3] = {};
+		for (uint32_t i = 0; i < 3; i++)
+		{
+			images[i].imageView = GetTexture(textures[i]).view;
+			images[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+			writes[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+			writes[i].dstSet = set;
+			writes[i].dstBinding = i;
+			writes[i].descriptorCount = 1;
+			writes[i].descriptorType = VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE;
+			writes[i].pImageInfo = &images[i];
+		}
+		vkUpdateDescriptorSets(m_device, 3, writes, 0, nullptr);
+		m_materialSets.emplace(key, set);
+		++m_newMaterialSets;
+		// 与现有 GPU 贴图缓存一起保留到 ShutDown，尚未做场景卸载时的资源淘汰。
+		return set;
+	}
+
+	void VulkanBackend::UpdatePassDescriptors(const RenderFrame &i_frame)
+	{
+		// 调用前已经等待上一帧 fence。只在换天空/环境或重建阴影图时更新，普通帧不写描述符。
+		for (int pass = 0; pass < 2; pass++)
+		{
+			std::array<VkImageView, 3> views = {GetCube(i_frame.m_irradiance).view, GetCube(i_frame.m_sky).view,
+				pass == 0 ? GetTexture(nullptr).view : m_shadow.view};
+			if (views == m_passViews[pass])
+				continue;
+			// 阴影 Pass 绑定白图，不能采样正在作为附件写入的阴影图。
+			VkDescriptorImageInfo images[3] = {};
+			VkWriteDescriptorSet writes[3] = {};
+			for (uint32_t i = 0; i < 3; i++)
+			{
+				images[i].imageView = views[i];
+				images[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
+				writes[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
+				writes[i].dstSet = m_passSets[pass];
+				writes[i].dstBinding = i;
+				writes[i].descriptorCount = 1;
+				writes[i].descriptorType = VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE;
+				writes[i].pImageInfo = &images[i];
+			}
+			vkUpdateDescriptorSets(m_device, 3, writes, 0, nullptr);
+			m_passViews[pass] = views;
+			++m_passUpdates;
+		}
+	}
+
 	void VulkanBackend::Resize(int width, int height)
 	{
 		if (width < 1 || height < 1)
@@ -641,6 +777,8 @@ namespace Rendering
 	}
 	void VulkanBackend::DestroySwapchain()
 	{
+		// 即使驱动重用了旧 imageView 数值，下次也必须刷新指向新阴影图的 Pass Set。
+		m_passViews[0] = m_passViews[1] = {};
 		if (m_shadowFramebuffer)
 			vkDestroyFramebuffer(m_device, m_shadowFramebuffer, nullptr);
 		m_shadowFramebuffer = VK_NULL_HANDLE;
@@ -924,15 +1062,18 @@ namespace Rendering
 			stages[1].stage = VK_SHADER_STAGE_FRAGMENT_BIT;
 			stages[1].module = pixel;
 			stages[1].pName = "PSMain";
-			VkVertexInputBindingDescription binding = {0, sizeof(Vertex), VK_VERTEX_INPUT_RATE_VERTEX};
+			VkVertexInputBindingDescription bindings[] = {
+				{0, sizeof(Vertex), VK_VERTEX_INPUT_RATE_VERTEX},
+				{1, sizeof(uint32_t), VK_VERTEX_INPUT_RATE_INSTANCE}};
 			VkVertexInputAttributeDescription attributes[] = {
 				{0, 0, VK_FORMAT_R32G32B32_SFLOAT, offsetof(Vertex, _position)},
 				{1, 0, VK_FORMAT_R32G32B32_SFLOAT, offsetof(Vertex, _normal)},
-				{2, 0, VK_FORMAT_R32G32_SFLOAT, offsetof(Vertex, _texCoords)}};
+				{2, 0, VK_FORMAT_R32G32_SFLOAT, offsetof(Vertex, _texCoords)},
+				{3, 1, VK_FORMAT_R32_UINT, 0}};
 			VkPipelineVertexInputStateCreateInfo input = {VK_STRUCTURE_TYPE_PIPELINE_VERTEX_INPUT_STATE_CREATE_INFO};
-			input.vertexBindingDescriptionCount = 1;
-			input.pVertexBindingDescriptions = &binding;
-			input.vertexAttributeDescriptionCount = 3;
+			input.vertexBindingDescriptionCount = 2;
+			input.pVertexBindingDescriptions = bindings;
+			input.vertexAttributeDescriptionCount = 4;
 			input.pVertexAttributeDescriptions = attributes;
 			VkPipelineInputAssemblyStateCreateInfo assembly = {
 				VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO};
@@ -1046,65 +1187,34 @@ namespace Rendering
 		for (size_t i = 0; i < frame.m_items.size(); ++i)
 			m_objectData[i] = MakeObject(frame.m_items[i]);
 	}
-	void VulkanBackend::Draw(const RenderFrame &frame, const DrawItem &item, int mode, uint32_t object)
+	void VulkanBackend::Draw(const DrawItem &item, int mode, uint32_t object)
 	{
 		// 共用 CPU 矩阵和 PBR 参数。Vulkan 深度 0..1 与屏幕 Y 翻转在离线顶点 Shader 完成。
 		if (!item.m_mesh || item.m_submesh >= item.m_mesh->m_subMeshes.size())
 			return;
-		if (m_drawIndex >= MaxDraws)
-			throw std::runtime_error("Vulkan: per-frame draw count exceeds 65536 (including shadows)");
+		if (object >= MaxObjects)
+			throw std::runtime_error("Vulkan: primitive index exceeds object buffer");
 		++m_drawIndex;
-		VkDescriptorSetAllocateInfo allocation = {VK_STRUCTURE_TYPE_DESCRIPTOR_SET_ALLOCATE_INFO};
-		allocation.descriptorPool = m_descriptorPool;
-		allocation.descriptorSetCount = 1;
-		allocation.pSetLayouts = &m_descriptorLayout;
-		VkDescriptorSet set;
-		CheckVK(vkAllocateDescriptorSets(m_device, &allocation, &set), "Allocate draw descriptors");
 		auto material = item.m_material;
-		VkDescriptorImageInfo images[8] = {};
-		images[0].imageView = GetTexture(material ? material->m_texture : nullptr).view;
-		images[1].imageView = GetCube(frame.m_irradiance).view;
-		images[2].imageView = GetCube(frame.m_sky).view;
-		images[3].imageView = GetTexture(material ? material->m_opacityTexture : nullptr).view;
-		images[4].imageView = GetTexture(material ? material->m_normalTexture : nullptr).view;
-		// 阴影绘制不能把正在写入的附件同时绑定为采样纹理。
-		images[5].imageView = mode == 3 ? GetTexture(nullptr).view : m_shadow.view;
-		for (int i = 0; i < 6; ++i)
-			images[i].imageLayout = VK_IMAGE_LAYOUT_SHADER_READ_ONLY_OPTIMAL;
-		images[6].sampler = m_sampler;
-		images[7].sampler = m_cubeSampler;
-		VkDescriptorBufferInfo frameBuffer = {m_frameConstants.buffer, 0, sizeof(FrameConstants)};
-		VkDescriptorBufferInfo objectBuffer = {m_objects.buffer, 0, VK_WHOLE_SIZE};
-		VkWriteDescriptorSet writes[10] = {};
-		for (uint32_t i = 0; i < 10; ++i)
-		{
-			writes[i].sType = VK_STRUCTURE_TYPE_WRITE_DESCRIPTOR_SET;
-			writes[i].dstSet = set;
-			writes[i].dstBinding = i;
-			writes[i].descriptorCount = 1;
-			writes[i].descriptorType =
-				i == 0 ? VK_DESCRIPTOR_TYPE_UNIFORM_BUFFER
-					   : i == 9 ? VK_DESCRIPTOR_TYPE_STORAGE_BUFFER
-								: (i <= 6 ? VK_DESCRIPTOR_TYPE_SAMPLED_IMAGE : VK_DESCRIPTOR_TYPE_SAMPLER);
-			if (i == 0)
-				writes[i].pBufferInfo = &frameBuffer;
-			else if (i == 9)
-				writes[i].pBufferInfo = &objectBuffer;
-			else
-				writes[i].pImageInfo = &images[i - 1];
-		}
-		vkUpdateDescriptorSets(m_device, 10, writes, 0, nullptr);
 		bool transparent = material && material->m_transparent;
 		int pipeline = mode == 3 ? 4 : mode == 1 ? 3 : mode == 2 ? 1 : transparent ? 2 : 0;
 		vkCmdBindPipeline(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelines[pipeline]);
-		vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 1, &set, 0, nullptr);
-		// Per draw the shader only needs to know which array element is its own, and the pass.
-		DrawPush push = {object, static_cast<uint32_t>(mode)};
+		// Set 0、2 已经在帧/Pass 开头绑定。这里只在贴图组合改变时换 Set 1。
+		auto set = GetMaterialDescriptors(material);
+		if (set != m_boundMaterial)
+		{
+			vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 1, 1, &set, 0, nullptr);
+			m_boundMaterial = set;
+		}
+		DrawPush push = {static_cast<uint32_t>(mode)};
 		vkCmdPushConstants(m_commands, m_pipelineLayout, VK_SHADER_STAGE_VERTEX_BIT | VK_SHADER_STAGE_FRAGMENT_BIT, 0,
 						   sizeof(push), &push);
 		auto &mesh = GetMesh(item.m_mesh);
 		VkDeviceSize vertexOffset = 0;
 		vkCmdBindVertexBuffers(m_commands, 0, 1, &mesh.vertices.buffer, &vertexOffset);
+		// Binding 0 读模型顶点；binding 1 读该物体的编号。firstInstance 保持0，避免重复加偏移。
+		VkDeviceSize primitiveOffset = VkDeviceSize(object) * sizeof(uint32_t);
+		vkCmdBindVertexBuffers(m_commands, 1, 1, &m_primitiveIds.buffer, &primitiveOffset);
 		vkCmdBindIndexBuffer(m_commands, mesh.indices.buffer, 0, VK_INDEX_TYPE_UINT32);
 		auto &part = item.m_mesh->m_subMeshes[item.m_submesh];
 		vkCmdDrawIndexed(m_commands, part.m_indexCount, 1, part.m_firstIndex, 0, 0);
@@ -1131,10 +1241,12 @@ namespace Rendering
 			CreateSwapchain();
 		if (!m_swapchain)
 			return;
+		m_newMaterialSets = m_passUpdates = 0;
 		// 所有资源先上传完毕再记录绘制；上传命令不会插进正在记录的 render pass。
 		GetTexture(nullptr);
 		GetCube(frame.m_irradiance);
 		GetCube(frame.m_sky);
+		GetMaterialDescriptors(nullptr);
 		for (auto &item : frame.m_items)
 		{
 			if (!item.m_mesh)
@@ -1144,9 +1256,11 @@ namespace Rendering
 			GetTexture(material ? material->m_texture : nullptr);
 			GetTexture(material ? material->m_opacityTexture : nullptr);
 			GetTexture(material ? material->m_normalTexture : nullptr);
+			GetMaterialDescriptors(material);
 		}
 		if (frame.m_drawSky && frame.m_sky && frame.m_skyMesh)
 			GetMesh(frame.m_skyMesh);
+		UpdatePassDescriptors(frame);
 		auto acquired =
 			vkAcquireNextImageKHR(m_device, m_swapchain, UINT64_MAX, m_acquired, VK_NULL_HANDLE, &m_imageIndex);
 		if (acquired == VK_ERROR_OUT_OF_DATE_KHR)
@@ -1158,7 +1272,6 @@ namespace Rendering
 			m_resize = true;
 		else
 			CheckVK(acquired, "Acquire swapchain image");
-		CheckVK(vkResetDescriptorPool(m_device, m_descriptorPool, 0), "Reset frame descriptors");
 		CheckVK(vkResetCommandBuffer(m_commands, 0), "Reset frame commands");
 		VkCommandBufferBeginInfo begin = {VK_STRUCTURE_TYPE_COMMAND_BUFFER_BEGIN_INFO};
 		begin.flags = VK_COMMAND_BUFFER_USAGE_ONE_TIME_SUBMIT_BIT;
@@ -1170,8 +1283,12 @@ namespace Rendering
 		}
 		m_drawIndex = 0;
 		WriteConstants(frame);
+		// 当前后端只有一帧在飞，公共 Set 跨帧保留，每次开始记录命令时重新绑定一次。
+		m_boundMaterial = VK_NULL_HANDLE;
+		vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 0, 1, &m_sceneSet, 0, nullptr);
 		if (frame.m_shadowParams.w > 0 || !m_shadowInitialized)
 		{
+			vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 2, 1, &m_passSets[0], 0, nullptr);
 			VkClearValue shadowClear[2] = {};
 			shadowClear[0].color = {{1, 1, 1, 1}};
 			shadowClear[1].depthStencil = {1, 0};
@@ -1188,11 +1305,12 @@ namespace Rendering
 			vkCmdSetScissor(m_commands, 0, 1, &shadowScissor);
 			for (size_t i = 0; i < frame.m_items.size(); ++i)
 				if (CastsShadow(frame, frame.m_items[i]))
-					Draw(frame, frame.m_items[i], 3, static_cast<uint32_t>(i));
+					Draw(frame.m_items[i], 3, static_cast<uint32_t>(i));
 			vkCmdEndRenderPass(m_commands);
 			m_shadowInitialized = true;
 		}
 		VkClearValue clear[2] = {};
+		vkCmdBindDescriptorSets(m_commands, VK_PIPELINE_BIND_POINT_GRAPHICS, m_pipelineLayout, 2, 1, &m_passSets[1], 0, nullptr);
 		clear[0].color = {{.025f, .04f, .065f, 1}};
 		clear[1].depthStencil = {1, 0};
 		VkRenderPassBeginInfo pass = {VK_STRUCTURE_TYPE_RENDER_PASS_BEGIN_INFO};
@@ -1215,10 +1333,10 @@ namespace Rendering
 			// The sky uses the element after the scene objects.
 			uint32_t skyIndex = static_cast<uint32_t>(frame.m_items.size());
 			m_objectData[skyIndex] = MakeObject(sky);
-			Draw(frame, sky, 2, skyIndex);
+			Draw(sky, 2, skyIndex);
 		}
 		for (size_t i = 0; i < frame.m_items.size(); ++i)
-			Draw(frame, frame.m_items[i], frame.m_items[i].m_sprite ? 1 : 0, static_cast<uint32_t>(i));
+			Draw(frame.m_items[i], frame.m_items[i].m_sprite ? 1 : 0, static_cast<uint32_t>(i));
 		vkCmdEndRenderPass(m_commands);
 		// 交换链图像获取后放弃旧内容，完整覆盖并在交还 present 前转换布局。
 		Barrier(m_commands, m_swapImages[m_imageIndex], VK_IMAGE_LAYOUT_UNDEFINED, VK_IMAGE_LAYOUT_TRANSFER_DST_OPTIMAL,
@@ -1247,6 +1365,11 @@ namespace Rendering
 		CheckVK(vkQueueSubmit(m_queue, 1, &submit, m_fence), "Submit frame");
 		m_pending = true;
 		m_rendered = true;
+		if (m_profiling)
+			Platform::Log("Vulkan descriptors: draws=" + std::to_string(m_drawIndex) +
+				", cached-material-sets=" + std::to_string(m_materialSets.size()) +
+				", new-material-sets=" + std::to_string(m_newMaterialSets) +
+				", pass-set-updates=" + std::to_string(m_passUpdates));
 		if (m_profiling && m_queries)
 		{
 			CheckVK(vkWaitForFences(m_device, 1, &m_fence, VK_TRUE, UINT64_MAX), "Wait GPU timestamps");
@@ -1319,6 +1442,16 @@ namespace Rendering
 			vkDeviceWaitIdle(m_device);
 		if (m_device && vkDestroyImage)
 		{
+			// GPU 已空闲，先释放引用资源的 Set，再释放纹理、Buffer、Sampler。
+			for (auto pool : m_materialPools)
+				vkDestroyDescriptorPool(m_device, pool, nullptr);
+			m_materialPools.clear();
+			m_materialSets.clear();
+			if (m_descriptorPool)
+				vkDestroyDescriptorPool(m_device, m_descriptorPool, nullptr);
+			m_descriptorPool = VK_NULL_HANDLE;
+			m_sceneSet = m_boundMaterial = VK_NULL_HANDLE;
+			m_passSets[0] = m_passSets[1] = VK_NULL_HANDLE;
 			DestroySwapchain();
 			for (auto &entry : m_meshes)
 			{
@@ -1341,6 +1474,7 @@ namespace Rendering
 			m_objectData = nullptr;
 			DestroyBuffer(m_frameConstants);
 			DestroyBuffer(m_objects);
+			DestroyBuffer(m_primitiveIds);
 			if (m_queries)
 				vkDestroyQueryPool(m_device, m_queries, nullptr);
 			m_queries = VK_NULL_HANDLE;
@@ -1353,12 +1487,12 @@ namespace Rendering
 			if (m_pipelineLayout)
 				vkDestroyPipelineLayout(m_device, m_pipelineLayout, nullptr);
 			m_pipelineLayout = VK_NULL_HANDLE;
-			if (m_descriptorPool)
-				vkDestroyDescriptorPool(m_device, m_descriptorPool, nullptr);
-			m_descriptorPool = VK_NULL_HANDLE;
-			if (m_descriptorLayout)
-				vkDestroyDescriptorSetLayout(m_device, m_descriptorLayout, nullptr);
-			m_descriptorLayout = VK_NULL_HANDLE;
+			for (auto &layout : m_descriptorLayouts)
+			{
+				if (layout)
+					vkDestroyDescriptorSetLayout(m_device, layout, nullptr);
+				layout = VK_NULL_HANDLE;
+			}
 			if (m_fence)
 				vkDestroyFence(m_device, m_fence, nullptr);
 			m_fence = VK_NULL_HANDLE;

@@ -66,7 +66,6 @@
     X(vkDestroyDescriptorSetLayout) \
     X(vkCreateDescriptorPool) \
     X(vkDestroyDescriptorPool) \
-    X(vkResetDescriptorPool) \
     X(vkAllocateDescriptorSets) \
     X(vkUpdateDescriptorSets) \
     X(vkCreatePipelineLayout) \
